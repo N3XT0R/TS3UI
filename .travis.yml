@@ -4,11 +4,20 @@ php:
     - 5.4.7
     - 5.4
     - 5.5
+    - hhvm
     
-before_install:
+install:
   - composer self-update
   - composer install
-  - cd tests
   
+before_script:
+     - mkdir -p build/coverage
+     - cd tests
+     
 script:
     - phpunit 
+    
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: hhvm
