@@ -31,5 +31,13 @@ class UserController extends AbstractActionController{
     public function indexAction(){
         return array();
     }
+    
+    public function login(){
+        return array();
+    }
+    
+    public function logout(){
+        return array();
+    }
 
 }
