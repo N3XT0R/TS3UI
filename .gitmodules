@@ -1,3 +1,7 @@
 [submodule "vendor/ZF2"]
 	path = vendor/ZF2
 	url = https://github.com/zendframework/zf2.git
+
+[submodule "vendor/fkubis"]
+        path = vendor/fkubis/teamspeak-php-framework
+        url = https://github.com/fkubis/teamspeak-php-framework.git
