@@ -9,15 +9,18 @@
  * $Date$
  */
 
-namespace TS3Core;
+namespace TSCore;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
+Use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\EventManager\EventInterface;
+use Zend\Mvc\ModuleRouteListener;
 
 class Module implements
 AutoloaderProviderInterface,
-ConfigProviderInterface
+ConfigProviderInterface,
+BootstrapListenerInterface
 {
     
      public function getAutoloaderConfig() {
@@ -32,6 +35,13 @@ ConfigProviderInterface
 
     public function getConfig() {
         return include 'config/module.config.php';
+    }
+
+    public function onBootstrap(EventInterface $e) {
+        $this->oServiceLocator = $e->getApplication()->getServiceManager();
+        $eventManager        = $e->getApplication()->getEventManager();
+        $moduleRouteListener = new ModuleRouteListener();
+        $moduleRouteListener->attach($eventManager);
     }
 
 }

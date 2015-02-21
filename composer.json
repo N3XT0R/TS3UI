@@ -10,6 +10,7 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.3.*",
-		"fkubis/teamspeak-php-framework": "dev-master"
+		"fkubis/teamspeak-php-framework": "dev-master",
+        "phpunit/phpunit": "4.5.*"
     }
 }
