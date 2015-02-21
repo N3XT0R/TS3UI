@@ -35,7 +35,7 @@ class Teamspeak3AdapterTest extends PHPUnit_Framework_TestCase{
     
     public function testSetGetAdapter(){
         if(@get_current_user() == "N3X"){
-            $teamspeak = TeamSpeak3::factory("serverquery://username:password@176.57.128.197:10011/?server_port=9987");
+            $teamspeak = TeamSpeak3::factory("serverquery://username:password@192.168.56.101:10011/?server_port=9987");
             $this->oAdapter->setTeamspeak($teamspeak);
             $GotTeamspeak = $this->oAdapter->getTeamspeak();
             $this->assertEquals($GotTeamspeak, $teamspeak);
