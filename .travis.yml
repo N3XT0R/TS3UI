@@ -9,7 +9,7 @@ install:
   - composer install
   
 before_script:
-     - cd tests
+    - cd tests
 script:
     - phpunit 
     - php coverage-checker.php clover.xml 80
