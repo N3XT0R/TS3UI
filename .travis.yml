@@ -16,4 +16,7 @@ script:
     
 after_script:
     - php ../vendor/bin/coveralls
+	
+notifications:
+  email: false
     
