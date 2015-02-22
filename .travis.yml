@@ -9,13 +9,13 @@ install:
   - composer install
   
 before_script:
-    - cd tests
+    - mkdir build
+    - mkdir build/logs
 script:
-    - phpunit 
-    - php coverage-checker.php clover.xml 80
+    - phpunit --coverage-clover build/logs/clover.xml -c tests/phpunit.xml 
     
 after_script:
-    - php ../vendor/bin/coveralls
+    - php vendor/bin/coveralls
 
 notifications:
     email: false
