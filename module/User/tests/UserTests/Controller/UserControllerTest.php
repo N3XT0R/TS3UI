@@ -13,12 +13,13 @@ namespace UserTests\Controller\Controller;
 
 use User\Controller\UserController;
 use User\Service\UserService;
-use Zend\Test\PHPUnit\Controller\AbstractControllerTestCase;
+use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
 
-class UserControllerTest extends AbstractControllerTestCase{
+class UserControllerTest extends AbstractHttpControllerTestCase{
     
     public function setUp() {
+        $this->setApplicationConfig(include "./config/application.config.php");
         parent::setUp();
     }
     
@@ -27,5 +28,14 @@ class UserControllerTest extends AbstractControllerTestCase{
         $controller = new UserController($service);
         $gotService = $controller->getUserService();
         $this->assertTrue($gotService instanceof UserService);
+    }
+    
+    public function testIndexAction(){
+        $this->dispatch("/user");
+        $this->assertControllerClass("usercontroller");
+        $this->assertControllerName("user");
+        $this->assertActionName("index");
+        $this->assertResponseStatusCode(200);
+        
     }
 }
