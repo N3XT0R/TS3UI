@@ -9,7 +9,7 @@
  * $Date$
  */
 
-namespace ModulesTests\TSCoreTest\Adapter;
+namespace TSCoreTests\Adapter;
 
 use TSCore\Adapter\Teamspeak3Adapter;
 use PHPUnit_Framework_TestCase;

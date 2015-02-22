@@ -7,16 +7,16 @@
     convertWarningsToExceptions="true"
     processIsolation="false"
     stopOnFailure="false"
-    syntaxCheck="true"
-    bootstrap="./Bootstrap.php">
+    syntaxCheck="false"
+    bootstrap="Bootstrap.php">
     <testsuites>
         <testsuite name="ts3ui">
-            <directory suffix=".php">./ModulesTests</directory>
-            <!--<directory>../module/TSCore/tests/TSCoreTest/</directory>-->
+            <directory suffix=".php">../module/TSCore/tests/TSCoreTests</directory>
+            <directory suffix=".php">../module/User/tests/UserTests</directory>
         </testsuite>
     </testsuites>
     <logging>
-        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
          <log type="coverage-clover" target="./clover.xml"/>
     </logging>
     <filter>

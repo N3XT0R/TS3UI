@@ -9,7 +9,7 @@
  * $Date$
  */
 
-namespace ModulesTests\UserTest\Controller;
+namespace UserTests\Controller\Controller;
 
 use User\Controller\UserController;
 use User\Service\UserService;
@@ -24,8 +24,7 @@ class UserControllerTest extends AbstractControllerTestCase{
     
     public function testSetGetService(){
         $service = new UserService();
-        $controller = new UserController();
-        $controller->setUserService($service);
+        $controller = new UserController($service);
         $gotService = $controller->getUserService();
         $this->assertTrue($gotService instanceof UserService);
     }
