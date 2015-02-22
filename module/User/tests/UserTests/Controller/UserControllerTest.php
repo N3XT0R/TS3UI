@@ -36,6 +36,5 @@ class UserControllerTest extends AbstractHttpControllerTestCase{
         $this->assertControllerName("user");
         $this->assertActionName("index");
         $this->assertResponseStatusCode(200);
-        
     }
 }
