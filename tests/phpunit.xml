@@ -19,6 +19,7 @@
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
          <log type="coverage-clover" target="./clover.xml"/>
          <log type="coverage-php" target="coverage.cov"/>
+         <log type="coverage-html" target="report" lowUpperBound="60" highLowerBound="80"/>
     </logging>
     <filter>
         <blacklist>

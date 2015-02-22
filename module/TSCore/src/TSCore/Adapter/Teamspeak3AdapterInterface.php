@@ -6,7 +6,9 @@ use TeamSpeak3\Node\Server;
 
 interface Teamspeak3AdapterInterface {
     
-    public function init($config);
+    public function init(array $config);
+    
+    public function connect();
     
     public function writeMessage($message);
     
@@ -16,5 +18,8 @@ interface Teamspeak3AdapterInterface {
      * @return TeamSpeak3
      */
     public function getTeamspeak();
+    
+    public function setConfig(array $config);
+    public function getConfig();
     
 }

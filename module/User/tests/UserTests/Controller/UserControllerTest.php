@@ -24,7 +24,9 @@ class UserControllerTest extends AbstractHttpControllerTestCase{
     }
     
     public function testSetGetService(){
-        $service = new UserService();
+        $auth = $this->getApplicationServiceLocator()->get("TSCore\Auth\Service");
+        $TSAdapter = $this->getApplicationServiceLocator()->get("TSCore\Adapter\TeamspeakAdapter");
+        $service = new UserService($auth, $TSAdapter);
         $controller = new UserController($service);
         $gotService = $controller->getUserService();
         $this->assertTrue($gotService instanceof UserService);

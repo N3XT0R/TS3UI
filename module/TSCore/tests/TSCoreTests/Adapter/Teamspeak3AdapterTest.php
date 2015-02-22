@@ -15,6 +15,7 @@ use TSCore\Adapter\Teamspeak3Adapter;
 use PHPUnit_Framework_TestCase;
 use TeamSpeak3\TeamSpeak3;
 use TeamSpeak3\Ts3Exception;
+use Zend\Stdlib\Exception\InvalidArgumentException;
 
 class Teamspeak3AdapterTest extends PHPUnit_Framework_TestCase{
     
@@ -26,10 +27,40 @@ class Teamspeak3AdapterTest extends PHPUnit_Framework_TestCase{
     }
     public function testException(){
         try{
-            $teamspeak = TeamSpeak3::factory("serverquery://username:password@176.57.128.197:10011/?server_port=9987");
-            $this->fail();
+           $this->oAdapter->init(array("server" => "localhost", "port" => "15"));
+           $this->oAdapter->connect();
         } catch (\Exception $ex) {
             $this->assertTrue($ex instanceof Ts3Exception);
         }
     }
+    
+    public function testSetGetConfig(){
+        $config = array(
+            "username" => "Foo",
+            "password" => "Bar",
+            "server" => "localhost:11001",
+            "port" => "9987",
+        );
+        $this->oAdapter->setConfig($config);
+        $getConfig = $this->oAdapter->getConfig();
+        $this->assertEquals($getConfig, $config);
+    }
+    
+    public function testThrowSErverInbvalidException(){
+        try{
+            $this->oAdapter->init(array());
+            $this->oAdapter->connect();
+        } catch (\Exception $ex) {
+            $this->assertTrue($ex instanceof InvalidArgumentException);
+        }
+    }
+    
+   public function testThrowsPortInvalidException(){
+       try{
+            $this->oAdapter->init(array("server" => "localhost"));
+            $this->oAdapter->connect();
+        } catch (\Exception $ex) {
+            $this->assertTrue($ex instanceof InvalidArgumentException);
+        }
+   }
 }

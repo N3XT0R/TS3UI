@@ -18,15 +18,16 @@ use TeamSpeak3\Node\Server;
 class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
 
     protected $ts;
+    protected $config;
     
-    public function init($config) {
+    public function init(array $config) {
         
         if(!array_key_exists("username", $config)){
-            throw new InvalidArgumentException("Username for Teamspeak-Server not set");
+            $config["username"] = "Admin";
         }
         
         if(!array_key_exists("password", $config)){
-            throw new InvalidArgumentException("Password for Teamspeak-Server not set");
+            $config["password"] = "Admin";
         }
         
         if(!array_key_exists("server", $config)){
@@ -36,7 +37,11 @@ class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
         if(!array_key_exists("port", $config)){
             throw new InvalidArgumentException("Port for Teamspeak-Server not set");
         }
-        
+        $this->setConfig($config);
+    }
+    
+    public function connect() {
+        $config = $this->getConfig();
         $username = $config["username"];
         $password = $config["password"];
         $server = $config["server"];
@@ -63,6 +68,15 @@ class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
      */
     public function setTeamspeak(Server $teamspeak) {
         $this->ts = $teamspeak;
+    }
+
+    public function getConfig() {
+        return $this->config;
+    }
+
+    public function setConfig(array $config) {
+        $this->config = $config;
+        return $this;
     }
 
 }
