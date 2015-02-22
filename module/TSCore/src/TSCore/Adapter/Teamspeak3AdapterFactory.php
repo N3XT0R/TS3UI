@@ -17,7 +17,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class Teamspeak3AdapterFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
-        $adapter = $serviceLocator->get("TS3Core\Adapter\TeamspeakAdapter");
+        $adapter = $serviceLocator->get("TSCore\Adapter\TeamspeakAdapter");
         $config = $serviceLocator->get("Config");
         $teamspeakConfig = $config["teamspeak"];
         $adapter->init($teamspeakConfig);

@@ -3,10 +3,12 @@
 return array(
     'service_manager' => array(
         'invokables' => array(
-            'TS3Core\Adapter\TeamspeakAdapter' => 'TS3\Adapter\Teamspeak3Adapter',
+            'TSCore\Adapter\TeamspeakAdapter' => 'TSCore\Adapter\Teamspeak3Adapter',
         ),
         'factories' => array(
-            'TS3Core\Adapter\Teamspeak' => 'TS3\Adapter\Teamspeak3AdapterFactory',
+            'TSCore\Adapter\Teamspeak' => 'TSCore\Adapter\Teamspeak3AdapterFactory',
+            'TSCore\Auth\Adapter'      => 'TSCore\Authentication\TS3AdapterFactory',
+            'TSCore\Adapter\Service'   => 'TSCore\Authentication\ServiceFactory',
         ),
     ),
 );

@@ -12,5 +12,10 @@
  */
 
 return array(
-    // ...
+   'teamspeak' => array(
+       'server' => '127.0.0.1:10011',
+       'port' => '12345',
+       'username' => 'Foo',
+       'password' => 'Bar',
+   ),
 );
