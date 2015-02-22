@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1424574142">
-  <project timestamp="1424574142">
+<coverage generated="1424575399">
+  <project timestamp="1424575399">
     <file name="C:/xampp/htdocs/ts3min/config/application.config.php">
       <line num="5" type="stmt" count="9"/>
       <line num="6" type="stmt" count="9"/>
