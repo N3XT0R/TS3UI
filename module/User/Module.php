@@ -23,6 +23,8 @@ AutoloaderProviderInterface,
 ConfigProviderInterface
 {
 
+    protected $serviceLocator;
+    
     public function getAutoloaderConfig() {
         return array(
             'Zend\Loader\StandardAutoloader' => array(

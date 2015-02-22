@@ -1,16 +1,40 @@
 <?php
-//we create ServiceManagerGrabber class later...
-use ModulesTests\ServiceManagerGrabber; 
- 
+
+namespace tests;
+
+use Zend\Mvc\Service\ServiceManagerConfig;
+use Zend\ServiceManager\ServiceManager;
+
 error_reporting(E_ALL | E_STRICT);
- 
-$cwd = __DIR__;
 chdir(dirname(__DIR__));
- 
-// Assume we use composer
-$loader = require_once  './vendor/autoload.php';
-$loader->add("ModulesTests\\", $cwd);
-$loader->register();
- 
-ServiceManagerGrabber::setServiceConfig(require_once './config/application.config.php');
-ob_start();
+
+define('SITE_PATH', dirname(dirname(__FILE__)));
+
+class Bootstrap {
+
+    protected static $serviceManager;
+
+    public static function init() {
+
+        include SITE_PATH . '/vendor/autoload.php';
+
+        $config = include SITE_PATH . '/config/application.config.php';
+        self::loadModules($config['modules']);
+        
+        static::$serviceManager = new ServiceManager(new ServiceManagerConfig());
+        static::$serviceManager->setService('ApplicationConfig', $config);
+        $test= static::$serviceManager->get('ModuleManager')->loadModules();
+    }
+
+    public static function getServiceManager() {
+        return static::$serviceManager;
+    }
+    
+    private static function loadModules(array $modules) {
+        foreach ($modules as $moduleName) {
+            include SITE_PATH . "/module/$moduleName/Module.php";
+        }
+    }
+
+}
+Bootstrap::init();

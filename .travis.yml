@@ -11,8 +11,8 @@ install:
   
 before_script:
      - mkdir -p build/coverage
+      - cd tests
 script:
-    - cd tests
     - phpunit 
     
 matrix:
