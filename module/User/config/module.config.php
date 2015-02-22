@@ -11,17 +11,16 @@ return array(
                         'controller' => 'User',
                         'action'     => 'index',
                     ),
-                    'may_terminate' => true,
-                    'child_routes' => array(
-                        'action' => array(
-                            'type' => 'segment',
-                            'options' => array(
-                                'route'         => '/[:controller[/:action[/:id]]]',
-                                'constraints' => array(
-                                    'controller'    => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                    'action'        => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                    'id'            => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                ),
+                ),    
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'action' => array(
+                        'type' => 'segment',
+                        'options' => array(
+                            'route'         => '/:action[/:id]',
+                            'constraints' => array(
+                                'action'        => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'id'            => '[0-9]+',
                             ),
                         ),
                     ),
