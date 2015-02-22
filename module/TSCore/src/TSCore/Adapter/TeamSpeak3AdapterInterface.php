@@ -4,7 +4,7 @@ namespace TSCore\Adapter;
 
 use TeamSpeak3\Node\Server;
 
-interface TeamSpeak3AdapaterInterface {
+interface Teamspeak3AdapterInterface {
     
     public function init($config);
     

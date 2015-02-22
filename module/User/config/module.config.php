@@ -14,10 +14,15 @@ return array(
                     'may_terminate' => true,
                     'child_routes' => array(
                         'action' => array(
-                            'route'         => '/[:controller[/:action[/:id]]]',
-                            'controller'    => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            'action'        => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            'id'            => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            'type' => 'segment',
+                            'options' => array(
+                                'route'         => '/[:controller[/:action[/:id]]]',
+                                'constraints' => array(
+                                    'controller'    => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                    'action'        => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                    'id'            => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                ),
+                            ),
                         ),
                     ),
                 ),

@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-         backupStaticAttributes="false"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
-         syntaxCheck="false"
-         bootstrap="Bootstrap.php">
+    backupStaticAttributes="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    syntaxCheck="true"
+    bootstrap="./Bootstrap.php">
     <testsuites>
-        <testsuite name="TSCore">
-            <directory suffix=".php">../module/TSCore/tests/TSCoreTest</directory>
+        <testsuite name="ts3ui">
+            <directory suffix=".php">./ModulesTests</directory>
+            <!--<directory>../module/TSCore/tests/TSCoreTest/</directory>-->
         </testsuite>
     </testsuites>
     <logging>
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+         <log type="coverage-clover" target="./clover.xml"/>
     </logging>
     <filter>
         <blacklist>
-            <directory suffix=".php">../public/</directory>
-            <directory suffix=".php">../vendor/</directory>
-            <directory suffix=".php">../config/</directory>
-            <directory suffix=".php">../data/</directory>
+            <directory suffix=".php">../public</directory>
+            <directory suffix=".php">../vendor</directory>
         </blacklist>
     </filter>
+    <php>
+        <ini name="date.timezone" value="UTC"/>
+    </php>
 </phpunit>

@@ -9,10 +9,10 @@
  * $Date$
  */
 
-namespace TSCoreTest\Adapter;
+namespace ModulesTests\TSCoreTest\Adapter;
 
+use TSCore\Adapter\Teamspeak3Adapter;
 use PHPUnit_Framework_TestCase;
-use TSCore\Adapter\TeamSpeak3Adapater;
 use TeamSpeak3\TeamSpeak3;
 use TeamSpeak3\Ts3Exception;
 
@@ -21,8 +21,8 @@ class Teamspeak3AdapterTest extends PHPUnit_Framework_TestCase{
     protected $oAdapter;
     
     public function setUp() {
-        $this->oAdapter = new TeamSpeak3Adapater();
         parent::setUp();
+        $this->oAdapter = new Teamspeak3Adapter();
     }
     public function testException(){
         try{
@@ -31,17 +31,5 @@ class Teamspeak3AdapterTest extends PHPUnit_Framework_TestCase{
         } catch (\Exception $ex) {
             $this->assertTrue($ex instanceof Ts3Exception);
         }
-    }
-    
-    public function testSetGetAdapter(){
-        if(@get_current_user() == "N3X"){
-            $teamspeak = TeamSpeak3::factory("serverquery://username:password@192.168.56.101:10011/?server_port=9987");
-            $this->oAdapter->setTeamspeak($teamspeak);
-            $GotTeamspeak = $this->oAdapter->getTeamspeak();
-            $this->assertEquals($GotTeamspeak, $teamspeak);
-        }else{
-            $this->assertTrue(true);
-        }
-        
     }
 }

@@ -15,7 +15,7 @@ use TeamSpeak3\TeamSpeak3;
 use Zend\Stdlib\Exception\InvalidArgumentException;
 use TeamSpeak3\Node\Server;
 
-class TeamSpeak3Adapater implements TeamSpeak3AdapaterInterface{
+class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
 
     protected $ts;
     
