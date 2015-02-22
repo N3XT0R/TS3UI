@@ -32,11 +32,12 @@ class UserController extends AbstractActionController{
         return array();
     }
     
-    public function login(){
+    public function loginAction(){
+        $this->layout("layout/login");
         return array();
     }
     
-    public function logout(){
+    public function logoutAction(){
         return array();
     }
 
