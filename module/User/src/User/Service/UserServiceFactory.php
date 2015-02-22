@@ -17,8 +17,9 @@ use Zend\ServiceManager\FactoryInterface;
 class UserServiceFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
-        
-        $userService = new UserService();
+        $auth = $serviceLocator->get("TSCore\Auth\Service");
+        $TSAdapter = $serviceLocator->get("TSCore\Adapter\Teamspeak");
+        $userService = new UserService($auth, $TSAdapter);
         return $userService;
     }
 

@@ -8,7 +8,7 @@ return array(
         'factories' => array(
             'TSCore\Adapter\Teamspeak' => 'TSCore\Adapter\Teamspeak3AdapterFactory',
             'TSCore\Auth\Adapter'      => 'TSCore\Authentication\TS3AdapterFactory',
-            'TSCore\Adapter\Service'   => 'TSCore\Authentication\ServiceFactory',
+            'TSCore\Auth\Service'      => 'TSCore\Authentication\ServiceFactory',
         ),
     ),
 );

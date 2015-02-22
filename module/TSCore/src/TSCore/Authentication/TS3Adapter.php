@@ -113,6 +113,7 @@ class TS3Adapter implements AdapterInterface{
             $config["username"] = $this->getIdentity();
             $config["password"] = $this->getCredential();
             $this->getTeamspeakAdapter()->init($config);
+            $this->getTeamspeakAdapter()->connect();
         } catch (\Exception $ex) {
             $this->authenticateResultInfo["code"] = Result::FAILURE_CREDENTIAL_INVALID;
             $this->authenticateResultInfo["messages"][] = "Login failed.";

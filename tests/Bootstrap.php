@@ -1,5 +1,4 @@
 <?php
-
 namespace tests;
 
 use Zend\Mvc\Service\ServiceManagerConfig;
@@ -10,6 +9,9 @@ chdir(dirname(__DIR__));
 
 define('SITE_PATH', dirname(dirname(__FILE__)));
 
+/**
+ * @codeCoverageIgnore
+ */
 class Bootstrap {
 
     protected static $serviceManager;
