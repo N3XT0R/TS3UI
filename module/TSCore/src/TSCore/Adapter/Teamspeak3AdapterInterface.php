@@ -2,7 +2,7 @@
 
 namespace TSCore\Adapter;
 
-use TeamSpeak3\Node\Server;
+use TeamSpeak3\Node\AbstractNode;
 
 interface Teamspeak3AdapterInterface {
     
@@ -10,12 +10,12 @@ interface Teamspeak3AdapterInterface {
     
     public function connect();
     
-    public function writeMessage($message);
     
-    public function setTeamspeak(Server $teamspeak);
+    
+    public function setTeamspeak(AbstractNode $teamspeak);
     
     /**
-     * @return TeamSpeak3
+     * @return AbstractNode
      */
     public function getTeamspeak();
     

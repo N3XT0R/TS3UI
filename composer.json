@@ -12,6 +12,7 @@
         "zendframework/zendframework": "2.3.*",
         "fkubis/teamspeak-php-framework": "dev-master",
         "phpunit/phpunit": "4.5.*",
-        "satooshi/php-coveralls": "dev-master"
+        "satooshi/php-coveralls": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master"
     }
 }

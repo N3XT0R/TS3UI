@@ -6,3 +6,7 @@ Develop:
 
 ## Introduction
 Web based Management Interface for Teamspeakservers.
+
+
+## Notice
+Currently is this Project under development. Do not try to install it.
