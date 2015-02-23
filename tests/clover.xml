@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1424726762">
-  <project timestamp="1424726762">
+<coverage generated="1424735050">
+  <project timestamp="1424735050">
     <file name="C:/xampp/htdocs/ts3min/config/application.config.php">
       <line num="6" type="stmt" count="16"/>
       <line num="7" type="stmt" count="16"/>
@@ -13,7 +13,7 @@
       <line num="27" type="stmt" count="16"/>
       <line num="52" type="stmt" count="16"/>
       <line num="67" type="stmt" count="16"/>
-      <metrics loc="67" ncloc="-11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="11" coveredelements="11"/>
+      <metrics loc="67" ncloc="-13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="11" coveredelements="11"/>
     </file>
     <file name="C:/xampp/htdocs/ts3min/config/autoload/global.php">
       <line num="16" type="stmt" count="12"/>
@@ -545,6 +545,6 @@
         <metrics loc="41" ncloc="38" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="28" loc="1507" ncloc="1229" classes="15" methods="59" coveredmethods="56" conditionals="0" coveredconditionals="0" statements="336" coveredstatements="326" elements="395" coveredelements="382"/>
+    <metrics files="28" loc="1507" ncloc="1227" classes="15" methods="59" coveredmethods="56" conditionals="0" coveredconditionals="0" statements="336" coveredstatements="326" elements="395" coveredelements="382"/>
   </project>
 </coverage>
