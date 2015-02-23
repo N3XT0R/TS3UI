@@ -31,6 +31,7 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'User\Service\User' => 'User\Service\UserServiceFactory',
+            'User\Acl\Service'   => 'User\Acl\ServiceFactory',
         ),
     ),
     'controllers' => array(
@@ -41,6 +42,19 @@ return array(
     'view_manager' => array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+    ),
+    'view_helpers' => array(
+        'factories'=> array(
+           // 'UserShowWidget' => 'User\View\Helper\UserShowWidgetFactory',
+            'UserIsAllowed'  => 'User\View\Helper\UserIsAllowedFactory',
+        ),
+    ),
+    'acl' => array(
+        'guest' => array(
+            'user' => array(
+                'deny' => array('logout'),
+            ),
         ),
     ),
 );

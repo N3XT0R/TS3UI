@@ -12,18 +12,19 @@
 namespace TSCoreTests\Adapter;
 
 use TSCore\Adapter\Teamspeak3Adapter;
-use PHPUnit_Framework_TestCase;
+use Zend\Test\PHPUnit\Controller\AbstractControllerTestCase;
 use TeamSpeak3\TeamSpeak3;
 use TeamSpeak3\Ts3Exception;
 use Zend\Stdlib\Exception\InvalidArgumentException;
 
-class Teamspeak3AdapterTest extends PHPUnit_Framework_TestCase{
+class Teamspeak3AdapterTest extends AbstractControllerTestCase{
     
     protected $oAdapter;
     
     public function setUp() {
         parent::setUp();
         $this->oAdapter = new Teamspeak3Adapter();
+        $this->setApplicationConfig(include "./config/application.config.php");
     }
     public function testException(){
         try{
@@ -31,6 +32,19 @@ class Teamspeak3AdapterTest extends PHPUnit_Framework_TestCase{
            $this->oAdapter->connect();
         } catch (\Exception $ex) {
             $this->assertTrue($ex instanceof Ts3Exception);
+        }
+    }
+    
+    public function testCreation(){
+        $config = $this->getApplicationServiceLocator()->get("Config");
+        try{
+           $this->oAdapter->init($config["teamspeak"]);
+           $this->oAdapter->connect();
+           /* @var $ts \Teamspeak\Node\Host */
+           $ts = $this->oAdapter->getTeamspeak();
+           $this->assertTrue($ts instanceof \TeamSpeak3\Node\AbstractNode);
+        } catch (\Exception $ex) {
+            $this->fail();
         }
     }
     

@@ -3,10 +3,18 @@ language: php
 php:
     - 5.4
     - 5.5
-    
+
+services:
+    - memcached
+
 install:
   - composer self-update
   - composer install
+
+before_script:
+    - mysql -e 'create database ts3ui;'
+    - sed 's/{PASSWORD}/'"$KEY"'/' ./config/autoload.global.php
+
 script:
     - phpunit --coverage-clover build/logs/clover.xml -c tests/phpunit.xml 
     
@@ -15,3 +23,6 @@ after_script:
 
 notifications:
     email: false
+
+env:
+    - secure: "UAWdr5c0N7F1+dpiDe98GdizgTFSwwNlSr7BfmUu6kvxWA2BXGPm1gor5b+w8AKRiRVVsy9JNy0lcu8a5xezyYiForWnLWMp3pJdHNBSzJ4m29P3JHl+kU6qLnht06paIvwhTePqjv0UjYp6AwIFQKglxWuztZCi4rggn0/oSXU="
