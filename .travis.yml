@@ -13,7 +13,7 @@ install:
 
 before_script:
     - mysql -e 'create database ts3ui;'
-    - sed 's/{PASSWORD}/'"$KEY"'/' config/autoload/global.php
+    - sed -i "s|{password}|$KEY|" ./config/autoload/global.php
 
 script:
     - phpunit --coverage-clover build/logs/clover.xml -c tests/phpunit.xml 
