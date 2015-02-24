@@ -13,6 +13,7 @@ namespace UserTests\Service;
 
 use Zend\Test\PHPUnit\Controller\AbstractControllerTestCase;
 use User\Service\UserService;
+use Doctrine\ORM\EntityManager;
 
 class UserServiceTest extends AbstractControllerTestCase{
     
@@ -23,14 +24,13 @@ class UserServiceTest extends AbstractControllerTestCase{
     }
     
     public function testSetGetAuthenticationANDAdapter(){
-        $auth = $this->getApplicationServiceLocator()->get("TSCore\Auth\Service");
-        $TSAdapter = $this->getApplicationServiceLocator()->get("TSCore\Adapter\TeamspeakAdapter");
-        $userService = new UserService($auth, $TSAdapter);
+        $auth = $this->getApplicationServiceLocator()->get("User\Auth\Service");
+        $entityManager = $this->getApplicationServiceLocator()->get("Doctrine\ORM\EntityManager");
+        $userService = new UserService($auth, $entityManager);
         $GotAuth = $userService->getAuthentication();
-        $gotTSAdapter = $userService->getTeamspeak();
+        $gotEntityManager = $userService->getEntityManager();
 
         $this->assertTrue($GotAuth instanceof \Zend\Authentication\AuthenticationService);
-        $this->assertTrue($GotAuth->getAdapter() instanceof \TSCore\Authentication\TS3Adapter);
-        $this->assertTrue($gotTSAdapter instanceof \TSCore\Adapter\Teamspeak3Adapter);
+        $this->assertTrue($gotEntityManager instanceof EntityManager);
     }
 }
