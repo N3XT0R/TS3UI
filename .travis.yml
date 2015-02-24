@@ -10,6 +10,8 @@ services:
 install:
   - composer self-update
   - composer install
+  - ./vendor/bin/doctrine-module orm:validate-schema
+  - ./vendor/bin/doctrine-module orm:schema-tool:create
 
 before_script:
     - mysql -e 'create database ts3ui;'
