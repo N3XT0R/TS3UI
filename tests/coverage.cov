@@ -9282,6 +9282,133 @@ $coverage->setData(array (
     ),
     132 => NULL,
   ),
+  '/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/ServerEntityInterface.php' => 
+  array (
+  ),
+  '/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/ServerEntity.php' => 
+  array (
+    40 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetID',
+      1 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    41 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetID',
+      1 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    42 => NULL,
+    45 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetID',
+    ),
+    46 => NULL,
+    49 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetServer',
+    ),
+    50 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetServer',
+    ),
+    51 => NULL,
+    54 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetServer',
+    ),
+    55 => NULL,
+    58 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPort',
+    ),
+    59 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPort',
+    ),
+    62 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPort',
+    ),
+    63 => NULL,
+    66 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetUsername',
+    ),
+    67 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetUsername',
+    ),
+    68 => NULL,
+    71 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetUsername',
+    ),
+    72 => NULL,
+    75 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword',
+    ),
+    76 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword',
+    ),
+    79 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword',
+    ),
+    80 => NULL,
+    83 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    84 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    85 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    86 => NULL,
+    87 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    88 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    89 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    90 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    91 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    92 => NULL,
+    93 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    94 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    95 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    98 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    99 => NULL,
+  ),
   '/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/SuperAdminInterface.php' => 
   array (
   ),
@@ -9962,6 +10089,12 @@ $coverage->setTests(array (
   'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet' => 0,
   'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet' => 0,
   'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin' => 0,
+  'TSCoreTests\\Entity\\ServerEntityTest::testSetGetID' => 0,
+  'TSCoreTests\\Entity\\ServerEntityTest::testSetGetServer' => 0,
+  'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPort' => 0,
+  'TSCoreTests\\Entity\\ServerEntityTest::testSetGetUsername' => 0,
+  'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword' => 0,
+  'TSCoreTests\\Entity\\ServerEntityTest::testExchange' => 0,
   'TSCoreTests\\Entity\\SuperAdminTest::testSetGetUsername' => 0,
   'TSCoreTests\\Entity\\SuperAdminTest::testSetGetPassword' => 0,
   'TSCoreTests\\Entity\\SuperAdminTest::testExchange' => 0,
@@ -14822,6 +14955,7 @@ $filter->setBlacklistedFiles(array (
   '/Applications/MAMP/htdocs/ts3min/vendor/zendframework/zendxml/tests/ZendXmlTest/SecurityTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Adapter/Teamspeak3AdapterTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Authentication/TS3AdapterTest.php' => true,
+  '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Entity/ServerEntityTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Entity/SuperAdminTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/User/tests/UserTests/Acl/ServiceTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/User/tests/UserTests/Controller/UserControllerTest.php' => true,

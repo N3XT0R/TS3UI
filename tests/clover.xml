@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1424775395">
-  <project timestamp="1424775395">
+<coverage generated="1424778368">
+  <project timestamp="1424778368">
     <file name="/Applications/MAMP/htdocs/ts3min/config/application.config.php">
       <line num="6" type="stmt" count="16"/>
       <line num="7" type="stmt" count="16"/>
@@ -347,6 +347,51 @@
       </file>
     </package>
     <package name="TSCore\Entity">
+      <file name="/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/ServerEntity.php">
+        <class name="ServerEntity" namespace="TSCore\Entity">
+          <metrics methods="12" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="39" coveredelements="39"/>
+        </class>
+        <line num="39" type="method" name="setServerID" crap="1" count="2"/>
+        <line num="40" type="stmt" count="2"/>
+        <line num="41" type="stmt" count="2"/>
+        <line num="44" type="method" name="getServerID" crap="1" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="48" type="method" name="setServer" crap="1" count="1"/>
+        <line num="49" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="1"/>
+        <line num="53" type="method" name="getServer" crap="1" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="57" type="method" name="setPort" crap="1" count="1"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="61" type="method" name="getPort" crap="1" count="1"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="65" type="method" name="setUsername" crap="1" count="1"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="70" type="method" name="getUsername" crap="1" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="74" type="method" name="setPassword" crap="1" count="1"/>
+        <line num="75" type="stmt" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="78" type="method" name="getPassword" crap="1" count="1"/>
+        <line num="79" type="stmt" count="1"/>
+        <line num="82" type="method" name="exchangeArray" crap="4" count="1"/>
+        <line num="83" type="stmt" count="1"/>
+        <line num="84" type="stmt" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="87" type="stmt" count="1"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="1"/>
+        <line num="95" type="stmt" count="1"/>
+        <line num="97" type="method" name="getArrayCopy" crap="1" count="1"/>
+        <line num="98" type="stmt" count="1"/>
+        <metrics loc="100" ncloc="82" classes="1" methods="12" coveredmethods="12" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="27" elements="39" coveredelements="39"/>
+      </file>
       <file name="/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/SuperAdmin.php">
         <class name="SuperAdmin" namespace="TSCore\Entity">
           <metrics methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="29" coveredelements="29"/>
@@ -383,6 +428,9 @@
         <metrics loc="77" ncloc="61" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="29" coveredelements="29"/>
       </file>
     </package>
+    <file name="/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/ServerEntityInterface.php">
+      <metrics loc="29" ncloc="24" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
     <file name="/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/SuperAdminInterface.php">
       <metrics loc="16" ncloc="16" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
@@ -580,6 +628,6 @@
         <metrics loc="87" ncloc="84" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="28" loc="1618" ncloc="1330" classes="15" methods="61" coveredmethods="58" conditionals="0" coveredconditionals="0" statements="369" coveredstatements="359" elements="430" coveredelements="417"/>
+    <metrics files="30" loc="1747" ncloc="1436" classes="16" methods="73" coveredmethods="70" conditionals="0" coveredconditionals="0" statements="396" coveredstatements="386" elements="469" coveredelements="456"/>
   </project>
 </coverage>

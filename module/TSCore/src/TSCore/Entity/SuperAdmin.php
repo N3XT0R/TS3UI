@@ -14,7 +14,10 @@ namespace TSCore\Entity;
 use Zend\Filter\StaticFilter;
 use Doctrine\ORM\Mapping as ORM;
 
-/** @ORM\Entity */
+/** 
+ * @ORM\Entity 
+ * @ORM\Table(name="user")
+ */
 class SuperAdmin implements SuperAdminInterface{
 
     /**
