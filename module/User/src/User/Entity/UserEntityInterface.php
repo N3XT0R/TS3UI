@@ -1,6 +1,6 @@
 <?php
 
-namespace TSCore\Entity;
+namespace User\Entity;
 
 use Zend\Stdlib\ArraySerializableInterface;
 

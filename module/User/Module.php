@@ -16,6 +16,8 @@ use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\EventManager\EventInterface;
+use User\Listener\UserListener;
+use Zend\Console\Request as ConsoleRequest;
 
 class Module implements
 BootstrapListenerInterface,
@@ -40,7 +42,11 @@ ConfigProviderInterface
     }
 
     public function onBootstrap(EventInterface $e) {
-         $this->serviceLocator = $e->getApplication()->getServiceManager();
+        $this->serviceLocator = $e->getApplication()->getServiceManager();
+        $aParams = $e->getParams();
+        if(!$aParams["request"] instanceof ConsoleRequest){
+            $e->getApplication()->getEventManager()->attachAggregate(new UserListener());
+        }
     }
 
 }

@@ -14,7 +14,7 @@ namespace TSCore\Authentication;
 use Zend\Authentication\Result;
 use Zend\Authentication\Adapter\AdapterInterface;
 use TSCore\Adapter\Teamspeak3AdapterInterface;
-use TSCore\Entity\UserEntity;
+use TSCore\Entity\ServerEntity;
 
 class TS3Adapter implements AdapterInterface{
     
@@ -120,7 +120,7 @@ class TS3Adapter implements AdapterInterface{
             return $this->createResult();
         }
         
-        $oUser = new UserEntity();
+        $oUser = new ServerEntity();
         $oUser->setUsername($this->getIdentity());
         $oUser->setPassword($this->getCredential());
         

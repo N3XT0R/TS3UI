@@ -9,10 +9,10 @@
  * $Date$
  */
 
-namespace TSCoreTests\Entity;
+namespace User\Entity;
 
 use PHPUnit_Framework_TestCase;
-use TSCore\Entity\UserEntity;
+use User\Entity\UserEntity;
 
 class UserTest extends PHPUnit_Framework_TestCase{
     

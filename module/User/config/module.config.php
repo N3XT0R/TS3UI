@@ -32,6 +32,22 @@ return array(
         'factories' => array(
             'User\Service\User' => 'User\Service\UserServiceFactory',
             'User\Acl\Service'   => 'User\Acl\ServiceFactory',
+            'User\Auth\Adapter' => 'User\Authentication\BcryptAdapterFactory',
+            'User\Auth\Service'  => 'User\Authentication\ServiceFactory',
+        ),
+    ),
+    'doctrine' => array(
+        'driver' => array(
+            'User_Entities' => array(
+                'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(__DIR__ . '/../src/User/Entity')
+            ),
+            'orm_default' => array(
+                'drivers' => array(
+                    'User\Entity' => 'User_Entities'
+                ),
+            ),
         ),
     ),
     'controllers' => array(
@@ -53,7 +69,23 @@ return array(
     'acl' => array(
         'guest' => array(
             'user' => array(
+                'allow' => array('login'),
                 'deny' => array('logout'),
+            ),
+        ),
+    ),
+    'console' => array(
+        'router' => array(
+            'routes' => array(
+                'user' => array(
+                    'options' => array(
+                        'route' => 'user [--help] [add|delete]:mode [<username>] [<password>]',
+                        'defaults' => array(
+                            'controller' => 'User',
+                            'action' => 'update',
+                        ),
+                    ),
+                ),
             ),
         ),
     ),

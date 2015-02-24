@@ -9,13 +9,13 @@
  * $Date$
  */
 
-namespace TSCore\Entity;
+namespace User\Entity;
 
 use Zend\Filter\StaticFilter;
 use Doctrine\ORM\Mapping as ORM;
 
 /** 
- * @ORM\Entity 
+ * @ORM\Entity
  * @ORM\Table(name="user")
  */
 class UserEntity implements UserEntityInterface{
@@ -30,6 +30,8 @@ class UserEntity implements UserEntityInterface{
     protected $username;
     /** @ORM\Column(type="string") */
     protected $password;
+    /** @ORM\Column(type="string") */
+    protected $salt;
     
     public function exchangeArray(array $array) {
         foreach ($array as $key => $value) {
@@ -75,6 +77,15 @@ class UserEntity implements UserEntityInterface{
     public function setId($id) {
         $this->id = $id;
         return $this;
+    }
+    
+    public function setSalt($salt){
+        $this->salt = $salt;
+        return $this;
+    }
+    
+    public function getSalt(){
+        return $this->salt;
     }
 
 }

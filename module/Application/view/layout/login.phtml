@@ -2,27 +2,22 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    <?php 
+        echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false);   
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge');
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->appendStylesheet($this->basePath() . '/bower_components/bootstrap/dist/css/bootstrap.min.css')
+                        ->appendStylesheet($this->basePath() . '/bower_components/metisMenu/dist/metisMenu.min.css')
+                        ->appendStylesheet($this->basePath() . '/dist/css/sb-admin-2.css')
+                        ->appendStylesheet($this->basePath() . '/bower_components/font-awesome/css/font-awesome.min.css');
+        ?>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,9 +26,7 @@
     <![endif]-->
 
 </head>
-
 <body>
-
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -64,19 +57,16 @@
             </div>
         </div>
     </div>
-
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<?php 
+    echo $this->headScript()
+              ->appendFile($this->basePath() . '/bower_components/jquery/dist/jquery.min.js')
+              ->appendFile($this->basePath() . '/bower_components/bootstrap/dist/js/bootstrap.min.js')
+              ->appendFile($this->basePath() . '/bower_components/metisMenu/dist/metisMenu.min.js')
+              ->appendFile($this->basePath() . '/dist/js/sb-admin-2.js');
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-
+    echo $this->inlineScript(); 
+?>
 </body>
 
 </html>
