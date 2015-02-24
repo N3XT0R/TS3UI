@@ -9775,20 +9775,6 @@ $coverage->setData(array (
   ),
   '/Applications/MAMP/htdocs/ts3min/module/User/src/User/Service/UserService.php' => 
   array (
-    20 => 
-    array (
-      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
-      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
-      2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
-      3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
-    ),
-    21 => 
-    array (
-      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
-      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
-      2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
-      3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
-    ),
     22 => 
     array (
       0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
@@ -9796,47 +9782,76 @@ $coverage->setData(array (
       2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    25 => 
+    23 => 
+    array (
+      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    24 => 
+    array (
+      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    27 => 
+    array (
+      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+    ),
+    28 => 
+    array (
+      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+    ),
+    29 => NULL,
+    32 => 
+    array (
+    ),
+    33 => NULL,
+    36 => 
     array (
       0 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    26 => NULL,
-    29 => 
+    37 => NULL,
+    40 => 
     array (
       0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
       1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
       2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    30 => 
+    41 => 
     array (
       0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
       1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
       2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    31 => NULL,
-    34 => 
+    42 => NULL,
+    45 => 
     array (
       0 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    35 => NULL,
-    38 => 
+    46 => NULL,
+    49 => 
     array (
       0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
       1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
       2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    39 => 
+    50 => 
     array (
       0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
       1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
       2 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       3 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    40 => NULL,
-    44 => 
+    51 => NULL,
+    55 => 
     array (
     ),
   ),
@@ -10054,17 +10069,27 @@ $coverage->setData(array (
       0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
       1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
     ),
-    22 => 
-    array (
-      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
-      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
-    ),
     23 => 
     array (
       0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
       1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
     ),
-    24 => NULL,
+    25 => 
+    array (
+      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+    ),
+    26 => 
+    array (
+      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+    ),
+    27 => 
+    array (
+      0 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      1 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+    ),
+    28 => NULL,
   ),
   '/Applications/MAMP/htdocs/ts3min/module/User/view/user/user/index.phtml' => 
   array (

@@ -19,7 +19,11 @@ class UserServiceFactory implements FactoryInterface{
     public function createService(ServiceLocatorInterface $serviceLocator) {
         $auth = $serviceLocator->get("TSCore\Auth\Service");
         $TSAdapter = $serviceLocator->get("TSCore\Adapter\Teamspeak");
+        
+        $entityManager = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        
         $userService = new UserService($auth, $TSAdapter);
+        $userService->setEntityManager($entityManager);
         return $userService;
     }
 

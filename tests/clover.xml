@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1424779378">
-  <project timestamp="1424779378">
+<coverage generated="1424780968">
+  <project timestamp="1424780968">
     <file name="/Applications/MAMP/htdocs/ts3min/config/application.config.php">
       <line num="6" type="stmt" count="16"/>
       <line num="7" type="stmt" count="16"/>
@@ -579,36 +579,43 @@
     <package name="User\Service">
       <file name="/Applications/MAMP/htdocs/ts3min/module/User/src/User/Service/UserService.php">
         <class name="UserService" namespace="User\Service">
-          <metrics methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="9" elements="16" coveredelements="14"/>
+          <metrics methods="8" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="11" elements="21" coveredelements="17"/>
         </class>
-        <line num="19" type="method" name="__construct" crap="1" count="4"/>
-        <line num="20" type="stmt" count="4"/>
-        <line num="21" type="stmt" count="4"/>
+        <line num="21" type="method" name="__construct" crap="1" count="4"/>
         <line num="22" type="stmt" count="4"/>
-        <line num="24" type="method" name="getAuthentication" crap="1" count="1"/>
-        <line num="25" type="stmt" count="1"/>
-        <line num="28" type="method" name="setAuthentication" crap="1" count="4"/>
-        <line num="29" type="stmt" count="4"/>
-        <line num="30" type="stmt" count="4"/>
-        <line num="33" type="method" name="getTeamspeak" crap="1" count="1"/>
-        <line num="34" type="stmt" count="1"/>
-        <line num="37" type="method" name="setTeamspeak" crap="1" count="4"/>
-        <line num="38" type="stmt" count="4"/>
-        <line num="39" type="stmt" count="4"/>
-        <line num="42" type="method" name="login" crap="2" count="0"/>
-        <line num="44" type="stmt" count="0"/>
-        <metrics loc="48" ncloc="43" classes="1" methods="6" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="9" elements="16" coveredelements="14"/>
+        <line num="23" type="stmt" count="4"/>
+        <line num="24" type="stmt" count="4"/>
+        <line num="26" type="method" name="setEntityManager" crap="1" count="2"/>
+        <line num="27" type="stmt" count="2"/>
+        <line num="28" type="stmt" count="2"/>
+        <line num="31" type="method" name="getEntityManager" crap="2" count="0"/>
+        <line num="32" type="stmt" count="0"/>
+        <line num="35" type="method" name="getAuthentication" crap="1" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="39" type="method" name="setAuthentication" crap="1" count="4"/>
+        <line num="40" type="stmt" count="4"/>
+        <line num="41" type="stmt" count="4"/>
+        <line num="44" type="method" name="getTeamspeak" crap="1" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="48" type="method" name="setTeamspeak" crap="1" count="4"/>
+        <line num="49" type="stmt" count="4"/>
+        <line num="50" type="stmt" count="4"/>
+        <line num="53" type="method" name="login" crap="2" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <metrics loc="59" ncloc="54" classes="1" methods="8" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="11" elements="21" coveredelements="17"/>
       </file>
       <file name="/Applications/MAMP/htdocs/ts3min/module/User/src/User/Service/UserServiceFactory.php">
         <class name="UserServiceFactory" namespace="User\Service">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
         </class>
         <line num="19" type="method" name="createService" crap="1" count="2"/>
         <line num="20" type="stmt" count="2"/>
         <line num="21" type="stmt" count="2"/>
-        <line num="22" type="stmt" count="2"/>
         <line num="23" type="stmt" count="2"/>
-        <metrics loc="26" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="27" type="stmt" count="2"/>
+        <metrics loc="30" ncloc="22" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
       </file>
     </package>
     <file name="/Applications/MAMP/htdocs/ts3min/module/User/src/User/Service/UserServiceInterface.php">
@@ -628,6 +635,6 @@
         <metrics loc="87" ncloc="84" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="30" loc="1753" ncloc="1436" classes="16" methods="73" coveredmethods="70" conditionals="0" coveredconditionals="0" statements="396" coveredstatements="386" elements="469" coveredelements="456"/>
+    <metrics files="30" loc="1768" ncloc="1451" classes="16" methods="75" coveredmethods="71" conditionals="0" coveredconditionals="0" statements="401" coveredstatements="390" elements="476" coveredelements="461"/>
   </project>
 </coverage>
