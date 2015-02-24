@@ -13,6 +13,8 @@ install:
 
 before_script:
     - mysql -e 'create database ts3ui;'
+    - sed -i "s|{username}|$USERNAME|" ./config/autoload/global.php
+    - sed -i "s|{server}|$SERVER|" ./config/autoload/global.php
     - sed -i "s|{password}|$KEY|" ./config/autoload/global.php
 
 script:

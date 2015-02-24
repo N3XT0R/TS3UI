@@ -15,7 +15,7 @@ return array(
    'teamspeak' => array(
        'server' => '5.159.56.190:10011',
        'port' => '9987',
-       'username' => 'serveradmin',
+       'username' => '{username}',
        'password' => '{password}',
    ),
 );
