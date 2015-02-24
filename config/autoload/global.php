@@ -12,6 +12,20 @@
  */
 
 return array(
+    'doctrine' => array(
+        'connection' => array(
+            'orm_default' => array(
+                'driverClass' =>'Doctrine\DBAL\Driver\PDOMySql\Driver',
+                'params' => array(
+                    'host'     => 'localhost',
+                    'port'     => '3306',
+                    'user'     => 'root',
+                    'password' => '',
+                    'dbname'   => 'ts3ui',
+                ),
+            ),
+        ),
+    ),
    'teamspeak' => array(
        'server' => '5.159.56.190:10011',
        'port' => '9987',
