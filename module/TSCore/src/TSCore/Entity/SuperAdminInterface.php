@@ -6,6 +6,8 @@ use Zend\Stdlib\ArraySerializableInterface;
 
 interface SuperAdminInterface extends ArraySerializableInterface{
     
+    public function setId($id);
+    public function getId();
     public function setUsername($username);
     public function getUsername();
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1424735883">
-  <project timestamp="1424735883">
+<coverage generated="1424760094">
+  <project timestamp="1424760094">
     <file name="C:/xampp/htdocs/ts3min/config/application.config.php">
       <line num="6" type="stmt" count="16"/>
       <line num="7" type="stmt" count="16"/>
@@ -319,37 +319,42 @@
     <package name="TSCore\Entity">
       <file name="C:/xampp/htdocs/ts3min/module/TSCore/src/TSCore/Entity/SuperAdmin.php">
         <class name="SuperAdmin" namespace="TSCore\Entity">
-          <metrics methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="24" coveredelements="24"/>
+          <metrics methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="29" coveredelements="29"/>
         </class>
-        <line num="21" type="method" name="exchangeArray" crap="4" count="1"/>
-        <line num="22" type="stmt" count="1"/>
-        <line num="23" type="stmt" count="1"/>
-        <line num="24" type="stmt" count="1"/>
+        <line num="24" type="method" name="exchangeArray" crap="4" count="1"/>
+        <line num="25" type="stmt" count="1"/>
         <line num="26" type="stmt" count="1"/>
         <line num="27" type="stmt" count="1"/>
-        <line num="28" type="stmt" count="1"/>
         <line num="29" type="stmt" count="1"/>
         <line num="30" type="stmt" count="1"/>
+        <line num="31" type="stmt" count="1"/>
         <line num="32" type="stmt" count="1"/>
         <line num="33" type="stmt" count="1"/>
-        <line num="34" type="stmt" count="1"/>
-        <line num="36" type="method" name="getArrayCopy" crap="1" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
         <line num="37" type="stmt" count="1"/>
-        <line num="40" type="method" name="getPassword" crap="1" count="1"/>
-        <line num="41" type="stmt" count="1"/>
-        <line num="44" type="method" name="getUsername" crap="1" count="1"/>
-        <line num="45" type="stmt" count="1"/>
-        <line num="48" type="method" name="setPassword" crap="1" count="1"/>
-        <line num="49" type="stmt" count="1"/>
-        <line num="50" type="stmt" count="1"/>
-        <line num="53" type="method" name="setUsername" crap="1" count="2"/>
-        <line num="54" type="stmt" count="2"/>
-        <line num="55" type="stmt" count="2"/>
-        <metrics loc="58" ncloc="50" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="24" coveredelements="24"/>
+        <line num="39" type="method" name="getArrayCopy" crap="1" count="1"/>
+        <line num="40" type="stmt" count="1"/>
+        <line num="43" type="method" name="getPassword" crap="1" count="1"/>
+        <line num="44" type="stmt" count="1"/>
+        <line num="47" type="method" name="getUsername" crap="1" count="1"/>
+        <line num="48" type="stmt" count="1"/>
+        <line num="51" type="method" name="setPassword" crap="1" count="1"/>
+        <line num="52" type="stmt" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="56" type="method" name="setUsername" crap="1" count="2"/>
+        <line num="57" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="2"/>
+        <line num="61" type="method" name="getId" crap="1" count="1"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="65" type="method" name="setId" crap="1" count="1"/>
+        <line num="66" type="stmt" count="1"/>
+        <line num="67" type="stmt" count="1"/>
+        <metrics loc="70" ncloc="61" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="29" coveredelements="29"/>
       </file>
     </package>
     <file name="C:/xampp/htdocs/ts3min/module/TSCore/src/TSCore/Entity/SuperAdminInterface.php">
-      <metrics loc="14" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <metrics loc="16" ncloc="16" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="User">
       <file name="C:/xampp/htdocs/ts3min/module/User/Module.php">
@@ -545,6 +550,6 @@
         <metrics loc="41" ncloc="38" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="28" loc="1507" ncloc="1227" classes="15" methods="59" coveredmethods="56" conditionals="0" coveredconditionals="0" statements="336" coveredstatements="326" elements="395" coveredelements="382"/>
+    <metrics files="28" loc="1521" ncloc="1240" classes="15" methods="61" coveredmethods="58" conditionals="0" coveredconditionals="0" statements="339" coveredstatements="329" elements="400" coveredelements="387"/>
   </project>
 </coverage>

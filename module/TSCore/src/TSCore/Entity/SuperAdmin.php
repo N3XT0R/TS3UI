@@ -12,10 +12,20 @@
 namespace TSCore\Entity;
 
 use Zend\Filter\StaticFilter;
+use Doctrine\ORM\Mapping as ORM;
 
+/** @ORM\Entity */
 class SuperAdmin implements SuperAdminInterface{
-    
+
+    /**
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    * @ORM\Column(type="integer")
+    */
+    protected $id;
+    /** @ORM\Column(type="string") */
     protected $username;
+    /** @ORM\Column(type="string") */
     protected $password;
     
     public function exchangeArray(array $array) {
@@ -52,6 +62,15 @@ class SuperAdmin implements SuperAdminInterface{
 
     public function setUsername($username) {
         $this->username = $username;
+        return $this;
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
         return $this;
     }
 

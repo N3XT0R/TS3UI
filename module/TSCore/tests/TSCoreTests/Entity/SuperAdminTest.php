@@ -47,4 +47,10 @@ class SuperAdminTest extends PHPUnit_Framework_TestCase{
         $gotArray = $this->oUser->getArrayCopy();
         $this->assertEquals($gotArray, $data);
     }
+    public function testSetGetId(){
+        $id = 12;
+        $this->oUser->setId($id);
+        $gotID = $this->oUser->getId();
+        $this->assertEquals($gotID, $id);
+    }
 }
