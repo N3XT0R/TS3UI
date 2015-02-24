@@ -6603,7 +6603,7 @@ $coverage->setData(array (
       14 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       15 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    18 => 
+    10 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testException',
       1 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
@@ -6622,7 +6622,7 @@ $coverage->setData(array (
       14 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       15 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    19 => 
+    11 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testException',
       1 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
@@ -6660,7 +6660,7 @@ $coverage->setData(array (
       14 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       15 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    26 => 
+    21 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testException',
       1 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
@@ -6679,7 +6679,7 @@ $coverage->setData(array (
       14 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       15 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    27 => 
+    22 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testException',
       1 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
@@ -6698,7 +6698,7 @@ $coverage->setData(array (
       14 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       15 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    52 => 
+    28 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testException',
       1 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
@@ -6717,7 +6717,45 @@ $coverage->setData(array (
       14 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       15 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    67 => 
+    29 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testException',
+      1 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testSetGetConfig',
+      3 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testThrowSErverInbvalidException',
+      4 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testThrowsPortInvalidException',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      8 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      9 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      10 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      11 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      12 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      13 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      14 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      15 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    54 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testException',
+      1 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testSetGetConfig',
+      3 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testThrowSErverInbvalidException',
+      4 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testThrowsPortInvalidException',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      8 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      9 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      10 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      11 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      12 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      13 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      14 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      15 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    69 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testException',
       1 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
@@ -7387,7 +7425,127 @@ $coverage->setData(array (
       10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
       11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
-    14 => 
+    17 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    18 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    19 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    20 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    24 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    25 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    26 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    27 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    28 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
       1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
@@ -8401,52 +8559,7 @@ $coverage->setData(array (
   ),
   'C:\\xampp\\htdocs\\ts3min\\config\\autoload\\global.php' => 
   array (
-    16 => 
-    array (
-      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
-      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
-      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
-      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
-      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
-      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
-      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
-      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
-      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
-      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
-      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
-      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
-    ),
-    17 => 
-    array (
-      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
-      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
-      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
-      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
-      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
-      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
-      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
-      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
-      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
-      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
-      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
-      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
-    ),
     18 => 
-    array (
-      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
-      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
-      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
-      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
-      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
-      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
-      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
-      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
-      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
-      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
-      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
-      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
-    ),
-    19 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
       1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
@@ -8477,6 +8590,201 @@ $coverage->setData(array (
       11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
     ),
     21 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    22 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    23 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    24 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    25 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    26 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    27 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    28 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    30 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    31 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    32 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    33 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    34 => 
+    array (
+      0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
+      1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
+      2 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetIdentity',
+      3 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetCredential',
+      4 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testSetGetConfig',
+      5 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginIdentityNotSet',
+      6 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testLoginCredentialNotSet',
+      7 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testFailedLogin',
+      8 => 'UserTests\\Controller\\Controller\\UserControllerTest::testSetGetService',
+      9 => 'UserTests\\Controller\\Controller\\UserControllerTest::testIndexAction',
+      10 => 'UserTests\\Controller\\Controller\\UserControllerTest::testLoginAction',
+      11 => 'UserTests\\Service\\UserServiceTest::testSetGetAuthenticationANDAdapter',
+    ),
+    35 => 
     array (
       0 => 'TSCoreTests\\Adapter\\Teamspeak3AdapterTest::testCreation',
       1 => 'TSCoreTests\\Authentication\\TS3AdapterTest::testCreation',
@@ -8883,31 +9191,6 @@ $coverage->setData(array (
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\TSCore\\src\\TSCore\\Entity\\SuperAdmin.php' => 
   array (
-    25 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
-    26 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
-    27 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
-    28 => NULL,
-    29 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
-    30 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
-    31 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
     32 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
@@ -8916,11 +9199,11 @@ $coverage->setData(array (
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
     ),
-    34 => NULL,
-    35 => 
+    34 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
     ),
+    35 => NULL,
     36 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
@@ -8929,55 +9212,80 @@ $coverage->setData(array (
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
     ),
+    38 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+    ),
+    39 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+    ),
     40 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
     ),
     41 => NULL,
+    42 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+    ),
+    43 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+    ),
     44 => 
     array (
+      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+    ),
+    47 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+    ),
+    48 => NULL,
+    51 => 
+    array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetPassword',
     ),
-    45 => NULL,
-    48 => 
+    52 => NULL,
+    55 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetUsername',
     ),
-    49 => NULL,
-    52 => 
+    56 => NULL,
+    59 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetPassword',
     ),
-    53 => 
+    60 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetPassword',
     ),
-    54 => NULL,
-    57 => 
+    61 => NULL,
+    64 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetUsername',
       1 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
     ),
-    58 => 
+    65 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetUsername',
       1 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
     ),
-    59 => NULL,
-    62 => 
+    66 => NULL,
+    69 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetId',
     ),
-    63 => NULL,
-    66 => 
+    70 => NULL,
+    73 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetId',
     ),
-    67 => 
+    74 => 
     array (
       0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetId',
     ),
-    68 => NULL,
+    75 => NULL,
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\User\\src\\User\\Acl\\Service.php' => 
   array (
