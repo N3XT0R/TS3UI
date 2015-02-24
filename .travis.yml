@@ -1,0 +1,32 @@
+language: php
+
+php:
+    - 5.4
+    - 5.5
+
+services:
+    - memcached
+
+install:
+  - composer self-update
+  - composer install
+
+before_script:
+    - mysql -e 'create database ts3ui;'
+    - ./vendor/bin/doctrine-module orm:validate-schema
+    - ./vendor/bin/doctrine-module orm:schema-tool:create
+    - sed -i "s|{username}|$USERNAME|" ./config/autoload/global.php
+    - sed -i "s|{server}|$SERVER|" ./config/autoload/global.php
+    - sed -i "s|{password}|$KEY|" ./config/autoload/global.php
+
+script:
+    - phpunit --coverage-clover build/logs/clover.xml -c tests/phpunit.xml 
+    
+after_script:
+    - php vendor/bin/coveralls
+
+notifications:
+    email: false
+
+env:
+    - secure: "MQIuJ4MpUhln5nTsoqRAqqFAveSkG28Seu/EL6tNQfreiXzGR1jPcdb6vVfMeEJg2O36JsmtVYZ80hvFAjv9HE1NzGW1eY02O9vW1dWef9NB03cp0E5ebGuw4AavroOGMIdDdWrAp3tEAdtsgIwgeMaWYJCswG/0xf3G/W114oM="
