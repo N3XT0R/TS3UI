@@ -12,14 +12,14 @@
 namespace TSCoreTests\Entity;
 
 use PHPUnit_Framework_TestCase;
-use TSCore\Entity\SuperAdmin;
+use TSCore\Entity\UserEntity;
 
-class SuperAdminTest extends PHPUnit_Framework_TestCase{
+class UserTest extends PHPUnit_Framework_TestCase{
     
     protected $oUser;
     
     public function setUp() {
-        $this->oUser = new SuperAdmin();
+        $this->oUser = new UserEntity();
         parent::setUp();
     }
     

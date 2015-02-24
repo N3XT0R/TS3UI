@@ -4,7 +4,7 @@ namespace TSCore\Entity;
 
 use Zend\Stdlib\ArraySerializableInterface;
 
-interface SuperAdminInterface extends ArraySerializableInterface{
+interface UserEntityInterface extends ArraySerializableInterface{
     
     public function setId($id);
     public function getId();

@@ -9287,41 +9287,37 @@ $coverage->setData(array (
   ),
   '/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/ServerEntity.php' => 
   array (
-    40 => 
+    43 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetID',
       1 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
     ),
-    41 => 
+    44 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetID',
       1 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
     ),
-    42 => NULL,
-    45 => 
+    45 => NULL,
+    48 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetID',
     ),
-    46 => NULL,
-    49 => 
+    49 => NULL,
+    52 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetServer',
     ),
-    50 => 
+    53 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetServer',
     ),
-    51 => NULL,
-    54 => 
+    54 => NULL,
+    57 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetServer',
     ),
-    55 => NULL,
-    58 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPort',
-    ),
-    59 => 
+    58 => NULL,
+    61 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPort',
     ),
@@ -9329,26 +9325,26 @@ $coverage->setData(array (
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPort',
     ),
-    63 => NULL,
-    66 => 
+    65 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPort',
+    ),
+    66 => NULL,
+    69 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetUsername',
     ),
-    67 => 
+    70 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetUsername',
     ),
-    68 => NULL,
-    71 => 
+    71 => NULL,
+    74 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetUsername',
     ),
-    72 => NULL,
-    75 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword',
-    ),
-    76 => 
+    75 => NULL,
+    78 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword',
     ),
@@ -9356,20 +9352,15 @@ $coverage->setData(array (
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword',
     ),
-    80 => NULL,
-    83 => 
+    82 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword',
+    ),
+    83 => NULL,
+    86 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
     ),
-    84 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
-    ),
-    85 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
-    ),
-    86 => NULL,
     87 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
@@ -9378,10 +9369,7 @@ $coverage->setData(array (
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
     ),
-    89 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
-    ),
+    89 => NULL,
     90 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
@@ -9390,7 +9378,10 @@ $coverage->setData(array (
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
     ),
-    92 => NULL,
+    92 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
     93 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
@@ -9399,7 +9390,12 @@ $coverage->setData(array (
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
     ),
-    95 => 
+    95 => NULL,
+    96 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    97 => 
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
     ),
@@ -9407,108 +9403,112 @@ $coverage->setData(array (
     array (
       0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
     ),
-    99 => NULL,
+    101 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\ServerEntityTest::testExchange',
+    ),
+    102 => NULL,
   ),
-  '/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/SuperAdminInterface.php' => 
+  '/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/UserEntity.php' => 
   array (
-  ),
-  '/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/SuperAdmin.php' => 
-  array (
-    32 => 
+    35 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
-    33 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
-    34 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
-    35 => NULL,
     36 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
     37 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
-    38 => 
-    array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
-    ),
+    38 => NULL,
     39 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
     40 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
-    41 => NULL,
+    41 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
+    ),
     42 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
     43 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
-    44 => 
+    44 => NULL,
+    45 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
+    ),
+    46 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
     47 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
-    48 => NULL,
-    51 => 
+    50 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetPassword',
+      0 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
-    52 => NULL,
-    55 => 
+    51 => NULL,
+    54 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetUsername',
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetPassword',
     ),
-    56 => NULL,
-    59 => 
+    55 => NULL,
+    58 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetPassword',
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetUsername',
     ),
-    60 => 
+    59 => NULL,
+    62 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetPassword',
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetPassword',
     ),
-    61 => NULL,
-    64 => 
+    63 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetUsername',
-      1 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetPassword',
     ),
-    65 => 
+    64 => NULL,
+    67 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetUsername',
-      1 => 'TSCoreTests\\Entity\\SuperAdminTest::testExchange',
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetUsername',
+      1 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
-    66 => NULL,
-    69 => 
+    68 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetId',
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetUsername',
+      1 => 'TSCoreTests\\Entity\\UserTest::testExchange',
     ),
-    70 => NULL,
-    73 => 
+    69 => NULL,
+    72 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetId',
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetId',
     ),
-    74 => 
+    73 => NULL,
+    76 => 
     array (
-      0 => 'TSCoreTests\\Entity\\SuperAdminTest::testSetGetId',
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetId',
     ),
-    75 => NULL,
+    77 => 
+    array (
+      0 => 'TSCoreTests\\Entity\\UserTest::testSetGetId',
+    ),
+    78 => NULL,
+  ),
+  '/Applications/MAMP/htdocs/ts3min/module/TSCore/src/TSCore/Entity/UserEntityInterface.php' => 
+  array (
   ),
   '/Applications/MAMP/htdocs/ts3min/module/User/src/User/Acl/Service.php' => 
   array (
@@ -10095,10 +10095,10 @@ $coverage->setTests(array (
   'TSCoreTests\\Entity\\ServerEntityTest::testSetGetUsername' => 0,
   'TSCoreTests\\Entity\\ServerEntityTest::testSetGetPassword' => 0,
   'TSCoreTests\\Entity\\ServerEntityTest::testExchange' => 0,
-  'TSCoreTests\\Entity\\SuperAdminTest::testSetGetUsername' => 0,
-  'TSCoreTests\\Entity\\SuperAdminTest::testSetGetPassword' => 0,
-  'TSCoreTests\\Entity\\SuperAdminTest::testExchange' => 0,
-  'TSCoreTests\\Entity\\SuperAdminTest::testSetGetId' => 0,
+  'TSCoreTests\\Entity\\UserTest::testSetGetUsername' => 0,
+  'TSCoreTests\\Entity\\UserTest::testSetGetPassword' => 0,
+  'TSCoreTests\\Entity\\UserTest::testExchange' => 0,
+  'TSCoreTests\\Entity\\UserTest::testSetGetId' => 0,
   'UserTests\\Acl\\ServiceTest::testCreation' => 0,
   'UserTests\\Acl\\ServiceTest::testSetGetConfig' => 0,
   'UserTests\\Acl\\ServiceTest::testSetGetRole' => 0,
@@ -14956,7 +14956,7 @@ $filter->setBlacklistedFiles(array (
   '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Adapter/Teamspeak3AdapterTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Authentication/TS3AdapterTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Entity/ServerEntityTest.php' => true,
-  '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Entity/SuperAdminTest.php' => true,
+  '/Applications/MAMP/htdocs/ts3min/module/TSCore/tests/TSCoreTests/Entity/UserTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/User/tests/UserTests/Acl/ServiceTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/User/tests/UserTests/Controller/UserControllerTest.php' => true,
   '/Applications/MAMP/htdocs/ts3min/module/User/tests/UserTests/Service/UserServiceTest.php' => true,

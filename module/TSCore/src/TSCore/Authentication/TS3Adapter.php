@@ -14,7 +14,7 @@ namespace TSCore\Authentication;
 use Zend\Authentication\Result;
 use Zend\Authentication\Adapter\AdapterInterface;
 use TSCore\Adapter\Teamspeak3AdapterInterface;
-use TSCore\Entity\SuperAdmin;
+use TSCore\Entity\UserEntity;
 
 class TS3Adapter implements AdapterInterface{
     
@@ -120,7 +120,7 @@ class TS3Adapter implements AdapterInterface{
             return $this->createResult();
         }
         
-        $oUser = new SuperAdmin();
+        $oUser = new UserEntity();
         $oUser->setUsername($this->getIdentity());
         $oUser->setPassword($this->getCredential());
         

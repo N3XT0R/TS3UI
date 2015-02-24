@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity 
  * @ORM\Table(name="user")
  */
-class SuperAdmin implements SuperAdminInterface{
+class UserEntity implements UserEntityInterface{
 
     /**
     * @ORM\Id
