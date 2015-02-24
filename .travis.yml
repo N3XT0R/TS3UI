@@ -10,11 +10,11 @@ services:
 install:
   - composer self-update
   - composer install
-  - ./vendor/bin/doctrine-module orm:validate-schema
-  - ./vendor/bin/doctrine-module orm:schema-tool:create
 
 before_script:
     - mysql -e 'create database ts3ui;'
+    - ./vendor/bin/doctrine-module orm:validate-schema
+    - ./vendor/bin/doctrine-module orm:schema-tool:create
     - sed -i "s|{username}|$USERNAME|" ./config/autoload/global.php
     - sed -i "s|{server}|$SERVER|" ./config/autoload/global.php
     - sed -i "s|{password}|$KEY|" ./config/autoload/global.php
