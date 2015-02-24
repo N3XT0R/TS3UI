@@ -13,6 +13,7 @@
         "fkubis/teamspeak-php-framework": "dev-master",
         "phpunit/phpunit": "4.5.*",
         "satooshi/php-coveralls": "dev-master",
-        "zendframework/zend-developer-tools": "dev-master"
+        "zendframework/zend-developer-tools": "dev-master",
+        "doctrine/doctrine-orm-module": "0.8.*"
     }
 }
