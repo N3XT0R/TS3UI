@@ -70,4 +70,12 @@ class BcryptAdapterTest extends AbstractControllerTestCase{
         $oResult = $oAdapter->authenticate();
         $this->assertEquals($oResult->getCode(), Result::FAILURE_CREDENTIAL_INVALID);
     }
+    
+    public function testAuthenticateSuccess(){
+        $oAdapter = $this->getApplicationServiceLocator()->get("User\Auth\Adapter");
+        $oAdapter->setIdentity("Admin");
+        $oAdapter->setCredential("Admin");
+        $oResult = $oAdapter->authenticate();
+        $this->assertEquals($oResult->getCode(), Result::SUCCESS);
+    }
 }

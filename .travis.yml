@@ -21,7 +21,7 @@ before_script:
     
 
 script:
-    - php ./public/index.php user add Admin Password
+    - php ./public/index.php user add Admin Admin
     - phpunit --coverage-clover build/logs/clover.xml -c tests/phpunit.xml 
     
 after_script:
