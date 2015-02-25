@@ -33,4 +33,6 @@ class UserServiceTest extends AbstractControllerTestCase{
         $this->assertTrue($GotAuth instanceof \Zend\Authentication\AuthenticationService);
         $this->assertTrue($gotEntityManager instanceof EntityManager);
     }
+    
+    
 }

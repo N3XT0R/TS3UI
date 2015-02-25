@@ -2,10 +2,8 @@
 
 namespace AssetManager\Resolver;
 
-use Assetic\Factory\Resource\DirectoryResource;
 use SplFileInfo;
 use Traversable;
-use Zend\Db\TableGateway\Exception\RuntimeException;
 use Zend\Stdlib\SplStack;
 use Assetic\Asset\FileAsset;
 use AssetManager\Exception;
@@ -142,7 +140,7 @@ class AliasPathStackResolver implements ResolverInterface, MimeResolverAwareInte
                 continue;
             }
 
-            $name = substr_replace($name, '', 0, strlen($alias) - 1);
+            $name = str_replace($alias, '', $name);
 
             $file = new SplFileInfo($path . $name);
 
@@ -158,37 +156,5 @@ class AliasPathStackResolver implements ResolverInterface, MimeResolverAwareInte
         }
 
         return null;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function collect()
-    {
-        $collection = array();
-
-        foreach ($this->aliases as $alias => $path) {
-            $locations = new SplStack();
-            $pathInfo = new SplFileInfo($path);
-            $locations->push($pathInfo);
-            $basePath = $this->normalizePath($pathInfo->getRealPath());
-
-            while (!$locations->isEmpty()) {
-                /** @var SplFileInfo $pathInfo */
-                $pathInfo = $locations->pop();
-                if (!$pathInfo->isReadable()) {
-                    throw new RuntimeException(sprintf('%s is not readable.', $pathInfo->getPath()));
-                }
-                if ($pathInfo->isDir()) {
-                    foreach (new DirectoryResource($pathInfo->getRealPath()) as $resource) {
-                        $locations->push(new SplFileInfo($resource));
-                    }
-                } else {
-                    $collection[] = $alias . substr($pathInfo->getRealPath(), strlen($basePath));
-                }
-            }
-        }
-
-        return array_unique($collection);
     }
 }

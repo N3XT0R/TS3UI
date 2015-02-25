@@ -52,7 +52,7 @@ class Menu extends ZendMenu
         }
 
         $ulClass = $ulClass ? ' class="'.$ulClass.'"' : '';
-        $html = $indent.'<ul'.$ulClass.'>'.PHP_EOL;
+        $html = $indent.'<ul'.$ulClass.'>'.self::EOL;
 
         foreach ($active['page'] as $subPage) {
             if (! $this->accept($subPage)) {
@@ -69,9 +69,9 @@ class Menu extends ZendMenu
             }
             $liClass = empty($liClasses) ? '' : ' class="'.implode(' ', $liClasses).'"';
 
-            $html .= $indent.'    <li'.$liClass.'>'.PHP_EOL;
-            $html .= $indent.'        '.$this->htmlify($subPage, $escapeLabels, $addClassToListItem).PHP_EOL;
-            $html .= $indent.'    </li>'.PHP_EOL;
+            $html .= $indent.'    <li'.$liClass.'>'.self::EOL;
+            $html .= $indent.'        '.$this->htmlify($subPage, $escapeLabels, $addClassToListItem).self::EOL;
+            $html .= $indent.'    </li>'.self::EOL;
         }
 
         $html .= $indent.'</ul>';
@@ -93,7 +93,6 @@ class Menu extends ZendMenu
             $foundDepth = $found['depth'];
         } else {
             $foundPage = null;
-            $foundDepth = 0;
         }
 
         // Since bootstrap doesn't support more than one level, we set maxDepth to minDeph plus one
@@ -138,16 +137,16 @@ class Menu extends ZendMenu
                 } else {
                     $ulClass = '';
                 }
-                $html .= $myIndent.'<ul'.$ulClass.'>'.PHP_EOL;
+                $html .= $myIndent.'<ul'.$ulClass.'>'.self::EOL;
             } elseif ($prevDepth > $depth) {
                 for ($i = $prevDepth; $i > $depth; $i --) {
                     $ind = $indent.str_repeat('        ', $i);
-                    $html .= $ind.'    </li>'.PHP_EOL;
-                    $html .= $ind.'</ul>'.PHP_EOL;
+                    $html .= $ind.'    </li>'.self::EOL;
+                    $html .= $ind.'</ul>'.self::EOL;
                 }
-                $html .= $myIndent.'    </li>'.PHP_EOL;
+                $html .= $myIndent.'    </li>'.self::EOL;
             } else {
-                $html .= $myIndent.'    </li>'.PHP_EOL;
+                $html .= $myIndent.'    </li>'.self::EOL;
             }
 
             $liClasses = [];
@@ -156,7 +155,7 @@ class Menu extends ZendMenu
             }
 
             if ($page->hasPages() && (! isset($maxDepth) || $depth < $maxDepth)) {
-                if (! isset($page->dropdown) || $page->dropdown === true) {
+                if (! isset($page->dropdown) || $page->dropdown == true) {
                     $liClasses[] = 'dropdown';
                     $page->isDropdown = true;
                 }
@@ -167,7 +166,7 @@ class Menu extends ZendMenu
             }
             $liClass = empty($liClasses) ? '' : ' class="'.implode(' ', $liClasses).'"';
 
-            $html .= $myIndent.'    <li'.$liClass.'>'.PHP_EOL.$myIndent.'        '.$this->htmlify($page, $escapeLabels, $addClassToListItem).PHP_EOL;
+            $html .= $myIndent.'    <li'.$liClass.'>'.self::EOL.$myIndent.'        '.$this->htmlify($page, $escapeLabels, $addClassToListItem).self::EOL;
 
             $prevDepth = $depth;
         }
@@ -175,9 +174,9 @@ class Menu extends ZendMenu
         if ($html) {
             for ($i = $prevDepth + 1; $i > 0; $i --) {
                 $myIndent = $indent.str_repeat('        ', $i - 1);
-                $html .= $myIndent.'    </li>'.PHP_EOL.$myIndent.'</ul>'.PHP_EOL;
+                $html .= $myIndent.'    </li>'.self::EOL.$myIndent.'</ul>'.self::EOL;
             }
-            $html = rtrim($html, PHP_EOL);
+            $html = rtrim($html, self::EOL);
         }
 
         return $html;

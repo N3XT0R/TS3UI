@@ -117,7 +117,10 @@ class BcryptAdapter implements AdapterInterface{
         $oUser = $this->getEntityRepositoryr()->findOneBy(array(
             "username" => $this->getIdentity(),
         ));
-        
+        if(!$oUser){
+            $this->authenticateResultInfo["messages"][] = "Login failed.";
+            return $this->createResult();
+        }
         $bcrypt = $this->getBcrypt();
         $bcrypt->setSalt($oUser->getSalt());
         $verify = $bcrypt->verify($this->getCredential(), $oUser->getPassword());

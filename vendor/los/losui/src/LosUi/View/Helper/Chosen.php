@@ -25,12 +25,6 @@ class Chosen extends AbstractHelper
 {
     protected $format = '$("%s").chosen(%s);';
 
-    /**
-     * @param  string                           $element
-     * @param  array                            $options
-     * @param  boolean                          $includeLibs
-     * @return string|\LosUi\View\Helper\Chosen
-     */
     public function __invoke($element = 'select', $options = [], $includeLibs = true)
     {
         if ($element) {
@@ -53,12 +47,6 @@ class Chosen extends AbstractHelper
         return $this;
     }
 
-    /**
-     * @param  string  $element
-     * @param  array   $options
-     * @param  boolean $includeLibs
-     * @return string
-     */
     public function render($element, $options = [], $includeLibs = true)
     {
         if ($includeLibs) {

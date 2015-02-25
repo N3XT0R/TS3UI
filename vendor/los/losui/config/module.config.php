@@ -31,7 +31,7 @@ return [
     'asset_manager' => [
         'resolver_configs' => [
             'paths' => [
-                'losui' => __DIR__.'/../vendors/',
+                'losui' => __DIR__.'/../public/',
             ],
         ],
     ],
@@ -39,5 +39,5 @@ return [
         'template_path_stack' => [
             'losui' => __DIR__.'/../view',
         ],
-    ],
+    ]
 ];

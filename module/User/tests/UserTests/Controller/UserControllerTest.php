@@ -46,4 +46,9 @@ class UserControllerTest extends AbstractHttpControllerTestCase{
         $this->assertActionName("login");
         $this->assertResponseStatusCode(200);
     }
+    
+    public function test404Error(){
+        $this->dispatch("/user/44444");
+        $this->assertResponseStatusCode(404);
+    }
 }

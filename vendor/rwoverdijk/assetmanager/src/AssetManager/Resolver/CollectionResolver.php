@@ -178,12 +178,4 @@ class CollectionResolver implements
     {
         return $this->filterManager;
     }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function collect()
-    {
-        return array_keys($this->collections);
-    }
 }
