@@ -28,6 +28,10 @@ class UserListener implements ListenerAggregateInterface{
         $this->listeners[] = $events->attach(
             MvcEvent::EVENT_RENDER, array($this, 'addAclToNavigation'), -100
         );
+        
+        $this->listeners[] = $events->attach(
+            MvcEvent::EVENT_DISPATCH_ERROR, array($this, "changeLayout"), 99
+        );
     }
 
     public function detach(EventManagerInterface $events) {
@@ -89,4 +93,14 @@ class UserListener implements ListenerAggregateInterface{
         $plugin->setAcl($aclService->getAcl());
     }
 
+    public function changeLayout(EventInterface $e){
+        /* @var $oServiceManager \Zend\ServiceManager\ServiceManager */
+        $oServiceManager = $e->getApplication()->getServiceManager();
+        /* @var $oAcl \User\Acl\Service */
+        $oAcl = $oServiceManager->get("User\Acl\Service");
+        if($oAcl->getRole() == "guest"){
+            $viewModel = $e->getViewModel();
+            $viewModel->setTemplate("layout/login.phtml");
+        }
+    }
 }
