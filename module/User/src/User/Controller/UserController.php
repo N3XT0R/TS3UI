@@ -40,8 +40,11 @@ class UserController extends AbstractActionController{
     }
     
     public function loginAction(){
+        $oForm = $this->getUserService()->getForm("login");
         $this->layout("layout/login");
-        return array();
+        return array(
+            "oForm" => $oForm,
+        );
     }
     
     public function logoutAction(){

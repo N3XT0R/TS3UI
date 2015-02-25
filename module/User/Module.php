@@ -42,11 +42,21 @@ ConfigProviderInterface
     }
 
     public function onBootstrap(EventInterface $e) {
-        $this->serviceLocator = $e->getApplication()->getServiceManager();
+        $this->oServiceLocator = $e->getApplication()->getServiceManager();
         $aParams = $e->getParams();
         if(!$aParams["request"] instanceof ConsoleRequest){
             $e->getApplication()->getEventManager()->attachAggregate(new UserListener());
         }
+        
+        $oSharedEventManager = $this->oServiceLocator->get("SharedEventManager");
+        $oSharedEventManager->attach('User\Service\UserService', 'setForm', array($this, 'onFormSet'));
+    }
+    
+    public function onFormSet(EventInterface $e){
+        $type = $e->getParam("type", "login");
+        $userService = $this->oServiceLocator->get('User\Service\User');
+        $form = $this->oServiceLocator->get('User\Form\\'.ucfirst($type));
+        $userService->setForm($type, $form);
     }
 
 }

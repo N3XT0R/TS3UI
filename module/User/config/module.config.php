@@ -34,6 +34,8 @@ return array(
             'User\Acl\Service'   => 'User\Acl\ServiceFactory',
             'User\Auth\Adapter' => 'User\Authentication\BcryptAdapterFactory',
             'User\Auth\Service'  => 'User\Authentication\ServiceFactory',
+            //Forms
+            'User\Form\Login'   => 'User\Form\LoginFormFactory',
         ),
     ),
     'doctrine' => array(

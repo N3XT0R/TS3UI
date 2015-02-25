@@ -13,11 +13,18 @@ use Doctrine\ORM\EntityManager;
 use User\Entity\UserEntity;
 use Zend\Math\Rand;
 use Doctrine\ORM\ORMException;
+use Zend\EventManager\EventManagerAwareInterface;
+use Zend\EventManager\EventManagerInterface;
 
-class UserService implements UserServiceInterface{
+class UserService implements 
+UserServiceInterface,
+EventManagerAwareInterface
+{
     
     protected $authentication;
     protected $entityRepository;
+    protected $eventManager;
+    protected $form = array();
     
     public function __construct(AuthenticationServiceInterface $authentication, EntityManager $entityManager) {
         $this->setAuthentication($authentication);
@@ -49,8 +56,32 @@ class UserService implements UserServiceInterface{
         return $this;
     }
     
+    public function setForm($type, $form){
+        $this->form[$type] = $form;
+    }
+    
+    /**
+     * 
+     * @param type $type
+     * @return \Zend\Form\Form
+     */
+    public function getForm($type = "login"){
+        if(!isset($this->form[$type])){
+            $this->getEventManager()->trigger(
+                'setForm', __CLASS__, array("type" => $type)
+            );
+        }
+        return $this->form[$type];
+    }
+    
     public function login(array $data){
+        $oForm = $this->getForm("login");
+        $oForm->setData($data);
         
+        if(!$oForm->isValid()){
+            //do something
+            return false;
+        }
     }
 
     public function save(array $data, $id = null){
@@ -94,6 +125,13 @@ class UserService implements UserServiceInterface{
         return Rand::getString(40);
     }
 
-    
+    public function getEventManager() {
+        return $this->eventManager;
+    }
+
+    public function setEventManager(EventManagerInterface $eventManager) {
+        $eventManager->setIdentifiers(array(__CLASS__));
+        $this->eventManager = $eventManager;
+    }
 
 }
