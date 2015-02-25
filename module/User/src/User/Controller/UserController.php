@@ -36,6 +36,12 @@ class UserController extends AbstractActionController{
     }
     
     public function indexAction(){
+        if(!$this->getUserService()->getAuthentication()->hasIdentity()){
+            // Redirect to login user
+            return $this->redirect()->toRoute(
+                'user/action', array('action' => 'login')
+            );
+        }
         return array();
     }
     

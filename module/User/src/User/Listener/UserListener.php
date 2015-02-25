@@ -15,10 +15,12 @@ use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\Mvc\MvcEvent;
 use Zend\Console\Request as ConsoleRequest;
+use Zend\Mvc\Controller\Plugin\Redirect;
 
 class UserListener implements ListenerAggregateInterface{
     
     protected $listeners;
+    
     
     public function attach(EventManagerInterface $events) {
         $this->listeners[] = $events->attach(
@@ -99,6 +101,7 @@ class UserListener implements ListenerAggregateInterface{
         /* @var $oAcl \User\Acl\Service */
         $oAcl = $oServiceManager->get("User\Acl\Service");
         if($oAcl->getRole() == "guest"){
+            //$e->getResponse()->setRedirect("/user");
             $viewModel = $e->getViewModel();
             $viewModel->setTemplate("layout/login.phtml");
         }
