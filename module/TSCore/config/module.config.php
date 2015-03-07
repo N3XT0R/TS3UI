@@ -11,19 +11,5 @@ return array(
             'TSCore\Auth\Service'      => 'TSCore\Authentication\ServiceFactory',
         ),
     ),
-    'doctrine' => array(
-        'driver' => array(
-            'TSCore_Entities' => array(
-                'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src/TSCore/Entity')
-            ),
-            'orm_default' => array(
-                'drivers' => array(
-                    'TSCore\Entity' => 'TSCore_Entities'
-                ),
-            ),
-        ),
-    ),
 );
 

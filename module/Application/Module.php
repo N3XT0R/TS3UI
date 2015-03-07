@@ -11,6 +11,8 @@ namespace Application;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use Zend\Validator\AbstractValidator;
+
 
 class Module
 {
@@ -19,6 +21,11 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+        
+        $translator = $e->getApplication()->getServiceManager()->get('translator');
+        $translator->setLocale(\Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']))
+                   ->setFallbackLocale('de_DE');
+        AbstractValidator::setDefaultTranslator($translator);
     }
 
     public function getConfig()

@@ -13,16 +13,28 @@
 namespace Server\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use Server\Service\ServerService;
 
 class ServerController extends AbstractActionController{
     
+    protected $oServerService;
     
-    public function __construct() {
-        
+    
+    public function __construct(ServerService $oServerService) {
+        $this->setServerService($oServerService);
+    }
+    
+    public function setServerService(ServerService $oServerService){
+        $this->oServerService = $oServerService;
+        return $this;
+    }
+    
+    public function getServerService(){
+        return $this->oServerService;
     }
     
     
-    public function indexAction() {
+    public function indexAction(){
         parent::indexAction();
     }
 }

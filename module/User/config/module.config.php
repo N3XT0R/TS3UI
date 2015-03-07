@@ -37,6 +37,18 @@ return array(
             //Forms
             'User\Form\Login'   => 'User\Form\LoginFormFactory',
         ),
+        'aliases' => array(
+            'translator' => 'MvcTranslator',
+        ),
+    ),
+    'translator' => array(
+        'translation_file_patterns' => array(
+            array(
+                'type'     => 'phpArray',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern'  => '%s.php',
+            ),
+        ),
     ),
     'doctrine' => array(
         'driver' => array(

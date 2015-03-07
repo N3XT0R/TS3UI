@@ -28,7 +28,10 @@
 </head>
 <body>
     <div class="container">
-        <?php echo $this->content; ?>
+        <?php
+            echo $this->losFlashMessenger()->renderAll();
+            echo $this->content; 
+        ?>
     </div>
     <!-- jQuery -->
 <?php 

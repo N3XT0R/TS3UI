@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace TSCore\Entity;
+namespace Server\Entity;
 
 use Zend\Stdlib\ArraySerializableInterface;
 

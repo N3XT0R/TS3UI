@@ -9,7 +9,7 @@
  * $Date$
  */
 
-namespace TSCore\Entity;
+namespace Server\Entity;
 
 use Zend\Filter\StaticFilter;
 use Doctrine\ORM\Mapping as ORM;

@@ -66,12 +66,22 @@ return array(
         ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'en_EN',
         'translation_file_patterns' => array(
             array(
-                'type'     => 'gettext',
+                'type'     => 'phpArray',
                 'base_dir' => __DIR__ . '/../language',
-                'pattern'  => '%s.mo',
+                'pattern'  => '%s.php',
+            ),
+           array(
+                'type' => 'phpArray',
+                'base_dir' => 'vendor/zendframework/zendframework/resources/languages',
+                'pattern' => '%s/Zend_Captcha.php',
+            ),
+            array(
+                'type' => 'phpArray',
+                'base_dir' => 'vendor/zendframework/zendframework/resources/languages',
+                'pattern' => '%s/Zend_Validate.php',
             ),
         ),
     ),
@@ -90,6 +100,11 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+    ),
+    'view_helpers' => array(
+        'invokables'=> array(
+            'pageTitle'    => 'Application\View\Helper\PageTitle',
         ),
     ),
     'acl' => array(

@@ -15,6 +15,7 @@ use Zend\Authentication\Result;
 use Zend\Authentication\Adapter\AdapterInterface;
 use Zend\Crypt\Password\Bcrypt;
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\NoResultException;
 
 class BcryptAdapter implements AdapterInterface{
     
@@ -113,25 +114,20 @@ class BcryptAdapter implements AdapterInterface{
             $this->authenticateResultInfo["messages"][] = "The Password Field is required.";
             return $this->createResult();
         }
-        /**
-        $oUser = $this->getEntityRepository()->findOneBy(array(
-            "username" => $this->getIdentity(),
-        ));
-         * 
-         */
-        
-        $oUser = $this->getEntityRepository()->createQueryBuilder('u')
-                      ->addSelect("userRole")
-                      ->join("u.role", "userRole")
-                      ->where("u.username = :username")
-                      ->setParameter("username", $this->getIdentity())
-                      ->getQuery()
-                      ->getSingleResult();
-        
-        if(!$oUser){
+       
+        try{
+            $oUser = $this->getEntityRepository()->createQueryBuilder('u')
+                          ->addSelect("userRole")
+                          ->join("u.role", "userRole")
+                          ->where("u.username = :username")
+                          ->setParameter("username", $this->getIdentity())
+                          ->getQuery()
+                          ->getSingleResult();
+        }catch(NoResultException $ex){
             $this->authenticateResultInfo["messages"][] = "Login failed.";
             return $this->createResult();
         }
+        
         $bcrypt = $this->getBcrypt();
         $bcrypt->setSalt($oUser->getSalt());
         $verify = $bcrypt->verify($this->getCredential(), $oUser->getPassword());

@@ -15,6 +15,7 @@ class LoginFormFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
         $oForm = new UserForm("login");
+        
         $oForm->addUsernameElement();
         $oForm->addPasswordElement();
         $oForm->addSubmitElement();

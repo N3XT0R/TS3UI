@@ -108,6 +108,10 @@ class UserController extends AbstractActionController{
         }
     }
     
+    public function editAction(){
+        
+    }
+    
     public function forbiddenAction(){
         if($this->getUserService()->getAuthentication()->hasIdentity() == false){
             $this->layout("layout/login");

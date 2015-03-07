@@ -21,19 +21,19 @@ class UserForm extends Form{
         $this->add($oElement);
     }
     
-    public function addUsernameElement($name = "username", $label = "Username"){
+    public function addUsernameElement($name = "username", $label = "USER_USERNAME"){
         $oElement = new Text($name);
         $oElement->setLabel($label);
         $this->add($oElement);
     }
     
-    public function addPasswordElement($name = "password", $label = "Password"){
+    public function addPasswordElement($name = "password", $label = "USER_PASSWORD"){
         $oElement = new Password($name);
         $oElement->setLabel($label);
         $this->add($oElement);
     }
     
-    public function addSubmitElement($name = "submit", $label = "Submit"){
+    public function addSubmitElement($name = "submit", $label = "USER_LOGIN"){
         $oElement = new Button($name);
         $oElement->setAttribute("type", "submit");
         $oElement->setLabel($label);
