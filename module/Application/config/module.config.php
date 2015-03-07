@@ -11,11 +11,11 @@ return array(
     'router' => array(
         'routes' => array(
             'home' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'type' => 'Literal',
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Dashboard',
                         'action'     => 'index',
                     ),
                 ),
@@ -29,8 +29,7 @@ return array(
                 'options' => array(
                     'route'    => '/dashboard',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'Index',
+                        'controller'    => 'Dashboard',
                         'action'        => 'index',
                     ),
                 ),
@@ -52,6 +51,11 @@ return array(
             ),
         ),
     ),
+    'controllers' => array(
+       'invokables' => array(
+            'Dashboard' => 'Application\Controller\IndexController',
+        ),
+    ),
     'service_manager' => array(
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
@@ -71,11 +75,6 @@ return array(
             ),
         ),
     ),
-    'controllers' => array(
-        'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
-        ),
-    ),
     'view_manager' => array(
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
@@ -91,6 +90,18 @@ return array(
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
+        ),
+    ),
+    'acl' => array(
+        'Admin' => array(
+            'Dashboard' => array(
+                'allow' => null,
+            ),
+        ),
+        'SuperAdmin' => array(
+            'Dashboard' => array(
+                'allow' => null,
+            ),
         ),
     ),
     // Placeholder for console routes
