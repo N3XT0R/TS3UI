@@ -9,6 +9,7 @@ return array(
         'Application',
         'TSCore',
         'User',
+        'Server',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
