@@ -1,3 +1,8 @@
+<?php
+/**
+ * @property \Zend\Form\Form $oForm 
+ */
+?>
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
         <div class="login-panel panel panel-default">
@@ -6,6 +11,10 @@
             </div>
             <div class="panel-body">
                 <?php
+                    
+                    $sAction = $this->url("user/action", array("action" => "login"));
+                    $this->oForm->setAttribute("action", $sAction);
+
                     echo $this->losForm()->openTag($this->oForm);
                     echo $this->losFormRow($this->oForm->get("username"));
                     echo $this->losFormRow($this->oForm->get("password"));

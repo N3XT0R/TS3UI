@@ -15,6 +15,6 @@
         "satooshi/php-coveralls": "dev-master",
         "zendframework/zend-developer-tools": "dev-master",
         "doctrine/doctrine-orm-module": "0.8.*",
-        "los/losui": "1.0.13"
+        "los/losui": "1.0.*"
     }
 }

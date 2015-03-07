@@ -118,9 +118,10 @@ class FormRow extends ZfFormRow
             return $this->view->render($this->partial, $vars);
         }
 
+        $elementErrors = '';
         if ($this->renderErrors) {
             $elementErrors = $elementErrorsHelper->render($element, [
-                'class' => 'text-danger'
+                'class' => 'text-danger',
             ]);
         }
 

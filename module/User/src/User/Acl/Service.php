@@ -55,8 +55,8 @@ class Service {
         // create acl
         $acl = new Acl();
         $acl->addRole('guest');
-        $acl->addRole("admin", "guest");
-        $acl->addRole('SuperAdmin', 'admin');
+        $acl->addRole("Admin", "guest");
+        $acl->addRole('SuperAdmin', 'Admin');
         
         // loop through role data
         foreach ($this->config as $role => $resources) {
@@ -90,7 +90,6 @@ class Service {
         if (empty($privilege)) {
             return false;
         }
-        
         // check acl
         return $this->getAcl()->isAllowed(
             $this->getRole(), $resource, $privilege

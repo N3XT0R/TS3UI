@@ -15,6 +15,8 @@ use Zend\Math\Rand;
 use Doctrine\ORM\ORMException;
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
+use Zend\Session\Container;
+use Zend\Authentication\Storage\Session;
 
 class UserService implements 
 UserServiceInterface,
@@ -45,7 +47,7 @@ EventManagerAwareInterface
 
     /**
      * 
-     * @return \Zend\Authentication\AuthenticationServiceInterface
+     * @return \Zend\Authentication\AuthenticationService
      */
     public function getAuthentication() {
         return $this->authentication;
@@ -82,6 +84,29 @@ EventManagerAwareInterface
             //do something
             return false;
         }
+        
+        $aUser = $oForm->getData();
+        
+        $oAuthentication = $this->getAuthentication();
+        $oAuthentication->getAdapter()->setIdentity($aUser["username"]);
+        $oAuthentication->getAdapter()->setCredential($aUser["password"]);
+        
+        $oResult = $oAuthentication->authenticate();
+        
+        if(!$oResult->isValid()){
+            return false;
+        }
+        
+        return $oResult->getIdentity();
+    }
+    
+    public function logout(){
+        $oAuthentication = $this->getAuthentication();
+        $oAuthentication->clearIdentity();
+        
+        $oAuthNamespace = new Container(Session::NAMESPACE_DEFAULT);
+        $oAuthNamespace->getManager()->destroy();
+        return true;
     }
 
     public function save(array $data, $id = null){

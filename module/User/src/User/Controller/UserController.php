@@ -12,11 +12,9 @@ use Zend\Mvc\Controller\AbstractActionController;
 use User\Service\UserServiceInterface;
 use Zend\Console\Request as ConsoleRequest;
 use Zend\View\Model\ViewModel;
+use Zend\Http\PhpEnvironment\Response;
 use Zend\Http\Request as HttpRequest;
 use Zend\Text\Figlet\Figlet;
-use Zend\Text\Table\Table;
-use Zend\Text\Table\Row;
-use Zend\Text\Table\Column;
 
 class UserController extends AbstractActionController{
 
@@ -31,6 +29,10 @@ class UserController extends AbstractActionController{
         return $this;
     }
     
+    /**
+     * 
+     * @return \User\Service\UserService
+     */
     public function getUserService(){
         return $this->userService;
     }
@@ -46,15 +48,38 @@ class UserController extends AbstractActionController{
     }
     
     public function loginAction(){
-        $oForm = $this->getUserService()->getForm("login");
         $this->layout("layout/login");
+        
+        $oPRG = $this->prg(
+            $this->url()->fromRoute("user/action", array("action" => "login")),
+            true
+        );
+        
+        if($oPRG instanceof Response){
+            return $oPRG;
+        }elseif($oPRG !== false){
+            $oUser = $this->getUserService()->login($oPRG);
+            if($oUser){
+                return $this->redirect()->toRoute("user");
+            }
+        }
+        
+        $oForm = $this->getUserService()->getForm("login");
+        
+        
         return array(
             "oForm" => $oForm,
         );
     }
     
     public function logoutAction(){
-        return array();
+         if ($this->getUserService()->getAuthentication()->hasIdentity()) {
+            // logout with redirected data
+            $this->getUserService()->logout();
+        }
+        
+        // Redirect to user page
+        return $this->redirect()->toRoute('user');
     }
 
     public function updateAction(){
@@ -84,7 +109,7 @@ class UserController extends AbstractActionController{
     }
     
     public function forbiddenAction(){
-        if($this->getUserService()->getAuthentication()->hasIdentiy() == false){
+        if($this->getUserService()->getAuthentication()->hasIdentity() == false){
             $this->layout("layout/login");
         }
         return array();

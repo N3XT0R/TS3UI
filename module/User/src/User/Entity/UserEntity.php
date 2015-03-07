@@ -33,6 +33,12 @@ class UserEntity implements UserEntityInterface{
     /** @ORM\Column(type="string") */
     protected $salt;
     
+     /**
+     * @ORM\ManyToOne(targetEntity="RoleEntity")
+     * @ORM\JoinColumn(name="roleID", referencedColumnName="roleID", nullable=false)
+     **/
+    protected $role;
+    
     public function exchangeArray(array $array) {
         foreach ($array as $key => $value) {
             if (empty($value)) {
@@ -86,6 +92,15 @@ class UserEntity implements UserEntityInterface{
     
     public function getSalt(){
         return $this->salt;
+    }
+    
+    public function setRole($role){
+        $this->role = $role;
+        return $this;
+    }
+    
+    public function getRole(){
+        return $this->role;
     }
 
 }

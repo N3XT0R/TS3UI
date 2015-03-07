@@ -70,9 +70,19 @@ return array(
     ),
     'acl' => array(
         'guest' => array(
-            'user' => array(
+            'User' => array(
                 'allow' => array('login'),
                 'deny' => array('logout'),
+            ),
+        ),
+        'Admin' => array(
+            'User' => array(
+                'allow' => null,
+            ),
+        ),
+        'SuperAdmin' => array(
+            'User' => array(
+                'allow' => null,
             ),
         ),
     ),

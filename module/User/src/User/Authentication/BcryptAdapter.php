@@ -52,7 +52,7 @@ class BcryptAdapter implements AdapterInterface{
      * 
      * @return \Doctrine\ORM\EntityRepository
      */
-    public function getEntityRepositoryr(){
+    public function getEntityRepository(){
         return $this->entityManager;
     }
     
@@ -113,10 +113,21 @@ class BcryptAdapter implements AdapterInterface{
             $this->authenticateResultInfo["messages"][] = "The Password Field is required.";
             return $this->createResult();
         }
-        
-        $oUser = $this->getEntityRepositoryr()->findOneBy(array(
+        /**
+        $oUser = $this->getEntityRepository()->findOneBy(array(
             "username" => $this->getIdentity(),
         ));
+         * 
+         */
+        
+        $oUser = $this->getEntityRepository()->createQueryBuilder('u')
+                      ->addSelect("userRole")
+                      ->join("u.role", "userRole")
+                      ->where("u.username = :username")
+                      ->setParameter("username", $this->getIdentity())
+                      ->getQuery()
+                      ->getSingleResult();
+        
         if(!$oUser){
             $this->authenticateResultInfo["messages"][] = "Login failed.";
             return $this->createResult();
@@ -131,6 +142,7 @@ class BcryptAdapter implements AdapterInterface{
             return $this->createResult();
         }
         
+    
         $this->authenticateResultInfo['code'] = Result::SUCCESS;
         $this->authenticateResultInfo['identity'] = $oUser;
         $this->authenticateResultInfo["messages"][] = "Successfully logged in.";
