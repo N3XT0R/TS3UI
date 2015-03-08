@@ -128,6 +128,8 @@ return array(
            "application" => array(
                'label' => 'APPLICATION_DASHBOARD',
                'route' => 'home',
+               'controller' => 'Dashboard',
+               'action' => 'index',
                'icon' => 'fa fa-dashboard fa-fw',
            ),
         ),

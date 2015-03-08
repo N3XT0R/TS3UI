@@ -5,7 +5,7 @@
  */
 /* @var $oPage Zend\Navigation\Page\Mvc */
 foreach($this->container as $sKey => $oPage){
-    if($oPage->isVisible() && $this->navigation()->accept($oPage, false) == true){
+    if($oPage->isVisible() && $this->UserIsAllowed($oPage->getController(), $oPage->getAction()) == true){
 ?>
 <li>
     <a href="<?php echo ($oPage->hasPages() == false) ? $oPage->getHref() : '#'; ?>"><?php 
@@ -24,7 +24,7 @@ foreach($this->container as $sKey => $oPage){
     <ul class="nav nav-second-level">
     <?php
         foreach($oPage->getPages() as $oSubPage){
-            if($oSubPage->isVisible() && $this->navigation()->accept($oSubPage, false) == true){
+            if($oSubPage->isVisible() && $this->UserIsAllowed($oSubPage->getController(), $oSubPage->getAction()) == true){
             ?>
         <li>
             <a href="<?php echo $oSubPage->getHref();?>"><?php echo $this->translate($oSubPage->getLabel());?></a>
