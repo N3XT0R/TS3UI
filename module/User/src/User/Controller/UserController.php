@@ -109,7 +109,14 @@ class UserController extends AbstractActionController{
     }
     
     public function editAction(){
+        $oUser = $this->getUserService()->getAuthentication()->getIdentity();
         
+        $oForm = $this->getUserService()->getForm("edit");
+        $oForm->setData($oUser->getArrayCopy());
+        
+        return array(
+            "oForm" => $oForm,
+        );
     }
     
     public function forbiddenAction(){

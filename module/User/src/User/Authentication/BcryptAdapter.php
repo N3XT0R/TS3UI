@@ -116,6 +116,7 @@ class BcryptAdapter implements AdapterInterface{
         }
        
         try{
+            /* @var $oUser \User\Entity\UserEntity */
             $oUser = $this->getEntityRepository()->createQueryBuilder('u')
                           ->addSelect("userRole")
                           ->join("u.role", "userRole")
@@ -138,6 +139,7 @@ class BcryptAdapter implements AdapterInterface{
             return $this->createResult();
         }
         
+        $oUser->setPassword("");
     
         $this->authenticateResultInfo['code'] = Result::SUCCESS;
         $this->authenticateResultInfo['identity'] = $oUser;

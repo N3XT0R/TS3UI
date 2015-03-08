@@ -61,6 +61,9 @@ return array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
+        'factories' => array(
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+        ),
         'aliases' => array(
             'translator' => 'MvcTranslator',
         ),
@@ -97,6 +100,7 @@ return array(
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'navigation/vertical'     => __DIR__ . '/../view/navigation/verticalnav.phtml'
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view',
@@ -117,6 +121,15 @@ return array(
             'Dashboard' => array(
                 'allow' => null,
             ),
+        ),
+    ),
+    'navigation'    => array(
+        'default'   => array(
+           "application" => array(
+               'label' => 'APPLICATION_DASHBOARD',
+               'route' => 'home',
+               'icon' => 'fa fa-dashboard fa-fw',
+           ),
         ),
     ),
     // Placeholder for console routes

@@ -30,12 +30,13 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'User\Service\User' => 'User\Service\UserServiceFactory',
-            'User\Acl\Service'   => 'User\Acl\ServiceFactory',
-            'User\Auth\Adapter' => 'User\Authentication\BcryptAdapterFactory',
-            'User\Auth\Service'  => 'User\Authentication\ServiceFactory',
+            'User\Service\User'     => 'User\Service\UserServiceFactory',
+            'User\Acl\Service'      => 'User\Acl\ServiceFactory',
+            'User\Auth\Adapter'     => 'User\Authentication\BcryptAdapterFactory',
+            'User\Auth\Service'     => 'User\Authentication\ServiceFactory',
             //Forms
-            'User\Form\Login'   => 'User\Form\LoginFormFactory',
+            'User\Form\Login'       => 'User\Form\LoginFormFactory',
+            'User\Form\Edit'        => 'User\Form\EditFormFactory',
         ),
         'aliases' => array(
             'translator' => 'MvcTranslator',
@@ -96,6 +97,22 @@ return array(
             'User' => array(
                 'allow' => null,
             ),
+        ),
+    ),
+    'navigation' => array(
+        'default' => array(
+            'user' => array(
+                'label' => 'USER',
+                'route' => 'user',
+                'icon' => 'fa-user',
+                'pages' => array(
+                    'index' => array(
+                        'label' => 'USER_SUB_MANAGEMENT',
+                        'route' => 'user/action',
+                        'action' => 'index',
+                    ),
+                ),
+            ),    
         ),
     ),
     'console' => array(

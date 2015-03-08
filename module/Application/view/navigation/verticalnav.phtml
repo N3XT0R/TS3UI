@@ -1,0 +1,43 @@
+<?php
+/* 
+ * @var $this Zend\View\Renderer\PhpRenderer 
+ * @property $container Zend\Navigation\Navigation
+ */
+/* @var $oPage Zend\Navigation\Page\Mvc */
+foreach($this->container as $sKey => $oPage){
+?>
+<li>
+    <a href="<?php echo ($oPage->hasPages() == false) ? $oPage->getHref() : '#'; ?>">
+         <?php 
+            if($oPage->get("icon") !== null){
+                echo $this->losIcon($oPage->get("icon"))." ";
+            }
+            echo $this->translate($oPage->getLabel()); 
+            
+            if($oPage->hasPages()){
+        ?>
+            <span class="fa arrow"></span>
+        <?php
+            }
+         ?>
+   </a>
+    <?php
+        if($oPage->hasPages()){
+    ?>
+    <ul class="nav nav-second-level">
+    <?php
+        foreach($oPage->getPages() as $oSubPage){
+            ?>
+        <li>
+            <a href="<?php echo $oSubPage->getHref();?>"><?php echo $this->translate($oSubPage->getLabel());?></a>
+        </li>
+            <?php
+        }
+    ?>
+    </ul>
+    <?php
+        }
+    ?>
+</li>
+<?php
+}
