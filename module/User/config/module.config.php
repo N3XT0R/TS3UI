@@ -108,8 +108,7 @@ return array(
                 'pages' => array(
                     'index' => array(
                         'label' => 'USER_SUB_MANAGEMENT',
-                        'route' => 'user/action',
-                        'action' => 'index',
+                        'route' => 'user',
                     ),
                 ),
             ),    

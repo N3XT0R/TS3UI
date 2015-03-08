@@ -7,19 +7,15 @@
 foreach($this->container as $sKey => $oPage){
 ?>
 <li>
-    <a href="<?php echo ($oPage->hasPages() == false) ? $oPage->getHref() : '#'; ?>">
-         <?php 
-            if($oPage->get("icon") !== null){
-                echo $this->losIcon($oPage->get("icon"))." ";
-            }
-            echo $this->translate($oPage->getLabel()); 
-            
-            if($oPage->hasPages()){
-        ?>
-            <span class="fa arrow"></span>
-        <?php
-            }
-         ?>
+    <a href="<?php echo ($oPage->hasPages() == false) ? $oPage->getHref() : '#'; ?>"><?php 
+       if($oPage->get("icon") !== null){
+           echo $this->losIcon($oPage->get("icon"))." ";
+       }
+       echo $this->translate($oPage->getLabel()); 
+
+       if($oPage->hasPages()){
+   ?><span class="fa arrow"></span><?php
+       }?>
    </a>
     <?php
         if($oPage->hasPages()){
