@@ -17,6 +17,9 @@ use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\Session\Container;
 use Zend\Authentication\Storage\Session;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use Zend\Paginator\Paginator;
 
 class UserService implements 
 UserServiceInterface,
@@ -144,6 +147,21 @@ EventManagerAwareInterface
         
         $oUser = $oRepository->find($id);
         return $oUser;
+    }
+    
+    public function getUserList($page = 1, $perPage = 15){
+        $query = $this->getEntityManager()->getRepository("User\Entity\UserEntity")
+                                          ->createQueryBuilder("u")
+                                          ->addSelect("userRole")
+                                          ->join("u.role", "userRole")
+                                          ->getQuery();
+        $oPaginator = new Paginator(
+            new DoctrinePaginator(new ORMPaginator($query))
+        );
+        $oPaginator->setCurrentPageNumber($page);
+        $oPaginator->setItemCountPerPage($perPage);
+        
+        return $oPaginator;
     }
     
     protected function createSalt(){

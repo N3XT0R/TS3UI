@@ -44,7 +44,11 @@ class UserController extends AbstractActionController{
                 'user/action', array('action' => 'login')
             );
         }
-        return array();
+        
+        $oPaginator = $this->getUserService()->getUserList(1, 15);
+        return array(
+            "oUserList" => $oPaginator,
+        );
     }
     
     public function loginAction(){

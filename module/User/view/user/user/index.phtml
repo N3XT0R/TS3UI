@@ -1,4 +1,34 @@
 <?php
     $this->PageTitle("USER_SUB_MANAGEMENT");
+    
 ?>
-test
+<div class="table-responsive">
+    <table class="table table-borderless table-striped table-hover">
+        <thead>
+            <tr>
+                <th><?php echo $this->translate("USER_USERNAME");?></th>
+                <th><?php echo $this->translate("USER_ROLE");?></th>
+                <th><?php echo $this->translate("TABLE_ACTION");?></th>
+            </tr>
+        </thead>
+        <tbody>
+<?php
+    foreach($this->oUserList as $oUser){
+?>
+            <tr>
+                <td><?php echo $oUser->getUsername();?></td>
+                <td><?php echo $oUser->getRole()->getRolename();?></td>
+                <td>
+                    <?php echo $oUser->getId();?>
+                </td>
+            </tr>
+<?php
+    }
+?> 
+        </tbody>
+    </table>
+</div>
+<?php
+    
+    echo $this->losPaginationControl($this->oUserList)
+?>
