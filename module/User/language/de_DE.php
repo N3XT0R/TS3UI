@@ -2,6 +2,7 @@
 return array(
     'USER'                          => 'Benutzer',
     'USER_SUB_MANAGEMENT'           => 'Benutzerverwaltung',
+    'USER_SUB_CREATE'               => 'Benutzer anlegen',
     "USER_EDIT_PROFILE"             => "Profil bearbeiten",
     'USER_LOGOUT'                   => 'Ausloggen',
     'USER_USERNAME'                 => 'Benutzername',

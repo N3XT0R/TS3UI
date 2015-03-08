@@ -112,6 +112,10 @@ class UserController extends AbstractActionController{
         }
     }
     
+    public function createAction(){
+        
+    }
+    
     public function editAction(){
         $oUser = $this->getUserService()->getAuthentication()->getIdentity();
         

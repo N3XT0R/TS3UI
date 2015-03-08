@@ -110,6 +110,11 @@ return array(
                         'label' => 'USER_SUB_MANAGEMENT',
                         'route' => 'user',
                     ),
+                    'create' => array(
+                        'label' => 'USER_SUB_CREATE',
+                        'route' => 'user/action',
+                        'action' => 'create',
+                    ),
                 ),
             ),    
         ),
