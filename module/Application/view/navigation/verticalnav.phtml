@@ -15,7 +15,7 @@ foreach($this->container as $sKey => $oPage){
        echo $this->translate($oPage->getLabel()); 
 
        if($oPage->hasPages()){
-   ?><span class="fa arrow"></span><?php
+           echo $this->losIcon("fa arrow");
        }?>
    </a>
     <?php
