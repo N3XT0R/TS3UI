@@ -12,7 +12,7 @@ namespace Application;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Validator\AbstractValidator;
-
+use Zend\Session\Config\SessionConfig;
 
 class Module
 {
@@ -26,6 +26,11 @@ class Module
         $translator->setLocale(\Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']))
                    ->setFallbackLocale('de_DE');
         AbstractValidator::setDefaultTranslator($translator);
+        
+        $config = $e->getApplication()->getServiceManager()->get('config');
+       
+        $sessionConfig = new SessionConfig();
+        $sessionConfig->setOptions($config['session']);
     }
 
     public function getConfig()

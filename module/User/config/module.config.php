@@ -84,13 +84,20 @@ return array(
     'acl' => array(
         'guest' => array(
             'User' => array(
-                'allow' => array('login'),
-                'deny' => array('logout'),
+                'allow' => array(
+                    'login'
+                ),
+                'deny' => array(
+                    'logout'
+                ),
             ),
         ),
         'Admin' => array(
             'User' => array(
                 'allow' => null,
+                'deny' => array(
+                    'create'
+                ),
             ),
         ),
         'SuperAdmin' => array(
@@ -101,19 +108,27 @@ return array(
     ),
     'navigation' => array(
         'default' => array(
-            'user' => array(
-                'label' => 'USER',
-                'route' => 'user',
-                'icon' => 'fa-user',
-                'pages' => array(
-                    'index' => array(
-                        'label' => 'USER_SUB_MANAGEMENT',
-                        'route' => 'user',
+            'User' => array(
+                'type'          => 'mvc',
+                'label'         => 'USER',
+                'route'         => 'user',
+                'icon'          => 'fa-user',
+                'controller'    => 'User',
+                'action'        => 'index',
+                'pages'         => array(
+                    'index'     => array(
+                        'type'          => 'mvc',
+                        'label'         => 'USER_SUB_MANAGEMENT',
+                        'route'         => 'user',
+                        'controller'    => 'User',
+                        'action'        => 'index',
                     ),
-                    'create' => array(
-                        'label' => 'USER_SUB_CREATE',
-                        'route' => 'user/action',
-                        'action' => 'create',
+                    'create'    => array(
+                        'type'          => 'mvc',
+                        'label'         => 'USER_SUB_CREATE',
+                        'route'         => 'user/action',
+                        'controller'    => 'User',
+                        'action'        => 'create',
                     ),
                 ),
             ),    

@@ -14,13 +14,10 @@ use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\Mvc\MvcEvent;
-use Zend\Console\Request as ConsoleRequest;
-use Zend\Mvc\Controller\Plugin\Redirect;
 
 class UserListener implements ListenerAggregateInterface{
     
-    protected $listeners;
-    
+    protected $listeners = array();
     
     public function attach(EventManagerInterface $events) {
         $this->listeners[] = $events->attach(
@@ -32,7 +29,7 @@ class UserListener implements ListenerAggregateInterface{
         );
         
         $this->listeners[] = $events->attach(
-            MvcEvent::EVENT_DISPATCH_ERROR, array($this, "changeLayout"), 99
+            MvcEvent::EVENT_DISPATCH_ERROR, array($this, "changeLayout"), 98
         );
     }
 
@@ -90,6 +87,7 @@ class UserListener implements ListenerAggregateInterface{
         $aclService     = $serviceManager->get('User\Acl\Service');
         
         // set navigation plugin and set acl and role
+        /* @var $plugin Zend\View\Helper\Navigation */
         $plugin = $viewManager->getRenderer()->plugin('navigation');
         $plugin->setRole($aclService->getRole());
         $plugin->setAcl($aclService->getAcl());

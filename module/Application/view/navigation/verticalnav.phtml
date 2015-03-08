@@ -5,11 +5,12 @@
  */
 /* @var $oPage Zend\Navigation\Page\Mvc */
 foreach($this->container as $sKey => $oPage){
+    if($oPage->isVisible() && $this->navigation()->accept($oPage, false) == true){
 ?>
 <li>
     <a href="<?php echo ($oPage->hasPages() == false) ? $oPage->getHref() : '#'; ?>"><?php 
        if($oPage->get("icon") !== null){
-           echo $this->losIcon($oPage->get("icon"))." ";
+           echo $this->losIcon($oPage->get("icon"), '', true)." ";
        }
        echo $this->translate($oPage->getLabel()); 
 
@@ -23,11 +24,13 @@ foreach($this->container as $sKey => $oPage){
     <ul class="nav nav-second-level">
     <?php
         foreach($oPage->getPages() as $oSubPage){
+            if($oSubPage->isVisible() && $this->navigation()->accept($oSubPage, false) == true){
             ?>
         <li>
             <a href="<?php echo $oSubPage->getHref();?>"><?php echo $this->translate($oSubPage->getLabel());?></a>
         </li>
             <?php
+            }
         }
     ?>
     </ul>
@@ -36,4 +39,5 @@ foreach($this->container as $sKey => $oPage){
     ?>
 </li>
 <?php
+    }
 }

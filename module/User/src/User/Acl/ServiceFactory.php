@@ -29,7 +29,7 @@ class ServiceFactory implements FactoryInterface{
                 $role = $auth->getIdentity()->getRole()->getRolename();
             }
         }
-        //$role = $auth->hasIdentity() ? $auth->getIdentity()->getRole()->getName() : "guest";
+
         $acl = new Service($role, $config["acl"]);
         return $acl;
     }

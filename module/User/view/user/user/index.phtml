@@ -19,7 +19,13 @@
                 <td><?php echo $oUser->getUsername();?></td>
                 <td><?php echo $oUser->getRole()->getRolename();?></td>
                 <td>
-                    <?php echo $oUser->getId();?>
+                    <?php
+                        if($this->UserIsAllowed("User", "update")){
+                    ?>
+                    <a class="btn btn-success btn-sm" href="<?php echo $this->url("user/action", array("action" => "update", "id" => $oUser->getId()));?>"><?php echo $this->translate("APPLICATION_ACTION_EDIT");?></a>
+                    <?php
+                        }
+                    ?>
                 </td>
             </tr>
 <?php

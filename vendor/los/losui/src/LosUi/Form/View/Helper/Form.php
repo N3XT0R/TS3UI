@@ -90,11 +90,10 @@ class Form extends ZfFormHelper
 
     /**
      * @param FormInterface|null $form
-     * @param boolean            $isHorizontal
      */
     private function setHorizontal($form)
     {
-        if ($this->isHorizontal) {
+        if ($this->isHorizontal && $form !== null) {
             if ($form->hasAttribute('class')) {
                 $form->setAttribute('class', 'form-horizontal '.$form->getAttribute('class'));
             } else {

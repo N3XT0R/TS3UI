@@ -32,4 +32,8 @@ return array(
        'username' => '{username}',
        'password' => '{password}',
    ),
+    'session' => array(
+        'save_path' => 'data/session',
+        'name'      => 'LUIGI_SESSION',
+    ),
 );

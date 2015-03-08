@@ -80,19 +80,21 @@ class Service {
         return $acl;
     }
     
-    public function isAllowed($resource, $privilege){
-        // check resource
-        if (empty($resource) || !$this->getAcl()->hasResource($resource)) {
+    public function isAllowed($sResource, $sPrivilege){
+        
+        if (empty($sResource) || !$this->getAcl()->hasResource($sResource)) {
+            return false;
+        }
+        if (empty($sPrivilege)) {
             return false;
         }
         
-        // check privilege
-        if (empty($privilege)) {
-            return false;
-        }
-        // check acl
-        return $this->getAcl()->isAllowed(
-            $this->getRole(), $resource, $privilege
+        $blIsAllowed = $this->getAcl()->isAllowed(
+            $this->getRole(), 
+            $sResource, 
+            $sPrivilege
         );
+        
+        return $blIsAllowed;
     }
 }
