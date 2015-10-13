@@ -1,10 +1,14 @@
 <?php
+
 /**
- * Head Link view helper, adding the necessary libs or cdns
+ * Head Link view helper, adding the necessary libs or cdns.
  *
  * @author     Leandro Silva <leandro@leandrosilva.info>
+ *
  * @category   LosUi
+ *
  * @license    https://github.com/Lansoweb/LosUi/blob/master/LICENSE BSD-3 License
+ *
  * @link       http://github.com/LansoWeb/LosUi
  */
 namespace LosUi\View\Helper;
@@ -12,7 +16,7 @@ namespace LosUi\View\Helper;
 use Zend\View\Helper\HeadLink as ZfHeadLink;
 
 /**
- * Head Link view helper, adding the necessary libs or cdns
+ * Head Link view helper, adding the necessary libs or cdns.
  *
  * Allows the following method calls:
  *
@@ -22,7 +26,6 @@ use Zend\View\Helper\HeadLink as ZfHeadLink;
  * @method HeadLink prependFontAwesome($useMinified = true)
  * @method HeadLink appendChosen($useMinified = true)
  * @method HeadLink prependChosen($useMinified = true)
- *
  * @method HeadLink appendStylesheet($href, $media = 'screen', $conditionalStylesheet = '', $extras = array())
  * @method HeadLink offsetSetStylesheet($index, $href, $media = 'screen', $conditionalStylesheet = '', $extras = array())
  * @method HeadLink prependStylesheet($href, $media = 'screen', $conditionalStylesheet = '', $extras = array())
@@ -33,28 +36,32 @@ use Zend\View\Helper\HeadLink as ZfHeadLink;
  * @method HeadLink setAlternate($href, $type, $title, $extras = array())
  *
  * @author Leandro Silva <leandro@leandrosilva.info>
+ *
  * @category LosUi
+ *
  * @license https://github.com/Lansoweb/LosUi/blob/master/LICENSE BSD-3 License
+ *
  * @link http://github.com/LansoWeb/LosUi
  */
 class HeadLink extends ZfHeadLink
 {
-    const VERSION_BOOTSTRAP = "3.3.2";
+    const VERSION_BOOTSTRAP = '3.3.5';
 
-    const VERSION_FONTAWESOME = "4.3.0";
+    const VERSION_FONTAWESOME = '4.4.0';
+
+    private $basePath;
 
     /**
-     * @param mixed  $method
      * @param array  $matches
      * @param string $basePath
      * @param array  $args
      */
-    private function callWithCdn($method, $matches, $basePath, $args)
+    private function callWithCdn($matches, $args)
     {
         $action = $matches['action'];
         $type = $matches['type'];
 
-        $action .= "Stylesheet";
+        $action .= 'Stylesheet';
 
         $useCdn = false;
         $version = false;
@@ -81,13 +88,13 @@ class HeadLink extends ZfHeadLink
                 if ($useCdn) {
                     return $this->$action(sprintf('//maxcdn.bootstrapcdn.com/bootstrap/%s/css/bootstrap.%scss', $version ?: self::VERSION_BOOTSTRAP, $isMin ? 'min.' : ''));
                 } else {
-                    return $this->$action(sprintf('%s/bootstrap/dist/css/bootstrap.%scss', $basePath, $isMin ? 'min.' : ''));
+                    return $this->$action(sprintf('%s/bootstrap/dist/css/bootstrap.%scss', $this->basePath, $isMin ? 'min.' : ''));
                 }
             case 'FontAwesome':
                 if ($useCdn) {
                     return $this->$action(sprintf('//maxcdn.bootstrapcdn.com/font-awesome/%s/css/font-awesome.%scss', $version ?: self::VERSION_FONTAWESOME, $isMin ? 'min.' : ''));
                 } else {
-                    return $this->$action(sprintf('%s/fontawesome/css/font-awesome.%scss', $basePath, $isMin ? 'min.' : ''));
+                    return $this->$action(sprintf('%s/fontawesome/css/font-awesome.%scss', $this->basePath, $isMin ? 'min.' : ''));
                 }
         }
 
@@ -95,55 +102,60 @@ class HeadLink extends ZfHeadLink
     }
 
     /**
-     * @param mixed  $method
      * @param array  $matches
      * @param string $basePath
      * @param array  $args
      */
-    private function callWithoutCdn($method, $matches, $basePath, $args)
+    private function callWithoutCdn($matches, $args)
     {
         $action = $matches['action'];
         $type = $matches['type'];
 
-        $action .= "Stylesheet";
+        $action .= 'Stylesheet';
 
         $isMin = true;
 
-        if (isset($args[0])) {
-            if (is_bool($args[0])) {
-                $isMin = $args[0];
-            }
-        }
-
         switch ($type) {
             case 'Chosen':
-                return $this->$action(sprintf('%s/chosen/chosen.%scss', $basePath, $isMin ? 'min.' : ''));
+                return $this->$action(sprintf('%s/chosen/chosen.%scss', $this->basePath, $isMin ? 'min.' : ''));
+            case 'ChosenBootstrap':
+                return $this->$action(sprintf('%s/losui/chosenbs3.css', $this->basePath));
         }
 
         return false;
     }
 
+    public function setBasePath($path = null)
+    {
+        if (null !== $path) {
+            $this->basePath = (string)$path;
+        }
+
+        return $this;
+    }
+
     /**
-     * Overload method access
+     * Overload method access.
      *
-     * @param  mixed                            $method
-     * @param  mixed                            $args
+     * @param mixed $method
+     * @param mixed $args
+     *
      * @throws Exception\BadMethodCallException
+     *
      * @return mixed
      */
     public function __call($method, $args)
     {
-        $basePath = '';
-        if (method_exists($this->view, 'plugin')) {
-            $basePath = $this->view->plugin('basepath')->__invoke();
+        if ($this->basePath == null && method_exists($this->view, 'plugin')) {
+            $this->basePath = $this->view->plugin('basepath')->__invoke();
         }
 
         $ret = false;
 
         if (preg_match('/^(?P<action>set|(ap|pre)pend)(?P<type>Bootstrap|FontAwesome)$/', $method, $matches)) {
-            $ret = $this->callWithCdn($method, $matches, $basePath, $args);
-        } elseif (preg_match('/^(?P<action>set|(ap|pre)pend)(?P<type>Chosen)$/', $method, $matches)) {
-            $ret = $this->callWithoutCdn($method, $matches, $basePath, $args);
+            $ret = $this->callWithCdn($matches, $args);
+        } elseif (preg_match('/^(?P<action>set|(ap|pre)pend)(?P<type>Chosen|ChosenBootstrap)$/', $method, $matches)) {
+            $ret = $this->callWithoutCdn($matches, $args);
         }
 
         return ($ret !== false) ? $ret : parent::__call($method, $args);

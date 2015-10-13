@@ -6,18 +6,27 @@
 This module provides a shortcut to several UI resources from some of the best front frameworks. 
 I will add more libraries with time and add more resources to the current ones.
 
-- Jquery: 2.1.3 [jquery.com](http://jquery.com)
-- Bootstrap: 3.3.2 [getbootstrap.com](http://getbootstrap.com)
-- Font Awesome: 4.3.0 [fortawesome.github.io](http://fortawesome.github.io/Font-Awesome/) 
-- Chosen: 1.3.0 [http://harvesthq.github.io/chosen/](http://harvesthq.github.io/chosen/)
-- MomentJs: 2.9.0 [http://momentjs.com](http://momentjs.com)
+- Jquery: 2.1.4 [jquery.com](http://jquery.com)
+- Bootstrap: 3.3.5 [getbootstrap.com](http://getbootstrap.com)
+- Font Awesome: 4.4.0 [fortawesome.github.io](http://fortawesome.github.io/Font-Awesome/) 
+- Chosen: 1.4.2 [http://harvesthq.github.io/chosen/](http://harvesthq.github.io/chosen/)
+- MomentJs: 2.10.6 [http://momentjs.com](http://momentjs.com)
 
 The ideia is to facilitate the front development. You do not need to worry about download individually each library, control their versions, so on. Refer to the Usage bellow.
 
 ## Requirements
+- PHP 5.4 or greater
 - Zend Framework 2 [framework.zend.com](http://framework.zend.com/).
 - AssetManager from rwoverdijk [rwoverdijk/assetmanager](https://github.com/RWOverdijk/AssetManager)
 - Any library above
+
+## ChangeLog
+
+* 1.0.24
+1. Added setBasePath to specify an url for the files (see each section bellow)
+
+* 1.0.23
+1. Added help-block option for Form elements
 
 ## Instalation
 Instalation can be done with composer ou manually
@@ -61,7 +70,10 @@ echo $this->losHeadScript()->appendJquery();
 echo $this->losHeadScript()->appendJquery(true);
  
 //Will use the 2.1.0 unminified CDN version  
-echo $this->losHeadScript()->appendJquery(true, false, '2.1.0'); 
+echo $this->losHeadScript()->appendJquery(true, false, '2.1.0');
+
+//Will use a specific url for the files
+echo $this->losHeadScript()->setBasePath('http://example.com')->appendJquery();
 ?>
 ```
 
@@ -85,6 +97,9 @@ echo $this->losHeadLink()->appendFontAwesome(true);
  
 //Will use the 4.2.0 unminified CDN version  
 echo $this->losHeadLink()->appendFontAwesome(true, false, '4.2.0');
+
+//Will use a specific url for the files
+echo $this->losHeadScript()->setBasePath('http://example.com')->appendFontAwesome();
 ?>
 ```
 
@@ -137,7 +152,7 @@ Will generate:
 
 ### Chosen
 If you do not provide an element as the first parameter, the module will assume "select" and will apply the Chosen for all "select" elements.
-You can pass thr Chosen attributes as an array (either as the first or second parameter).
+You can pass the Chosen attributes as an array (either as the first or second parameter).
 ```php
 <script>
 <?= $this->losChosen() ?>
@@ -176,6 +191,16 @@ Again, you can use the false parameter to get the default file:
 <link type="text/css" rel="stylesheet" media="screen" href="/chosen/chosen.css">
 <script src="/chosen/chosen.jquery.js" type="text/javascript"></script>
 ```
+
+UPDATE: Starting from version 1.0.19, you can style the Chosen element with Bootstrap 3. Just pass a true as fourth parameter:
+<?= $this->losChosen('#my_select',['disable_search_threshold'=>10], true, true) ?>
+
+Or you can manually include the necessary styles with:
+<?php echo $this->losHeadLink()->appendChosenBootstrap() ?>
+
+//Will use a specific url for the files
+echo $this->losHeadLink()->setBasePath('http://example.com')->appendChosen();
+echo $this->losHeadScript()->setBasePath('http://example.com')->appendChosen();
 
 ### Moment
 To include the script (can use append or prepend)
@@ -227,6 +252,9 @@ It will generate the following html:
 <script src="/moment/min/moment-with-locales.min.js" type="text/javascript"></script>
 ```
 
+//Will use a specific url for the files
+echo $this->losHeadScript()->setBasePath('http://example.com')->appendMoment();
+
 ### Bootstrap
 Bootstrap is provided as local files (default) or with CDN. Just pass "true" to the appendBootstrap method to use the CDN files.
 The second argument indicates the use of minified version (default) or not, while the third indicates a specific version of a CDN file.
@@ -253,6 +281,10 @@ The first call will generate the following html:
 <link type="text/css" rel="stylesheet" media="screen" href="/bootstrap/dist/css/bootstrap.min.css">
 <script src="/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 ``` 
+
+//Will use a specific url for the files
+echo $this->losHeadLink()->setBasePath('http://example.com')->appendBootstrap();
+echo $this->losHeadScript()->setBasePath('http://example.com')->appendBootstrap();
 
 For each section bellow, please refer to the [bootstrap documentation](http://getbootstrap.com) for the classes specifications.
 
@@ -289,6 +321,57 @@ foreach (['name','gender','email','password','passwordVerify','captcha','newslet
     echo $this->losFormRow()->render($form->get($element), true, 4);
 }
 echo $this->losForm()->closeTag();
+```
+
+You can add bootstrap addons to form inputs. Just add the keys "addon-append" or "addon-prepend" to the input options 
+and can combine them with icons (both glyphicon and fontawesome):
+```php
+array(
+	'spec' => array(
+	    'type'    => 'Zend\Form\Element\Text',
+    	'name'    => 'price',
+    	'options' => array(
+        	'label' => 'Price',
+        	'addon-append' => '.00',
+        	'addon-prepend' => 'glyphicon-usd',
+    	),
+    ),
+),
+array(
+	'user' => array(
+	    'type'    => 'Zend\Form\Element\Text',
+    	'name'    => 'user',
+    	'options' => array(
+        	'label' => 'User',
+        	'addon-prepend' => 'fa-user'
+    	),
+    ),
+),
+```
+
+The same for annotations:
+```php
+/**
+ * @Form\Attributes({"type":"text","placeholder":"Price"})
+ * @Form\Options({"label":"Price", "addon-prepend":"glyphicon-usd", "addon-append":".00"})
+ */
+protected $price;
+```
+
+UPDATE: Added help-block element:
+```php
+array(
+	'spec' => array(
+	    'type'    => 'Zend\Form\Element\Text',
+    	'name'    => 'price',
+    	'options' => array(
+        	'label' => 'Price',
+        	'addon-append' => '.00',
+        	'addon-prepend' => 'glyphicon-usd',
+        	'help-block' => 'Value is a price',
+    	),
+    ),
+),
 ```
 
 #### Alert

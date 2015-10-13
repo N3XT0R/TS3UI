@@ -1,12 +1,16 @@
 <?php
+
 /**
- * Form View Helper
+ * Form View Helper.
  *
  * This view helper overrides the default ZF2 helper to use the LosFormRow
  *
  * @author     Leandro Silva <leandro@leandrosilva.info>
+ *
  * @category   LosUi
+ *
  * @license    https://github.com/Lansoweb/LosUi/blob/master/LICENSE BSD-3 License
+ *
  * @link       http://github.com/LansoWeb/LosUi
  * @link       http://getbootstrap.com/css/#forms
  */
@@ -16,16 +20,19 @@ use Zend\Form\FormInterface;
 use Zend\Form\FieldsetInterface;
 use Zend\Form\View\Helper\Form as ZfFormHelper;
 use Zend\Form\Element\Button;
+use Zend\Form\Element\Submit;
 
 /**
- *
- * Form View Helper
+ * Form View Helper.
  *
  * This view helper overrides the default ZF2 helper to use the LosFormRow
  *
  * @author     Leandro Silva <leandro@leandrosilva.info>
+ *
  * @category   LosUi
+ *
  * @license    https://github.com/Lansoweb/LosUi/blob/master/LICENSE BSD-3 License
+ *
  * @link       http://github.com/LansoWeb/LosUi
  * @link       http://getbootstrap.com/css/#forms
  */
@@ -36,7 +43,8 @@ class Form extends ZfFormHelper
     protected $labelColumns = 2;
 
     /**
-     * (non-PHPdoc)
+     * (non-PHPdoc).
+     *
      * @see \Zend\Form\View\Helper\Form::render()
      */
     public function render(FormInterface $form, $isHorizontal = false, $labelColumns = 2)
@@ -44,7 +52,7 @@ class Form extends ZfFormHelper
         $this->isHorizontal = (bool) $isHorizontal;
         $this->labelColumns = (int) $labelColumns;
 
-        $this->setHorizontal($form);
+        $this->setHorizontal($form, $this->isHorizontal);
 
         if (method_exists($form, 'prepare')) {
             $form->prepare();
@@ -55,7 +63,7 @@ class Form extends ZfFormHelper
         $buttons = [];
 
         foreach ($form as $element) {
-            if ($element instanceof Button) {
+            if ($element instanceof Button || $element instanceof Submit) {
                 $buttons[] = $element;
                 continue;
             } elseif ($element instanceof FieldsetInterface) {
@@ -73,7 +81,8 @@ class Form extends ZfFormHelper
     }
 
     /**
-     * (non-PHPdoc)
+     * (non-PHPdoc).
+     *
      * @see \Zend\Form\View\Helper\Form::__invoke()
      */
     public function __invoke(FormInterface $form = null, $isHorizontal = false, $labelColumns = 2)
@@ -81,7 +90,7 @@ class Form extends ZfFormHelper
         $this->isHorizontal = (bool) $isHorizontal;
         $this->labelColumns = (int) $labelColumns;
 
-        if (! $form) {
+        if (!$form) {
             return $this;
         }
 
@@ -91,8 +100,10 @@ class Form extends ZfFormHelper
     /**
      * @param FormInterface|null $form
      */
-    private function setHorizontal($form)
+    private function setHorizontal($form, $isHorizontal = false)
     {
+        $this->isHorizontal = (bool) $isHorizontal;
+
         if ($this->isHorizontal && $form !== null) {
             if ($form->hasAttribute('class')) {
                 $form->setAttribute('class', 'form-horizontal '.$form->getAttribute('class'));
@@ -104,9 +115,7 @@ class Form extends ZfFormHelper
 
     public function openTag(FormInterface $form = null, $isHorizontal = false)
     {
-        $this->isHorizontal = (bool) $isHorizontal;
-
-        $this->setHorizontal($form);
+        $this->setHorizontal($form, $isHorizontal);
 
         return parent::openTag($form);
     }
