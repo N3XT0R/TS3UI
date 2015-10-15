@@ -1,5 +1,5 @@
-[submodule "vendor/ZF2"]
-	path = vendor/ZF2
+[submodule "vendor/zendframework"]
+	path = vendor/zendframework
 	url = https://github.com/zendframework/zf2.git
 
 [submodule "vendor/fkubis"]
