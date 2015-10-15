@@ -134,11 +134,7 @@ EventManagerAwareInterface
         }
         
         try{
-            if($mode == "register"){
-                $this->getEntityManager()->persist($oUser);
-            }else{
-                $this->getEntityManager()->refresh($oUser);
-            }
+            $this->getEntityManager()->persist($oUser);
             $this->getEntityManager()->flush();
             $id = $oUser->getId();
         } catch (ORMException $ex) {

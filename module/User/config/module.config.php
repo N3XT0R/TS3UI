@@ -67,7 +67,8 @@ return array(
     ),
     'controllers' => array(
         'factories' => array(
-            'User' => 'User\Controller\UserControllerFactory',
+            'User'          => 'User\Controller\UserControllerFactory',
+            'UserConsole'   => 'User\Controller\Console\UserControllerFactory',
         ),
     ),
     'view_manager' => array(
@@ -141,7 +142,7 @@ return array(
                     'options' => array(
                         'route' => 'user [--help] [add|delete]:mode [<username>] [<password>]',
                         'defaults' => array(
-                            'controller' => 'User',
+                            'controller' => 'UserConsole',
                             'action' => 'update',
                         ),
                     ),

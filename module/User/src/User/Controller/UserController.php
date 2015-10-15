@@ -86,30 +86,8 @@ class UserController extends AbstractActionController{
         return $this->redirect()->toRoute('user');
     }
 
-    public function updateAction(){
-        $request = $this->getRequest();
-        if(!$request instanceof ConsoleRequest){
-            
-            
-            return new ViewModel();
-        }else{
-            $needHelp = (bool)$request->getParam("help", false);
-            if($needHelp){
-                $figlet = new Figlet();
-                echo $figlet->render("TS3UI");
-                echo "\n###############################################\n\n Usage: \n";
-                echo "index .php user add [username] [password]\n";
-            }else{
-                $mode = $request->getParam("mode");
-                $params = $request->getParams()->getArrayCopy();
-                
-                switch($mode){
-                    case "add":
-                        $this->getUserService()->save($params);
-                    break;
-                }
-            }
-        }
+    public function updateAction(){   
+        return new ViewModel();
     }
     
     public function createAction(){

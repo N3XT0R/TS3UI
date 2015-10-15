@@ -2,14 +2,17 @@
 
 /*
  * @author         N3X
- * @copyright      Copyright (c) 2014, Ilya Beliaev
+ * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
+ * 
+ * $Id$
+ * $Date$
  */
 
-namespace User\Controller;
+namespace User\Controller\Console;
 
-use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 
 class UserControllerFactory implements FactoryInterface{
     

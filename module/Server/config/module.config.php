@@ -11,6 +11,21 @@ return array(
                         'controller' => 'Server',
                         'action'     => 'index',
                     ),
+                     'may_terminate' => true,
+                     'child_routes' => array(
+                         
+                         'action' => array(
+                             'type' => 'segment',
+                             'options' => array(
+                                 'route' => '/[:action]/[:id]',
+                                 'constraints' => array(
+                                     'action' => '[a-zA-Z]+',
+                                     'id'     => '[0-9]+',
+                                 ),
+                             ),
+                             
+                         ),
+                     ),
                 ),
             ),
         ),
