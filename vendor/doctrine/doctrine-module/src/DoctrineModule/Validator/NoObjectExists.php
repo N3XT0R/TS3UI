@@ -32,7 +32,7 @@ class NoObjectExists extends ObjectExists
     /**
      * Error constants
      */
-    const ERROR_OBJECT_FOUND    = 'objectFound';
+    const ERROR_OBJECT_FOUND = 'objectFound';
 
     /**
      * @var array Message templates
@@ -46,8 +46,8 @@ class NoObjectExists extends ObjectExists
      */
     public function isValid($value)
     {
-        $value = $this->cleanSearchValue($value);
-        $match = $this->objectRepository->findOneBy($value);
+        $cleanedValue = $this->cleanSearchValue($value);
+        $match        = $this->objectRepository->findOneBy($cleanedValue);
 
         if (is_object($match)) {
             $this->error(self::ERROR_OBJECT_FOUND, $value);

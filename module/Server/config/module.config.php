@@ -1,5 +1,7 @@
 <?php
 
+namespace Server;
+
 return array(
     'router' => array(
         'routes' => array(
@@ -11,21 +13,19 @@ return array(
                         'controller' => 'Server',
                         'action'     => 'index',
                     ),
-                     'may_terminate' => true,
-                     'child_routes' => array(
-                         
-                         'action' => array(
-                             'type' => 'segment',
-                             'options' => array(
-                                 'route' => '/[:action]/[:id]',
-                                 'constraints' => array(
-                                     'action' => '[a-zA-Z]+',
-                                     'id'     => '[0-9]+',
-                                 ),
-                             ),
-                             
-                         ),
-                     ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'action' => array(
+                        'type' => 'segment',
+                        'options' => array(
+                            'route' => '/[:action]/[:id]',
+                            'constraints' => array(
+                                'action' => '[a-zA-Z]+',
+                                'id'     => '[0-9]+',
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
@@ -55,6 +55,44 @@ return array(
             'orm_default' => array(
                 'drivers' => array(
                     'Server\Entity' => 'Server_Entities'
+                ),
+            ),
+        ),
+    ),
+    'translator' => array(
+        'translation_file_patterns' => array(
+            array(
+                'type'     => 'phpArray',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern'  => '%s.php',
+            ),
+        ),
+    ),
+    'navigation' => array(
+        'default' => array(
+            'Server' => array(
+                'type'          => 'mvc',
+                'label'         => 'SERVER',
+                'route'         => 'server/action',
+                'icon'          => 'fa-server',
+                'controller'    => 'Server',
+                'action'        => 'index',
+                'order'         => '10',
+                'pages'         => array(
+                    'index'     => array(
+                        'type'          => 'mvc',
+                        'label'         => 'SERVER_SUB_LIST',
+                        'route'         => 'server/action',
+                        'controller'    => 'Server',
+                        'action'        => 'index',
+                    ),
+                    'create'    => array(
+                        'type'          => 'mvc',
+                        'label'         => 'SERVER_SUB_CREATE',
+                        'route'         => 'server/action',
+                        'controller'    => 'Server',
+                        'action'        => 'create',
+                    ),
                 ),
             ),
         ),

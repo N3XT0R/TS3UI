@@ -1,30 +1,27 @@
 # 0.9.0
 
- * Minimum PHP version has been bumped to `5.3.23` [#376](https://github.com/doctrine/DoctrineModule/pull/376)
- * Minimum `zendframework/zendframework` version has been bumped to `2.3` [#376](https://github.com/doctrine/DoctrineModule/pull/376)
+ * Fixed intend in hydrator.md [#471](https://github.com/doctrine/DoctrineModule/pull/471)
+ * Allow symfony 3.0 [#477](https://github.com/doctrine/DoctrineModule/pull/477)
+ * Removed Travis build for 5.3 and added builds for 5.6 and 7.0 [#491](https://github.com/doctrine/DoctrineModule/pull/491)
+ * Fixed documentation for Example 4 [#486](https://github.com/doctrine/DoctrineModule/pull/486)
+ * Update year of license [#488](https://github.com/doctrine/DoctrineModule/pull/488)
+ * Standardize array configuration [#489](https://github.com/doctrine/DoctrineModule/pull/489)
+ * Fix #467 bypass value to validate message [#479](https://github.com/doctrine/DoctrineModule/pull/479)
+ * Adding doctrine/coding-standard to builds [#478](https://github.com/doctrine/DoctrineModule/pull/478)
+ * update hydrator s documentation url to current [#493](https://github.com/doctrine/DoctrineModule/pull/493)
+ * Added PredisCache support [#492](https://github.com/doctrine/DoctrineModule/pull/492)
+ * adding functionality to support custom attributes on value-options [#446](https://github.com/doctrine/DoctrineModule/pull/446)
+ * FormElement s options can be set individual [#452](https://github.com/doctrine/DoctrineModule/pull/452)
+ * Update module.config.php [#498](https://github.com/doctrine/DoctrineModule/pull/498)
+ * Implemented Optgroup functionality within Proxy element [#502](https://github.com/doctrine/DoctrineModule/pull/502)
+ * Removed check to allow zero-identifiers. [#459](https://github.com/doctrine/DoctrineModule/pull/459)
+ * Refactored tests for option_attributes [#505](https://github.com/doctrine/DoctrineModule/pull/505)
+ * Bump phpunit minimum version [#512](https://github.com/doctrine/DoctrineModule/pull/512)
 
 # 0.8.1
 
- * [#376](https://github.com/doctrine/DoctrineModule/pull/376) Bumping PHP and ZF2 dependencies, branch alias for master
- * [#378](https://github.com/doctrine/DoctrineModule/pull/378) PSR fixing.
- * [#381](https://github.com/doctrine/DoctrineModule/pull/381) Validator documentatin update
- * [#388](https://github.com/doctrine/DoctrineModule/pull/388) Added exception for missing required parameter for `find_method` option as
- * [#390](https://github.com/doctrine/DoctrineModule/pull/390) Clarified how to pass sort information.
- * [#395](https://github.com/doctrine/DoctrineModule/pull/395) Issue with objects being cast to array in validators
- * [#397](https://github.com/doctrine/DoctrineModule/pull/397) Enhancement: use exit code from run()
- * [#401](https://github.com/doctrine/DoctrineModule/pull/401) Reading Inconsistency
- * [#391](https://github.com/doctrine/DoctrineModule/pull/391) UniqueObject Validator * allowing composite identifiers from context or not
- * [#400](https://github.com/doctrine/DoctrineModule/pull/400) let zf2 console return exit status
- * [#404](https://github.com/doctrine/DoctrineModule/pull/404) Fix form elements
- * [#406](https://github.com/doctrine/DoctrineModule/pull/406) Fix context unique
- * [#421](https://github.com/doctrine/DoctrineModule/pull/421) Make DoctrineObject use AbstractHydrator s namingStrategy
- * [#426](https://github.com/doctrine/DoctrineModule/pull/426) update year in license
- * [#436](https://github.com/doctrine/DoctrineModule/pull/436) Fixing typo and updating paginator link to ZF 2.3
- * [#450](https://github.com/doctrine/DoctrineModule/pull/450) minor cs fix
- * [#458](https://github.com/doctrine/DoctrineModule/pull/458) Update doctrine*module.php
- * [#462](https://github.com/doctrine/DoctrineModule/pull/462) Adding custom Doctrine*Cli Commands
- * [#465](https://github.com/doctrine/DoctrineModule/pull/465) Re*enable scrutinizer*ci code coverage
- * [#453](https://github.com/doctrine/DoctrineModule/pull/453) phpdoc fixes
+ * Minimum PHP version has been bumped to `5.3.23` [#376](https://github.com/doctrine/DoctrineModule/pull/376)
+ * Minimum `zendframework/zendframework` version has been bumped to `2.3` [#376](https://github.com/doctrine/DoctrineModule/pull/376)
 
 # 0.8.0
 

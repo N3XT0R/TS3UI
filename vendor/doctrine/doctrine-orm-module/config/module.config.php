@@ -87,6 +87,9 @@ return array(
                 'datetime_functions' => array(),
                 'string_functions' => array(),
                 'numeric_functions' => array(),
+
+                // Second level cache configuration (see doc to learn about configuration)
+                'second_level_cache' => array()
             )
         ),
 
@@ -137,7 +140,7 @@ return array(
 
         // form annotation builder configuration
         'formannotationbuilder' => array(
-            // Configuration for service `doctrine.formannotation.orm_default` service
+            // Configuration for service `doctrine.formannotationbuilder.orm_default` service
             'orm_default' => array(),
         ),
 
@@ -177,6 +180,7 @@ return array(
             'status'   => array(),
             'version'  => array(),
             'diff'     => array(),
+            'latest'   => array()
         ),
     ),
 

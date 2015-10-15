@@ -1,5 +1,7 @@
 <?php
 
+namespace User;
+
 return array(
     'router' => array(
         'routes' => array(
@@ -116,6 +118,7 @@ return array(
                 'icon'          => 'fa-user',
                 'controller'    => 'User',
                 'action'        => 'index',
+                'order'         => '100',
                 'pages'         => array(
                     'index'     => array(
                         'type'          => 'mvc',

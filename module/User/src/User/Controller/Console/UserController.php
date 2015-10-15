@@ -12,7 +12,7 @@
 namespace User\Controller\Console;
 
 use Zend\Mvc\Controller\AbstractConsoleController;
-use Zend\View\Model\ViewModel;
+use Zend\Text\Figlet\Figlet;
 
 class UserController extends AbstractConsoleController{
     

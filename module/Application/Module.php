@@ -13,6 +13,7 @@ use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Validator\AbstractValidator;
 use Zend\Session\Config\SessionConfig;
+use Zend\I18n\Translator\Resources;
 
 class Module
 {
@@ -23,8 +24,14 @@ class Module
         $moduleRouteListener->attach($eventManager);
         
         $translator = $e->getApplication()->getServiceManager()->get('translator');
-        $translator->setLocale(\Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']))
-                   ->setFallbackLocale('de_DE');
+        $translator->addTranslationFilePattern(
+            'phpArray',
+            Resources::getBasePath(),
+            Resources::getPatternForValidator()
+        );
+        
+        $translator->setLocale($_SERVER['HTTP_ACCEPT_LANGUAGE'])
+                   ->setFallbackLocale('de');
         AbstractValidator::setDefaultTranslator($translator);
         
         $config = $e->getApplication()->getServiceManager()->get('config');
@@ -33,13 +40,11 @@ class Module
         $sessionConfig->setOptions($config['session']);
     }
 
-    public function getConfig()
-    {
+    public function getConfig(){
         return include __DIR__ . '/config/module.config.php';
     }
 
-    public function getAutoloaderConfig()
-    {
+    public function getAutoloaderConfig(){
         return array(
             'Zend\Loader\StandardAutoloader' => array(
                 'namespaces' => array(

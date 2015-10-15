@@ -4,7 +4,7 @@ Hydrators are simple objects that allow to convert an array of data to an object
 convert back an object to an array (this is called "extracting"). Hydrators are mainly used in the context of Forms,
 with the new binding functionality of Zend Framework 2, but can also be used for any hydrating/extracting context (for
 instance, it can be used in RESTful context). If you are not really comfortable with hydrators, please first
-read [Zend Framework hydrator's documentation](http://framework.zend.com/manual/2.0/en/modules/zend.stdlib.hydrator.html).
+read [Zend Framework hydrator's documentation](http://framework.zend.com/manual/current/en/modules/zend.stdlib.hydrator.html).
 
 
 ### Basic usage
@@ -123,7 +123,7 @@ class Appointment
 
     public function getId()
     {
-	return $this->id;
+        return $this->id;
     }
 
     public function setTime(DateTime $time)
@@ -195,7 +195,7 @@ class User
 
     public function getId()
     {
-	return $this->id;
+        return $this->id;
     }
 
     public function setUsername($username)

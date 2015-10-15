@@ -1,4 +1,4 @@
-#### How to Register Custom DQL Functions
+### How to Register Custom DQL Functions
 
 ```php
 return array(
@@ -12,35 +12,6 @@ return array(
         ),
     ),
 )
-```
-
-#### How to use Memcache
-
-```php
-'doctrine' => array(
-    'configuration' => array(
-        'orm_default' => array(
-            'metadata_cache'    => 'my_memcache',
-            'query_cache'       => 'my_memcache',
-            'result_cache'      => 'my_memcache',
-            'hydration_cache'   => 'my_memcache',
-        )
-    ),
-);
-```
-
-```php
-'service_manager' => array(
-    'factories' => array(
-        'doctrine.cache.my_memcache' => function ($sm) {
-            $cache = new \Doctrine\Common\Cache\MemcacheCache();
-            $memcache = new \Memcache();
-            $memcache->connect('localhost', 11211);
-            $cache->setMemcache($memcache);
-            return $cache;
-        },
-    ),
-),
 ```
 
 ### How to register type mapping
@@ -79,6 +50,46 @@ return array(
         ),
     )
 ),
+```
+
+### Option to set the doctrine type comment (DC2Type:myType) for custom types
+
+```php
+'doctrine' => array(
+    'connection' => array(
+        'orm_default' => array(
+            'doctrineCommentedTypes' => array(
+                'mytype'
+            ),
+        ),
+    ),
+),
+```
+
+### How to Define Relationships with Abstract Classes and Interfaces (ResolveTargetEntityListener)
+
+```php
+'doctrine' => array(
+    'entity_resolver' => array(
+        'orm_default' => array(
+            'resolvers' => array(
+                'Acme\\InvoiceModule\\Model\\InvoiceSubjectInterface', 'Acme\\CustomerModule\\Entity\\Customer'
+            )
+        )
+    )
+)
+```
+
+### Set a custom default repository
+
+```php
+'doctrine' => array(
+    'configuration' => array(
+        'orm_default' => array(
+            'default_repository_class_name' => 'MyCustomRepository'
+        )
+    )
+)
 ```
 
 ### How to Use Two Connections
@@ -166,7 +177,7 @@ public function getServiceConfig()
             'doctrine.driver.orm_crawler'               => new \DoctrineModule\Service\DriverFactory('orm_crawler'),
             'doctrine.eventmanager.orm_crawler'         => new \DoctrineModule\Service\EventManagerFactory('orm_crawler'),
             'doctrine.entity_resolver.orm_crawler'      => new \DoctrineORMModule\Service\EntityResolverFactory('orm_crawler'),
-            'doctrine.sql_logger_collector.orm_crawler' => new \DoctrineORMModule\Service\EntityResolverFactory('orm_crawler'),
+            'doctrine.sql_logger_collector.orm_crawler' => new \DoctrineORMModule\Service\SQLLoggerCollectorFactory('orm_crawler'),
 
             'DoctrineORMModule\Form\Annotation\AnnotationBuilder' => function(\Zend\ServiceManager\ServiceLocatorInterface $sl) {
                 return new \DoctrineORMModule\Form\Annotation\AnnotationBuilder($sl->get('doctrine.entitymanager.orm_crawler'));
@@ -174,4 +185,27 @@ public function getServiceConfig()
         ),
     );
 }
+```
+
+### How to Use Naming Strategy
+
+[Official documentation](http://doctrine-orm.readthedocs.org/en/latest/reference/namingstrategy.html)
+
+Zend Configuration
+
+```php
+return array(
+    'service_manager' => array(
+        'invokables' => array(
+            'Doctrine\ORM\Mapping\UnderscoreNamingStrategy' => 'Doctrine\ORM\Mapping\UnderscoreNamingStrategy',
+        ),
+    ),
+    'doctrine' => array(
+        'configuration' => array(
+            'orm_default' => array(
+                'naming_strategy' => 'Doctrine\ORM\Mapping\UnderscoreNamingStrategy'
+            ),
+        ),
+    ),
+);
 ```

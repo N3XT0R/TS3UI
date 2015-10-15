@@ -10,11 +10,8 @@ namespace User\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use User\Service\UserServiceInterface;
-use Zend\Console\Request as ConsoleRequest;
 use Zend\View\Model\ViewModel;
 use Zend\Http\PhpEnvironment\Response;
-use Zend\Http\Request as HttpRequest;
-use Zend\Text\Figlet\Figlet;
 
 class UserController extends AbstractActionController{
 
@@ -46,9 +43,9 @@ class UserController extends AbstractActionController{
         }
         
         $oPaginator = $this->getUserService()->getUserList(1, 15);
-        return array(
+        return new ViewModel(array(
             "oUserList" => $oPaginator,
-        );
+        ));
     }
     
     public function loginAction(){
@@ -71,9 +68,9 @@ class UserController extends AbstractActionController{
         $oForm = $this->getUserService()->getForm("login");
         
         
-        return array(
+        return new ViewModel(array(
             "oForm" => $oForm,
-        );
+        ));
     }
     
     public function logoutAction(){
@@ -91,7 +88,7 @@ class UserController extends AbstractActionController{
     }
     
     public function createAction(){
-        
+        return new ViewMOdel();
     }
     
     public function editAction(){
@@ -109,6 +106,6 @@ class UserController extends AbstractActionController{
         if($this->getUserService()->getAuthentication()->hasIdentity() == false){
             $this->layout("layout/login");
         }
-        return array();
+        return new ViewModel();
     }
 }

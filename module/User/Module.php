@@ -58,5 +58,4 @@ ConfigProviderInterface
         $form = $this->oServiceLocator->get('User\Form\\'.ucfirst($type));
         $userService->setForm($type, $form);
     }
-
 }
