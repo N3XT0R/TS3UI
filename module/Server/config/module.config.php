@@ -37,7 +37,8 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            'Server\Service\Server' => 'Server\Service\ServerServiceFactory',
+            'Server\Service\Server'         => 'Server\Service\ServerServiceFactory',
+            'Server\Form\Create'            => 'Server\Form\ServerCreateFormFactory',
         ),
     ),
      'view_manager' => array(

@@ -13,6 +13,7 @@
 namespace Server\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 use Server\Service\ServerService;
 
 class ServerController extends AbstractActionController{
@@ -36,5 +37,9 @@ class ServerController extends AbstractActionController{
     
     public function indexAction(){
         parent::indexAction();
+    }
+    
+    public function createAction(){
+        return new ViewModel();
     }
 }
