@@ -39,6 +39,7 @@ return array(
             //Forms
             'User\Form\Login'       => 'User\Form\LoginFormFactory',
             'User\Form\Edit'        => 'User\Form\EditFormFactory',
+            'User\Form\Create'      => 'User\Form\CreateFormFactory',
         ),
         'aliases' => array(
             'translator'                                => 'MvcTranslator',

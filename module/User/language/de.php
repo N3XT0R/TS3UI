@@ -10,4 +10,5 @@ return array(
     'USER_PASSWORD_RETYPE'          => 'Passwort wiederholen',
     'USER_LOGIN'                    => 'Login',
     'USER_ROLE'                     => 'Benutzerrolle',
+    'USER_CREATE'                   => 'Anlegen',
 );

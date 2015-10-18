@@ -88,7 +88,22 @@ class UserController extends AbstractActionController{
     }
     
     public function createAction(){
-        return new ViewMOdel();
+        $oForm = $this->getUserService()->getForm("Create");
+        
+        $oPRG = $this->prg(
+            $this->url()->fromRoute("user/action", array("action" => "create")), 
+            true
+        );
+        
+        if($oPRG instanceof Response){
+            return $oPRG;
+        }elseif($oPRG !== false){
+            
+        }
+        
+        return new ViewModel(array(
+            "oForm" => $oForm,
+        ));
     }
     
     public function editAction(){
