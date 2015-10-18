@@ -41,7 +41,8 @@ return array(
             'User\Form\Edit'        => 'User\Form\EditFormFactory',
         ),
         'aliases' => array(
-            'translator' => 'MvcTranslator',
+            'translator'                                => 'MvcTranslator',
+            'Zend\Authentication\AuthenticationService' => 'User\Auth\Service',
         ),
     ),
     'translator' => array(

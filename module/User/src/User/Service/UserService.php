@@ -30,11 +30,51 @@ EventManagerAwareInterface
     protected $entityRepository;
     protected $eventManager;
     protected $form = array();
+    protected $aMessages = array();
     
     public function __construct(AuthenticationServiceInterface $authentication, EntityManager $entityManager) {
         $this->setAuthentication($authentication);
         $this->setEntityManager($entityManager);
     }
+    
+    /**
+     * Add new Message
+     * @param string $sType Type of Message (e.g. error, info, success)
+     * @param string $sMessage Message
+     * @return \User\Service\UserService
+     */
+    public function addMessage($sType, $sMessage){
+        $this->aMessages[$sType] = $sMessage;
+        return $this;
+    }
+    
+    /**
+     * Set multiple Messages
+     * @param array $aMessages
+     * @return \User\Service\UserService
+     */
+    public function setMessages(array $aMessages){
+        $this->aMessages = $aMessages;
+        return $this;
+    }
+    
+    /**
+     * Get Messages
+     * @return array
+     */
+    public function getMessages(){
+        return $this->aMessages;
+    }
+    
+    /**
+     * Clean Messages
+     * @return \User\Service\UserService
+     */
+    public function cleanMessages(){
+        $this->aMessages = array();
+        return $this;
+    }
+    
     /**
      * 
      * @return EntityManager
@@ -138,6 +178,7 @@ EventManagerAwareInterface
             $this->getEntityManager()->flush();
             $id = $oUser->getId();
         } catch (ORMException $ex) {
+            $this->addMessage("error", $ex->getMessage());
             return false;
         }
         
