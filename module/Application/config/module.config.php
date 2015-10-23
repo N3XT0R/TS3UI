@@ -24,7 +24,7 @@ return array(
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
             // using the path /application/:controller/:action
-            'application' => array(
+            /*'application' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/dashboard',
@@ -47,8 +47,8 @@ return array(
                             ),
                         ),
                     ),
-                ),
-            ),
+                )
+            ),*/
         ),
     ),
     'controllers' => array(
@@ -62,7 +62,7 @@ return array(
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
         'factories' => array(
-            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+            //'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
         'aliases' => array(
             'translator' => 'MvcTranslator',
@@ -76,16 +76,6 @@ return array(
                 'base_dir' => __DIR__ . '/../language',
                 'pattern'  => '%s.php',
             ),
-           array(
-                'type' => 'phpArray',
-                'base_dir' => 'vendor/zendframework/zendframework/resources/languages',
-                'pattern' => '%s/Zend_Captcha.php',
-            ),
-            array(
-                'type' => 'phpArray',
-                'base_dir' => 'vendor/zendframework/zendframework/resources/languages',
-                'pattern' => '%s/Zend_Validate.php',
-            ),
         ),
     ),
     'view_manager' => array(
@@ -96,7 +86,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'layout/login'            => __DIR__ . '/../view/layout/login.phtml',
+            //'layout/login'            => __DIR__ . '/../view/layout/login.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
@@ -111,6 +101,7 @@ return array(
             'pageTitle'    => 'Application\View\Helper\PageTitle',
         ),
     ),
+    /*
     'acl' => array(
         'Admin' => array(
             'Dashboard' => array(
@@ -122,7 +113,7 @@ return array(
                 'allow' => null,
             ),
         ),
-    ),
+    ),*/
     'navigation'    => array(
         'default'   => array(
            "application" => array(
