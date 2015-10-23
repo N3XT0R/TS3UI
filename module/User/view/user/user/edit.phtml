@@ -1,0 +1,14 @@
+<?php
+
+$this->PageTitle("USER_EDIT_PROFILE");
+
+$sAction = $this->url("user/action", array("action" => "edit"));
+$this->oForm->setAttribute("action", $sAction);
+
+echo $this->losForm()->openTag($this->oForm);
+echo $this->losFormRow($this->oForm->get("token"));
+echo $this->losFormRow($this->oForm->get("id"));
+echo $this->losFormRow($this->oForm->get("password"));
+echo $this->losFormRow($this->oForm->get("retype_password"));
+echo $this->losFormRow($this->oForm->get("submit")->setAttribute("class", "btn-success"));
+echo $this->losForm()->closeTag();

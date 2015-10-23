@@ -7,15 +7,13 @@
  */
 
 namespace User;
-
-use BjyAuthorize\View\RedirectionStrategy;
+use User\Listener\UserListener;
 use Zend\EventManager\EventInterface;
 
 class Module {
     
-    public function onBootstrap(EventInterface $e) 
-    {
-        
+    public function onBootstrap(EventInterface $e){
+        $e->getApplication()->getEventManager()->attachAggregate(new UserListener());
     }
     
     public function getConfig(){

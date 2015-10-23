@@ -1,5 +1,21 @@
 <?php
 return array(
+    'router' => array(
+        'routes' => array(
+            'zfcuser' => array(
+                'edit' => array(
+                    'type' => 'Literal',
+                    'options' => array(
+                        'route' => '/edit',
+                        'defaults' => array(
+                            'controller' => 'user',
+                            'action'     => 'edit',
+                        ),
+                    ),
+                ),
+            ),
+        ),
+    ),
     'doctrine' => array(
         'driver' => array(
             // overriding zfc-user-doctrine-orm's config
