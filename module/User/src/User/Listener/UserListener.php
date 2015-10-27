@@ -36,10 +36,11 @@ class UserListener implements ListenerAggregateInterface{
     public function changeLayout(EventInterface $e){
         /* @var $oServiceManager \Zend\ServiceManager\ServiceManager */
         $oServiceManager = $e->getApplication()->getServiceManager();
-        /* @var $oAcl \User\Acl\Service */
-        $oAcl = $oServiceManager->get("User\Acl\Service");
-        if($oAcl->getRole() == "guest"){
-            //$e->getResponse()->setRedirect("/user");
+        /* @var $oAcl \BjyAuthorize\Provider\Identity\ProviderInterface */
+        $oProvider = $oServiceManager->get("BjyAuthorize\Provider\Identity\ProviderInterface");
+        $aRoles    = $oProvider->getIdentityRoles();
+        
+        if(in_array("guest", $aRoles)){
             $viewModel = $e->getViewModel();
             $viewModel->setTemplate("layout/login.phtml");
         }
