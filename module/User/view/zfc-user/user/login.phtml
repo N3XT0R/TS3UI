@@ -1,0 +1,34 @@
+<?php
+/**
+ * @property \Zend\Form\Form $oForm 
+ */
+$oForm = $this->loginForm;
+?>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><?php echo $this->translate("Please Sign In");?></h3>
+            </div>
+            <div class="panel-body">
+                <?php
+                    
+                    $sAction = $this->url('zfcuser/login');
+                    $oForm->setAttribute("action", $sAction);
+
+                    echo $this->losForm()->openTag($oForm);
+                    echo $this->losFormRow($oForm->get("identity"));
+                    echo $this->losFormRow($oForm->get("credential"));
+                    echo $this->losFormRow($oForm->get("submit")->setAttribute("class", "btn-block btn-success"));
+                
+                if ($this->redirect){
+                ?>
+                <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+                <?php
+                }
+                    echo $this->losForm()->closeTag();
+                ?>
+            </div>
+        </div>
+    </div>
+</div>

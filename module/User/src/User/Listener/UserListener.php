@@ -21,7 +21,7 @@ class UserListener implements ListenerAggregateInterface{
     
     public function attach(EventManagerInterface $events) {
         $this->listeners[] = $events->attach(
-            MvcEvent::EVENT_DISPATCH_ERROR, array($this, "changeLayout"), 98
+            MvcEvent::EVENT_DISPATCH, array($this, "changeLayout"), 98
         );
     }
 
@@ -39,7 +39,6 @@ class UserListener implements ListenerAggregateInterface{
         /* @var $oAcl \BjyAuthorize\Provider\Identity\ProviderInterface */
         $oProvider = $oServiceManager->get("BjyAuthorize\Provider\Identity\ProviderInterface");
         $aRoles    = $oProvider->getIdentityRoles();
-        
         if(in_array("guest", $aRoles)){
             $viewModel = $e->getViewModel();
             $viewModel->setTemplate("layout/login.phtml");

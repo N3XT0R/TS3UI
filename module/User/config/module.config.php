@@ -30,6 +30,11 @@ return array(
             ),
         ),
     ),
+    'view_manager' => array(
+        'template_path_stack' => array(
+            'zfc-user' => __DIR__ . '/../view',
+        ),
+    ),
     'zfcuser' => array(
         // telling ZfcUser to use our own class
         'user_entity_class'       => 'User\Entity\User',

@@ -2,6 +2,7 @@
 /**
  * @property \Zend\Form\Form $oForm 
  */
+$this->oForm = $this->loginForm;
 ?>
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
@@ -12,7 +13,7 @@
             <div class="panel-body">
                 <?php
                     
-                    $sAction = $this->url("user/action", array("action" => "login"));
+                    $sAction = $this->url('zfcuser/login');
                     $this->oForm->setAttribute("action", $sAction);
 
                     echo $this->losForm()->openTag($this->oForm);

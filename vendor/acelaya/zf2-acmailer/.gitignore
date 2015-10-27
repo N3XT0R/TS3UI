@@ -1,0 +1,7 @@
+# Tests config
+config/mail.global.php
+
+# Build
+build
+vendor
+composer.lock
