@@ -37,7 +37,7 @@ return array(
         'enable_default_entities' => false,
     ),
     'bjyauthorize' => array(
-        //'unauthorized_strategy' => 'BjyAuthorize\View\RedirectionStrategy',
+        'unauthorized_strategy' => 'BjyAuthorize\View\RedirectionStrategy',
         // Using the authentication identity provider, which basically reads the roles from the auth service's identity
         'identity_provider'     => 'BjyAuthorize\Provider\Identity\AuthenticationIdentityProvider',
         'role_providers'        => array(
