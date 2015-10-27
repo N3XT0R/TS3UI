@@ -28,6 +28,7 @@ return array(
             'BjyAuthorize\Provider\Resource\Config' => array(
                 'administrator' => array(),
                 'zfcuser'       => array('login'),
+                'DoctrineORMModule\\Yuml\\YumlController' => array('index'),
                 //'pants' => array(),
             ),
         ),
@@ -44,6 +45,7 @@ return array(
                     // the "wear" privilege on the resource "pants",
                     
                     array(array('administrator'), 'administrator'),
+                    array(array('guest'), 'DoctrineORMModule\\Yuml\\YumlController'),
                 ),
                 // Don't mix allow/deny rules if you are using role inheritance.
                 // There are some weird bugs.
@@ -87,7 +89,12 @@ return array(
                     'route' => 'zfcuser/changeemail',  
                     'roles' => array('user')
                 ),
+                array(
+                    'route' => 'doctrine_orm_module_yuml',
+                    'roles' => array('user', 'guest')
+                ),
             ),
+            
         ),
     ),
 );
