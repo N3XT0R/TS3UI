@@ -17,9 +17,9 @@ $oForm = $this->loginForm;
                     $oForm->setAttribute("action", $sAction);
 
                     echo $this->losForm()->openTag($oForm);
-                    echo $this->losFormRow($oForm->get("identity"));
-                    echo $this->losFormRow($oForm->get("credential"));
-                    echo $this->losFormRow($oForm->get("submit")->setAttribute("class", "btn-block btn-success"));
+                    echo $this->losFormRow($oForm->get("identity"), false);
+                    echo $this->losFormRow($oForm->get("credential"), false);
+                    echo $this->losFormRow($oForm->get("submit")->setAttribute("class", "btn-block btn-success"), false);
                 
                 if ($this->redirect){
                 ?>
