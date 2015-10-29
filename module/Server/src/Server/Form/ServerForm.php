@@ -50,7 +50,7 @@ class ServerForm extends Form{
     public function addPortElement($name = "port", $label = "SERVER_FORM_PORT"){
         $oElement = new Number($name);
         $oElement->setLabel($label);
-        $oElement->setAttribute("placeholder", 9987);
+        $oElement->setAttribute("placeholder", 10011);
         $this->add($oElement);
     }
     
