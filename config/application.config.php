@@ -6,11 +6,13 @@ return array(
         'ZendDeveloperTools',
         'DoctrineModule',
         'DoctrineORMModule',
+        'DoctrineDataFixtureModule',
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
         'BjyAuthorize',
         'LosUi',
+        //Application:
         'User',
         'TSCore',
         'Server',

@@ -10,3 +10,24 @@ Web based Management Interface for Teamspeakservers.
 
 ## Notice
 Currently is this Project under development. Do not try to install it.
+
+---------
+
+## Installation
+
+### Install Composer 
+
+```
+php composer.phar self-update
+php composer.phar install
+```
+
+### Create Database & Import Data
+
+```
+./vendor/bin/doctrine-module orm:schema-tool:drop --force
+./vendor/bin/doctrine-module orm:schema-tool:create
+./vendor/bin/doctrine-module orm:validate-schema
+./vendor/bin/doctrine-module orm:generate:proxies
+./vendor/bin/doctrine-module data-fixture:import
+```

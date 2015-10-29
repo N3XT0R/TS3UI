@@ -1,4 +1,6 @@
 <?php
+Namespace User;
+
 return array(
     'router' => array(
         'routes' => array(
@@ -21,7 +23,7 @@ return array(
             // overriding zfc-user-doctrine-orm's config
             'zfcuser_entity' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'paths' => __DIR__ . '/../src/User/Entity',
+                'paths' => __DIR__ . '/../src/'.__NAMESPACE__.'/Entity',
             ),
             'orm_default' => array(
                 'drivers' => array(
@@ -54,5 +56,7 @@ return array(
         ),
         
     ),
-    
+    'data-fixture' => array(
+        __NAMESPACE__.'_fixture' => __DIR__.'/../src/'.__NAMESPACE__.'/Fixture',
+    ),
 );
