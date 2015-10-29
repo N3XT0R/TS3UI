@@ -11,30 +11,24 @@
 
 namespace Server\Mapper;
 
-use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Server\Entity\Server;
+use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 
 class ServerMapper implements ServerMapperInterface{
     
     protected $oServerRepository;
+    protected $oEntityManager;
     
-    /**
-     * Set Server-Repository
-     * @param EntityRepository $oServerRepository
-     * @return \Server\Service\ServerService
-     */
-    public function setServerRepository(EntityRepository $oServerRepository){
-        $this->oServerRepository = $oServerRepository;
+    public function setEntityManager(EntityManagerInterface $oEntityManager){
+        $this->oEntityManager = $oEntityManager;
         return $this;
     }
     
-    /**
-     * Get Server-Repository
-     * @return EntityRepository
-     */
-    public function getServerRepository(){
-        return $this->oServerRepository;
+    public function getEntityManager(){
+        return $this->oEntityManager;
     }
+    
     
     /**
      * Get single Server-Entity
@@ -42,14 +36,28 @@ class ServerMapper implements ServerMapperInterface{
      * @return Server
      */
     public function getOneById($id){
-        $oRepository = $this->getServerRepository();
+        $oEM = $this->getEntityManager();
+        $oRepository = $oEM->getRepository("Server\Entity\Server");
+        
         /* @var $oServer ServerEntity */
         $oServer     = $oRepository->findOneBy(array("serverID" => $id));
         return $oServer;
     }
 
+    /**
+     * Create new Server
+     * @param array $data
+     * @return Server
+     */
     public function create(array $data) {
+        $oEM = $this->getEntityManager();
+        $oHydrator = new DoctrineHydrator($oEM);
+        $oServer = $oHydrator->hydrate($data, new Server());
         
+        $oEM->persist($oServer);
+        $oEM->flush();
+        
+        return $oServer;
     }
 
     public function delete($id) {

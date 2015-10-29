@@ -19,9 +19,8 @@ class ServerMapperFactory implements FactoryInterface{
     public function createService(ServiceLocatorInterface $serviceLocator) {
         /* @var $oEM \Doctrine\ORM\EntityManager */
         $oEM     = $serviceLocator->get("Doctrine\ORM\EntityManager");
-        $oRepo   = $oEM->getRepository("Server\Entity\Server");
         $oMapper = new ServerMapper();
-        $oMapper->setServerRepository($oRepo);
+        $oMapper->setEntityManager($oEM);
         return $oMapper;
     }
 

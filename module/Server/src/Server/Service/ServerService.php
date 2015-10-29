@@ -95,18 +95,43 @@ class ServerService extends EventProvider{
      */
     public function getForm($sType){
         $oForm = null;
-        if(array_key_exists($sType, $this->aForms)){
-            $oForm = $this->aForms[$sType];
+        if (!isset($this->aForms[$type])){
+            $this->getEventManager()->trigger(
+                'setForm', __CLASS__, array('type' => $type)
+            );
         }
-        return $oForm;
+        return $this->aForms[$type];
     }
 
     public function save(array $data, $id){
         
+        
     }
     
+    /**
+     * Create a new dedicated Server
+     * @param array $data Input data
+     * @return \Server\Entity\Server|null
+     */
     public function create(array $data){
+        $oServer    = null;
+        $oForm      = $this->getForm("ServerCreate");
+        $oForm->setData($data);
         
+        if(!$oForm->isValid()){
+            return false;
+        }
+        
+        $oMapper    = $this->getServerMapper();
+        
+        try{
+            $oServer    = $oMapper->create($oForm->getData());
+            $this->addMessage("success", "SERVER_CREATE_SUCCESS");
+        } catch (\Exception $ex) {
+            $this->addMessage("success", "SERVER_CREATE_FAILED");
+        }
+        
+        return $oServer;
     }
 
 }

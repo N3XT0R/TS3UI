@@ -11,23 +11,11 @@
 
 namespace Server\Mapper;
 
-use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Server\Entity\Server;
 
 interface ServerMapperInterface {
     
-    /**
-     * Set Server-Repository
-     * @param EntityRepository $oServerRepository
-     * @return \Server\Service\ServerService
-     */
-    public function setServerRepository(EntityRepository $oServerRepository);
-    
-    /**
-     * Get Server-Repository
-     * @return EntityRepository
-     */
-    public function getServerRepository();
     
     /**
      * Get single Server-Entity
