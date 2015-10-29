@@ -47,4 +47,21 @@ class ServerMapper implements ServerMapperInterface{
         $oServer     = $oRepository->findOneBy(array("serverID" => $id));
         return $oServer;
     }
+
+    public function create(array $data) {
+        
+    }
+
+    public function delete($id) {
+        
+    }
+
+    public function getServers($blPagination, $aFilter = array()) {
+        
+    }
+
+    public function update(array $data, $id) {
+        
+    }
+
 }

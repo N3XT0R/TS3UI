@@ -41,7 +41,6 @@ return array(
             'Server\Mapper\Server'          => 'Server\Mapper\ServerMapperFactory',
             //Service
             'Server\Service\Server'         => 'Server\Service\ServerServiceFactory',
-            
             //Form
             'Server\Form\Create'            => 'Server\Form\ServerCreateFormFactory',
         ),

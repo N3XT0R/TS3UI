@@ -35,4 +35,12 @@ interface ServerMapperInterface {
      * @return Server
      */
     public function getOneById($id);
+    
+    public function getServers($blPagination, $aFilter = array());
+    
+    public function update(array $data, $id);
+    
+    public function create(array $data);
+    
+    public function delete($id);
 }

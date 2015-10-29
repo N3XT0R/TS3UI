@@ -15,6 +15,7 @@ use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\EventManager\EventInterface;
+use Server\Listener\FormListener;
 
 class Module implements
 BootstrapListenerInterface,
@@ -37,7 +38,8 @@ ConfigProviderInterface
     }
 
     public function onBootstrap(EventInterface $e) {
-        
+        $eventManager = $e->getTarget()->getEventManager();
+        $eventManager->attach(new FormListener());
     }
 
 }
