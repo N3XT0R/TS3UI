@@ -50,7 +50,9 @@ php ./public/index.php assetmanager warmup
 The Default Credentials for the Application are:
 
 Email: 
+
 admin@example.com
 
 Password:
+
 Administrator
