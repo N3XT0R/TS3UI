@@ -19,7 +19,7 @@ return array(
                     'action' => array(
                         'type' => 'segment',
                         'options' => array(
-                            'route' => '/[:action]/[:id]',
+                            'route' => '/[:action][/:id]',
                             'constraints' => array(
                                 'action' => '[a-zA-Z]+',
                                 'id'     => '[0-9]+',
@@ -129,8 +129,8 @@ return array(
              */
             'BjyAuthorize\Guard\Route' => array(
                 array(
-                    'route' => 'server',
-                    'roles' => array('User'),
+                    'route' => 'server/action',
+                    'roles' => array('User', 'Administrator'),
                 ),
             ),
         ),
@@ -138,9 +138,7 @@ return array(
         // in the ACL. like roles, they can be hierarchical
         'resource_providers' => array(
             'BjyAuthorize\Provider\Resource\Config' => array(
-                'Administrator' => array(),
                 'Server'       => array('index', 'create'),
-                //'pants' => array(),
             ),
         ),
     ),

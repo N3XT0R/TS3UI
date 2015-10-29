@@ -27,7 +27,7 @@ foreach($this->container as $sKey => $oPage){
             if($oSubPage->isVisible() && $this->IsAllowed($oSubPage->getController(), $oSubPage->getAction()) == true){
             ?>
         <li>
-            <a href="<?php echo $oSubPage->getHref();?>"><?php echo $this->translate($oSubPage->getLabel());?></a>
+            <a href="<?php echo $oSubPage->getHref();?>" <?php if($oSubPage->isActive()){echo 'class="active"'; } ?>><?php echo $this->translate($oSubPage->getLabel());?></a>
         </li>
             <?php
             }
