@@ -11,16 +11,19 @@
 
 namespace Server\Mapper;
 
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManager;
 use Server\Entity\Server;
 use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
+use Zend\Paginator\Paginator;
 
 class ServerMapper implements ServerMapperInterface{
     
     protected $oServerRepository;
     protected $oEntityManager;
     
-    public function setEntityManager(EntityManagerInterface $oEntityManager){
+    public function setEntityManager(EntityManager $oEntityManager){
         $this->oEntityManager = $oEntityManager;
         return $this;
     }
@@ -64,8 +67,28 @@ class ServerMapper implements ServerMapperInterface{
         
     }
 
-    public function getServers($blPagination, $aFilter = array()) {
+    /**
+     * 
+     * @param bool $blPagination
+     * @param array $aFilter
+     * @return Paginator|array
+     */
+    public function getServers($blPagination, array $aFilter = array()) {
+        $oEM    = $this->getEntityManager();
+        $oRepo  = $oEM->getRepository("Server\Entity\Server");
+        $oQB    = $oRepo->createQueryBuilder("s");
         
+        $oQuery = $oQB->getQuery();
+        
+        if($blPagination){
+            $oORMPaginator  = new ORMPaginator($oQuery);
+            $oAdapter       = new DoctrineAdapter($oORMPaginator);
+            $oResult        = new Paginator($oAdapter);
+        }else{
+            $oResult = $oQuery->getResult();
+        }
+        
+        return $oResult;
     }
 
     public function update(array $data, $id) {

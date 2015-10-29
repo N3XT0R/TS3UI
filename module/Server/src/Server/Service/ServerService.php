@@ -132,5 +132,16 @@ class ServerService extends EventProvider{
         
         return $oServer;
     }
+    
+    /**
+     * 
+     * @param bool $blPagination
+     * @param array $aFilter
+     * @return \Zend\Paginator\Paginator|array
+     */
+    public function fetchServers(array $aFilter = array()){
+        $oResult = $this->getServerMapper()->getServers(true, $aFilter);
+        return $oResult;
+    }
 
 }

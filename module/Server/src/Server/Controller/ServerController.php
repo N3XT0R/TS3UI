@@ -37,7 +37,15 @@ class ServerController extends AbstractActionController{
     
     
     public function indexAction(){
-        parent::indexAction();
+        $page   = (int)$this->params()->fromQuery("page", 0);
+        
+        
+        $aServers = $this->getServerService()->fetchServers(array());
+        $aServers->setCurrentPageNumber($page);
+        
+        return new ViewModel(array(
+            "aServers" => $aServers,
+        ));
     }
     
     public function createAction(){

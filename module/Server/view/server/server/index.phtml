@@ -1,7 +1,37 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><?php echo $this->translate("SERVER_FORM_HOSTNAME");?></th>
+                <th><?php echo $this->translate("SERVER_FORM_PORT");?></th>
+                <th><?php echo $this->translate("SERVER_ACTION");?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                if(count($aServers) > 0 ){
+                    /* @var $aServers \Server\Entity\Server[] */
+                    foreach($aServers as $oServer){
+            ?>
+            <tr>
+                <td><?php echo $oServer->getServer(); ?></td>
+                <td><?php echo $oServer->getPort(); ?></td>
+                <td><?php echo $oServer->getServerID(); ?></td>
+            </tr>
+            <?php
+                    }
+                }else{
+            ?>
+            <tr>
+                <td colspan="3" class="text-center text-muted"><?php echo $this->translate("SERVER_NO_RECORD");?></td>
+            </tr>
+            <?php
+                }
+            ?>
+        </tbody>
+    </table>
+</div>
 <?php
 
-/* 
- * Here comes the text of your license
- * Each line should be prefixed with  * 
- */
+echo $this->losPaginationControl($aServers);
 

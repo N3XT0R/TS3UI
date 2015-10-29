@@ -11,7 +11,6 @@
 
 namespace Server\Mapper;
 
-use Doctrine\ORM\EntityManagerInterface;
 use Server\Entity\Server;
 
 interface ServerMapperInterface {
@@ -24,7 +23,13 @@ interface ServerMapperInterface {
      */
     public function getOneById($id);
     
-    public function getServers($blPagination, $aFilter = array());
+    /**
+     * 
+     * @param bool $blPagination
+     * @param array $aFilter
+     * @return Paginator|array
+     */
+    public function getServers($blPagination, array $aFilter = array());
     
     public function update(array $data, $id);
     

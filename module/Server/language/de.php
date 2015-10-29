@@ -11,6 +11,7 @@
 
 return array(
     'SERVER'                        => 'Server',
+    'SERVER_ACTION'                 => 'Aktion',
     'SERVER_SUB_LIST'               => 'Server verwalten',
     'SERVER_SUB_CREATE'             => 'Server anlegen',
     'SERVER_CREATE_INFO'            => 'In diesem Schritt können neue dedizierte Server hinzugefügt werden. Die hier erwarteten Zugangsdaten sind die ServerQuery-Daten.',
@@ -19,5 +20,6 @@ return array(
     'SERVER_FORM_HOSTNAME'          => 'IP-Adresse/Hostname',
     'SERVER_FORM_PORT'              => 'Query-Port',
     'SERVER_FORM_SAVE'              => 'Speichern',
+    'SERVER_NO_RECORD'              => 'Keine Einträge verfügbar',
 );
 
