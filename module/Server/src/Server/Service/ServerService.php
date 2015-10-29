@@ -94,13 +94,12 @@ class ServerService extends EventProvider{
      * @return \Zend\Form\FormInterface
      */
     public function getForm($sType){
-        $oForm = null;
         if (!isset($this->aForms[$sType])){
             $this->getEventManager()->trigger(
                 'setForm', __CLASS__, array('type' => $sType)
             );
         }
-        return $this->aForms[$type];
+        return $this->aForms[$sType];
     }
 
     public function save(array $data, $id){
