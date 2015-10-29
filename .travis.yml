@@ -17,9 +17,10 @@ before_script:
     - ./vendor/bin/doctrine-module orm:validate-schema
     - ./vendor/bin/doctrine-module orm:generate:proxies
     - ./vendor/bin/doctrine-module data-fixture:import
-    - sed -i "s|{username}|$USERNAME|" ./config/autoload/global.php
-    - sed -i "s|{server}|$SERVER|" ./config/autoload/global.php
-    - sed -i "s|{password}|$KEY|" ./config/autoload/global.php
+    - php ./public/index.php assetmanager warmup
+    - sed -i "s|{username}|$USERNAME|" ./config/autoload/teamspeak.global.php
+    - sed -i "s|{server}|$SERVER|" ./config/autoload/teamspeak.global.php
+    - sed -i "s|{password}|$KEY|" ./config/autoload/teamspeak.global.php
     
 
 script:
