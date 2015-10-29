@@ -3,6 +3,10 @@
  * @property \Zend\Form\Form $oForm 
  */
 $oForm = $this->loginForm;
+$oForm->prepare();
+$oForm->setAttribute('action', $this->url('zfcuser/login'));
+$oForm->setAttribute('method', 'post');
+$oForm->setAttribute('autocomplete', 'off');
 ?>
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
@@ -12,20 +16,16 @@ $oForm = $this->loginForm;
             </div>
             <div class="panel-body">
                 <?php
-                    
-                    $sAction = $this->url('zfcuser/login');
-                    $oForm->setAttribute("action", $sAction);
-
                     echo $this->losForm()->openTag($oForm);
                     echo $this->losFormRow($oForm->get("identity"), false);
                     echo $this->losFormRow($oForm->get("credential"), false);
                     echo $this->losFormRow($oForm->get("submit")->setAttribute("class", "btn-block btn-success"), false);
                 
-                if ($this->redirect){
-                ?>
-                <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
-                <?php
-                }
+                    if ($this->redirect){
+                    ?>
+                        <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+                    <?php
+                    }
                     echo $this->losForm()->closeTag();
                 ?>
             </div>

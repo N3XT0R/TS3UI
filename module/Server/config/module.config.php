@@ -75,7 +75,7 @@ return array(
                 'type'          => 'mvc',
                 'label'         => 'SERVER',
                 'route'         => 'server/action',
-                'icon'          => 'fa-server',
+                'icon'          => 'fa-server fa-fw',
                 'controller'    => 'Server',
                 'action'        => 'index',
                 'order'         => '10',
@@ -131,6 +131,10 @@ return array(
                 array(
                     'route' => 'server/action',
                     'roles' => array('User', 'Administrator'),
+                ),
+                array(
+                    'route' => 'Assetmanager-warmup',
+                    'roles' => array('User', 'Administrator', 'Guest', null),
                 ),
             ),
         ),

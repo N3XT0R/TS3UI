@@ -31,3 +31,9 @@ php composer.phar install
 ./vendor/bin/doctrine-module orm:generate:proxies
 ./vendor/bin/doctrine-module data-fixture:import
 ```
+
+### Generate Assets
+
+```
+php ./public/index.php assetmanager warmup
+```

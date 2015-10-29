@@ -1,5 +1,7 @@
 <?php
-return array(
+
+use Zend\Console\Console;
+$config = array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
         'Application',
@@ -12,6 +14,7 @@ return array(
         'ZfcUserDoctrineORM',
         'BjyAuthorize',
         'LosUi',
+        'AssetManager',
         //Application:
         'User',
         'TSCore',
@@ -75,3 +78,9 @@ return array(
    // Should be compatible with Zend\ServiceManager\Config.
    // 'service_manager' => array(),
 );
+
+if (Console::isConsole()) {
+    array_splice($config['modules'],array_search('BjyAuthorize',$config['modules']),1);
+}
+
+return $config;

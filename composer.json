@@ -19,6 +19,9 @@
         "bjyoungblood/bjy-authorize": "1.4.*",
         "zf-commons/zfc-user-doctrine-orm": "^1.0",
         "acelaya/zf2-acmailer": "5.0.*",
-        "hounddog/doctrine-data-fixture-module": "dev-master"
+        "hounddog/doctrine-data-fixture-module": "dev-master",
+        "twbs/bootstrap": "3.3.*",
+        "fortawesome/font-awesome": "4.4.*",
+        "rwoverdijk/assetmanager": "^1.4"
     }
 }

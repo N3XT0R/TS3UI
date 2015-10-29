@@ -85,7 +85,7 @@ return array(
                'route'          => 'home',
                'controller'     => 'Dashboard',
                'action'         => 'index',
-               'icon'           => 'fa fa-dashboard fa-fw',
+               'icon'           => 'fa-dashboard fa-fw',
            ),
         ),
     ),

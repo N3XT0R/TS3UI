@@ -14,15 +14,18 @@ use Zend\EventManager\EventInterface;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\Mvc\MvcEvent;
+use Zend\Console\Console;
 
 class UserListener implements ListenerAggregateInterface{
     
     protected $listeners = array();
     
     public function attach(EventManagerInterface $events) {
-        $this->listeners[] = $events->attach(
-            MvcEvent::EVENT_DISPATCH, array($this, "changeLayout"), 98
-        );
+        if(!Console::isConsole()){
+            $this->listeners[] = $events->attach(
+                MvcEvent::EVENT_DISPATCH, array($this, "changeLayout"), 98
+            );
+        }
     }
 
     public function detach(EventManagerInterface $events) {

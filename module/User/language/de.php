@@ -11,4 +11,20 @@ return array(
     'USER_LOGIN'                    => 'Login',
     'USER_ROLE'                     => 'Benutzerrolle',
     'USER_CREATE'                   => 'Anlegen',
+    //ZFCUser Overrides
+    'Username'                      => 'Benutzername',
+    'Password'                      => 'Passwort',
+    'Password Verify'               => 'Passwort wiederholen',
+    'Current Password'              => 'Aktuelles Passwort',
+    'Verify New Password'           => 'Neues Passwort wiederholen',
+    'New Password'                  => 'Neues Passwort',
+    'Submit'                        => 'Absenden',
+    'Sign In'                       => 'Anmelden',
+    'Register'                      => 'Registrieren',
+    'Please Sign In'                => 'Login',
+    'No record matching the input was found'    => 'Kein Eintrag gefunden.',
+    'A record matching the input was found'     => 'Eintrag gefunden.',
+    'Authentication failed. Please try again.'  => 'Login fehlgeschlagen.',
+    'Please type the following text'            => 'Bitte Schreiben Sie folgenden Text',
+
 );
