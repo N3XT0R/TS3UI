@@ -46,6 +46,15 @@ return array(
         // telling ZfcUserDoctrineORM to skip the entities it defines
         'enable_default_entities' => false,
     ),
+    'translator' => array(
+        'translation_file_patterns' => array(
+            array(
+                'type'     => 'phpArray',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern'  => '%s.php',
+            ),
+        ),
+    ),
     'bjyauthorize' => array(
         'unauthorized_strategy' => 'BjyAuthorize\View\RedirectionStrategy',
         // Using the authentication identity provider, which basically reads the roles from the auth service's identity

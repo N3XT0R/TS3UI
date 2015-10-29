@@ -11,8 +11,11 @@ namespace Application;
 
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\BootstrapListenerInterface;
+use Zend\EventManager\EventInterface;
+use Zend\Validator\AbstractValidator;
 
-class Module implements ConfigProviderInterface, AutoloaderProviderInterface
+class Module implements ConfigProviderInterface, AutoloaderProviderInterface, BootstrapListenerInterface
 {
 
     public function getConfig(){
@@ -28,4 +31,11 @@ class Module implements ConfigProviderInterface, AutoloaderProviderInterface
             ),
         );
     }
+
+    public function onBootstrap(EventInterface $e) {
+        $serviceManager = $e->getApplication()->getServiceManager();
+        $translator = $serviceManager->get('translator');
+        AbstractValidator::setDefaultTranslator($translator);
+    }
+
 }

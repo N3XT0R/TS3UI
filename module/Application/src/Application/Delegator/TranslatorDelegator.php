@@ -15,7 +15,6 @@ use Zend\I18n\Translator\Resources;
 use Zend\ServiceManager\DelegatorFactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Http\PhpEnvironment\Request;
-use Locale;
 
 class TranslatorDelegator implements DelegatorFactoryInterface{
     

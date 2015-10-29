@@ -7,6 +7,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
+namespace Application;
 return array(
     'router' => array(
         'routes' => array(
@@ -62,19 +63,19 @@ return array(
             'Zend\Log\LoggerAbstractServiceFactory',
         ),
         'factories' => array(
-            //'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
-        ),
-        'aliases' => array(
-            'translator' => 'MvcTranslator',
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+            
         ),
         'delegators' => array(
             'MvcTranslator' => array(
                 'Application\Delegator\TranslatorDelegator',
             ),
         ),
+        'aliases' => array(
+            'translator' => 'MvcTranslator',
+        ),
     ),
     'translator' => array(
-        'locale' => 'en_EN',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'phpArray',
