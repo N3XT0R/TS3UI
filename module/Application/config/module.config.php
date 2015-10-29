@@ -21,35 +21,6 @@ return array(
                     ),
                 ),
             ),
-            // The following is a route to simplify getting started creating
-            // new controllers and actions without needing to create a new
-            // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-            /*'application' => array(
-                'type'    => 'Literal',
-                'options' => array(
-                    'route'    => '/dashboard',
-                    'defaults' => array(
-                        'controller'    => 'Dashboard',
-                        'action'        => 'index',
-                    ),
-                ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                    'default' => array(
-                        'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/[:controller[/:action]]',
-                            'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
-                            'defaults' => array(
-                            ),
-                        ),
-                    ),
-                )
-            ),*/
         ),
     ),
     'controllers' => array(
@@ -122,12 +93,12 @@ return array(
     ),*/
     'navigation'    => array(
         'default'   => array(
-           "application" => array(
-               'label' => 'APPLICATION_DASHBOARD',
-               'route' => 'home',
-               'controller' => 'Dashboard',
-               'action' => 'index',
-               'icon' => 'fa fa-dashboard fa-fw',
+           "home" => array(
+               'label'          => 'APPLICATION_DASHBOARD',
+               'route'          => 'home',
+               'controller'     => 'Dashboard',
+               'action'         => 'index',
+               'icon'           => 'fa fa-dashboard fa-fw',
            ),
         ),
     ),
@@ -135,6 +106,46 @@ return array(
     'console' => array(
         'router' => array(
             'routes' => array(
+            ),
+        ),
+    ),
+    'bjyauthorize' => array(
+        /* rules can be specified here with the format:
+         * array(roles (array), resource, [privilege (array|string), assertion])
+         * assertions will be loaded using the service manager and must implement
+         * Zend\Acl\Assertion\AssertionInterface.
+         * *if you use assertions, define them using the service manager!*
+         */
+        'rule_providers' => array(
+            'BjyAuthorize\Provider\Rule\Config' => array(
+                'allow' => array(
+                    // allow guests and users (and admins, through inheritance)
+                    // the "wear" privilege on the resource "pants",
+                    array(array('Administrator', 'User'), 'Dashboard'),
+                ),
+                // Don't mix allow/deny rules if you are using role inheritance.
+                // There are some weird bugs.
+                'deny' => array(
+                    // ...
+                ),
+            ),
+        ),
+         'guards' => array(
+            /* If this guard is specified here (i.e. it is enabled), it will block
+             * access to all routes unless they are specified here.
+             */
+            'BjyAuthorize\Guard\Route' => array(
+                array(
+                    'route' => 'home',
+                    'roles' => array('User', 'Administrator'),
+                ),
+            ),
+        ),
+        // resource providers provide a list of resources that will be tracked
+        // in the ACL. like roles, they can be hierarchical
+        'resource_providers' => array(
+            'BjyAuthorize\Provider\Resource\Config' => array(
+                'Dashboard'       => array('index'),
             ),
         ),
     ),
