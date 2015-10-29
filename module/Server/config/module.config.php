@@ -119,7 +119,7 @@ return array(
                 // Don't mix allow/deny rules if you are using role inheritance.
                 // There are some weird bugs.
                 'deny' => array(
-                    // ...
+                    array(array('Guest'), 'Server'),
                 ),
             ),
         ),

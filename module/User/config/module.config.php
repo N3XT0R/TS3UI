@@ -87,14 +87,12 @@ return array(
                 'allow' => array(
                     // allow guests and users (and admins, through inheritance)
                     // the "wear" privilege on the resource "pants",
-                    
-                    array(array('Administrator'), 'Administrator'),
                     array(array('Guest'), 'DoctrineORMModule\\Yuml\\YumlController'),
                 ),
                 // Don't mix allow/deny rules if you are using role inheritance.
                 // There are some weird bugs.
                 'deny' => array(
-                    // ...
+                    array(array('Guest'), 'DoctrineORMModule\\Yuml\\YumlController'),
                 ),
             ),
         ),
