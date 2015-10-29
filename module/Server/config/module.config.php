@@ -80,7 +80,7 @@ return array(
                 'action'        => 'index',
                 'order'         => '10',
                 'resource'      => 'Server',
-                'privilege'     => null,
+                'privilege'     => 'index',
                 'pages'         => array(
                     'index'     => array(
                         'type'          => 'mvc',
@@ -102,13 +102,45 @@ return array(
             ),
         ),
     ),
-    'acl' => array(
-        'User' => array(
-            
+    'bjyauthorize' => array(
+        /* rules can be specified here with the format:
+         * array(roles (array), resource, [privilege (array|string), assertion])
+         * assertions will be loaded using the service manager and must implement
+         * Zend\Acl\Assertion\AssertionInterface.
+         * *if you use assertions, define them using the service manager!*
+         */
+        'rule_providers' => array(
+            'BjyAuthorize\Provider\Rule\Config' => array(
+                'allow' => array(
+                    // allow guests and users (and admins, through inheritance)
+                    // the "wear" privilege on the resource "pants",
+                    array(array('Administrator', 'User'), 'Server'),
+                ),
+                // Don't mix allow/deny rules if you are using role inheritance.
+                // There are some weird bugs.
+                'deny' => array(
+                    // ...
+                ),
+            ),
         ),
-        'Administrator' => array(
-            'Server' => array(
-                'allow' => null,
+         'guards' => array(
+            /* If this guard is specified here (i.e. it is enabled), it will block
+             * access to all routes unless they are specified here.
+             */
+            'BjyAuthorize\Guard\Route' => array(
+                array(
+                    'route' => 'server',
+                    'roles' => array('User'),
+                ),
+            ),
+        ),
+        // resource providers provide a list of resources that will be tracked
+        // in the ACL. like roles, they can be hierarchical
+        'resource_providers' => array(
+            'BjyAuthorize\Provider\Resource\Config' => array(
+                'Administrator' => array(),
+                'Server'       => array('index', 'create'),
+                //'pants' => array(),
             ),
         ),
     ),
