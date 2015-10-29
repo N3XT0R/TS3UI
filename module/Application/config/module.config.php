@@ -67,6 +67,11 @@ return array(
         'aliases' => array(
             'translator' => 'MvcTranslator',
         ),
+        'delegators' => array(
+            'MvcTranslator' => array(
+                'Application\Delegator\TranslatorDelegator',
+            ),
+        ),
     ),
     'translator' => array(
         'locale' => 'en_EN',
