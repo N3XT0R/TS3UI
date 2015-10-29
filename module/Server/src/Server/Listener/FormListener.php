@@ -13,12 +13,10 @@ namespace Server\Listener;
 
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
-use Zend\ServiceManager\ServiceLocatorAwareTrait;
-use Zend\ServiceManager\ServiceLocatorAwareInterface;
+use Zend\EventManager\EventInterface;
 
-class FormListener implements ListenerAggregateInterface, ServiceLocatorAwareInterface{
+class FormListener implements ListenerAggregateInterface{
     
-    use ServiceLocatorAwareTrait;
     /**
      * @var \Zend\Stdlib\CallbackHandler[]
      */
@@ -44,10 +42,11 @@ class FormListener implements ListenerAggregateInterface, ServiceLocatorAwareInt
         }
     }
 
-    public function onSetForm($e){
+    public function onSetForm(EventInterface $e){
+        $oServiceManager = $e->getApplication()->getServiceManager();
         $type = $e->getParam('type', 'ServerCreate');
-        $service = $this->getServiceLocator()->get('Server\Service\Server');
-        $form    = $this->getServiceLocator()->get('Server\Form\\' . ucfirst($type));
+        $service = $oServiceManager->get('Server\Service\Server');
+        $form    = $oServiceManager->get('Server\Form\\' . ucfirst($type));
         $service->setForm($form, $type);
     }
 
