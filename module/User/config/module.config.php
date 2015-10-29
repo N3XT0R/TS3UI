@@ -31,6 +31,9 @@ return array(
                 ),
             ),
         ),
+        'fixture' => array(
+            __NAMESPACE__.'_fixture' => __DIR__.'/../src/'.__NAMESPACE__.'/Fixture',
+        ),
     ),
     'view_manager' => array(
         'template_path_stack' => array(
@@ -56,7 +59,5 @@ return array(
         ),
         
     ),
-    'data-fixture' => array(
-        __NAMESPACE__.'_fixture' => __DIR__.'/../src/'.__NAMESPACE__.'/Fixture',
-    ),
+    
 );

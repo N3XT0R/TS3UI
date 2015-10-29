@@ -13,15 +13,17 @@ install:
 
 before_script:
     - mysql -e 'create database ts3ui;'
-    - ./vendor/bin/doctrine-module orm:validate-schema
+    - ./vendor/bin/doctrine-module orm:schema-tool:drop --force
     - ./vendor/bin/doctrine-module orm:schema-tool:create
+    - ./vendor/bin/doctrine-module orm:validate-schema
+    - ./vendor/bin/doctrine-module orm:generate:proxies
+    - ./vendor/bin/doctrine-module data-fixture:import
     - sed -i "s|{username}|$USERNAME|" ./config/autoload/global.php
     - sed -i "s|{server}|$SERVER|" ./config/autoload/global.php
     - sed -i "s|{password}|$KEY|" ./config/autoload/global.php
     
 
 script:
-    - php ./public/index.php user add Admin Admin
     - phpunit --coverage-clover build/logs/clover.xml -c tests/phpunit.xml 
     
 after_script:
