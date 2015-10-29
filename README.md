@@ -15,6 +15,13 @@ Currently is this Project under development. Do not try to install it.
 
 ## Installation
 
+### Get it from git
+
+```
+git clone https://github.com/N3XT0R/TS3UI.git
+cd TS3UI
+```
+
 ### Install Composer 
 
 ```
