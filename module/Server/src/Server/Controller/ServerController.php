@@ -40,6 +40,11 @@ class ServerController extends AbstractActionController{
     }
     
     public function createAction(){
-        return new ViewModel();
+        
+        $oForm = $this->getServerService()->getForm("ServerCreate");
+        
+        return new ViewModel(array(
+            "oForm" => $oForm,
+        ));
     }
 }

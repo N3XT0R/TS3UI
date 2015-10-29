@@ -95,9 +95,9 @@ class ServerService extends EventProvider{
      */
     public function getForm($sType){
         $oForm = null;
-        if (!isset($this->aForms[$type])){
+        if (!isset($this->aForms[$sType])){
             $this->getEventManager()->trigger(
-                'setForm', __CLASS__, array('type' => $type)
+                'setForm', __CLASS__, array('type' => $sType)
             );
         }
         return $this->aForms[$type];

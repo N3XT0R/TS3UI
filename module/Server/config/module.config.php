@@ -42,7 +42,7 @@ return array(
             //Service
             'Server\Service\Server'         => 'Server\Service\ServerServiceFactory',
             //Form
-            'Server\Form\Create'            => 'Server\Form\ServerCreateFormFactory',
+            'Server\Form\ServerCreate'      => 'Server\Form\ServerCreateFormFactory',
         ),
     ),
      'view_manager' => array(

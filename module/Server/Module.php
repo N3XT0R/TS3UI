@@ -38,8 +38,11 @@ ConfigProviderInterface
     }
 
     public function onBootstrap(EventInterface $e) {
+        $manager  = $e->getApplication()->getServiceManager();
         $eventManager = $e->getTarget()->getEventManager();
-        $eventManager->attach(new FormListener());
+        $oListener  = new FormListener();
+        $oListener->setServiceLocator($manager);
+        $eventManager->attach($oListener);
     }
 
 }
