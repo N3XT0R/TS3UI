@@ -11,14 +11,13 @@
 
 namespace Server\Entity;
 
-use Zend\Filter\StaticFilter;
 use Doctrine\ORM\Mapping as ORM;
 
 /** 
  * @ORM\Entity 
  * @ORM\Table(name="server")
  */
-class ServerEntity implements ServerEntityInterface{
+class Server implements ServerInterface{
     
     /**
     * @ORM\Id
@@ -82,22 +81,4 @@ class ServerEntity implements ServerEntityInterface{
         return $this->password;
     }
     
-    public function exchangeArray(array $array) {
-        foreach ($array as $key => $value) {
-            if (empty($value)) {
-                continue;
-            }
-            $method = 'set' . StaticFilter::execute(
-                $key, 'wordunderscoretocamelcase'
-            );
-            if (!method_exists($this, $method)) {
-                continue;
-            }
-            $this->$method($value);
-        }
-    }
-
-    public function getArrayCopy() {
-        return get_object_vars($this);
-    }
 }

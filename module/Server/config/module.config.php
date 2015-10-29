@@ -37,7 +37,12 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
+            //Mapper
+            'Server\Mapper\Server'          => 'Server\Mapper\ServerMapperFactory',
+            //Service
             'Server\Service\Server'         => 'Server\Service\ServerServiceFactory',
+            
+            //Form
             'Server\Form\Create'            => 'Server\Form\ServerCreateFormFactory',
         ),
     ),

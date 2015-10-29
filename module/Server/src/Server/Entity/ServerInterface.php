@@ -8,9 +8,8 @@
 
 namespace Server\Entity;
 
-use Zend\Stdlib\ArraySerializableInterface;
 
-interface ServerEntityInterface extends ArraySerializableInterface{
+interface ServerInterface{
     
     public function setServerID($serverID);
     public function getServerID();

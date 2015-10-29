@@ -17,6 +17,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class ServerServiceFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
+        $oMapper  = $serviceLocator->get("Server\Mapper\Server");
         $oService = new ServerService();
         return $oService;
     }

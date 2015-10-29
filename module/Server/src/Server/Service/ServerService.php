@@ -11,54 +11,32 @@
 
 namespace Server\Service;
 
-use Zend\EventManager\EventManagerAwareInterface;
-use Zend\EventManager\EventManagerInterface;
 use Zend\Form\FormInterface;
-use Doctrine\ORM\EntityRepository;
-use Server\Entity\ServerEntity;
+use ZfcBase\EventManager\EventProvider;
+use Server\Mapper\ServerMapperInterface;
 
-class ServerService implements EventManagerAwareInterface{
+class ServerService extends EventProvider{
 
     protected $aForms = array();
-    protected $aMessages = array();#
-    protected $oEventManager;
-    protected $oServerRepository;
+    protected $aMessages = array();
+    protected $oServerMapper;
     
     /**
-     * Set Server-Repository
-     * @param EntityRepository $oServerRepository
+     * Set Server Mapper
+     * @param ServerMapperInterface $oServerMapper
      * @return \Server\Service\ServerService
      */
-    public function setServerRepository(EntityRepository $oServerRepository){
-        $this->oServerRepository = $oServerRepository;
+    public function setServerMapper(ServerMapperInterface $oServerMapper){
+        $this->oServerMapper = $oServerMapper;
         return $this;
     }
     
     /**
-     * Get Server-Repository
-     * @return EntityRepository
+     * Get Server Mapper
+     * @return ServerMapperInterface
      */
-    public function getServerRepository(){
-        return $this->oServerRepository;
-    }
-
-    /**
-     * Get EventManager
-     * @return EventManagerInterface
-     */
-    public function getEventManager() {
-        return $this->oEventManager;
-    }
-
-    /**
-     * Set EventManager
-     * @param EventManagerInterface $eventManager
-     * @return \Server\Service\ServerService
-     */
-    public function setEventManager(EventManagerInterface $eventManager) {
-        $eventManager->setIdentifiers(array(__CLASS__));
-        $this->oEventManager = $eventManager;
-        return $this;
+    public function getServerMapper(){
+        return $this->oServerMapper;
     }
 
     /**
@@ -130,19 +108,5 @@ class ServerService implements EventManagerAwareInterface{
     public function create(array $data){
         
     }
-
-    /**
-     * Get single Server-Entity
-     * @param int $id
-     * @return ServerEntity
-     */
-    public function getOneById($id){
-        $oRepository = $this->getServerRepository();
-        /* @var $oServer ServerEntity */
-        $oServer     = $oRepository->findOneBy(array("serverID" => $id));
-        return $oServer;
-    }
-    
-    
 
 }
