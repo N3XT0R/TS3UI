@@ -44,3 +44,13 @@ php composer.phar install
 ```
 php ./public/index.php assetmanager warmup
 ```
+
+## Login into Application
+
+The Default Credentials for the Application are:
+
+Email: 
+admin@example.com
+
+Password:
+Administrator
