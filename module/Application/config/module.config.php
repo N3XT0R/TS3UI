@@ -28,6 +28,11 @@ return array(
             'Dashboard' => 'Application\Controller\IndexController',
         ),
     ),
+    'controller_plugins' => array(
+        'factories' => array(
+            'MessagesToFlashMessenger' => 'Application\Controller\Plugin\MessagesToFlashMessengerFactory',
+        ),
+    ),
     'service_manager' => array(
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',

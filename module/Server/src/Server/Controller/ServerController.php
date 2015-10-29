@@ -15,6 +15,7 @@ namespace Server\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Server\Service\ServerService;
+use Zend\Http\PhpEnvironment\Response;
 
 class ServerController extends AbstractActionController{
     
@@ -40,8 +41,17 @@ class ServerController extends AbstractActionController{
     }
     
     public function createAction(){
-        
         $oForm = $this->getServerService()->getForm("ServerCreate");
+        $sUrl = $this->url()->fromRoute("server/action", array("action" => "create"));
+        $oPrg = $this->prg($sUrl, true);
+        
+        if($oPrg instanceof Response){
+            return $oPrg;
+        }elseif($oPrg !== false){
+            $this->getServerService()->create($oPrg);
+            $aMessages = $this->getServerService()->getMessages();
+            $this->MessagesToFlashMessenger()->add($aMessages);
+        }
         
         return new ViewModel(array(
             "oForm" => $oForm,

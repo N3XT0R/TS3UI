@@ -9,18 +9,18 @@
  * $Date$
  */
 
-namespace Server\Service;
+namespace Application\Controller\Plugin;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class ServerServiceFactory implements FactoryInterface{
+class MessagesToFlashMessengerFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
-        $oMapper  = $serviceLocator->get("Server\Mapper\Server");
-        $oService = new ServerService();
-        $oService->setServerMapper($oMapper);
-        return $oService;
+        $oMessenger = $serviceLocator->get("FlashMessenger");
+        $oPlugin    = new MessagesToFlashMessenger();
+        $oPlugin->setFlashMessenger($oMessenger);
+        return $oPlugin;
     }
 
 }
