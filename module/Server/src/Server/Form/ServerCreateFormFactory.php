@@ -25,6 +25,7 @@ class ServerCreateFormFactory implements FactoryInterface{
         $oForm->addHostnameElement();
         $oForm->addPasswordElement();
         $oForm->addPortElement();
+        $oForm->addSubmitElement();
         $oForm->setInputFilter(new ServerFilter());
         $oForm->setValidationGroup(array(
             'username',

@@ -55,7 +55,7 @@ class ServerForm extends Form{
     }
     
     
-    public function addSubmitElement($name = "save", $name = "SERVER_FORM_SAVE"){
+    public function addSubmitElement($name = "submit", $label = "SERVER_FORM_SAVE"){
         $oElement = new Button($name);
         $oElement->setLabel($label);
         $oElement->setAttribute("type", "submit");

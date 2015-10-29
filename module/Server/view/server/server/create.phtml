@@ -8,4 +8,50 @@
  * $Id$
  * $Date$
  */
+/* @var $oForm \Zend\Form\Form */
+$oForm = $this->oForm;
+$oForm->prepare();
 
+echo $this->losAlert()->info($this->translate("SERVER_CREATE_INFO"));
+
+echo $this->losForm()->openTag($oForm);
+echo $this->losFormRow($oForm->get("token"));
+?>
+<div class="row">
+    <div class="col-md-6">
+        <?php
+            echo $this->losFormRow($oForm->get("username"), false);
+        ?>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?php
+            echo $this->losFormRow($oForm->get("password"), false);
+        ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?php
+            echo $this->losFormRow($oForm->get("hostname"), false);
+        ?>
+    </div>
+    <div class="col-md-2">
+        <?php
+            echo $this->losFormRow($oForm->get("port"), false);
+        ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <?php
+                echo $this->losFormRow($oForm->get("submit")->setAttribute("class", "btn btn-primary"));
+            ?>
+        </div>
+    </div>
+</div>
+<?php
+echo $this->losForm()->closeTag();
