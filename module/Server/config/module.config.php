@@ -79,6 +79,8 @@ return array(
                 'controller'    => 'Server',
                 'action'        => 'index',
                 'order'         => '10',
+                'resource'      => 'Server',
+                'privilege'     => null,
                 'pages'         => array(
                     'index'     => array(
                         'type'          => 'mvc',
@@ -86,6 +88,8 @@ return array(
                         'route'         => 'server/action',
                         'controller'    => 'Server',
                         'action'        => 'index',
+                        'resource'      => 'Server',
+                        'privilege'     => 'index',
                     ),
                     'create'    => array(
                         'type'          => 'mvc',
@@ -99,10 +103,10 @@ return array(
         ),
     ),
     'acl' => array(
-        'Admin' => array(
+        'User' => array(
             
         ),
-        'SuperAdmin' => array(
+        'Administrator' => array(
             'Server' => array(
                 'allow' => null,
             ),

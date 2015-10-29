@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: a4b4eb1c555115598f70b76d6c20e5a84a41ca2d $
+ * $Id: 8aa3b1bff7d817bdcbe2db4daa20a77908c11eb7 $
  * $Date$
  */
 
@@ -39,7 +39,7 @@ class UserListener implements ListenerAggregateInterface{
         /* @var $oAcl \BjyAuthorize\Provider\Identity\ProviderInterface */
         $oProvider = $oServiceManager->get("BjyAuthorize\Provider\Identity\ProviderInterface");
         $aRoles    = $oProvider->getIdentityRoles();
-        if(in_array("guest", $aRoles)){
+        if(in_array("Guest", $aRoles)){
             $viewModel = $e->getViewModel();
             $viewModel->setTemplate("layout/login.phtml");
         }
