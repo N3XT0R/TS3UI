@@ -78,19 +78,6 @@ return array(
             'pageTitle'    => 'Application\View\Helper\PageTitle',
         ),
     ),
-    /*
-    'acl' => array(
-        'Admin' => array(
-            'Dashboard' => array(
-                'allow' => null,
-            ),
-        ),
-        'SuperAdmin' => array(
-            'Dashboard' => array(
-                'allow' => null,
-            ),
-        ),
-    ),*/
     'navigation'    => array(
         'default'   => array(
            "home" => array(
