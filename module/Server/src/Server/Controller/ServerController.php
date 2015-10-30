@@ -38,30 +38,30 @@ class ServerController extends AbstractActionController{
     
     public function indexAction(){
         $page   = (int)$this->params()->fromQuery("page", 0);
-        $aServers = $this->getServerService()->fetchServers(array());
+        $aServers = $this->getServerService()->fetchServers([]);
         $aServers->setCurrentPageNumber($page);
         
-        return new ViewModel(array(
+        return new ViewModel([
             "aServers" => $aServers,
-        ));
+        ]);
     }
     
     public function virtualServerListAction(){
         $serverID   = (int)$this->params()->fromRoute("id", 0);
         $aVirtualServer = $this->getServerService()->fetchVirtualServer($serverID);
         if(count($aVirtualServer) == 0){
-            $this->redirect()->toRoute("server/action", array("action" => "index"));
+            $this->redirect()->toRoute("server/action", ["action" => "index"]);
             return false;
         }
         
-        return new ViewModel(array(
+        return new ViewModel([
             "aVirtualServer" => $aVirtualServer,
-        ));
+        ]);
     }
     
     public function createAction(){
         $oForm = $this->getServerService()->getForm("ServerCreate");
-        $sUrl = $this->url()->fromRoute("server/action", array("action" => "create"));
+        $sUrl = $this->url()->fromRoute("server/action", ["action" => "create"]);
         $oPrg = $this->prg($sUrl, true);
         
         if($oPrg instanceof Response){
@@ -72,8 +72,8 @@ class ServerController extends AbstractActionController{
             $this->MessagesToFlashMessenger()->add($aMessages);
         }
         
-        return new ViewModel(array(
+        return new ViewModel([
             "oForm" => $oForm,
-        ));
+        ]);
     }
 }

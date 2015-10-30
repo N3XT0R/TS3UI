@@ -9,7 +9,7 @@
  * $Date$
  */
 
-return array(
+return [
     'SERVER'                        => 'Server',
     'SERVER_ACTION'                 => 'Aktion',
     'SERVER_EDIT'                   => 'Bearbeiten',
@@ -33,5 +33,5 @@ return array(
     'SERVER_VIRTUAL_SLOTS'          => 'Belegte Slots',
     'SERVER_VIRTUAL_VERSION'        => 'Server-Version',
     'SERVER_VIRTUAL_MANAGE'         => 'Verwalten',
-);
+];
 

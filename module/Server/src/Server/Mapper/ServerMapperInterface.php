@@ -29,7 +29,7 @@ interface ServerMapperInterface {
      * @param array $aFilter
      * @return Paginator|array
      */
-    public function getServers($blPagination, array $aFilter = array());
+    public function getServers($blPagination, array $aFilter = []);
     
     public function update(array $data, $id);
     

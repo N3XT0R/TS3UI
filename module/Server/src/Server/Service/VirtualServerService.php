@@ -9,6 +9,12 @@
  * $Date$
  */
 
-class VirtualServerService {
+namespace Server\Service;
+
+use Zend\EventManager\EventManagerAwareInterface;
+use Zend\EventManager\EventManagerAwareTrait;
+
+class VirtualServerService implements EventManagerAwareInterface{
     
+    use EventManagerAwareTrait;
 }

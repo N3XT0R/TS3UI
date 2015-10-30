@@ -19,8 +19,8 @@
                 <td>
                     <?php
                         $iId = $oServer->getServerID();
-                        $sEditUrl = $this->url("server/action", array("action" => "edit", "id" => $iId));
-                        $sVirtualServerUrl = $this->url("server/action", array("action" => "virtualServerList", "id" => $iId));
+                        $sEditUrl = $this->url("server/action", ["action" => "edit", "id" => $iId]);
+                        $sVirtualServerUrl = $this->url("server/action", ["action" => "virtualServerList", "id" => $iId]);
                     ?>
                     <a href="<?php echo $sVirtualServerUrl; ?>" class="btn btn-primary btn-xs">
                         <?php echo $this->translate("SERVER_VIRTUAL"); ?>

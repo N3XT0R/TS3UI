@@ -43,7 +43,7 @@ class ServerMapper implements ServerMapperInterface{
         $oRepository = $oEM->getRepository("Server\Entity\Server");
         
         /* @var $oServer ServerEntity */
-        $oServer     = $oRepository->findOneBy(array("serverID" => $id));
+        $oServer     = $oRepository->findOneBy(["serverID" => $id]);
         return $oServer;
     }
 
@@ -73,7 +73,7 @@ class ServerMapper implements ServerMapperInterface{
      * @param array $aFilter
      * @return Paginator|array
      */
-    public function getServers($blPagination, array $aFilter = array()) {
+    public function getServers($blPagination, array $aFilter = []) {
         $oEM    = $this->getEntityManager();
         $oRepo  = $oEM->getRepository("Server\Entity\Server");
         $oQB    = $oRepo->createQueryBuilder("s");

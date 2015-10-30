@@ -12,11 +12,14 @@
 namespace Server\Service;
 
 use Zend\Form\FormInterface;
-use ZfcBase\EventManager\EventProvider;
 use Server\Mapper\ServerMapperInterface;
+use Zend\EventManager\EventManagerAwareTrait;
+use Zend\EventManager\EventManagerAwareInterface;
 
-class ServerService extends EventProvider{
+class ServerService implements EventManagerAwareInterface{
 
+    use EventManagerAwareTrait;
+    
     protected $aForms = array();
     protected $aMessages = array();
     protected $oServerMapper;
@@ -158,7 +161,7 @@ class ServerService extends EventProvider{
      * @param array $aFilter
      * @return \Zend\Paginator\Paginator|array
      */
-    public function fetchServers(array $aFilter = array()){
+    public function fetchServers(array $aFilter = []){
         $oResult = $this->getServerMapper()->getServers(true, $aFilter);
         return $oResult;
     }
