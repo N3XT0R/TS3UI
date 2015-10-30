@@ -24,5 +24,12 @@ return array(
     'SERVER_FORM_PORT'              => 'Query-Port',
     'SERVER_FORM_SAVE'              => 'Speichern',
     'SERVER_NO_RECORD'              => 'Keine Einträge verfügbar',
+    
+    //Virtual Servers
+    'SERVER_VIRTUAL_NAME'           => 'Name',
+    'SERVER_VIRTUAL_PORT'           => 'Port',
+    'SERVER_VIRTUAL_STATUS'         => 'Online-Status',
+    'SERVER_VIRTUAL_SLOTS'          => 'Belegte Slots',
+    'SERVER_VIRTUAL_VERSION'        => 'Server-Version',
 );
 

@@ -94,6 +94,18 @@ return array(
                         'action'        => 'index',
                         'resource'      => 'Server',
                         'privilege'     => 'index',
+                        'pages'         => array(
+                            'virtualserverlist' => array(
+                                'type'          => 'mvc',
+                                'label'         => 'SERVER_SUB_LIST',
+                                'route'         => 'server/action',
+                                'controller'    => 'Server',
+                                'action'        => 'virtualServerList',
+                                'resource'      => 'Server',
+                                'privilege'     => 'virtualServerList',
+                                'useRouteMatch' => true,
+                            ),
+                        ),
                     ),
                     'create'    => array(
                         'type'          => 'mvc',
@@ -146,7 +158,7 @@ return array(
         // in the ACL. like roles, they can be hierarchical
         'resource_providers' => array(
             'BjyAuthorize\Provider\Resource\Config' => array(
-                'Server'       => array('index', 'create'),
+                'Server'       => array('index', 'create', 'virtualServerList'),
             ),
         ),
     ),

@@ -28,6 +28,7 @@ class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
         $port = $config["port"];
         $ts = TeamSpeak3::factory("serverquery://$username:$password@$server:$port/");
         $this->setTeamspeak($ts);
+        return $this;
     }
 
     /**

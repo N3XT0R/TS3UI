@@ -166,13 +166,16 @@ class ServerService extends EventProvider{
     public function fetchVirtualServer($id){
         $aServerList = array();
         $oServer = $this->getServerMapper()->getOneById($id);
-        $oService = $this->getTeamspeakService();
-        $oService->setServer($oServer);
-        try{
-            $aServerList = $oService->getVirtualServer();
-        } catch (\Exception $ex) {
-            $this->addMessage("error", $ex->getMessage());
+        if($oServer){
+            $oService = $this->getTeamspeakService();
+            $oService->setServer($oServer);
+            try{
+                $aServerList = $oService->getVirtualServer();
+            } catch (\Exception $ex) {
+                $this->addMessage("error", $ex->getMessage());
+            }
         }
+        
         
         return $aServerList;
     }

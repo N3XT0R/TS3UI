@@ -38,15 +38,24 @@ class ServerController extends AbstractActionController{
     
     public function indexAction(){
         $page   = (int)$this->params()->fromQuery("page", 0);
-        
-        
         $aServers = $this->getServerService()->fetchServers(array());
         $aServers->setCurrentPageNumber($page);
         
-        print_r($this->getServerService()->fetchVirtualServer(3));
-        
         return new ViewModel(array(
             "aServers" => $aServers,
+        ));
+    }
+    
+    public function virtualServerListAction(){
+        $serverID   = (int)$this->params()->fromRoute("id", 0);
+        $aVirtualServer = $this->getServerService()->fetchVirtualServer($serverID);
+        if(count($aVirtualServer) == 0){
+            $this->redirect()->toRoute("server/action", array("action" => "index"));
+            return false;
+        }
+        
+        return new ViewModel(array(
+            "aVirtualServer" => $aVirtualServer,
         ));
     }
     
