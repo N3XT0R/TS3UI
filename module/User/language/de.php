@@ -4,7 +4,7 @@ return array(
     'USER_SUB_MANAGEMENT'           => 'Benutzerverwaltung',
     'USER_SUB_CREATE'               => 'Benutzer anlegen',
     "USER_EDIT_PROFILE"             => "Profil bearbeiten",
-    'USER_LOGOUT'                   => 'Ausloggen',
+    'USER_LOGOUT'                   => 'Abmelden',
     'USER_USERNAME'                 => 'Benutzername',
     'USER_PASSWORD'                 => 'Passwort',
     'USER_PASSWORD_RETYPE'          => 'Passwort wiederholen',
@@ -27,5 +27,5 @@ return array(
     'A record matching the input was found'     => 'Eintrag gefunden.',
     'Authentication failed. Please try again.'  => 'Login fehlgeschlagen.',
     'Please type the following text'            => 'Bitte Schreiben Sie folgenden Text',
-    
+    'Sign Out'                      => 'Abmelden',
 );
