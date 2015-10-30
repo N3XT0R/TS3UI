@@ -14,13 +14,15 @@ namespace Server;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
 use Zend\EventManager\EventInterface;
 use Server\Listener\FormListener;
 
 class Module implements
 BootstrapListenerInterface,
 AutoloaderProviderInterface,
-ConfigProviderInterface
+ConfigProviderInterface,
+DependencyIndicatorInterface
 {
     
     public function getAutoloaderConfig() {
@@ -43,6 +45,12 @@ ConfigProviderInterface
         $oListener  = new FormListener();
         $oListener->setServiceLocator($manager);
         $eventManager->attach($oListener);
+    }
+
+    public function getModuleDependencies() {
+        return array(
+            'TSCore'
+        );
     }
 
 }

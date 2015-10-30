@@ -9,16 +9,18 @@
  * $Date$
  */
 
-namespace TSCore\Adapter;
+namespace TSCore\Service;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class Teamspeak3AdapterFactory implements FactoryInterface{
+class TeamspeakServiceFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
-        $adapter = new Teamspeak3Adapter();
-        return $adapter;
+        $oAdapter = $serviceLocator->get("TSCore\Adapter\Teamspeak");
+        $oService = new TeamspeakService();
+        $oService->setTeamspeakAdapter($oAdapter);
+        return $oService;
     }
 
 }

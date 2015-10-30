@@ -43,6 +43,8 @@ class ServerController extends AbstractActionController{
         $aServers = $this->getServerService()->fetchServers(array());
         $aServers->setCurrentPageNumber($page);
         
+        print_r($this->getServerService()->fetchVirtualServer(3));
+        
         return new ViewModel(array(
             "aServers" => $aServers,
         ));

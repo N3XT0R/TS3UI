@@ -17,8 +17,10 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class ServerServiceFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
+        $oTS      = $serviceLocator->get("TSCore\Service\Teamspeak");
         $oMapper  = $serviceLocator->get("Server\Mapper\Server");
         $oService = new ServerService();
+        $oService->setTeamspeakService($oTS);
         $oService->setServerMapper($oMapper);
         return $oService;
     }

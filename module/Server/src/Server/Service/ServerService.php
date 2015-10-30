@@ -20,6 +20,20 @@ class ServerService extends EventProvider{
     protected $aForms = array();
     protected $aMessages = array();
     protected $oServerMapper;
+    protected $oTeamspeakService;
+    
+    public function setTeamspeakService($oTeamspeakService){
+        $this->oTeamspeakService = $oTeamspeakService;
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return \TSCore\Service\TeamspeakService
+     */
+    public function getTeamspeakService(){
+        return $this->oTeamspeakService;
+    }
     
     /**
      * Set Server Mapper
@@ -123,13 +137,17 @@ class ServerService extends EventProvider{
         
         $oMapper    = $this->getServerMapper();
         
+        $this->getEventManager()->trigger(__FUNCTION__.".pre", $this, compact("oForm", "oMapper"));
+        
         try{
             $oServer    = $oMapper->create($oForm->getData());
             $this->addMessage("success", "SERVER_CREATE_SUCCESS");
         } catch (\Exception $ex) {
-            print_r($ex->getMessage());
             $this->addMessage("error", "SERVER_CREATE_FAILED");
         }
+        
+        $this->getEventManager()->trigger(__FUNCTION__.".post", $this, compact("oMapper", "oServer"));
+        
         
         return $oServer;
     }
@@ -145,4 +163,17 @@ class ServerService extends EventProvider{
         return $oResult;
     }
 
+    public function fetchVirtualServer($id){
+        $aServerList = array();
+        $oServer = $this->getServerMapper()->getOneById($id);
+        $oService = $this->getTeamspeakService();
+        $oService->setServer($oServer);
+        try{
+            $aServerList = $oService->getVirtualServer();
+        } catch (\Exception $ex) {
+            $this->addMessage("error", $ex->getMessage());
+        }
+        
+        return $aServerList;
+    }
 }
