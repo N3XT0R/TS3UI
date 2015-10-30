@@ -16,7 +16,15 @@
             <tr>
                 <td><?php echo $oServer->getServer(); ?></td>
                 <td><?php echo $oServer->getPort(); ?></td>
-                <td><?php echo $oServer->getServerID(); ?></td>
+                <td>
+                    <?php
+                        $iId = $oServer->getServerID();
+                        $sEditUrl = $this->url("server/action", array("action" => "edit", "id" => $iId));
+                    ?>
+                    <a href="<?php echo $sEditUrl; ?>" class="btn btn-primary btn-xs">
+                        <?php echo $this->translate("SERVER_EDIT"); ?>
+                    </a>
+                </td>
             </tr>
             <?php
                     }
