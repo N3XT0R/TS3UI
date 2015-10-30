@@ -40,7 +40,7 @@ class ServerForm extends Form{
         $this->add($oElement);
     }
     
-    public function addHostnameElement($name = "hostname", $label = "SERVER_FORM_HOSTNAME"){
+    public function addHostnameElement($name = "server", $label = "SERVER_FORM_HOSTNAME"){
         $oElement = new Text($name);
         $oElement->setLabel($label);
         $oElement->setAttribute("placeholder", $label);

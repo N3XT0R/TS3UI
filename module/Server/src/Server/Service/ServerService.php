@@ -46,7 +46,7 @@ class ServerService extends EventProvider{
      * @return \Server\Service\ServerService
      */
     public function addMessage($sType, $sMessage){
-        $this->aMessages[$sType] = $sMessage;
+        $this->aMessages[$sType][] = $sMessage;
         return $this;
     }
 
@@ -127,7 +127,8 @@ class ServerService extends EventProvider{
             $oServer    = $oMapper->create($oForm->getData());
             $this->addMessage("success", "SERVER_CREATE_SUCCESS");
         } catch (\Exception $ex) {
-            $this->addMessage("success", "SERVER_CREATE_FAILED");
+            print_r($ex->getMessage());
+            $this->addMessage("error", "SERVER_CREATE_FAILED");
         }
         
         return $oServer;

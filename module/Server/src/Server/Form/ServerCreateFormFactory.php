@@ -30,7 +30,7 @@ class ServerCreateFormFactory implements FactoryInterface{
         $oForm->setValidationGroup(array(
             'username',
             'password',
-            'hostname',
+            'server',
             'port',
         ));
         

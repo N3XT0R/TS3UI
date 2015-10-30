@@ -27,7 +27,7 @@ class MessagesToFlashMessenger extends AbstractPlugin{
         return $this->flashMessenger;
     }
     
-    public function add(array $messages, $hops = 1){
+    public function add(array $messages, $hops = 0){
         foreach($messages as $sType =>  $typemessages){
             foreach($typemessages as $message){
                 $this->getFlashMessenger()->addMessage($message, $sType, $hops);
