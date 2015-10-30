@@ -8,6 +8,7 @@
  * $Id$
  * $Date$
  */
+$this->PageTitle("SERVER_VIRTUAL");
 /* @var $aVirtualServer \TeamSpeak3\Node\Server[] */
 $aVirtualServer = $this->aVirtualServer;
 
@@ -30,12 +31,31 @@ $aVirtualServer = $this->aVirtualServer;
                 foreach($aVirtualServer as $oVirtualServer){
             ?>
             <tr>
-                <td><?php echo $oVirtualServer->getProperty("virtualserver_name").":".$oVirtualServer->getProperty("virtualserver_port");?></td>
+                <td><?php echo $this->escapeHtml($oVirtualServer->getProperty("virtualserver_name"));?></td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_port");?></td>
-                <td><?php echo $oVirtualServer->getProperty("virtualserver_status"); ?></td>
+                <td>
+                    <?php 
+                        $sStatus = $this->escapeHtml($oVirtualServer->getProperty("virtualserver_status")); 
+                        if($sStatus == "online"){
+                            echo $this->losLabel()->success(ucfirst($sStatus));
+                        }else{
+                            echo $this->losLabel()->danger(ucfirst($sStatus));
+                        }
+                    ?>
+                </td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_clientsonline")."/".$oVirtualServer->getProperty("virtualserver_maxclients");?></td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_version"); ?></td>
-                <td><?php echo $oVirtualServer->getId(); ?></td>
+                <td
+                    ><?php 
+                        $sVirtualServerId = $oVirtualServer->getId(); 
+                    ?>
+                    <a href="" class="btn btn-primary btn-xs">
+                        <?php
+                            echo $this->translate("SERVER_VIRTUAL_MANAGE");
+                        ?>
+                    </a>
+                    
+                </td>
             </tr>
             <?php
             }

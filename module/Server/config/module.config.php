@@ -97,7 +97,7 @@ return array(
                         'pages'         => array(
                             'virtualserverlist' => array(
                                 'type'          => 'mvc',
-                                'label'         => 'SERVER_SUB_LIST',
+                                'label'         => 'SERVER_VIRTUAL',
                                 'route'         => 'server/action',
                                 'controller'    => 'Server',
                                 'action'        => 'virtualServerList',
