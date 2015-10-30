@@ -22,9 +22,10 @@ return array(
     'Sign In'                       => 'Anmelden',
     'Register'                      => 'Registrieren',
     'Please Sign In'                => 'Login',
+    'Email or Username'             => 'Email/Benutzername',
     'No record matching the input was found'    => 'Kein Eintrag gefunden.',
     'A record matching the input was found'     => 'Eintrag gefunden.',
     'Authentication failed. Please try again.'  => 'Login fehlgeschlagen.',
     'Please type the following text'            => 'Bitte Schreiben Sie folgenden Text',
-
+    
 );
