@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 85a37f66efa0a5257821fdb39688e2da5febe151 $
  * $Date$
  */
 
@@ -33,5 +33,9 @@ return [
     'SERVER_VIRTUAL_SLOTS'          => 'Belegte Slots',
     'SERVER_VIRTUAL_VERSION'        => 'Server-Version',
     'SERVER_VIRTUAL_MANAGE'         => 'Verwalten',
+    
+    //Exceptions
+    'Operation timed out'           => 'Der Server hat zu lang gebraucht um zu Antworten. Operation fehlgeschlagen.',
 ];
+
 

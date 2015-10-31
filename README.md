@@ -27,9 +27,16 @@ cd TS3UI
 ```
 php composer.phar self-update
 php composer.phar install
+php composer.phar update
 ```
 
-### Create Database & Import Data
+### Configure Database
+
+Edit /config/autoload/database.global.php and configure there your Database-
+Connection.
+
+
+### Create Database-Schema & Import initial Data
 
 ```
 ./vendor/bin/doctrine-module orm:schema-tool:drop --force

@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: e78d58a63b16afac570c0a8c8e735e2086a04d68 $
  * $Date$
  */
 
@@ -50,6 +50,7 @@ class ServerController extends AbstractActionController{
         $serverID   = (int)$this->params()->fromRoute("id", 0);
         $aVirtualServer = $this->getServerService()->fetchVirtualServer($serverID);
         if(count($aVirtualServer) == 0){
+            $this->MessagesToFlashMessenger()->add($this->getServerService()->getMessages(), 1);
             $this->redirect()->toRoute("server/action", ["action" => "index"]);
             return false;
         }
