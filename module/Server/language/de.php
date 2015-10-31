@@ -33,6 +33,7 @@ return [
     'SERVER_VIRTUAL_SLOTS'          => 'Belegte Slots',
     'SERVER_VIRTUAL_VERSION'        => 'Server-Version',
     'SERVER_VIRTUAL_MANAGE'         => 'Verwalten',
+    'SERVER_VIRTUAL_MANAGEMENT'     => 'Verwaltungszentrum',
     
     //Exceptions
     'Operation timed out'           => 'Der Server hat nicht in der vorgebenen Zeit geantwortet. Operation fehlgeschlagen.',
