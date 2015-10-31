@@ -57,6 +57,7 @@ class ServerController extends AbstractActionController{
         
         return new ViewModel([
             "aVirtualServer" => $aVirtualServer,
+            "iServerID"      => $serverID,
         ]);
     }
     

@@ -20,6 +20,7 @@ $aVirtualServer = $this->aVirtualServer;
                 <th><?php echo $this->translate("SERVER_VIRTUAL_NAME");?></th>
                 <th><?php echo $this->translate("SERVER_VIRTUAL_PORT");?></th>
                 <th><?php echo $this->translate("SERVER_VIRTUAL_STATUS");?></th>
+                
                 <th><?php echo $this->translate("SERVER_VIRTUAL_SLOTS");?></th>
                 <th><?php echo $this->translate("SERVER_VIRTUAL_VERSION");?></th>
                 <th><?php echo $this->translate("SERVER_ACTION");?></th>
@@ -48,8 +49,9 @@ $aVirtualServer = $this->aVirtualServer;
                 <td
                     ><?php 
                         $sVirtualServerId = $oVirtualServer->getId(); 
+                        $sIndexUrl = $this->url("server/virtual/action", ["action" => "index", "id" => $iServerID, "virtualId" => $sVirtualServerId]);
                     ?>
-                    <a href="" class="btn btn-primary btn-xs">
+                    <a href="<?php echo $sIndexUrl; ?>" class="btn btn-primary btn-xs">
                         <?php
                             echo $this->translate("SERVER_VIRTUAL_MANAGE");
                         ?>

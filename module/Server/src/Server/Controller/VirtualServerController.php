@@ -16,4 +16,14 @@ use Zend\View\Model\ViewModel;
 
 class VirtualServerController extends AbstractActionController{
     
+    protected $oVirtualServerService;
+    
+    public function setVirtualServerService($oVirtualServerService){
+        $this->oVirtualServerService = $oVirtualServerService;
+        return $this;
+    }
+    
+    public function getVirtualServerService(){
+        return $this->oVirtualServerService;
+    }
 }

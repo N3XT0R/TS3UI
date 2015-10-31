@@ -6,10 +6,10 @@ return array(
     'router' => array(
         'routes' => array(
             'server' => array(
-                 'type' => 'literal',
-                 'options' => array(
+                'type' => 'literal',
+                'options' => array(
                      'route'    => '/server',
-                    'defaults' => array(
+                     'defaults' => array(
                         'controller' => 'Server',
                         'action'     => 'index',
                     ),
@@ -26,13 +26,40 @@ return array(
                             ),
                         ),
                     ),
+                    'virtual' => array(
+                        'type' => 'segment',
+                        'options' => array(
+                             'route'    => '/virtualserver/:id',
+                             'defaults' => array(
+                                'controller' => 'VirtualServer',
+                                'action'     => 'index',
+                            ),
+                            'constraints' => array(
+                                'id'     => '[0-9]+',
+                            ),
+                        ),   
+                        'may_terminate' => true,
+                        'child_routes' => array(
+                            'action' => array(
+                                'type' => 'segment',
+                                'options' => array(
+                                    'route' => '/[:action][/:virtualId]',
+                                    'constraints' => array(
+                                        'action'        => '[a-zA-Z]+',
+                                        'virtualId'     => '[0-9]+',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
                 ),
             ),
         ),
     ),
     'controllers' => array(
         'factories' => array(
-            'Server' => 'Server\Controller\ServerControllerFactory',
+            'Server'                => 'Server\Controller\ServerControllerFactory',
+            'VirtualServer'         => 'Server\Controller\VirtualServerControllerFactory',
         ),
     ),
     'service_manager' => array(
@@ -41,6 +68,7 @@ return array(
             'Server\Mapper\Server'          => 'Server\Mapper\ServerMapperFactory',
             //Service
             'Server\Service\Server'         => 'Server\Service\ServerServiceFactory',
+            'Server\Service\VirtualServer'  => 'Server\Service\VirtualServerServiceFactory',
             //Form
             'Server\Form\ServerCreate'      => 'Server\Form\ServerCreateFormFactory',
         ),
@@ -130,7 +158,8 @@ return array(
                 'allow' => array(
                     // allow guests and users (and admins, through inheritance)
                     // the "wear" privilege on the resource "pants",
-                    array(array('Administrator', 'User'), 'Server'),
+                    array(array('Administrator', 'User'), ['Server', 'VirtualServer']),
+                   
                 ),
                 // Don't mix allow/deny rules if you are using role inheritance.
                 // There are some weird bugs.
@@ -149,6 +178,10 @@ return array(
                     'roles' => array('User', 'Administrator'),
                 ),
                 array(
+                    'route' => 'server/virtual/action',
+                    'roles' => array('User', 'Administrator'),
+                ),
+                array(
                     'route' => 'Assetmanager-warmup',
                     'roles' => array('User', 'Administrator', 'Guest', null),
                 ),
@@ -158,7 +191,8 @@ return array(
         // in the ACL. like roles, they can be hierarchical
         'resource_providers' => array(
             'BjyAuthorize\Provider\Resource\Config' => array(
-                'Server'       => array('index', 'create', 'virtualServerList'),
+                'Server'            => array('index', 'create', 'virtualServerList'),
+                'VirtualServer'     => array('index'),
             ),
         ),
     ),
