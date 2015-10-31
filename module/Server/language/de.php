@@ -35,7 +35,7 @@ return [
     'SERVER_VIRTUAL_MANAGE'         => 'Verwalten',
     
     //Exceptions
-    'Operation timed out'           => 'Der Server hat zu lang gebraucht um zu Antworten. Operation fehlgeschlagen.',
+    'Operation timed out'           => 'Der Server hat nicht in der vorgebenen Zeit geantwortet. Operation fehlgeschlagen.',
 ];
 
 
