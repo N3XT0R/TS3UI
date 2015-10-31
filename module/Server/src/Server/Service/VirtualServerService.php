@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: 1168ccdf6bca74bd7d4cd0526934b75597c480e4 $
+ * $Id: f5a5e9bd773132fa6fd6d04da423f28985b77a6f $
  * $Date$
  */
 
@@ -13,6 +13,7 @@ namespace Server\Service;
 
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerAwareTrait;
+use Server\Entity\ServerInterface;
 
 class VirtualServerService implements EventManagerAwareInterface{
     
@@ -72,5 +73,24 @@ class VirtualServerService implements EventManagerAwareInterface{
         return $this;
     }
     
+    /**
+     * Get one Virtual Server
+     * @param ServerInterface $oServer
+     * @param integer $id
+     * @return \TeamSpeak3\Node\Server|null
+     */
+    public function getOneVirtualServerById(ServerInterface $oServer, $id){
+        $oVirtualServer = null;
+        $oTeamspeak = $this->getTeamspeakService();
+        $oTeamspeak->setServer($oServer);
+        
+        try{
+            $oVirtualServer = $oTeamspeak->getOneVirtualServerById($id);
+        } catch (\Exception $ex) {
+            $this->addMessage("error", $ex->getMessage());
+        }
+        
+        return $oVirtualServer;
+    }
     
 }

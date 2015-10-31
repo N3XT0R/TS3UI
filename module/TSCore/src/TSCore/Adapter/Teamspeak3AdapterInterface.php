@@ -2,7 +2,9 @@
 
 namespace TSCore\Adapter;
 
+use TeamSpeak3\Node\AbstractNode;
 use TeamSpeak3\Node\Host;
+use TeamSpeak3\Node\Server;
 
 interface Teamspeak3AdapterInterface {
     
@@ -13,10 +15,10 @@ interface Teamspeak3AdapterInterface {
     
     
     
-    public function setTeamspeak(Host $teamspeak);
+    public function setTeamspeak(AbstractNode $teamspeak);
     
     /**
-     * @return Host
+     * @return Host|Server
      */
     public function getTeamspeak();
     

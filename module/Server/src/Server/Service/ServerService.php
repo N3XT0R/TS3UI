@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  *
- * $Id: 4b0e892f736cda8c21353924389fa5b5bd990de9 $
+ * $Id: 20563a2af668f435d12284056f8562038cc51cd3 $
  * $Date$
  */
 
@@ -166,10 +166,15 @@ class ServerService implements EventManagerAwareInterface{
         $oResult = $this->getServerMapper()->getServers(true, $aFilter);
         return $oResult;
     }
+    
+    public function getOneServerById($id){
+        $oServer = $this->getServerMapper()->getOneById($id);
+        return $oServer;
+    }
 
     public function fetchVirtualServer($id){
         $aServerList = array();
-        $oServer = $this->getServerMapper()->getOneById($id);
+        $oServer = $this->getOneServerById($id);
         if($oServer){
             $oService = $this->getTeamspeakService();
             $oService->setServer($oServer);

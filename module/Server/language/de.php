@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: 85a37f66efa0a5257821fdb39688e2da5febe151 $
+ * $Id: 503f9eecc5fa44e5a9f4948ce4192e09e6378555 $
  * $Date$
  */
 
@@ -34,9 +34,11 @@ return [
     'SERVER_VIRTUAL_VERSION'        => 'Server-Version',
     'SERVER_VIRTUAL_MANAGE'         => 'Verwalten',
     'SERVER_VIRTUAL_MANAGEMENT'     => 'Verwaltungszentrum',
+    'SERVER_VIRTUAL_CHANNEL'        => 'Channel',
     
     //Exceptions
     'Operation timed out'           => 'Der Server hat nicht in der vorgebenen Zeit geantwortet. Operation fehlgeschlagen.',
+    'invalid URI supplied'          => 'Der angegebene Server oder die Zugangsdaten sind ungültig.',
 ];
 
 

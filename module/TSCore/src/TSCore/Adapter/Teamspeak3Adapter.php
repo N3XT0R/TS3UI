@@ -13,7 +13,7 @@ namespace TSCore\Adapter;
 
 use TeamSpeak3\TeamSpeak3;
 use Zend\Stdlib\Exception\InvalidArgumentException;
-use TeamSpeak3\Node\Host;
+use TeamSpeak3\Node\AbstractNode;
 
 class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
 
@@ -21,19 +21,25 @@ class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
     protected $config;
     
     public function connect() {
-        $config = $this->getConfig();
-        $username = $config["username"];
-        $password = $config["password"];
-        $server = $config["server"];
-        $port = $config["port"];
-        $ts = TeamSpeak3::factory("serverquery://$username:$password@$server:$port/");
+        $config     = $this->getConfig();
+        $username   = $config["username"];
+        $password   = $config["password"];
+        $server     = $config["server"];
+        $port       = $config["port"];
+        $sURI       = "serverquery://$username:$password@$server:$port/";
+        
+        if(array_key_exists("server_id", $config)){
+            $sURI .= "?server_id=".(int)$config["server_id"];
+        }
+        
+        $ts = TeamSpeak3::factory($sURI);
         $this->setTeamspeak($ts);
         return $this;
     }
 
     /**
      * Get Teamspeak
-     * @return Host
+     * @return Host|Server
      */
     public function getTeamspeak() {
         return $this->ts;
@@ -41,9 +47,9 @@ class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
 
     /**
      * Set Teamspeak
-     * @param Host $teamspeak
+     * @param AbstractNode $teamspeak
      */
-    public function setTeamspeak(Host $teamspeak) {
+    public function setTeamspeak(AbstractNode $teamspeak) {
         $this->ts = $teamspeak;
     }
 

@@ -14,10 +14,13 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class VirtualServerControllerFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
-        $oSM = $serviceLocator->getServiceLocator();
-        $oVirtualServerService = $oSM->get("Server\Service\VirtualServer");
+        $oSM                    = $serviceLocator->getServiceLocator();
+        $oVirtualServerService  = $oSM->get("Server\Service\VirtualServer");
+        $oServerService         = $oSM->get("Server\Service\Server");
+        
         $oController = new VirtualServerController();
         $oController->setVirtualServerService($oVirtualServerService);
+        $oController->setServerService($oServerService);
         return $oController;
     }
 

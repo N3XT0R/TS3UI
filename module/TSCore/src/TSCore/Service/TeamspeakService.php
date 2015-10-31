@@ -5,18 +5,20 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: 975a93be3f74b42477b38c68bdb44ba2821820be $
+ * $Id: 081e2001a84f1aa103ab091f8af69e583dc60bc9 $
  * $Date$
  */
 
 namespace TSCore\Service;
 
-use ZfcBase\EventManager\EventProvider;
 use TSCore\Entity\ServerInterface;
 use TSCore\Adapter\Teamspeak3AdapterInterface;
+use Zend\EventManager\EventManagerAwareInterface;
+use Zend\EventManager\EventManagerAwareTrait;
 
-class TeamspeakService extends EventProvider{
+class TeamspeakService implements EventManagerAwareInterface{
     
+    use EventManagerAwareTrait;
     protected $oServer;
     protected $oTeamspeakAdapter;
     
@@ -57,7 +59,7 @@ class TeamspeakService extends EventProvider{
         return $this->oServer;
     }
     
-    public function getVirtualServer(){
+    public function connect($server_id = null){
         $oServer = $this->getServer();
         $config = array(
             "username"  => $oServer->getUsername(),
@@ -65,10 +67,30 @@ class TeamspeakService extends EventProvider{
             "server"    => $oServer->getServer(),
             "port"      => $oServer->getPort(),
         );
-        $oTS = $this->getTeamspeakAdapter();
-        $oTS->setConfig($config);
-        $oTSHost = $oTS->connect()->getTeamspeak();
+        if($server_id){
+            $config["server_id"] = $server_id;
+        }
+        
+        $this->getTeamspeakAdapter()->setConfig($config)
+                                    ->connect();
+        return $this;
+    }
+    
+    public function getVirtualServer(){
+        $this->connect();
+        $oTSHost = $this->getTeamspeakAdapter()->getTeamspeak();
         $aServerList = $oTSHost->serverList();
         return $aServerList;
+    }
+    
+    /**
+     * Get one Virtual Server by ID
+     * @param integer $id
+     * @return \TeamSpeak3\Node\Server
+     */
+    public function getOneVirtualServerById($id){
+        $this->connect($id);
+        $oTSHost = $this->getTeamspeakAdapter()->getTeamspeak();
+        return $oTSHost;
     }
 }
