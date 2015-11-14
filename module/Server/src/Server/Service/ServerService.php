@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  *
- * $Id: 20563a2af668f435d12284056f8562038cc51cd3 $
+ * $Id$
  * $Date$
  */
 
@@ -167,6 +167,11 @@ class ServerService implements EventManagerAwareInterface{
         return $oResult;
     }
     
+    /**
+     * 
+     * @param integer $id
+     * @return \Server\Entity\Server
+     */
     public function getOneServerById($id){
         $oServer = $this->getServerMapper()->getOneById($id);
         return $oServer;

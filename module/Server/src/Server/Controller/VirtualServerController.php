@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: 2c9080b5c84e48b5276a81ec588a048f4c3c90c8 $
+ * $Id$
  * $Date$
  */
 
@@ -61,5 +61,34 @@ class VirtualServerController extends AbstractActionController{
             'oServer'            => $oServer,
             'oVirtualServer'     => $oVirtualServer,
         ]);
+    }
+    
+    public function channelListAction(){
+        $id         = (int)$this->params()->fromRoute("id", 0);
+        $virtualID  = (int)$this->params()->fromRoute("virtualId", 0);
+        
+        $oServer = $this->getServerService()->getOneServerById($id);
+        
+        if(!$oServer){
+            $this->redirect()->toRoute("server");
+            return false;
+        }
+        
+        $oVirtualServer = $this->getVirtualServerService()->getOneVirtualServerById(
+            $oServer, $virtualID
+        );
+        
+        if(!$oVirtualServer){
+            $this->redirect()->toRoute("server");
+            return false;
+        }
+        
+        $aChannels = $this->getVirtualServerService()->getChannels($oVirtualServer);
+        
+        return new ViewModel([
+            'id'                => $id,
+            'oVirtualServer'    => $oVirtualServer,
+            'aChannels'         => $aChannels,
+        ]); 
     }
 }

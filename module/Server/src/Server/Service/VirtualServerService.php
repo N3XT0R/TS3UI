@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: f5a5e9bd773132fa6fd6d04da423f28985b77a6f $
+ * $Id$
  * $Date$
  */
 
@@ -14,6 +14,7 @@ namespace Server\Service;
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerAwareTrait;
 use Server\Entity\ServerInterface;
+use TeamSpeak3\Node\Server;
 
 class VirtualServerService implements EventManagerAwareInterface{
     
@@ -91,6 +92,24 @@ class VirtualServerService implements EventManagerAwareInterface{
         }
         
         return $oVirtualServer;
+    }
+    
+    /**
+     * Get Channels (list)
+     * @param Server $oServer
+     * @param array $aFilter
+     * @return \TeamSpeak3\Node\Channel[]
+     */
+    public function getChannels(Server $oServer, array $aFilter = array()){
+        $aChannels = array();
+        
+        try{
+            $aChannels = $oServer->channelList($aFilter);
+        } catch (\Exception $ex) {
+            $this->addMessage("error", $ex->getMessage());
+        }
+        
+        return $aChannels;
     }
     
 }

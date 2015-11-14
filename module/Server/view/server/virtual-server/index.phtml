@@ -1,9 +1,21 @@
 <?php
     $this->PageTitle("SERVER_VIRTUAL_MANAGEMENT");
+    /* @var $oServer \Server\Entity\Server */
+    $oServer        = $this->oServer;
+    
+    /* @var $oVirtualServer \TeamSpeak3\Node\Server */
+    $oVirtualServer = $this->oVirtualServer;
 ?>
 <div class="row">
     <div class="col-md-1">
-        <a href="#" class="btn btn-sq btn-primary">
+        <?php
+            $sVirtualChannelUrl = $this->url("server/virtual/action", [
+                "action"        => "channelList",
+                'id'            => $oServer->getServerID(),
+                'virtualId'     => $oVirtualServer->getId(),
+            ]);
+        ?>
+        <a href="<?php echo $sVirtualChannelUrl; ?>" class="btn btn-sq btn-primary">
             <i class="fa fa-clone fa-5x"></i><br/>
             <?php echo $this->translate("SERVER_VIRTUAL_CHANNEL");?>
         </a>
