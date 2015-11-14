@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 5125df25f88f232a239ba58b9acac16d6fde09f4 $
  * $Date$
  */
 
@@ -53,7 +53,6 @@ class ServerForm extends Form{
         $oElement->setAttribute("placeholder", 10011);
         $this->add($oElement);
     }
-    
     
     public function addSubmitElement($name = "submit", $label = "SERVER_FORM_SAVE"){
         $oElement = new Button($name);

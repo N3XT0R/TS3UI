@@ -1,23 +1,19 @@
 <?php
-
-
-/* @var $oVirtualServer \TeamSpeak3\Node\Server */
-$oVirtualServer = $this->oVirtualServer;
-
-$this->PageTitle('"'.$oVirtualServer->getProperty("virtualserver_name").'"');
-$this->PageTitle("SERVER_VIRTUAL_CHANNEL", 'APPEND');
-
-
-/* @var $aChannels \TeamSpeak3\Node\Channel[] */
-$aChannels = $this->aChannels;
+    /* @var $oVirtualServer \TeamSpeak3\Node\Server */
+    $oVirtualServer = $this->oVirtualServer;
+    /* @var $aChannels \TeamSpeak3\Node\Channel[] */
+    $aChannels      = $this->aChannels;
+    
+    $this->PageTitle('"'.$oVirtualServer->getProperty("virtualserver_name").'"');
+    $this->PageTitle("SERVER_VIRTUAL_CHANNEL", 'APPEND');
 ?>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <tr>
-                <th><?php echo $this->translate("SERVER_VIRTUAL_CHANNEL_NAME");?></th>
-                <th><?php echo $this->translate("SERVER_VIRTUAL_CHANNEL_DESCRIPTION");?></th>
-                <th><?php echo $this->translate("SERVER_ACTION");?></th>
+                <th class="col-md-3"><?php echo $this->translate("SERVER_VIRTUAL_CHANNEL_NAME");?></th>
+                <th class="col-md-5"><?php echo $this->translate("SERVER_VIRTUAL_CHANNEL_DESCRIPTION");?></th>
+                <th class="col-md-4"><?php echo $this->translate("SERVER_ACTION");?></th>
             </tr>
         </thead>
         <tbody>
@@ -28,23 +24,23 @@ $aChannels = $this->aChannels;
                         if($oChannel->getProperty("pid") == 0){ // is not a sub channel?
             ?>
             <tr>
-                <td><?php echo $oChannel->getProperty("channel_name"); ?></td>
-                <td><?php echo $oChannel->getProperty("channel_topic"); ?></td>
+                <td><?php echo nl2br($oChannel->getProperty("channel_name")); ?></td>
+                <td ><?php echo $oChannel->getProperty("channel_topic"); ?></td>
                 <td>
                     <div class="pull-right">
-
                         <?php
                             if(count($aSubChannelList) > 0){
                         ?>
                         <a href="" class="btn btn-xs btn-primary">
                             <?php
-                                echo $this->translate("SERVER_VIRTUAL_CHANNEL");
+                                echo $this->translate("SERVER_VIRTUAL_SUB_CHANNEL");
                             ?>
                         </a>
                         <?php
                             }
                         ?>
                         <a href="" class="btn btn-xs btn-warning"><?php echo $this->translate("SERVER_VIRTUAL_CHANNEL_EDIT");?></a>
+                        <a href="" class="btn btn-xs btn-danger"><?php echo $this->translate("SERVER_VIRTUAL_CHANNEL_DELETE");?></a>
                     </div>
                 </td>
             </tr>
@@ -52,7 +48,11 @@ $aChannels = $this->aChannels;
                         }
                     }
                 }else{
-                    
+            ?>
+            <tr>
+                <td colspan="12"><?php echo $this->translate("SERVER_NO_RECORD");?></td>
+            </tr>
+            <?php
                 }
             ?>
         </tbody>

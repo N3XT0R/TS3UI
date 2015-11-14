@@ -1,0 +1,162 @@
+<?php
+
+/* @var $oForm \Zend\Form\Form */
+$oForm = $this->oForm;
+
+$sActionUrl = $this->url("server/action", [
+    "action"        => "edit", 
+    "id"            => $serverId, 
+    "virtualId"     => $virtualId
+]);
+
+$oForm->setAttribute("action", $sActionUrl);
+
+echo $this->losForm()->openTag($oForm);
+echo $this->losFormRow($oForm->get("token"));
+echo $this->losFormRow($oForm->get("serverID"));
+echo $this->losFormRow($oForm->get("virtualserver_id"));
+?>
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#host" aria-controls="host" role="tab" data-toggle="tab"><?php echo $this->translate("SERVER_VIRTUAL_HOST");?></a></li>
+        <li role="presentation"><a href="#transport" aria-controls="transport" role="tab" data-toggle="tab"><?php echo $this->translate("SERVER_VIRTUAL_BANDWIDTH");?></a></li>
+        <li role="presentation"><a href="#antiflood" aria-controls="host" role="tab" data-toggle="tab"><?php echo $this->translate("SERVER_VIRTUAL_ANTIFLOOD");?></a></li>
+        <li role="presentation"><a href="#security" aria-controls="host" role="tab" data-toggle="tab"><?php echo $this->translate("SERVER_VIRTUAL_SECURITY");?></a></li>
+        <li role="presentation"><a href="#misc" aria-controls="host" role="tab" data-toggle="tab"><?php echo $this->translate("SERVER_VIRTUAL_MISC");?></a></li>
+        <li role="presentation"><a href="#log" aria-controls="log" role="tab" data-toggle="tab"><?php echo $this->translate("SERVER_VIRTUAL_LOG");?></a></li>
+    </ul>
+    <br/>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="host">
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_name"), false);
+                    ?>
+                </div>
+                <div class="col-md-2">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_port"), false);
+                    ?>
+                </div>
+                <div class="col-md-3">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_maxclients"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_welcomemessage"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_password"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_weblist_enabled"), false);
+                    ?>
+                </div>
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_autostart"), false);
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="transport">
+            <?php
+                echo $this->losAlert()->info($this->translate("SERVER_VIRTUAL_BANDWIDTH_INFO"));
+            ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_max_download_total_bandwidth"), false);
+                    ?>
+                </div>
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_max_upload_total_bandwidth"), false);
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="antiflood">
+            
+        </div>
+        <div role="tabpanel" class="tab-pane" id="security">
+            <?php
+                echo $this->losAlert()->info($this->translate("SERVER_VIRTUAL_SECURITY_LEVEL_INFO"));
+            ?>
+            <div class="col-md-6">
+                <?php
+                    echo $this->losFormRow($oForm->get("virtualserver_needed_identity_security_level"), false);
+                ?>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="misc">
+            
+        </div>
+        <div role="tabpanel" class="tab-pane" id="log">
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_log_client"), false);
+                    ?>
+                </div>
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_log_query"), false);
+                    ?>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_log_channel"), false);
+                    ?>
+                </div>
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_log_permissions"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_log_server"), false);
+                    ?>
+                </div>
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_log_query"), false);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <?php
+                echo $this->formRow($oForm->get("submit")->setAttribute("class", "btn btn-primary"));
+            ?>
+        </div>
+    </div>
+</div>
+<?php
+echo $this->losForm()->closeTag($oForm);
+

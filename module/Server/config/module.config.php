@@ -65,12 +65,13 @@ return array(
     'service_manager' => array(
         'factories' => array(
             //Mapper
-            'Server\Mapper\Server'          => 'Server\Mapper\ServerMapperFactory',
+            'Server\Mapper\Server'                  => 'Server\Mapper\ServerMapperFactory',
             //Service
-            'Server\Service\Server'         => 'Server\Service\ServerServiceFactory',
-            'Server\Service\VirtualServer'  => 'Server\Service\VirtualServerServiceFactory',
+            'Server\Service\Server'                 => 'Server\Service\ServerServiceFactory',
+            'Server\Service\VirtualServer'          => 'Server\Service\VirtualServerServiceFactory',
             //Form
-            'Server\Form\ServerCreate'      => 'Server\Form\ServerCreateFormFactory',
+            'Server\Form\ServerCreate'              => 'Server\Form\ServerCreateFormFactory',
+            'Server\Form\VirtualServerEdit'         => 'Server\Form\VirtualServerEditFormFactory',
         ),
     ),
      'view_manager' => array(
@@ -132,6 +133,31 @@ return array(
                                 'resource'      => 'Server',
                                 'privilege'     => 'virtualServerList',
                                 'useRouteMatch' => true,
+                                'pages'         => array(
+                                    'channelList' => array(
+                                        'id'                => 'channelList',
+                                        'type'              => 'mvc',
+                                        'label'             => 'SERVER_VIRTUAL_CHANNEL',
+                                        'route'             => 'server/virtual/action',
+                                        'controller'        => 'VirtualServer',
+                                        'action'            => 'channelList',
+                                        'resource'          => 'VirtualServer',
+                                        'privilege'         => 'channelList',
+                                        'useRouteMatch'     => true,
+                                        //'visisble'          => false,
+                                    ),
+                                    'editVirtualServer' => array(
+                                        'id'                => 'editVirtualServer',
+                                        'type'              => 'mvc',
+                                        'label'             => 'SERVER_VIRTUAL_EDIT',
+                                        'route'             => 'server/virtual/action',
+                                        'controller'        => 'VirtualServer',
+                                        'action'            => 'edit',
+                                        'resource'          => 'VirtualServer',
+                                        'privilege'         => 'edit',
+                                        'useRouteMatch'     => true,
+                                    ),
+                                ),
                             ),
                         ),
                     ),

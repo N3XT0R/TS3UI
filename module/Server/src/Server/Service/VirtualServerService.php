@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 6f6aec97051ac8f46d7163163d72aa99820771af $
  * $Date$
  */
 
@@ -13,6 +13,7 @@ namespace Server\Service;
 
 use Zend\EventManager\EventManagerAwareInterface;
 use Zend\EventManager\EventManagerAwareTrait;
+use Zend\Form\FormInterface;
 use Server\Entity\ServerInterface;
 use TeamSpeak3\Node\Server;
 
@@ -22,6 +23,7 @@ class VirtualServerService implements EventManagerAwareInterface{
     
     protected $aMessages = array();
     protected $oTeamspeakService;
+    protected $oForms = array();
     
     public function setTeamspeakService($oTeamspeakService){
         $this->oTeamspeakService = $oTeamspeakService;
@@ -75,9 +77,34 @@ class VirtualServerService implements EventManagerAwareInterface{
     }
     
     /**
+     * get Form
+     * @param string $sName
+     * @return \Zend\Form\FormInterface
+     */
+    public function getForm($sName){
+        if(!isset($this->oForms[$sName])){
+            $this->getEventManager()->trigger(
+                'setVirtualServerForm', __CLASS__, array('type' => $sName)
+            );
+        }
+        return $this->oForms[$sName];
+    }
+    
+    /**
+     * set Form
+     * @param string $sName
+     * @param FormInterface $oForm
+     * @return \Server\Service\ServerService
+     */
+    public function setForm($sName, FormInterface $oForm){
+        $this->oForms[$sName] = $oForm;
+        return $this;
+    }
+    
+    /**
      * Get one Virtual Server
      * @param ServerInterface $oServer
-     * @param integer $id
+     * @param integer $id VirtualServerID
      * @return \TeamSpeak3\Node\Server|null
      */
     public function getOneVirtualServerById(ServerInterface $oServer, $id){
@@ -110,6 +137,34 @@ class VirtualServerService implements EventManagerAwareInterface{
         }
         
         return $aChannels;
+    }
+    
+    /**
+     * Update VirtualServer Settings
+     * @param Server $oServer Server-Instance from Database
+     * @param array $data Modification-Data
+     * @param integer $id virtualServerId
+     * @return boolean
+     */
+    public function update(Server $oServer, array $data, $id){
+        $blResult           = false;
+        $oForm              = $this->getForm("VirtualServerEdit");
+        $oForm->setData($data);
+        
+        if(!$oForm->isValid()){
+            return false;
+        }
+        
+        $oVirtualServer     = $this->getOneVirtualServerById($oServer, $id);
+        
+        try{
+            $oVirtualServer->modify($oForm->getData());
+            $blResult       = true;
+        } catch (\Exception $ex) {
+            $this->addMessage("error", $ex->getMessage());
+        }
+        
+        return $blResult;
     }
     
 }

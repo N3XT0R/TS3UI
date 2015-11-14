@@ -20,6 +20,7 @@ $aVirtualServer = $this->aVirtualServer;
                 <th><?php echo $this->translate("SERVER_VIRTUAL_NAME");?></th>
                 <th><?php echo $this->translate("SERVER_VIRTUAL_PORT");?></th>
                 <th><?php echo $this->translate("SERVER_VIRTUAL_STATUS");?></th>
+                <th><?php echo $this->translate("SERVER_VIRTUAL_PING");?></th>
                 
                 <th><?php echo $this->translate("SERVER_VIRTUAL_SLOTS");?></th>
                 <th><?php echo $this->translate("SERVER_VIRTUAL_VERSION");?></th>
@@ -44,6 +45,7 @@ $aVirtualServer = $this->aVirtualServer;
                         }
                     ?>
                 </td>
+                <td><?php echo round($oVirtualServer->getProperty("virtualserver_total_ping")); ?> ms</td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_clientsonline")."/".$oVirtualServer->getProperty("virtualserver_maxclients");?></td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_version"); ?></td>
                 <td

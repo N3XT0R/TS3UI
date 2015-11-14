@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: c27855108cb72845d627062c901b207182bf1dbc $
  * $Date$
  */
 
@@ -36,6 +36,15 @@ class FormListener implements ListenerAggregateInterface, ServiceLocatorAwareInt
            ), 
            100
         );
+        
+        $this->listeners[]  = $sharedEvents->attach(
+            'Server\Service\VirtualServerService', 
+            'setVirtualServerForm', 
+            array(
+                $this, 'onVirtualSetForm',
+            ),
+            101
+        );
     }
     
     public function detach(EventManagerInterface $events){
@@ -55,6 +64,14 @@ class FormListener implements ListenerAggregateInterface, ServiceLocatorAwareInt
         $type = $e->getParam('type', 'ServerCreate');
         $service = $oServiceManager->get('Server\Service\Server');
         $form    = $oServiceManager->get('Server\Form\\' . ucfirst($type));
+        $service->setForm($type, $form);
+    }
+    
+    public function onVirtualSetForm(EventInterface $e){
+        $oServiceManager    = $this->getServiceLocator();
+        $type               = $e->getParam("type", "VirtualServerEdit");
+        $service            = $oServiceManager->get('Server\Service\VirtualServer');
+        $form               = $oServiceManager->get('Server\Form\\' . ucfirst($type));
         $service->setForm($type, $form);
     }
 

@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 055c418db9628c78392b15d74538acb78bd7f98b $
  * $Date$
  */
 
@@ -64,10 +64,10 @@ class VirtualServerController extends AbstractActionController{
     }
     
     public function channelListAction(){
-        $id         = (int)$this->params()->fromRoute("id", 0);
+        $serverID   = (int)$this->params()->fromRoute("id", 0);
         $virtualID  = (int)$this->params()->fromRoute("virtualId", 0);
         
-        $oServer = $this->getServerService()->getOneServerById($id);
+        $oServer = $this->getServerService()->getOneServerById($serverID);
         
         if(!$oServer){
             $this->redirect()->toRoute("server");
@@ -78,17 +78,60 @@ class VirtualServerController extends AbstractActionController{
             $oServer, $virtualID
         );
         
+        // when virtual server not found or not available redirect to virtualserver list
         if(!$oVirtualServer){
-            $this->redirect()->toRoute("server");
+            $this->redirect()->toRoute("server/action", [
+                "action"    => "virtualServerList", 
+                "id"        => $serverID,
+            ]);
             return false;
         }
         
         $aChannels = $this->getVirtualServerService()->getChannels($oVirtualServer);
         
         return new ViewModel([
-            'id'                => $id,
+            'id'                => $serverID,
             'oVirtualServer'    => $oVirtualServer,
             'aChannels'         => $aChannels,
         ]); 
+    }
+    
+    public function editAction(){
+        $serverID   = (int)$this->params()->fromRoute("id",0);
+        $virtualID  = (int)$this->params()->fromRoute("virtualId",0);
+        
+        $oServer = $this->getServerService()->getOneServerById($serverID);
+        
+        if(!$oServer){
+            $this->redirect()->toRoute("server");
+            return false;
+        }
+        
+        $oVirtualServer = $this->getVirtualServerService()->getOneVirtualServerById(
+            $oServer, $virtualID
+        );
+        
+        // when virtual server not found or not available redirect to virtualserver list
+        if(!$oVirtualServer){ 
+            $this->redirect()->toRoute("server/action", [
+                "action"    => "virtualServerList", 
+                "id"        => $serverID,
+            ]);
+            return false;
+        }
+        
+        
+        $oForm = $this->getVirtualServerService()->getForm("VirtualServerEdit");
+        
+        $aInfo = $oVirtualServer->getInfo();
+        var_dump($aInfo);
+        $oForm->setData($aInfo);
+        
+        return new ViewModel([
+            'serverId'          => $serverID,
+            'virtualId'         => $virtualID,
+            'oVirtualServer'    => $oVirtualServer,
+            'oForm'             => $oForm,
+        ]);
     }
 }
