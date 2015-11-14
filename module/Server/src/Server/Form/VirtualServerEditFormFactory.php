@@ -17,7 +17,12 @@ class VirtualServerEditFormFactory implements FactoryInterface{
         $oForm->addPasswordElement();
         $oForm->addAutostartElement();
         $oForm->addComplainAutoBanCountElement();
+        $oForm->addComplainAutobanTimeElement();
+        $oForm->addComplainRemoveTimeElement();
         $oForm->addDefaultServerGroupElement();
+        $oForm->addDefaultChannelAdminGroupElement();
+        $oForm->addDefaultChannelGroupElement();
+        
         $oForm->addIdentSecurityLevelElement();
         $oForm->addWeblistElement();
         $oForm->addPortElement();

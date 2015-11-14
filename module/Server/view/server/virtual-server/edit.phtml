@@ -105,7 +105,49 @@ echo $this->losFormRow($oForm->get("virtualserver_id"));
             </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="misc">
-            
+            <h3><?php echo $this->translate("SERVER_VIRTUAL_STANDARD_GROUP");?></h3>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_default_server_group"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_default_channel_group"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_default_channel_admin_group"), false);
+                    ?>
+                </div>
+            </div>
+            <br/>
+            <h3><?php echo $this->translate("SERVER_VIRTUAL_COMPLAINS");?></h3>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_complain_autoban_count"), false);
+                    ?>
+                </div>
+                <div class="col-md-4">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_complain_autoban_time"), false);
+                    ?>
+                </div>
+                <div class="col-md-4">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_complain_remove_time"), false);
+                    ?>
+                </div>
+            </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="log">
             <div class="row">

@@ -60,6 +60,20 @@ class VirtualServerForm extends Form{
         $this->add($oElement);
     }
     
+    public function addDefaultChannelGroupElement(array $aValues = array(), $name = "virtualserver_default_channel_group", $label = "SERVER_VIRTUAL_DEFAULT_CHANNEL_GROUP"){
+        $oElement = new Select($name);
+        $oElement->setLabel($label);
+        $oElement->setValueOptions($aValues);
+        $this->add($oElement);
+    }
+    
+    public function addDefaultChannelAdminGroupElement(array $aValues = array(), $name = "virtualserver_default_channel_admin_group", $label = "SERVER_VIRTUAL_DEFAULT_CHANNEL_ADMIN_GROUP"){
+        $oElement = new Select($name);
+        $oElement->setLabel($label);
+        $oElement->setValueOptions($aValues);
+        $this->add($oElement);
+    }
+    
     public function addAutostartElement($name = "virtualserver_autostart", $label = "SERVER_VIRTUAL_AUTOSTART"){
         $oElement = new Checkbox($name);
         $oElement->setValue(1);
@@ -75,6 +89,18 @@ class VirtualServerForm extends Form{
     }
     
     public function addComplainAutoBanCountElement($name = "virtualserver_complain_autoban_count", $label = "SERVER_VIRTUAL_COMPLAIN_AUOTBAN_COUNT"){
+        $oElement = new Number($name);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
+    public function addComplainAutobanTimeElement($name = "virtualserver_complain_autoban_time", $label = "SERVER_VIRTUAL_COMPLAIN_AUOTBAN_TIME"){
+        $oElement = new Number($name);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
+    public function addComplainRemoveTimeElement($name = "virtualserver_complain_remove_time", $label = "SERVER_VIRTUAL_COMPLAIN_REMOVE_TIME"){
         $oElement = new Number($name);
         $oElement->setLabel($label);
         $this->add($oElement);

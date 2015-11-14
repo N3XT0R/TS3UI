@@ -36,7 +36,9 @@ return [
     'SERVER_VIRTUAL_MANAGE'                 => 'Verwalten',
     'SERVER_VIRTUAL_MANAGEMENT'             => 'Verwaltungszentrum',
     'SERVER_VIRTUAL_CHANNEL'                => 'Channelliste',
-    'SERVER_VIRTUAL_COMPLAIN_AUOTBAN_COUNT' => 'Anzahl an nötigen Beschwerden für einen Autoban',
+    'SERVER_VIRTUAL_COMPLAIN_AUOTBAN_COUNT' => 'Autoban Beschwerdeanzahl',
+    'SERVER_VIRTUAL_COMPLAIN_AUOTBAN_TIME'  => 'Autoban Dauer',
+    'SERVER_VIRTUAL_COMPLAIN_REMOVE_TIME'   => 'Entfernen nach',
     'SERVER_VIRTUAL_COMPLAIN_AUTOBAN_TIME'  => 'Autoban-Dauer',
     'SERVER_VIRTUAL_COMPLAIN_REMOVE_TIME'   => 'Autoban entfernen nach',
     'SERVER_VIRTUAL_BANDWIDTH_TOTAL_UPLOAD'     => 'Maximale Uploadbandbreite',
@@ -63,6 +65,11 @@ return [
     'SERVER_VIRTUAL_SECURITY_LEVEL'         => 'Benötigte Sicherheitsstufe',
     'SERVER_VIRTUAL_SECURITY_LEVEL_INFO'    => 'Auf einem TS3 Server kann eingestellt werden, welche Rechte bestimmte Sicherheitsstufen haben bzw. welche Richtlinien für eine Sicherheitsstufe gelten. Es kann z.B. eingestellt werden, dass nur Identitäten mit einer Sicherheitsstufe von 22 auf den Server joinen können. Hauptsächlich soll dies Spamm und Hacker vom Server halten, da diese nach einem Bann eine neue Identität erstellen mit dementsprechend hoher Sicherheitsstufe erstellen müssten. Jede Erhöhung kann die Zeit zur Generation der höheren Sicherheitsstufe erheblich erhöhen.',
     'SERVER_VIRTUAL_AUTOSTART'              => 'Autostart aktivieren',
+    'SERVER_VIRTUAL_STANDARD_GROUP'         => 'Standard Gruppen',
+    'SERVER_VIRTUAL_DEFAULT_GROUP'          => 'Server Gruppe',
+    'SERVER_VIRTUAL_DEFAULT_CHANNEL_GROUP'  => 'Channel Gruppe',
+    'SERVER_VIRTUAL_DEFAULT_CHANNEL_ADMIN_GROUP'    => 'Channel Admin Gruppe',
+    'SERVER_VIRTUAL_COMPLAINS'              => 'Beschwerden',
     
     
     //Channel
