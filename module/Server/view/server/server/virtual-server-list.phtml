@@ -45,17 +45,24 @@ $aVirtualServer = $this->aVirtualServer;
                         }
                     ?>
                 </td>
-                <td><?php echo round($oVirtualServer->getProperty("virtualserver_total_ping")); ?> ms</td>
+                <td><?php echo $oVirtualServer->getProperty("virtualserver_total_ping"); ?> ms</td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_clientsonline")."/".$oVirtualServer->getProperty("virtualserver_maxclients");?></td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_version"); ?></td>
-                <td
-                    ><?php 
+                <td>
+                    <?php 
                         $sVirtualServerId = $oVirtualServer->getId(); 
                         $sIndexUrl = $this->url("server/virtual/action", ["action" => "index", "id" => $iServerID, "virtualId" => $sVirtualServerId]);
+                        $sEditUrl  = $this->url("server/virtual/action", ["action" => "edit", "id" => $iServerID, "virtualId" => $sVirtualServerId]);
                     ?>
                     <a href="<?php echo $sIndexUrl; ?>" class="btn btn-primary btn-xs">
                         <?php
                             echo $this->translate("SERVER_VIRTUAL_MANAGE");
+                        ?>
+                    </a>
+                    
+                    <a href="<?php echo $sEditUrl ;?>" class="btn btn-warning btn-xs">
+                        <?php
+                            echo $this->translate("SERVER_VIRTUAL_EDIT");
                         ?>
                     </a>
                     

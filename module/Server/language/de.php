@@ -50,6 +50,8 @@ return [
     'SERVER_VIRTUAL_BANDWIDTH_INFO'         => 'Die maximale Bandbreite begrenzt die Geschwindigkeit mit der Daten heruntergeladen werden können. Die maximale Bandbreite von -1 steht für unbeschränkt.',
     'SERVER_VIRTUAL_LOG'                    => 'Protokoll',
     
+    'SERVER_VIRTUAL_UPDATE_SUCCESS'         => 'Die Server-Konfiguration wurde erfolgreich gespeichert.',
+    
     'SERVER_VIRTUAL_ANTIFLOOD'              => 'Anti-Flood',
     'SERVER_VIRTUAL_ANTIFLOOD_POINTS_TICK_REDUCE'               => 'Reduziere Punkte pro Tick',
     'SERVER_VIRTUAL_ANTIFLOOD_POINTS_NEEDED_COMMAND_BLOCK'      => 'Punkte, um Befehle zu blockieren',
