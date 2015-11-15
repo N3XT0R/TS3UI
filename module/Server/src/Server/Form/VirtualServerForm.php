@@ -180,6 +180,50 @@ class VirtualServerForm extends Form{
         $this->add($oElement);
     }
     
+    public function addMinClientsInChannelBeforeForcedSilenceElement($name = "virtualserver_min_clients_in_channel_before_forced_silence", $label = "SERVER_VIRTUAL_MIN_CLIENTS_BEFORE_SILENCE"){
+        $oElement = new Number($name);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
+    public function addPrioritySpeakerDimmModificatorElement($name = "virtualserver_priority_speaker_dimm_modificator", $label = "SERVER_VIRTUAL_PRIORITY_SPEAKER_DIMM_MODIFICATOR"){
+        $oElement = new Number($name);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
+    public function addChannelTempDeleteDelayElement($name = "virtualserver_channel_temp_delete_delay_default", $label = "SERVER_VIRTUAL_CHANNEL_TEMP_DELETE_DELAY"){
+        $oElement = new Number($name);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
+    public function addVirtualCodedEncModeElement(array $aOptions = array(), $name = "virtualserver_codec_encryption_mode", $label = "SERVER_VIRTUAL_ENCMODE"){
+        $oElement = new Select($name);
+        $oElement->setValueOptions($aOptions);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
+    
+    public function addAntifloodPointsReduceElement($name = "virtualserver_antiflood_points_tick_reduce", $label = "SERVER_VIRTUAL_ANTIFLOOD_POINTS_TICK_REDUCE"){
+        $oElement = new Number($name);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
+    public function addAntifloodPointsNeededCommandBlockElement($name = "virtualserver_antiflood_points_needed_command_block", $label = "SERVER_VIRTUAL_ANTIFLOOD_POINTS_NEEDED_COMMAND_BLOCK"){
+        $oElement = new Number($name);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
+    public function addPointsNeededIpBlockElement($name = "virtualserver_antiflood_points_needed_ip_block", $label = "SERVER_VIRTUAL_ANTIFLOOD_POINTS_NEEDED_IP_BLOCK"){
+        $oElement = new Number($name);
+        $oElement->setLabel($label);
+        $this->add($oElement);
+    }
+    
     public function addSubmitElement($name = "submit", $label = "SERVER_SAVE"){
         $oElement = new Button($name);
         $oElement->setAttribute("type", "submit");

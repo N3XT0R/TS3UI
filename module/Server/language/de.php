@@ -70,6 +70,11 @@ return [
     'SERVER_VIRTUAL_DEFAULT_CHANNEL_GROUP'  => 'Channel Gruppe',
     'SERVER_VIRTUAL_DEFAULT_CHANNEL_ADMIN_GROUP'    => 'Channel Admin Gruppe',
     'SERVER_VIRTUAL_COMPLAINS'              => 'Beschwerden',
+    'SERVER_VIRTUAL_MIN_CLIENTS_BEFORE_SILENCE'         => 'Min Clients im Channel für Stille',
+    'SERVER_VIRTUAL_PRIORITY_SPEAKER_DIMM_MODIFICATOR'  => 'Abschwächung des Gesprächleiters',
+    'SERVER_VIRTUAL_CHANNEL_TEMP_DELETE_DELAY'          => 'Verzögerung des Löschens temporärer Channel',
+    'SERVER_VIRTUAL_ENCMODE_GLOBAL_ON'                  => 'Global an',
+    'SERVER_VIRTUAL_ENCMODE'                            => 'Channel Voice Verschlüsselung',
     
     
     //Channel

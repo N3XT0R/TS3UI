@@ -33,7 +33,16 @@ class VirtualServerEditFormFactory implements FactoryInterface{
         $oForm->addLogServerElement();
         $oForm->addLogPermissionsElement();
         $oForm->addLogChannelElement();
+        $oForm->addMinClientsInChannelBeforeForcedSilenceElement();
+        $oForm->addPrioritySpeakerDimmModificatorElement();
+        $oForm->addChannelTempDeleteDelayElement();
+        $oForm->addVirtualCodedEncModeElement(array(
+            2       => 'SERVER_VIRTUAL_ENCMODE_GLOBAL_ON',
+        ));
         
+        $oForm->addAntifloodPointsReduceElement();
+        $oForm->addAntifloodPointsNeededCommandBlockElement();
+        $oForm->addPointsNeededIpBlockElement();
         $oForm->addSubmitElement();
         
         return $oForm;

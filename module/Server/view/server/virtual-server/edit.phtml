@@ -64,11 +64,6 @@ echo $this->losFormRow($oForm->get("virtualserver_id"));
             <div class="row">
                 <div class="col-md-6">
                     <?php
-                        echo $this->losFormRow($oForm->get("virtualserver_weblist_enabled"), false);
-                    ?>
-                </div>
-                <div class="col-md-6">
-                    <?php
                         echo $this->losFormRow($oForm->get("virtualserver_autostart"), false);
                     ?>
                 </div>
@@ -92,16 +87,45 @@ echo $this->losFormRow($oForm->get("virtualserver_id"));
             </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="antiflood">
-            
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_antiflood_points_tick_reduce"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_antiflood_points_needed_command_block"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_antiflood_points_needed_ip_block"), false);
+                    ?>
+                </div>
+            </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="security">
             <?php
                 echo $this->losAlert()->info($this->translate("SERVER_VIRTUAL_SECURITY_LEVEL_INFO"));
             ?>
-            <div class="col-md-6">
-                <?php
-                    echo $this->losFormRow($oForm->get("virtualserver_needed_identity_security_level"), false);
-                ?>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_needed_identity_security_level"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_codec_encryption_mode"), false);
+                    ?>
+                </div>
             </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="misc">
@@ -145,6 +169,35 @@ echo $this->losFormRow($oForm->get("virtualserver_id"));
                 <div class="col-md-4">
                     <?php
                         echo $this->losFormRow($oForm->get("virtualserver_complain_remove_time"), false);
+                    ?>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_min_clients_in_channel_before_forced_silence"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_priority_speaker_dimm_modificator"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_channel_temp_delete_delay_default"), false);
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <?php
+                        echo $this->losFormRow($oForm->get("virtualserver_weblist_enabled"), false);
                     ?>
                 </div>
             </div>
