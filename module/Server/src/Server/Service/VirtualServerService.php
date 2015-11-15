@@ -157,12 +157,17 @@ class VirtualServerService implements EventManagerAwareInterface{
         
         $oVirtualServer     = $this->getOneVirtualServerById($oServer, $id);
         
+        $this->getEventManager()->trigger(__FUNCTION__.".pre", $this, compact("oForm", "oServer", "oVirtualServer"));
+        
         try{
             $oVirtualServer->modify($oForm->getData());
             $blResult       = true;
+            $this->addMessage("success", "SERVER_VIRTUAL_UPDATE_SUCCESS");
         } catch (\Exception $ex) {
             $this->addMessage("error", $ex->getMessage());
         }
+        
+        $this->getEventManager()->trigger(__FUNCTION__.".post", $this, compact("oForm", "oServer", "oVirtualServer", "blResult"));
         
         return $blResult;
     }

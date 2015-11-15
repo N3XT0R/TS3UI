@@ -138,7 +138,19 @@ class VirtualServerController extends AbstractActionController{
         if($oPRG instanceof Response){
             return $oPRG;
         }elseif($oPRG !== false){
+            $this->getVirtualServerService()->update($oServer, $oPRG, $virtualID);
+            $aMessages = $this->getVirtualServerService()->getMessages();
+            $this->MessagesToFlashMessenger()->add($aMessages, 1);
             
+            /**
+             * After succesfull server modification redirect user
+             * back to Virtual Server List
+             */
+            $this->redirect()->toRoute("server/virtual/action", [
+                "action"        => "virtualServerList",
+                "id"            => $serverID,
+            ]);
+            return true;
         }
         
         return new ViewModel([
