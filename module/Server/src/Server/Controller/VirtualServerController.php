@@ -13,6 +13,7 @@ namespace Server\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Zend\Http\PhpEnvironment\Response;
 
 class VirtualServerController extends AbstractActionController{
     
@@ -124,8 +125,21 @@ class VirtualServerController extends AbstractActionController{
         $oForm = $this->getVirtualServerService()->getForm("VirtualServerEdit");
         
         $aInfo = $oVirtualServer->getInfo();
-        var_dump($aInfo);
         $oForm->setData($aInfo);
+        
+        $sUrl = $this->url()->fromRoute("server/virtual/action", [
+            "action"    => "edit",
+            "id"        => $serverID,
+            "virtualId" => $virtualID,
+        ]);
+        
+        $oPRG = $this->prg($sUrl, true);
+        
+        if($oPRG instanceof Response){
+            return $oPRG;
+        }elseif($oPRG !== false){
+            
+        }
         
         return new ViewModel([
             'serverId'          => $serverID,
