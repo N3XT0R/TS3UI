@@ -76,6 +76,8 @@ return [
     'SERVER_VIRTUAL_PRIORITY_SPEAKER_DIMM_MODIFICATOR'  => 'Abschwächung des Gesprächleiters',
     'SERVER_VIRTUAL_CHANNEL_TEMP_DELETE_DELAY'          => 'Verzögerung des Löschens temporärer Channel',
     'SERVER_VIRTUAL_ENCMODE_GLOBAL_ON'                  => 'Global an',
+    'SERVER_VIRTUAL_ENCMODE_GLOBAL_OFF'                 => 'Global aus',
+    'SERVER_VIRTUAL_ENCMODE_INDIVIDUAL'                 => 'Channel individuell einstellen',
     'SERVER_VIRTUAL_ENCMODE'                            => 'Channel Voice Verschlüsselung',
     
     

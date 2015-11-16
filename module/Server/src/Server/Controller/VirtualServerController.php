@@ -99,8 +99,8 @@ class VirtualServerController extends AbstractActionController{
     }
     
     public function editAction(){
-        $aGroups                = array();
-        $aSimpleChannelGroups   = array();
+        $aGroups                = [];
+        $aSimpleChannelGroups   = [];
         $serverID               = (int)$this->params()->fromRoute("id",0);
         $virtualID              = (int)$this->params()->fromRoute("virtualId",0);
         
@@ -126,7 +126,13 @@ class VirtualServerController extends AbstractActionController{
         }
         
         $aServerGroups = $this->getVirtualServerService()->getServerGroupList($oServer, $virtualID);
-        $aChannelGroups = $this->getVirtualServerService()->getChannelGroupList($oServer, $virtualID);
+        $aChannelGroups = $this->getVirtualServerService()->getChannelGroupList(
+            $oServer, 
+            $virtualID,
+            [
+                "type" => GroupDbType::PermGroupTypeGlobalClient,
+            ]
+        );
         
         foreach($aServerGroups as $oGroup){
             $iSGId = $oGroup->getProperty("sgid");
@@ -137,11 +143,7 @@ class VirtualServerController extends AbstractActionController{
         foreach($aChannelGroups as $oChannelGroup){
             $iCGid = $oChannelGroup->getProperty("cgid");
             $sName = $oChannelGroup->getProperty("name")->toString();
-            $sType = $oChannelGroup->getProperty("type");
-            
-            if($sType == GroupDbType::PermGroupTypeGlobalClient){
-                $aSimpleChannelGroups[$iCGid] = $sName;
-            }
+            $aSimpleChannelGroups[$iCGid] = $sName;
         }
         
         $oForm = $this->getVirtualServerService()->getForm("VirtualServerEdit");
@@ -198,7 +200,6 @@ class VirtualServerController extends AbstractActionController{
         }
         
         $aGroups    = $this->getVirtualServerService()->getServerGroupList($oServer, $virtualID);
-        
         
         return new ViewModel([
             'aGroups'       => $aGroups,

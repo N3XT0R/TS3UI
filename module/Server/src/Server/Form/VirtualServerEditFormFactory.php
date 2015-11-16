@@ -3,6 +3,7 @@
 namespace Server\Form;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\ServiceManager\FactoryInterface;
+use TSCore\Enum\CodecEncryptionMode;
 
 class VirtualServerEditFormFactory implements FactoryInterface{
     
@@ -37,7 +38,9 @@ class VirtualServerEditFormFactory implements FactoryInterface{
         $oForm->addPrioritySpeakerDimmModificatorElement();
         $oForm->addChannelTempDeleteDelayElement();
         $oForm->addVirtualCodedEncModeElement(array(
-            2       => 'SERVER_VIRTUAL_ENCMODE_GLOBAL_ON',
+            CodecEncryptionMode::CODEC_CRYPT_INDIVIDUAL     => 'SERVER_VIRTUAL_ENCMODE_INDIVIDUAL',
+            CodecEncryptionMode::CODEC_CRYPT_DISABLED       => 'SERVER_VIRTUAL_ENCMODE_GLOBAL_OFF',
+            CodecEncryptionMode::CODEC_CRYPT_ENABLED        => 'SERVER_VIRTUAL_ENCMODE_GLOBAL_ON',
         ));
         
         $oForm->addAntifloodPointsReduceElement();
