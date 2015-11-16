@@ -20,4 +20,19 @@
             <?php echo $this->translate("SERVER_VIRTUAL_CHANNEL");?>
         </a>
     </div>
+    
+    
+    <div class="col-md-1">
+        <?php
+            $sVirtualGroupsUrl = $this->url("server/virtual/action", [
+                "action"        => "serverGroupList",
+                'id'            => $oServer->getServerID(),
+                'virtualId'     => $oVirtualServer->getId(),
+            ]);
+        ?>
+        <a href="<?php echo $sVirtualGroupsUrl; ?>" class="btn btn-sq btn-primary">
+            <i class="fa fa-group fa-5x"></i><br/>
+            <?php echo $this->translate("SERVER_VIRTUAL_GROUPS");?>
+        </a>
+    </div>
 </div>

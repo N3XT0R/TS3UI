@@ -14,6 +14,7 @@ namespace Server\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\Http\PhpEnvironment\Response;
+use TSCore\Enum\GroupDbType;
 
 class VirtualServerController extends AbstractActionController{
     
@@ -98,16 +99,19 @@ class VirtualServerController extends AbstractActionController{
     }
     
     public function editAction(){
-        $serverID   = (int)$this->params()->fromRoute("id",0);
-        $virtualID  = (int)$this->params()->fromRoute("virtualId",0);
+        $aGroups                = array();
+        $aSimpleChannelGroups   = array();
+        $serverID               = (int)$this->params()->fromRoute("id",0);
+        $virtualID              = (int)$this->params()->fromRoute("virtualId",0);
         
-        $oServer = $this->getServerService()->getOneServerById($serverID);
+        $oServer                = $this->getServerService()->getOneServerById($serverID);
         
         if(!$oServer){
             $this->redirect()->toRoute("server");
             return false;
         }
         
+        /* @var $oVirtualServer \TeamSpeak3\Node\Server */
         $oVirtualServer = $this->getVirtualServerService()->getOneVirtualServerById(
             $oServer, $virtualID
         );
@@ -121,8 +125,29 @@ class VirtualServerController extends AbstractActionController{
             return false;
         }
         
+        $aServerGroups = $this->getVirtualServerService()->getServerGroupList($oServer, $virtualID);
+        $aChannelGroups = $this->getVirtualServerService()->getChannelGroupList($oServer, $virtualID);
+        
+        foreach($aServerGroups as $oGroup){
+            $iSGId = $oGroup->getProperty("sgid");
+            $sName = $oGroup->getProperty("name")->toString();
+            $aGroups[$iSGId] = $sName;
+        }
+        
+        foreach($aChannelGroups as $oChannelGroup){
+            $iCGid = $oChannelGroup->getProperty("cgid");
+            $sName = $oChannelGroup->getProperty("name")->toString();
+            $sType = $oChannelGroup->getProperty("type");
+            
+            if($sType == GroupDbType::PermGroupTypeGlobalClient){
+                $aSimpleChannelGroups[$iCGid] = $sName;
+            }
+        }
         
         $oForm = $this->getVirtualServerService()->getForm("VirtualServerEdit");
+        $oForm->get("virtualserver_default_server_group")->setValueOptions($aGroups);
+        $oForm->get("virtualserver_default_channel_group")->setValueOptions($aSimpleChannelGroups);
+        $oForm->get("virtualserver_default_channel_admin_group")->setValueOptions($aSimpleChannelGroups);
         
         $aInfo = $oVirtualServer->getInfo();
         $oForm->setData($aInfo);
@@ -158,6 +183,25 @@ class VirtualServerController extends AbstractActionController{
             'virtualId'         => $virtualID,
             'oVirtualServer'    => $oVirtualServer,
             'oForm'             => $oForm,
+        ]);
+    }
+    
+    public function serverGroupListAction(){
+        $serverID   = (int)$this->params()->fromRoute("id",0);
+        $virtualID  = (int)$this->params()->fromRoute("virtualId",0);
+        
+        $oServer = $this->getServerService()->getOneServerById($serverID);
+        
+        if(!$oServer){
+            $this->redirect()->toRoute("server");
+            return false;
+        }
+        
+        $aGroups    = $this->getVirtualServerService()->getServerGroupList($oServer, $virtualID);
+        
+        
+        return new ViewModel([
+            'aGroups'       => $aGroups,
         ]);
     }
 }

@@ -172,4 +172,30 @@ class VirtualServerService implements EventManagerAwareInterface{
         return $blResult;
     }
     
+    
+    /**
+     * Get Server Group List for a Virtual Server
+     * @param ServerInterface $oServer
+     * @param integer $id
+     * @param array $aFilter
+     * @return \TeamSpeak3\Node\Servergroup[]
+     */
+    public function getServerGroupList(ServerInterface $oServer, $id, array $aFilter = array()){
+        $oVirtualServer     = $this->getOneVirtualServerById($oServer, $id);
+        $aGroups            = $oVirtualServer->serverGroupList($aFilter);
+        return $aGroups;
+    }
+    
+    /**
+     * Get Channel Group List for a Virtual Server
+     * @param ServerInterface $oServer
+     * @param integer $id
+     * @param array $aFilter
+     * @return \TeamSpeak3\Node\Servergroup[]
+     */
+    public function getChannelGroupList(ServerInterface $oServer, $id, array $aFilter = array()){
+        $oVirtualServer     = $this->getOneVirtualServerById($oServer, $id);
+        $aGroups            = $oVirtualServer->channelGroupList($aFilter);
+        return $aGroups;
+    }
 }

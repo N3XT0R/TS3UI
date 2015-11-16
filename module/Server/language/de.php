@@ -90,6 +90,9 @@ return [
     'SERVER_VIRTUAL_PASSWORD'               => 'Kennwort',
     'SERVER_VIRTUAL_PING'                   => 'Ping',
     'SERVER_VIRTUAL_EDIT'                   => 'Virtuellen Server editieren',
+    
+    //Groups
+    'SERVER_VIRTUAL_GROUP_NAME'             => 'Gruppe',
    
     
     //Exceptions

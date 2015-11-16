@@ -31,6 +31,7 @@ $aVirtualServer = $this->aVirtualServer;
             <?php
             /* @var $oVirtualServer TeamSpeak3\Node\Server */
                 foreach($aVirtualServer as $oVirtualServer){
+                    
             ?>
             <tr>
                 <td><?php echo $this->escapeHtml($oVirtualServer->getProperty("virtualserver_name"));?></td>
@@ -46,7 +47,7 @@ $aVirtualServer = $this->aVirtualServer;
                     ?>
                 </td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_total_ping"); ?> ms</td>
-                <td><?php echo $oVirtualServer->getProperty("virtualserver_clientsonline")."/".$oVirtualServer->getProperty("virtualserver_maxclients");?></td>
+                <td><?php echo ($oVirtualServer->getProperty("virtualserver_clientsonline") - $oVirtualServer->getProperty("virtualserver_queryclientsonline"))."/".$oVirtualServer->getProperty("virtualserver_maxclients");?></td>
                 <td><?php echo $oVirtualServer->getProperty("virtualserver_version"); ?></td>
                 <td>
                     <?php 

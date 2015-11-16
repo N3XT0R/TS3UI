@@ -1,0 +1,29 @@
+<?php
+
+/* @var $aGroups \TeamSpeak3\Node\Servergroup[] */
+$aGroups    = $this->aGroups;
+
+var_dump($aGroups);
+?>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><?php echo $this->translate("SERVER_VIRTUAL_GROUP_NAME");?></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+            foreach($aGroups as $oGroup){
+        ?>
+            <tr>
+                <td><?php echo $oGroup->getProperty("name"); ?></td> 
+                <td><?php echo $oGroup->getProperty("type"); ?> </td>
+                <td><?php echo $oGroup->getProperty("sgid"); ?></td>
+            </tr> 
+        <?php
+            }
+        ?>
+        </tbody>
+    </table>
+</div>
