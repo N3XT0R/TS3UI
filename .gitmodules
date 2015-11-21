@@ -10,6 +10,6 @@
         path = vendor/satooshi/php-coveralls
         url = https://github.com/satooshi/php-coveralls.git
 
-[submodule "hounddog/doctrine-data-fixture-module"]
+[submodule "vendor/hounddog/doctrine-data-fixture-module"]
         path = vendor/hounddog/doctrine-data-fixture-module 
         url = https://github.com/Hounddog/DoctrineDataFixtureModule.git
