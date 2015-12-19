@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: a9785692acdfb9946d038f818eee404bd2a882b4 $
  * $Date$
  */
 
@@ -15,8 +15,9 @@ use Zend\ServiceManager\ServiceLocatorAwareInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
-class UserFixtures implements FixtureInterface, ServiceLocatorAwareInterface{
+class UserFixtures implements FixtureInterface, ServiceLocatorAwareInterface, OrderedFixtureInterface{
     
     protected $oServiceLocator;
     
@@ -65,6 +66,8 @@ class UserFixtures implements FixtureInterface, ServiceLocatorAwareInterface{
         $manager->flush();
     }
 
-    
+    public function getOrder() {
+        return 2;
+    }
 
 }

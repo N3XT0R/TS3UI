@@ -22,11 +22,10 @@ namespace DoctrineModule\Stdlib\Hydrator;
 use DateTime;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\Common\Persistence\ObjectManager;
-use DoctrineModule\Stdlib\Hydrator\Strategy\AbstractCollectionStrategy;
+use Doctrine\Common\Util\Inflector;
 use InvalidArgumentException;
 use RuntimeException;
 use Traversable;
-use Zend\Stdlib\ArrayObject;
 use Zend\Stdlib\ArrayUtils;
 use Zend\Stdlib\Hydrator\AbstractHydrator;
 use Zend\Stdlib\Hydrator\Filter\FilterProviderInterface;
@@ -181,8 +180,9 @@ class DoctrineObject extends AbstractHydrator
             if ($filter && !$filter->filter($fieldName)) {
                 continue;
             }
-            $getter = 'get' . ucfirst($fieldName);
-            $isser  = 'is' . ucfirst($fieldName);
+
+            $getter = 'get' . Inflector::classify($fieldName);
+            $isser  = 'is' . Inflector::classify($fieldName);
 
             $dataFieldName = $this->computeExtractFieldName($fieldName);
             if (in_array($getter, $methods)) {
@@ -252,7 +252,7 @@ class DoctrineObject extends AbstractHydrator
         foreach ($data as $field => $value) {
             $field  = $this->computeHydrateFieldName($field);
             $value  = $this->handleTypeConversions($value, $metadata->getTypeOfField($field));
-            $setter = 'set' . ucfirst($field);
+            $setter = 'set' . Inflector::classify($field);
 
             if ($metadata->hasAssociation($field)) {
                 $target = $metadata->getAssociationTargetClass($field);
@@ -307,6 +307,7 @@ class DoctrineObject extends AbstractHydrator
 
         foreach ($data as $field => $value) {
             $field = $this->computeHydrateFieldName($field);
+
             // Ignore unknown fields
             if (!$refl->hasProperty($field)) {
                 continue;
@@ -409,15 +410,58 @@ class DoctrineObject extends AbstractHydrator
      */
     protected function toMany($object, $collectionName, $target, $values)
     {
+        $metadata   = $this->objectManager->getClassMetadata(ltrim($target, '\\'));
+        $identifier = $metadata->getIdentifier();
+
         if (!is_array($values) && !$values instanceof Traversable) {
-            $values = (array) $values;
+            $values = (array)$values;
         }
 
         $collection = array();
 
         // If the collection contains identifiers, fetch the objects from database
         foreach ($values as $value) {
-            $collection[] = $this->find($value, $target);
+
+            if ($value instanceof $target) {
+                // assumes modifications have already taken place in object
+                $collection[] = $value;
+                continue;
+            } elseif (empty($value)) {
+                // assumes no id and retrieves new $target
+                $collection[] = $this->find($value, $target);
+                continue;
+            }
+
+            $find = array();
+            if (is_array($identifier)) {
+                foreach ($identifier as $field) {
+                    switch (gettype($value)) {
+                        case 'object':
+                            $getter = 'get' . ucfirst($field);
+                            if (method_exists($value, $getter)) {
+                                $find[$field] = $value->$getter();
+                            } elseif (property_exists($value, $field)) {
+                                $find[$field] = $value->$field;
+                            }
+                            break;
+                        case 'array':
+                            if (array_key_exists($field, $value) && $value[$field] != null) {
+                                $find[$field] = $value[$field];
+                                unset($value[$field]); // removed identifier from persistable data
+                            }
+                            break;
+                        default:
+                            $find[$field] = $value;
+                            break;
+                    }
+                }
+            }
+
+            if (!empty($find) && $found = $this->find($find, $target)) {
+                $collection[] = (is_array($value)) ? $this->hydrate($value, $found) : $found;
+            } else {
+                $collection[] = (is_array($value)) ? $this->hydrate($value, new $target) : new $target;
+            }
         }
 
         $collection = array_filter(
@@ -447,7 +491,7 @@ class DoctrineObject extends AbstractHydrator
      */
     protected function handleTypeConversions($value, $typeOfField)
     {
-        switch($typeOfField) {
+        switch ($typeOfField) {
             case 'datetimetz':
             case 'datetime':
             case 'time':

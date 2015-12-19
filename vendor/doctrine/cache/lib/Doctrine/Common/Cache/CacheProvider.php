@@ -95,7 +95,7 @@ abstract class CacheProvider implements Cache, FlushableCache, ClearableCache, M
         // no internal array function supports this sort of mapping: needs to be iterative
         // this filters and combines keys in one pass
         foreach ($namespacedKeys as $requestedKey => $namespacedKey) {
-            if (isset($items[$namespacedKey])) {
+            if (isset($items[$namespacedKey]) || array_key_exists($namespacedKey, $items)) {
                 $foundItems[$requestedKey] = $items[$namespacedKey];
             }
         }
@@ -211,8 +211,8 @@ abstract class CacheProvider implements Cache, FlushableCache, ClearableCache, M
     {
         $returnValues = array();
 
-        foreach ($keys as $index => $key) {
-            if (false !== ($item = $this->doFetch($key))) {
+        foreach ($keys as $key) {
+            if (false !== ($item = $this->doFetch($key)) || $this->doContains($key)) {
                 $returnValues[$key] = $item;
             }
         }
