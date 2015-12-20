@@ -5,7 +5,9 @@ Develop:
 [![Coverage Status](https://coveralls.io/repos/N3XT0R/TS3UI/badge.svg?branch=development)](https://coveralls.io/r/N3XT0R/TS3UI?branch=development)
 
 ## Introduction
-Web based Management Interface for Teamspeakservers.
+Web based Management Interface for Teamspeak servers.
+
+![overview](https://raw.githubusercontent.com/N3XT0R/TS3UI/development/docs/screens/overview.png "Overview")
 
 
 ## Notice

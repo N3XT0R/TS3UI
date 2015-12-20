@@ -1,4 +1,3 @@
-
 /*
  * TS3UI - Teamspeak 3 Webinterface
  * @author         N3X

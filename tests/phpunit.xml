@@ -11,7 +11,7 @@
     bootstrap="Bootstrap.php">
     <testsuites>
         <testsuite name="ts3ui">
-            <directory suffix=".php">../module/TSCore/tests/TSCoreTests</directory>
+            <directory suffix=".php">../module/Server/tests/ServerTests</directory>
             <directory suffix=".php">../module/User/tests/UserTests</directory>
         </testsuite>
     </testsuites>
