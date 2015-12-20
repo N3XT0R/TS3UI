@@ -15,6 +15,16 @@ Currently is this Project under development. Do not try to install it.
 
 ---------
 
+## Platform Requirements
+
+- PHP 5.5 or higher
+    - PHP5-Intl
+    - PHP5-pdo
+    - PHP5-mbstring
+- MySQL or MariaDB
+- Apache-Webserver or etc. (Nginx, Lighttpd, ...)
+- git
+
 ## Installation
 
 ### Get it from git
