@@ -31,6 +31,7 @@ Currently is this Project under development. Do not try to install it.
     - PHP5-Intl
     - PHP5-pdo
     - PHP5-mbstring
+    - PHP5-mcrypt
 - MySQL or MariaDB
 - Apache-Webserver or etc. (Nginx, Lighttpd, ...)
 - git
