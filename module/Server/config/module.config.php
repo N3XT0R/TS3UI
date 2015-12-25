@@ -222,4 +222,7 @@ return array(
             ),
         ),
     ),
+    'teamspeak'    => [
+        'encryption_key' => '',
+    ],
 );

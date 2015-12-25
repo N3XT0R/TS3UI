@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: b4503ebad4341de3103471caa18b4d753bc747a7 $
  * $Date$
  */
 
@@ -17,11 +17,23 @@ use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
 use Zend\Paginator\Paginator;
+use Zend\Crypt\BlockCipher;
+use Zend\Crypt\Symmetric\Mcrypt;
 
 class ServerMapper implements ServerMapperInterface{
     
     protected $oServerRepository;
     protected $oEntityManager;
+    protected $aConfig;
+    
+    public function setConfig(array $aConfig){
+        $this->aConfig = $aConfig;
+        return $this;
+    }
+    
+    public function getConfig(){
+        return $this->aConfig;
+    }
     
     public function setEntityManager(EntityManager $oEntityManager){
         $this->oEntityManager = $oEntityManager;
@@ -42,8 +54,13 @@ class ServerMapper implements ServerMapperInterface{
         $oEM = $this->getEntityManager();
         $oRepository = $oEM->getRepository("Server\Entity\Server");
         
-        /* @var $oServer ServerEntity */
+        /* @var $oServer Server */
         $oServer     = $oRepository->findOneBy(["serverID" => $id]);
+        if($oServer){
+            $sPassword = $oServer->getPassword();
+            $sPassword = $this->decryptPassword($sPassword);
+            $oServer->setPassword($sPassword);
+        }
         return $oServer;
     }
 
@@ -53,14 +70,51 @@ class ServerMapper implements ServerMapperInterface{
      * @return Server
      */
     public function create(array $data) {
-        $oEM = $this->getEntityManager();
-        $oHydrator = new DoctrineHydrator($oEM);
-        $oServer = $oHydrator->hydrate($data, new Server());
+        $oEM                = $this->getEntityManager();
+        $oHydrator          = new DoctrineHydrator($oEM);
+        $data["password"]   = $this->encryptPassword($data["password"]);
+        $oServer            = $oHydrator->hydrate($data, new Server());
         
         $oEM->persist($oServer);
         $oEM->flush();
         
         return $oServer;
+    }
+    
+    protected function encryptPassword($sPassword){
+        $aConfig    = $this->getConfig();
+        
+        if(array_key_exists("encryption_key", $aConfig)){
+            $sKey = $aConfig["encryption_key"];
+        }else{
+            $sKey = "changeme";
+        }
+        
+        $oMcrypt = new Mcrypt(array(
+            'algo' => 'aes',
+        ));
+        $oBlockCipher = new BlockCipher($oMcrypt);
+        $oBlockCipher->setKey($sKey);
+        $sCrypted = $oBlockCipher->encrypt($sPassword);
+        return $sCrypted;
+    }
+    
+    protected function decryptPassword($sPassword){
+        $aConfig    = $this->getConfig();
+        
+        if(array_key_exists("encryption_key", $aConfig)){
+            $sKey = $aConfig["encryption_key"];
+        }else{
+            $sKey = "changeme";
+        }
+        
+        $oMcrypt = new Mcrypt(array(
+            'algo' => 'aes',
+        ));
+        $oBlockCipher = new BlockCipher($oMcrypt);
+        $oBlockCipher->setKey($sKey);
+        $sDecrypted   = $oBlockCipher->decrypt($sPassword);
+        return $sDecrypted;
     }
 
     public function delete($id) {

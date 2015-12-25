@@ -5,14 +5,11 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: aa059dd09b729a01abcc660da876734bb34cb303 $
  * $Date$
  */
 return array(
-    'teamspeak' => array(
-        'server' => '5.159.56.190:10011',
-        'port' => '9987',
-        'username' => '{username}',
-        'password' => '{password}',
-    ),
+    'teamspeak' => [
+        'encryption_key' => '{ENCKEY}',
+    ],
 );

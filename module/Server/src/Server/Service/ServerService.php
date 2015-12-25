@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  *
- * $Id$
+ * $Id: 93a6f24edbb86a2d1a0c07a29c5f8d6adf293632 $
  * $Date$
  */
 
@@ -142,9 +142,10 @@ class ServerService implements EventManagerAwareInterface{
         $oMapper    = $this->getServerMapper();
         
         $this->getEventManager()->trigger(__FUNCTION__.".pre", $this, compact("oForm", "oMapper"));
+        $aData      = $oForm->getData();
         
         try{
-            $oServer    = $oMapper->create($oForm->getData());
+            $oServer    = $oMapper->create($aData);
             $this->addMessage("success", "SERVER_CREATE_SUCCESS");
         } catch (\Exception $ex) {
             $this->addMessage("error", "SERVER_CREATE_FAILED");
