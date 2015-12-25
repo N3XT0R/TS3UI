@@ -9,6 +9,16 @@ Web based Management Interface for Teamspeak servers.
 
 ![overview](https://raw.githubusercontent.com/N3XT0R/TS3UI/development/docs/screens/overview.png "Overview")
 
+### Features
+
+- Manage dedicated Teamspeak3 Server instances
+- Manage virtual Teamspeak3 Server Nodes
+
+
+Planned Features:
+
+- Provisioning API for Hosters
+
 
 ## Notice
 Currently is this Project under development. Do not try to install it.
