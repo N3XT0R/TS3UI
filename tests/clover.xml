@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1450549584">
-  <project timestamp="1450549584">
+<coverage generated="1451026620">
+  <project timestamp="1451026620">
     <package name="Application">
       <file name="C:\xampp/htdocs/ts3min/module/Application/Module.php">
         <class name="Module" namespace="Application">
@@ -123,6 +123,29 @@
         <metrics loc="32" ncloc="27" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
       </file>
     </package>
+    <package name="User\Entity">
+      <file name="C:\xampp/htdocs/ts3min/module/User/src/User/Entity/Role.php">
+        <class name="Role" namespace="User\Entity">
+          <metrics methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="15" coveredelements="15"/>
+        </class>
+        <line num="40" type="method" name="getId" crap="1" count="1"/>
+        <line num="42" type="stmt" count="1"/>
+        <line num="51" type="method" name="setId" crap="1" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="60" type="method" name="getRoleId" crap="1" count="1"/>
+        <line num="62" type="stmt" count="1"/>
+        <line num="71" type="method" name="setRoleId" crap="1" count="1"/>
+        <line num="73" type="stmt" count="1"/>
+        <line num="74" type="stmt" count="1"/>
+        <line num="80" type="method" name="getParent" crap="1" count="1"/>
+        <line num="82" type="stmt" count="1"/>
+        <line num="91" type="method" name="setParent" crap="1" count="1"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="94" type="stmt" count="1"/>
+        <metrics loc="95" ncloc="39" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="15" coveredelements="15"/>
+      </file>
+    </package>
     <package name="tests">
       <file name="C:\xampp/htdocs/ts3min/tests/Bootstrap.php">
         <class name="Bootstrap" namespace="tests">
@@ -132,25 +155,25 @@
       </file>
     </package>
     <file name="C:\xampp/php/pear/File/Iterator/Autoload.php">
-      <line num="47" type="stmt" count="1"/>
-      <line num="48" type="stmt" count="1"/>
-      <line num="50" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="2"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="50" type="stmt" count="2"/>
       <line num="52" type="stmt" count="0"/>
       <line num="53" type="stmt" count="0"/>
       <line num="55" type="stmt" count="0"/>
       <line num="57" type="stmt" count="0"/>
       <line num="58" type="stmt" count="0"/>
-      <line num="60" type="stmt" count="1"/>
-      <line num="62" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="2"/>
+      <line num="62" type="stmt" count="2"/>
       <line num="63" type="stmt" count="0"/>
       <line num="64" type="stmt" count="0"/>
-      <line num="65" type="stmt" count="1"/>
+      <line num="65" type="stmt" count="2"/>
       <metrics loc="66" ncloc="25" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="6" elements="13" coveredelements="6"/>
     </file>
     <file name="C:\xampp/php/pear/PHP/CodeCoverage/Autoload.php">
-      <line num="57" type="stmt" count="1"/>
-      <line num="58" type="stmt" count="1"/>
-      <line num="60" type="stmt" count="1"/>
+      <line num="57" type="stmt" count="2"/>
+      <line num="58" type="stmt" count="2"/>
+      <line num="60" type="stmt" count="2"/>
       <line num="62" type="stmt" count="0"/>
       <line num="63" type="stmt" count="0"/>
       <line num="64" type="stmt" count="0"/>
@@ -174,31 +197,31 @@
       <line num="83" type="stmt" count="0"/>
       <line num="85" type="stmt" count="0"/>
       <line num="86" type="stmt" count="0"/>
-      <line num="88" type="stmt" count="1"/>
-      <line num="90" type="stmt" count="1"/>
+      <line num="88" type="stmt" count="2"/>
+      <line num="90" type="stmt" count="2"/>
       <line num="91" type="stmt" count="0"/>
       <line num="92" type="stmt" count="0"/>
-      <line num="93" type="stmt" count="1"/>
+      <line num="93" type="stmt" count="2"/>
       <metrics loc="94" ncloc="51" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="6" elements="31" coveredelements="6"/>
     </file>
     <file name="C:\xampp/php/pear/PHP/Timer/Autoload.php">
-      <line num="49" type="stmt" count="1"/>
-      <line num="50" type="stmt" count="1"/>
-      <line num="52" type="stmt" count="1"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="50" type="stmt" count="2"/>
+      <line num="52" type="stmt" count="2"/>
       <line num="55" type="stmt" count="0"/>
       <line num="57" type="stmt" count="0"/>
       <line num="58" type="stmt" count="0"/>
-      <line num="60" type="stmt" count="1"/>
-      <line num="62" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="2"/>
+      <line num="62" type="stmt" count="2"/>
       <line num="63" type="stmt" count="0"/>
       <line num="64" type="stmt" count="0"/>
-      <line num="65" type="stmt" count="1"/>
+      <line num="65" type="stmt" count="2"/>
       <metrics loc="66" ncloc="23" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="6" elements="11" coveredelements="6"/>
     </file>
     <file name="C:\xampp/php/pear/PHP/Token/Stream/Autoload.php">
-      <line num="48" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="1"/>
-      <line num="51" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="2"/>
       <line num="53" type="stmt" count="0"/>
       <line num="54" type="stmt" count="0"/>
       <line num="55" type="stmt" count="0"/>
@@ -363,17 +386,17 @@
       <line num="215" type="stmt" count="0"/>
       <line num="217" type="stmt" count="0"/>
       <line num="218" type="stmt" count="0"/>
-      <line num="220" type="stmt" count="1"/>
-      <line num="222" type="stmt" count="1"/>
+      <line num="220" type="stmt" count="2"/>
+      <line num="222" type="stmt" count="2"/>
       <line num="223" type="stmt" count="0"/>
       <line num="224" type="stmt" count="0"/>
-      <line num="225" type="stmt" count="1"/>
+      <line num="225" type="stmt" count="2"/>
       <metrics loc="226" ncloc="184" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="172" coveredstatements="6" elements="172" coveredelements="6"/>
     </file>
     <file name="C:\xampp/php/pear/PHPUnit/Autoload.php">
-      <line num="73" type="stmt" count="1"/>
-      <line num="74" type="stmt" count="1"/>
-      <line num="76" type="stmt" count="1"/>
+      <line num="73" type="stmt" count="2"/>
+      <line num="74" type="stmt" count="2"/>
+      <line num="76" type="stmt" count="2"/>
       <line num="78" type="stmt" count="0"/>
       <line num="79" type="stmt" count="0"/>
       <line num="80" type="stmt" count="0"/>
@@ -495,12 +518,12 @@
       <line num="197" type="stmt" count="0"/>
       <line num="199" type="stmt" count="0"/>
       <line num="200" type="stmt" count="0"/>
-      <line num="202" type="stmt" count="1"/>
-      <line num="204" type="stmt" count="1"/>
+      <line num="202" type="stmt" count="2"/>
+      <line num="204" type="stmt" count="2"/>
       <line num="205" type="stmt" count="0"/>
       <line num="206" type="stmt" count="0"/>
-      <line num="207" type="stmt" count="1"/>
-      <line num="213" type="stmt" count="1"/>
+      <line num="207" type="stmt" count="2"/>
+      <line num="213" type="stmt" count="2"/>
       <line num="214" type="stmt" count="0"/>
       <line num="215" type="stmt" count="0"/>
       <line num="217" type="stmt" count="0"/>
@@ -512,13 +535,13 @@
       <line num="224" type="stmt" count="0"/>
       <line num="225" type="stmt" count="0"/>
       <line num="226" type="stmt" count="0"/>
-      <line num="227" type="stmt" count="1"/>
+      <line num="227" type="stmt" count="2"/>
       <metrics loc="248" ncloc="204" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="142" coveredstatements="8" elements="142" coveredelements="8"/>
     </file>
     <file name="C:\xampp/php/pear/PHPUnit/Framework/MockObject/Autoload.php">
-      <line num="48" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="1"/>
-      <line num="51" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="2"/>
       <line num="53" type="stmt" count="0"/>
       <line num="54" type="stmt" count="0"/>
       <line num="55" type="stmt" count="0"/>
@@ -557,11 +580,11 @@
       <line num="89" type="stmt" count="0"/>
       <line num="91" type="stmt" count="0"/>
       <line num="92" type="stmt" count="0"/>
-      <line num="94" type="stmt" count="1"/>
-      <line num="96" type="stmt" count="1"/>
+      <line num="94" type="stmt" count="2"/>
+      <line num="96" type="stmt" count="2"/>
       <line num="97" type="stmt" count="0"/>
       <line num="98" type="stmt" count="0"/>
-      <line num="99" type="stmt" count="1"/>
+      <line num="99" type="stmt" count="2"/>
       <metrics loc="100" ncloc="58" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="46" coveredstatements="6" elements="46" coveredelements="6"/>
     </file>
     <file name="C:\xampp/php/pear/PHPUnit/TextUI/Command.php">
@@ -2113,19 +2136,19 @@
       <metrics loc="920" ncloc="634" classes="1" methods="14" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="452" coveredstatements="0" elements="466" coveredelements="0"/>
     </file>
     <file name="C:\xampp/php/pear/Text/Template/Autoload.php">
-      <line num="48" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="1"/>
-      <line num="51" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="2"/>
       <line num="54" type="stmt" count="0"/>
       <line num="56" type="stmt" count="0"/>
       <line num="57" type="stmt" count="0"/>
-      <line num="59" type="stmt" count="1"/>
-      <line num="61" type="stmt" count="1"/>
+      <line num="59" type="stmt" count="2"/>
+      <line num="61" type="stmt" count="2"/>
       <line num="62" type="stmt" count="0"/>
       <line num="63" type="stmt" count="0"/>
-      <line num="64" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="2"/>
       <metrics loc="65" ncloc="22" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="6" elements="11" coveredelements="6"/>
     </file>
-    <metrics files="20" loc="4425" ncloc="3226" classes="11" methods="72" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="1948" coveredstatements="47" elements="2020" coveredelements="49"/>
+    <metrics files="21" loc="4520" ncloc="3265" classes="12" methods="78" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="1957" coveredstatements="56" elements="2035" coveredelements="64"/>
   </project>
 </coverage>
