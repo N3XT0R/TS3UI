@@ -175,12 +175,22 @@ class ServerMapper implements ServerMapperInterface{
         $oServer    = $oEM->find("Server\Entity\Server", $id);
         
         if($oServer){
+            /**
+             * when password is available in updateable content,
+             * encrypt it
+             */
+            if(array_key_exists("password", $data)){
+                $sPassword          = $data["password"];
+                $data["password"]   = $this->encryptPassword($sPassword);
+            }
+            
             $oHydrator          = new DoctrineHydrator($oEM);
             $oUpdatedServer     = $oHydrator->hydrate($data, $oServer);
             
             try{
                 $oEM->persist($oUpdatedServer);
                 $oEM->flush();
+                $blResult = true;
             } catch (\Exception $ex) {}
         }
         
