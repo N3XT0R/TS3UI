@@ -72,7 +72,8 @@ class ServerMapper implements ServerMapperInterface{
     public function create(array $data) {
         $oEM                = $this->getEntityManager();
         $oHydrator          = new DoctrineHydrator($oEM);
-        $data["password"]   = $this->encryptPassword($data["password"]);
+        $sPassword          = $data["password"];
+        $data["password"]   = $this->encryptPassword($sPassword);
         $oServer            = $oHydrator->hydrate($data, new Server());
         
         $oEM->persist($oServer);
@@ -117,8 +118,25 @@ class ServerMapper implements ServerMapperInterface{
         return $sDecrypted;
     }
 
+    /**
+     * Delete Server by ID
+     * @param integer $id Server-ID
+     * @return boolean
+     */
     public function delete($id) {
+        $blResult   = false;
+        $oEM        = $this->getEntityManager();
+        $oServer    = $oEM->find("Server\Entity\Server", $id);
         
+        if($oServer){
+            try{
+                $oEM->remove($oServer);
+                $oEM->flush();
+                $blResult = true;
+            } catch (\Exception $ex) {}
+        }
+        
+        return $blResult;
     }
 
     /**
@@ -145,8 +163,28 @@ class ServerMapper implements ServerMapperInterface{
         return $oResult;
     }
 
+    /**
+     * Update a Server
+     * @param array $data
+     * @param integer $id Server-ID
+     * @return boolean
+     */
     public function update(array $data, $id) {
+        $blResult   = false;
+        $oEM        = $this->getEntityManager();
+        $oServer    = $oEM->find("Server\Entity\Server", $id);
         
+        if($oServer){
+            $oHydrator          = new DoctrineHydrator($oEM);
+            $oUpdatedServer     = $oHydrator->hydrate($data, $oServer);
+            
+            try{
+                $oEM->persist($oUpdatedServer);
+                $oEM->flush();
+            } catch (\Exception $ex) {}
+        }
+        
+        return $blResult;
     }
 
 }
