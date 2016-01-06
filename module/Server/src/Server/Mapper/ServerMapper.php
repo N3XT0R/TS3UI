@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: b4503ebad4341de3103471caa18b4d753bc747a7 $
+ * $Id$
  * $Date$
  */
 
@@ -190,7 +190,7 @@ class ServerMapper implements ServerMapperInterface{
             try{
                 $oEM->persist($oUpdatedServer);
                 $oEM->flush();
-                $blResult = true;
+                $blResult       = true;
             } catch (\Exception $ex) {}
         }
         

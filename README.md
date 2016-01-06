@@ -75,6 +75,36 @@ Connection.
 php ./public/index.php assetmanager warmup
 ```
 
+## Create Virtual Host
+
+### Apache 2.2
+```
+<VirtualHost *:80>
+    ServerName YOUR.FQDN.tld
+    DocumentRoot /path/to/TS3UI/public
+    <Directory /path/to/TS3UI/public>
+        DirectoryIndex index.php
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+```
+
+### Apache 2.4
+
+```
+<VirtualHost *:80>
+    ServerName YOUR.FQDN.tld
+    DocumentRoot /path/to/TS3UI/public
+    <Directory /path/to/TS3UI/public>
+        DirectoryIndex index.php
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
 ## Login into Application
 
 The Default Credentials for the Application are:
