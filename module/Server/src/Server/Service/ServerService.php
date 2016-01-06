@@ -142,9 +142,10 @@ class ServerService implements EventManagerAwareInterface{
         $oMapper    = $this->getServerMapper();
         
         $this->getEventManager()->trigger(__FUNCTION__.".pre", $this, compact("oForm", "oMapper"));
+        $aData      = $oForm->getData();
         
         try{
-            $oServer    = $oMapper->create($oForm->getData());
+            $oServer    = $oMapper->create($aData);
             $this->addMessage("success", "SERVER_CREATE_SUCCESS");
         } catch (\Exception $ex) {
             $this->addMessage("error", "SERVER_CREATE_FAILED");

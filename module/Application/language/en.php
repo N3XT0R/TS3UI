@@ -5,4 +5,5 @@ return array(
     'APPLICATION_ACTION_SHOW'       => 'Show',
     'APPLICATION_ACTION_EDIT'       => 'Edit',
     'APPLICATION_ACTION_DELETE'     => 'Delete',
+    'APPLICATION_DESCRIPTION'       => 'Powerful Webinterface for Teamspeak3-Admins',
 );

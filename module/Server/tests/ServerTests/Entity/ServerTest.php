@@ -30,4 +30,32 @@ class ServerTest extends PHPUnit_Framework_TestCase{
         $gotServerID = $this->oServer->getServerID();
         $this->assertEquals($serverID, $gotServerID);
     }
+    
+    public function testSetGetServer(){
+        $server = "127.0.0.1";
+        $this->oServer->setServer($server);
+        $gotServer = $this->oServer->getServer();
+        $this->assertEquals($gotServer, $server);
+    }
+    
+    public function testSetGetPort(){
+        $port = 10011;
+        $this->oServer->setPort($port);
+        $gotPort = $this->oServer->getPort();
+        $this->assertEquals($gotPort, $port);
+    }
+    
+    public function testSetGetUsername(){
+        $username = "serveradmin";
+        $this->oServer->setUsername($username);
+        $gotUsername = $this->oServer->getUsername();
+        $this->assertEquals($gotUsername, $username);
+    }
+    
+    public function testSetGetPassword(){
+        $password = "encryptedPass";
+        $this->oServer->setPassword($password);
+        $gotPassword = $this->oServer->getPassword();
+        $this->assertEquals($gotPassword, $password);
+    }
 }

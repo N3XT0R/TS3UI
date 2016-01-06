@@ -17,10 +17,15 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class ServerMapperFactory implements FactoryInterface{
     
     public function createService(ServiceLocatorInterface $serviceLocator) {
+        
+        $aConfig = $serviceLocator->get("Config");
+        $aTSConf = $aConfig["teamspeak"];
+        
         /* @var $oEM \Doctrine\ORM\EntityManager */
         $oEM     = $serviceLocator->get("Doctrine\ORM\EntityManager");
         $oMapper = new ServerMapper();
         $oMapper->setEntityManager($oEM);
+        $oMapper->setConfig($aTSConf);
         return $oMapper;
     }
 
