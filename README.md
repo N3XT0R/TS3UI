@@ -38,6 +38,19 @@ Currently is this Project under development. Do not try to install it.
 
 ## Installation
 
+This Explanation is based on a default LAMP Installation.
+
+### Install Packages
+
+#### Debian / Ubuntu
+
+```
+apt-get update
+apt-get upgrade -y && apt-get dist-upgrade -y
+apt-get install mysql-server apache2 php5 php5-intl php5-mcrypt php5-mysql
+```
+
+
 ### Get it from git
 
 ```
