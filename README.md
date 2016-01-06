@@ -75,9 +75,9 @@ Connection.
 php ./public/index.php assetmanager warmup
 ```
 
-## Create Virtual Host
+### Create Virtual Host
 
-### Apache 2.2
+#### Apache 2.2
 ```
 <VirtualHost *:80>
     ServerName YOUR.FQDN.tld
@@ -91,7 +91,7 @@ php ./public/index.php assetmanager warmup
 </VirtualHost>
 ```
 
-### Apache 2.4
+#### Apache 2.4
 
 ```
 <VirtualHost *:80>
