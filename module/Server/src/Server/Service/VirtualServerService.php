@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 0c9abaae62b8f473846eb69a7de2c609efe9bd4b $
  * $Date$
  */
 
@@ -146,7 +146,7 @@ class VirtualServerService implements EventManagerAwareInterface{
      * @param integer $id virtualServerId
      * @return boolean
      */
-    public function update(Server $oServer, array $data, $id){
+    public function update(ServerInterface $oServer, array $data, $id){
         $blResult           = false;
         $oForm              = $this->getForm("VirtualServerEdit");
         $oForm->setData($data);
@@ -160,7 +160,11 @@ class VirtualServerService implements EventManagerAwareInterface{
         $this->getEventManager()->trigger(__FUNCTION__.".pre", $this, compact("oForm", "oServer", "oVirtualServer"));
         
         try{
-            $oVirtualServer->modify($oForm->getData());
+            $aData = $oForm->getData();
+            //Remove Application relevant data
+            unset($aData["serverID"]);
+            unset($aData["virtualserver_id"]);
+            $oVirtualServer->modify($aData);
             $blResult       = true;
             $this->addMessage("success", "SERVER_VIRTUAL_UPDATE_SUCCESS");
         } catch (\Exception $ex) {
