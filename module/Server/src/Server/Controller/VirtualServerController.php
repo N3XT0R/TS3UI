@@ -150,7 +150,7 @@ class VirtualServerController extends AbstractActionController{
         $oForm->get("virtualserver_default_server_group")->setValueOptions($aGroups);
         $oForm->get("virtualserver_default_channel_group")->setValueOptions($aSimpleChannelGroups);
         $oForm->get("virtualserver_default_channel_admin_group")->setValueOptions($aSimpleChannelGroups);
-        
+
         $aInfo = $oVirtualServer->getInfo();
         $oForm->setData($aInfo);
         
@@ -173,12 +173,14 @@ class VirtualServerController extends AbstractActionController{
              * After succesfull server modification redirect user
              * back to Virtual Server List
              */
-            $this->redirect()->toRoute("server/virtual/action", [
+            $this->redirect()->toRoute("server/action", [
                 "action"        => "virtualServerList",
                 "id"            => $serverID,
             ]);
             return true;
         }
+        
+        //print_R($oVirtualServer); die();
         
         return new ViewModel([
             'serverId'          => $serverID,

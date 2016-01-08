@@ -38,6 +38,29 @@ Currently is this Project under development. Do not try to install it.
 
 ## Installation
 
+This Explanation is based on a default LAMP Installation.
+
+### Install Packages
+
+#### Debian / Ubuntu
+
+```
+apt-get update
+apt-get upgrade -y && apt-get dist-upgrade -y
+apt-get install mysql-server apache2 php5 php5-intl php5-mcrypt php5-mysql
+```
+
+## Whitelisting
+
+Also when you had running Teamspeak on another server than the Webinterface should run,
+you need to modify the whitelist of the Teamspeak-Server.
+
+You find it in the root directory of your Teamspeak-Server:
+
+query_ip_whitelist.txt
+
+Edit it, and append in the next line your webinterface IP-Address.
+
 ### Get it from git
 
 ```
@@ -107,11 +130,17 @@ php ./public/index.php assetmanager warmup
 
 ## Login into Application
 
-The Default Credentials for the Application are:
+Notice:
+You can login into the Application with Email or Username.
+
+The default Credentials for the Application are:
 
 Email: 
 
 admin@example.com
+
+Username:
+Administrator
 
 Password:
 

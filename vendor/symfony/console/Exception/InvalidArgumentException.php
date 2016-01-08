@@ -9,14 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Process\Tests;
+namespace Symfony\Component\Console\Exception;
 
-use Symfony\Component\Process\Process;
-
-class ProcessInSigchildEnvironment extends Process
+/**
+ * @author Jérôme Tamarelle <jerome@tamarelle.net>
+ */
+class InvalidArgumentException extends \InvalidArgumentException implements ExceptionInterface
 {
-    protected function isSigchildEnabled()
-    {
-        return true;
-    }
 }
