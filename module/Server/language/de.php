@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 489658d3601856465fce9f7450273f45bbd79f8a $
  * $Date$
  */
 
@@ -17,6 +17,7 @@ return [
     'SERVER_SUB_LIST'                       => 'Server verwalten',
     'SERVER_SUB_CREATE'                     => 'Server anlegen',
     'SERVER_CREATE_INFO'                    => 'In diesem Schritt können neue dedizierte Server hinzugefügt werden. Die hier erwarteten Zugangsdaten sind die ServerQuery-Daten.',
+    'SERVER_EDIT_INFO'                      => 'In diesem Schritt können Sie Ihren bestehenden dedizierten Teamspeak-Server editieren.',
     'SERVER_CREATE_SUCCESS'                 => 'Der Server wurde erfolgreich angelegt.',
     'SERVER_CREATE_FAILED'                  => 'Beim Anlegen des Servers ist ein Fehler aufgetreten, bitte prüfen Sie Ihre Eingaben.',
     'SERVER_FORM_USERNAME'                  => 'ServerQuery-User',

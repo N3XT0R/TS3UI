@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: b3199f982e85b6f361b32705e5ed7c707e645f45 $
  * $Date$
  */
 
@@ -16,6 +16,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Server\Service\ServerService;
 use Zend\Http\PhpEnvironment\Response;
+use Zend\Stdlib\Hydrator\ClassMethods;
 
 class ServerController extends AbstractActionController{
     
@@ -76,6 +77,34 @@ class ServerController extends AbstractActionController{
         
         return new ViewModel([
             "oForm" => $oForm,
+        ]);
+    }
+    
+    public function editAction(){
+        //Check if serverID is given, when not redirect
+        $serverID   = (int)$this->params()->fromRoute("id", 0);
+        if($serverID == 0){
+            $this->redirect()->toRoute("server");
+            return false;
+        }
+        
+        /**
+         * Server found by id ? When not redirect user
+         */
+        $oServer = $this->getServerService()->getOneServerById($serverID);
+        if(!$oServer){
+            $this->redirect()->toRoute("server");
+            return false;
+        }
+        
+        $oHydrator = new ClassMethods();
+        $aData     = $oHydrator->extract($oServer);
+        $oForm = $this->getServerService()->getForm("ServerEdit");
+        $oForm->setData($aData);
+        
+        return new ViewModel([
+            'oForm'     => $oForm,
+            'oServer'   => $oServer,
         ]);
     }
 }

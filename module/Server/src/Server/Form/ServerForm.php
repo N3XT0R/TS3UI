@@ -5,13 +5,14 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 555a9652838362e41971e4519752f4e923dbbb84 $
  * $Date$
  */
 
 namespace Server\Form;
 
 use Zend\Form\Form;
+use Zend\Form\Element\Hidden;
 use Zend\Form\Element\Csrf;
 use Zend\Form\Element\Text;
 use Zend\Form\Element\Password;
@@ -23,6 +24,11 @@ class ServerForm extends Form{
     
     public function addTokenElement($name = "token"){
         $oElement = new Csrf($name);
+        $this->add($oElement);
+    }
+    
+    public function addServerIDElement($name = "serverID"){
+        $oElement = new Hidden($name);
         $this->add($oElement);
     }
     

@@ -72,6 +72,7 @@ return array(
             //Form
             'Server\Form\ServerCreate'              => 'Server\Form\ServerCreateFormFactory',
             'Server\Form\VirtualServerEdit'         => 'Server\Form\VirtualServerEditFormFactory',
+            'Server\Form\ServerEdit'                => 'Server\Form\ServerEditFormFactory'
         ),
     ),
      'view_manager' => array(
