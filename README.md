@@ -4,10 +4,36 @@ Develop:
 [![Build Status](https://travis-ci.org/N3XT0R/TS3UI.svg?branch=development)](https://travis-ci.org/N3XT0R/TS3UI)
 [![Coverage Status](https://coveralls.io/repos/N3XT0R/TS3UI/badge.svg?branch=development)](https://coveralls.io/r/N3XT0R/TS3UI?branch=development)
 
+
 ## Introduction
 Web based Management Interface for Teamspeak servers.
 
 ![overview](https://raw.githubusercontent.com/N3XT0R/TS3UI/development/docs/screens/overview.png "Overview")
+
+
+## Announcement
+At the current time i am searching an experienced Webdesigner for this Project.
+
+When you (yes you ;) ) are interested in a great project and also live the opensource Community
+maybe you are the right man.
+
+Requirements:
+
+- Experience:
+  - Bootstrap
+  - Jquery 
+  - JS
+  - HTML 
+
+* Languages:
+Either English or German
+
+
+
+have experiences with Bootstrap, Jquery and a good hand for UX and also want to join 
+a community Project write me a Message.
+
+
 
 ### Features
 
@@ -18,7 +44,6 @@ Web based Management Interface for Teamspeak servers.
 Planned Features:
 
 - Provisioning API for Hosters
-
 
 ## Notice
 Currently is this Project under development. Do not try to install it.
