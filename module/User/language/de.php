@@ -1,5 +1,6 @@
 <?php
 return array(
+    //General
     'USER'                          => 'Benutzer',
     'USER_SUB_MANAGEMENT'           => 'Benutzerverwaltung',
     'USER_SUB_CREATE'               => 'Benutzer anlegen',
@@ -11,6 +12,9 @@ return array(
     'USER_LOGIN'                    => 'Login',
     'USER_ROLE'                     => 'Benutzerrolle',
     'USER_CREATE'                   => 'Anlegen',
+    //Admin-Interface
+    'USER_ADMIN'                    => 'Administrator',
+    
     //ZFCUser Overrides
     'Username'                      => 'Benutzername',
     'Password'                      => 'Passwort',

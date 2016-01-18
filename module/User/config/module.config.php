@@ -16,8 +16,23 @@ return array(
                     ),
                 ),
             ),
+            'admin' => [
+                'type' => 'literal',
+                'options' => [
+                     'route'    => '/admin',
+                     'defaults' => [
+                        'controller' => 'User-Admin',
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
         ),
     ),
+    'controllers' => [
+        'factories' => [
+            'User-Admin' => 'User\Controller\Admin\UserAdminControllerFactory',
+        ],
+    ],
     'doctrine' => array(
         'driver' => array(
             // overriding zfc-user-doctrine-orm's config
@@ -37,7 +52,8 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'zfc-user' => __DIR__ . '/../view',
+            'user'          => __DIR__ . '/../view',
+            'zfc-user'      => __DIR__ . '/../view',
         ),
     ),
     'zfcuser' => array(
@@ -55,6 +71,32 @@ return array(
             ),
         ),
     ),
+    'navigation' => [
+        'default' => [
+            'User-Admin' => [
+                'type'          => 'mvc',
+                'label'         => 'USER_ADMIN',
+                'route'         => 'admin',
+                'icon'          => 'fa-user fa-fw',
+                'controller'    => 'User-Admin',
+                'action'        => 'index',
+                'order'         => '10',
+                'resource'      => 'User-Admin',
+                'privilege'     => 'index',
+                'pages'         => [
+                    'index'     => [
+                        'type'          => 'mvc',
+                        'label'         => 'USER_ADMIN',
+                        'route'         => 'admin',
+                        'controller'    => 'User-Admin',
+                        'action'        => 'index',
+                        'resource'      => 'User-Admin',
+                        'privilege'     => 'index',
+                    ],
+                ],
+            ],
+        ],
+    ],
     'bjyauthorize' => array(
         'unauthorized_strategy' => 'BjyAuthorize\View\RedirectionStrategy',
         // Using the authentication identity provider, which basically reads the roles from the auth service's identity
@@ -87,7 +129,8 @@ return array(
                 'allow' => array(
                     // allow guests and users (and admins, through inheritance)
                     // the "wear" privilege on the resource "pants",
-                    array(array('Guest'), 'DoctrineORMModule\\Yuml\\YumlController'),
+                    [['Administrator'], ['User-Admin']],
+                    array(array('Administrator', 'User'), 'DoctrineORMModule\\Yuml\\YumlController'),
                 ),
                 // Don't mix allow/deny rules if you are using role inheritance.
                 // There are some weird bugs.
@@ -131,10 +174,24 @@ return array(
                 ),
                 array(
                     'route' => 'doctrine_orm_module_yuml',
-                    'roles' => array('User', 'Guest')
+                    'roles' => array('User', 'Administrator')
                 ),
+                [
+                    'route' => 'admin',
+                    'roles' => [
+                        'Administrator',
+                    ],
+                ],
             ),
         ),
+        // resource providers provide a list of resources that will be tracked
+        // in the ACL. like roles, they can be hierarchical
+        'resource_providers' => [
+            'BjyAuthorize\Provider\Resource\Config' => [
+                'User-Admin'                                => ['index'],
+                'DoctrineORMModule\Yuml\YumlController'     => ['index'],
+            ],
+        ],
     ),
     
 );

@@ -185,8 +185,7 @@ return array(
                 'allow' => array(
                     // allow guests and users (and admins, through inheritance)
                     // the "wear" privilege on the resource "pants",
-                    array(array('Administrator', 'User'), ['Server', 'VirtualServer']),
-                   
+                    array(array('Administrator', 'User'), ['Server', 'VirtualServer']),                   
                 ),
                 // Don't mix allow/deny rules if you are using role inheritance.
                 // There are some weird bugs.
