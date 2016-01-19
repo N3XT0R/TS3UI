@@ -6,7 +6,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 291670d4e6e889ca689d04251d3d680ca1680505 $
  * $Date$
  */
 
@@ -14,6 +14,7 @@ namespace ServerTests\Entity;
 
 use PHPUnit_Framework_TestCase;
 use Server\Entity\Server;
+use Server\Entity\Snapshot;
 
 class ServerTest extends PHPUnit_Framework_TestCase{
     
@@ -57,5 +58,16 @@ class ServerTest extends PHPUnit_Framework_TestCase{
         $this->oServer->setPassword($password);
         $gotPassword = $this->oServer->getPassword();
         $this->assertEquals($gotPassword, $password);
+    }
+    
+    public function testSetGetAddSnapshot(){
+        $snapshot = new Snapshot();
+        $this->oServer->addSnapshot($snapshot);
+        $gotSnapshots = $this->oServer->getSnapshots();
+        $this->assertCount(1, $gotSnapshots);
+        
+        $this->oServer->setSnapshots($gotSnapshots);
+        $gotSecondSnapshots = $this->oServer->getSnapshots();
+        $this->assertEquals($gotSecondSnapshots, $gotSnapshots);
     }
 }

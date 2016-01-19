@@ -6,20 +6,23 @@ $coverage->setData(array (
     57 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     58 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     60 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     62 => 
     array (
@@ -93,14 +96,16 @@ $coverage->setData(array (
     88 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     90 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     91 => 
     array (
@@ -111,8 +116,9 @@ $coverage->setData(array (
     93 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
   ),
   'C:\\xampp\\php\\pear\\Text\\Template\\Autoload.php' => 
@@ -120,20 +126,23 @@ $coverage->setData(array (
     48 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     49 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     51 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     54 => 
     array (
@@ -147,14 +156,16 @@ $coverage->setData(array (
     59 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     61 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     62 => 
     array (
@@ -165,8 +176,9 @@ $coverage->setData(array (
     64 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
   ),
   'C:\\xampp\\php\\pear\\PHP\\Timer\\Autoload.php' => 
@@ -174,20 +186,23 @@ $coverage->setData(array (
     49 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     50 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     52 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     55 => 
     array (
@@ -201,14 +216,16 @@ $coverage->setData(array (
     60 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     62 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     63 => 
     array (
@@ -219,8 +236,9 @@ $coverage->setData(array (
     65 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\User\\Module.php' => 
@@ -1552,20 +1570,23 @@ $coverage->setData(array (
     47 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     48 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     50 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     52 => 
     array (
@@ -1585,14 +1606,16 @@ $coverage->setData(array (
     60 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     62 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     63 => 
     array (
@@ -1603,8 +1626,9 @@ $coverage->setData(array (
     65 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\Application\\Module.php' => 
@@ -1641,74 +1665,147 @@ $coverage->setData(array (
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\Server\\src\\Server\\Entity\\Server.php' => 
   array (
-    42 => 
+    48 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+      2 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+      3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+      4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+      5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    49 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+      2 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+      3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+      4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+      5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    50 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+      2 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+      3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+      4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+      5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    53 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
     ),
-    43 => 
+    54 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
     ),
-    44 => NULL,
-    47 => 
+    55 => NULL,
+    58 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
     ),
-    48 => NULL,
-    51 => 
+    59 => NULL,
+    62 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
     ),
-    52 => 
+    63 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
     ),
-    53 => NULL,
-    56 => 
+    64 => NULL,
+    67 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
     ),
-    57 => NULL,
-    60 => 
+    68 => NULL,
+    71 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
     ),
-    61 => 
+    72 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
     ),
-    64 => 
+    75 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
     ),
-    65 => NULL,
-    68 => 
+    76 => NULL,
+    79 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
     ),
-    69 => 
+    80 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
     ),
-    70 => NULL,
-    73 => 
+    81 => NULL,
+    84 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
     ),
-    74 => NULL,
-    77 => 
+    85 => NULL,
+    88 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
     ),
-    78 => 
+    89 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
     ),
-    81 => 
+    92 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
     ),
-    82 => NULL,
+    93 => NULL,
+    101 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+      2 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+      3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+      4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+      5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    102 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+      2 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+      3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+      4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+      5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    103 => NULL,
+    110 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+    ),
+    111 => NULL,
+    119 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+    ),
+    120 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+    ),
+    121 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+    ),
+    122 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+    ),
+    123 => NULL,
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\Server\\Module.php' => 
   array (
@@ -3451,20 +3548,23 @@ $coverage->setData(array (
     48 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     49 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     51 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     53 => 
     array (
@@ -3583,14 +3683,16 @@ $coverage->setData(array (
     94 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     96 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     97 => 
     array (
@@ -3601,8 +3703,9 @@ $coverage->setData(array (
     99 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
   ),
   'C:\\xampp\\php\\pear\\PHP\\Token\\Stream\\Autoload.php' => 
@@ -3610,20 +3713,23 @@ $coverage->setData(array (
     48 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     49 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     51 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     53 => 
     array (
@@ -4120,14 +4226,16 @@ $coverage->setData(array (
     220 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     222 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     223 => 
     array (
@@ -4138,8 +4246,9 @@ $coverage->setData(array (
     225 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
   ),
   'C:\\xampp\\php\\pear\\PHPUnit\\Util\\Configuration.php' => 
@@ -5653,20 +5762,23 @@ $coverage->setData(array (
     73 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     74 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     76 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     78 => 
     array (
@@ -6034,14 +6146,16 @@ $coverage->setData(array (
     202 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     204 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     205 => 
     array (
@@ -6052,14 +6166,16 @@ $coverage->setData(array (
     207 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     213 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
     214 => 
     array (
@@ -6097,8 +6213,9 @@ $coverage->setData(array (
     227 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'UserTests\\Entity\\RoleTest::testSetGetId',
-      2 => 'UserTests\\Entity\\UserTest::testSetGetId',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      2 => 'UserTests\\Entity\\RoleTest::testSetGetId',
+      3 => 'UserTests\\Entity\\UserTest::testSetGetId',
     ),
   ),
   'C:\\xampp\\htdocs\\ts3min\\tests\\Bootstrap.php' => 
@@ -6166,6 +6283,96 @@ $coverage->setData(array (
     array (
     ),
     106 => NULL,
+  ),
+  'C:\\xampp\\htdocs\\ts3min\\module\\Server\\src\\Server\\Entity\\Snapshot.php' => 
+  array (
+    57 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetSnapshotId',
+    ),
+    58 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetSnapshotId',
+    ),
+    59 => NULL,
+    66 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetSnapshotId',
+    ),
+    67 => NULL,
+    75 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    76 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    77 => NULL,
+    84 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    85 => NULL,
+    93 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetVirtualServerID',
+    ),
+    94 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetVirtualServerID',
+    ),
+    95 => NULL,
+    102 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetVirtualServerID',
+    ),
+    103 => NULL,
+    111 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetConfig',
+    ),
+    112 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetConfig',
+    ),
+    113 => NULL,
+    120 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetConfig',
+    ),
+    121 => NULL,
+    129 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetTimestamp',
+    ),
+    130 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetTimestamp',
+    ),
+    131 => NULL,
+    138 => 
+    array (
+      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetTimestamp',
+    ),
+    139 => NULL,
+    146 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+    ),
+    147 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+    ),
+    148 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+    ),
+    149 => NULL,
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\User\\src\\User\\Entity\\Role.php' => 
   array (
@@ -6398,6 +6605,36 @@ $coverage->setTests(array (
     'status' => 0,
   ),
   'ServerTests\\Entity\\ServerTest::testSetGetPassword' => 
+  array (
+    'size' => 'small',
+    'status' => 0,
+  ),
+  'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot' => 
+  array (
+    'size' => 'small',
+    'status' => 0,
+  ),
+  'ServerTests\\Entity\\SnapshotTest::testSetGetSnapshotId' => 
+  array (
+    'size' => 'small',
+    'status' => 0,
+  ),
+  'ServerTests\\Entity\\SnapshotTest::testSetGetVirtualServerID' => 
+  array (
+    'size' => 'small',
+    'status' => 0,
+  ),
+  'ServerTests\\Entity\\SnapshotTest::testSetGetConfig' => 
+  array (
+    'size' => 'small',
+    'status' => 0,
+  ),
+  'ServerTests\\Entity\\SnapshotTest::testSetGetTimestamp' => 
+  array (
+    'size' => 'small',
+    'status' => 0,
+  ),
+  'ServerTests\\Entity\\SnapshotTest::testSetGetServer' => 
   array (
     'size' => 'small',
     'status' => 0,
@@ -12013,6 +12250,7 @@ $filter->setBlacklistedFiles(array (
   'C:\\xampp\\htdocs\\ts3min\\vendor\\zf-commons\\zfc-user\\tests\\ZfcUserTest\\View\\Helper\\ZfcUserLoginWidgetTest.php' => true,
   'C:\\xampp\\htdocs\\ts3min\\vendor\\zf-commons\\zfc-user\\tests\\bootstrap.php' => true,
   'C:\\xampp\\htdocs\\ts3min\\module\\Server\\tests\\ServerTests\\Entity\\ServerTest.php' => true,
+  'C:\\xampp\\htdocs\\ts3min\\module\\Server\\tests\\ServerTests\\Entity\\SnapshotTest.php' => true,
   'C:\\xampp\\htdocs\\ts3min\\module\\User\\tests\\UserTests\\Entity\\RoleTest.php' => true,
   'C:\\xampp\\htdocs\\ts3min\\module\\User\\tests\\UserTests\\Entity\\UserTest.php' => true,
 ));
