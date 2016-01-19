@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1452108289">
-  <project timestamp="1452108289">
+<coverage generated="1453154119">
+  <project timestamp="1453154119">
     <package name="Application">
       <file name="C:\xampp/htdocs/ts3min/module/Application/Module.php">
         <class name="Module" namespace="Application">
@@ -208,7 +208,7 @@
         <class name="Bootstrap" namespace="tests">
           <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
         </class>
-        <metrics loc="87" ncloc="84" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics loc="91" ncloc="84" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
     <file name="C:\xampp/php/pear/File/Iterator/Autoload.php">
@@ -2206,6 +2206,6 @@
       <line num="64" type="stmt" count="3"/>
       <metrics loc="65" ncloc="22" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="6" elements="11" coveredelements="6"/>
     </file>
-    <metrics files="22" loc="4754" ncloc="3366" classes="13" methods="96" coveredmethods="34" conditionals="0" coveredconditionals="0" statements="1990" coveredstatements="101" elements="2086" coveredelements="135"/>
+    <metrics files="22" loc="4758" ncloc="3366" classes="13" methods="96" coveredmethods="34" conditionals="0" coveredconditionals="0" statements="1990" coveredstatements="101" elements="2086" coveredelements="135"/>
   </project>
 </coverage>

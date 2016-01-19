@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: d90df8e94697b543c2bf21481635c41f26b45a45 $
  * $Date$
  */
 
@@ -96,7 +96,7 @@ return [
     
     //Groups
     'SERVER_VIRTUAL_GROUP_NAME'             => 'Gruppe',
-   
+   'SERVER_VIRTUAL_GROUPS'                  => 'Benutzergruppen',
     
     //Exceptions
     'Operation timed out'                   => 'Der Server hat nicht in der vorgebenen Zeit geantwortet. Operation fehlgeschlagen.',

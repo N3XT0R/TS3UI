@@ -30,6 +30,10 @@ class Bootstrap {
         static::$serviceManager->get('ModuleManager')->loadModules();
     }
 
+    /**
+     * 
+     * @return \Zend\ServiceManager\ServiceManager
+     */
     public static function getServiceManager() {
         return static::$serviceManager;
     }

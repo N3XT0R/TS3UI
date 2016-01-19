@@ -7,7 +7,7 @@
     $oVirtualServer = $this->oVirtualServer;
 ?>
 <div class="row">
-    <div class="col-md-1">
+    <div class="col-sm-12">
         <?php
             $sVirtualChannelUrl = $this->url("server/virtual/action", [
                 "action"        => "channelList",
@@ -15,14 +15,10 @@
                 'virtualId'     => $oVirtualServer->getId(),
             ]);
         ?>
-        <a href="<?php echo $sVirtualChannelUrl; ?>" class="btn btn-sq btn-primary">
-            <i class="fa fa-clone fa-5x"></i><br/>
+        <a href="<?php echo $sVirtualChannelUrl; ?>" data-placement="top" class="btn btn-lg btn-primary">
+            <i class="fa fa-clone fa-4x" list-alt></i><br/><br/>
             <?php echo $this->translate("SERVER_VIRTUAL_CHANNEL");?>
         </a>
-    </div>
-    
-    
-    <div class="col-md-1">
         <?php
             $sVirtualGroupsUrl = $this->url("server/virtual/action", [
                 "action"        => "serverGroupList",
@@ -30,8 +26,8 @@
                 'virtualId'     => $oVirtualServer->getId(),
             ]);
         ?>
-        <a href="<?php echo $sVirtualGroupsUrl; ?>" class="btn btn-sq btn-primary">
-            <i class="fa fa-group fa-5x"></i><br/>
+        <a href="<?php echo $sVirtualGroupsUrl; ?>" data-placement="top" class="btn btn-lg btn-primary">
+            <i class="fa fa-group fa-4x list-alt"></i><br/><br/>
             <?php echo $this->translate("SERVER_VIRTUAL_GROUPS");?>
         </a>
     </div>
