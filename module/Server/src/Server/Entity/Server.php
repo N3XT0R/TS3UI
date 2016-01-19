@@ -5,13 +5,14 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: fe250fd9d2d854fcb4243692dd360535149ddc90 $
  * $Date$
  */
 
 namespace Server\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /** 
  * @ORM\Entity 
@@ -37,6 +38,16 @@ class Server implements ServerInterface{
     
     /** @ORM\Column(type="string") */
     protected $password;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Snapshot", mappedBy="server")
+     */
+    protected $snapshots;
+    
+    public function __construct() {
+        $snapshots = new ArrayCollection();
+        $this->setSnapshots($snapshots);
+    }
     
     public function setServerID($serverID){
         $this->serverID = $serverID;
@@ -81,4 +92,33 @@ class Server implements ServerInterface{
         return $this->password;
     }
     
+    /**
+     * Set Snapshots
+     * @param ArrayCollection|Snapshot[] $snapshots
+     * @return \Server\Entity\Server
+     */
+    public function setSnapshots(ArrayCollection $snapshots){
+        $this->snapshots = $snapshots;
+        return $this;
+    }
+    
+    /**
+     * Get Snapshots
+     * @return ArrayCollection|Snapshot[]
+     */
+    public function getSnapshots(){
+        return $this->snapshots;
+    }
+    
+    /**
+     * Add a Snapshot to Snapshot list
+     * @param \Server\Entity\Snapshot $snapshot
+     * @return \Server\Entity\Server
+     */
+    public function addSnapshot(Snapshot $snapshot){
+        $snapshot->setServer($this);
+        $snapshot->setUpdated();
+        $this->getSnapshots()->add($snapshot);
+        return $this;
+    }
 }
