@@ -135,6 +135,17 @@ return array(
                                 'privilege'     => 'virtualServerList',
                                 'useRouteMatch' => true,
                                 'pages'         => array(
+                                    'index' => array(
+                                        'id'                => 'index',
+                                        'type'              => 'mvc',
+                                        'label'             => 'SERVER_VIRTUAL_MANAGEMENT',
+                                        'route'             => 'server/virtual/action',
+                                        'controller'        => 'VirtualServer',
+                                        'action'            => 'index',
+                                        'resource'          => 'VirtualServer',
+                                        'privilege'         => 'index',
+                                        'useRouteMatch'     => true,
+                                    ),
                                     'channelList' => array(
                                         'id'                => 'channelList',
                                         'type'              => 'mvc',
