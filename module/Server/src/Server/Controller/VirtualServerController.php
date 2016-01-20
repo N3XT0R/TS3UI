@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: b2d81a8bf25e49072517211fbb5f2a66930afc53 $
  * $Date$
  */
 
@@ -206,5 +206,10 @@ class VirtualServerController extends AbstractActionController{
         return new ViewModel([
             'aGroups'       => $aGroups,
         ]);
+    }
+    
+    public function snapshotListAction(){
+        
+        return new ViewModel([]);
     }
 }

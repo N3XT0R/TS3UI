@@ -30,5 +30,17 @@
             <i class="fa fa-group fa-4x list-alt"></i><br/><br/>
             <?php echo $this->translate("SERVER_VIRTUAL_GROUPS");?>
         </a>
+        
+        <?php
+            $sVirtualBackupsUrl = $this->url("server/virtual/action", [
+                "action"        => "snapshotList",
+                'id'            => $oServer->getServerID(),
+                'virtualId'     => $oVirtualServer->getId(),
+            ]);
+        ?>
+        <a href="<?php echo $sVirtualBackupsUrl; ?>" data-placement="top" class="btn btn-lg btn-primary">
+            <i class="fa fa-floppy-o fa-4x list-alt"></i><br/><br/>
+            <?php echo $this->translate("SERVER_VIRTUAL_SNAPSHOTS");?>
+        </a>
     </div>
 </div>

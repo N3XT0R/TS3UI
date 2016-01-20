@@ -146,6 +146,18 @@ return array(
                                         'privilege'         => 'index',
                                         'useRouteMatch'     => true,
                                         'pages'             => [
+                                            'snapshotList' => [
+                                                'id'                => 'snapshotList',
+                                                'type'              => 'mvc',
+                                                'label'             => 'SERVER_VIRTUAL_SNAPSHOTS',
+                                                'route'             => 'server/virtual/action',
+                                                'controller'        => 'VirtualServer',
+                                                'action'            => 'snapshotList',
+                                                'resource'          => 'VirtualServer',
+                                                'privilege'         => 'snapshotList',
+                                                'useRouteMatch'     => true,
+                                                //'visisble'          => false,
+                                            ],
                                             'channelList' => array(
                                                 'id'                => 'channelList',
                                                 'type'              => 'mvc',
