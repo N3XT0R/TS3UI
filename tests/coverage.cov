@@ -1665,16 +1665,6 @@ $coverage->setData(array (
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\Server\\src\\Server\\Entity\\Server.php' => 
   array (
-    48 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-      1 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
-      2 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
-      3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
-      4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
-      5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
-    ),
     49 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
@@ -1683,7 +1673,8 @@ $coverage->setData(array (
       3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
       4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
       5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+      6 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      7 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
     ),
     50 => 
     array (
@@ -1693,77 +1684,10 @@ $coverage->setData(array (
       3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
       4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
       5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+      6 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      7 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
     ),
-    53 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-    ),
-    54 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-    ),
-    55 => NULL,
-    58 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
-    ),
-    59 => NULL,
-    62 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
-    ),
-    63 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
-    ),
-    64 => NULL,
-    67 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
-    ),
-    68 => NULL,
-    71 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
-    ),
-    72 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
-    ),
-    75 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
-    ),
-    76 => NULL,
-    79 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
-    ),
-    80 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
-    ),
-    81 => NULL,
-    84 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
-    ),
-    85 => NULL,
-    88 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
-    ),
-    89 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
-    ),
-    92 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
-    ),
-    93 => NULL,
-    101 => 
+    51 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
       1 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
@@ -1771,8 +1695,80 @@ $coverage->setData(array (
       3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
       4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
       5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+      6 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      7 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
     ),
+    54 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+    ),
+    55 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+    ),
+    56 => NULL,
+    59 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+    ),
+    60 => NULL,
+    63 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+    ),
+    64 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+    ),
+    65 => NULL,
+    68 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+    ),
+    69 => NULL,
+    72 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+    ),
+    73 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+    ),
+    76 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+    ),
+    77 => NULL,
+    80 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+    ),
+    81 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+    ),
+    82 => NULL,
+    85 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+    ),
+    86 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+    ),
+    89 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+    ),
+    90 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+    ),
+    93 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+    ),
+    94 => NULL,
     102 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
@@ -1781,31 +1777,65 @@ $coverage->setData(array (
       3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
       4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
       5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      6 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+      6 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      7 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
     ),
-    103 => NULL,
-    110 => 
+    103 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetServerID',
+      1 => 'ServerTests\\Entity\\ServerTest::testSetGetServer',
+      2 => 'ServerTests\\Entity\\ServerTest::testSetGetPort',
+      3 => 'ServerTests\\Entity\\ServerTest::testSetGetUsername',
+      4 => 'ServerTests\\Entity\\ServerTest::testSetGetPassword',
+      5 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      6 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      7 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+    ),
+    104 => NULL,
+    111 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
     ),
-    111 => NULL,
-    119 => 
-    array (
-      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-    ),
+    112 => NULL,
     120 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
     ),
     121 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
     ),
     122 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
     ),
-    123 => NULL,
+    123 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+    ),
+    124 => NULL,
+    132 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+    ),
+    133 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+    ),
+    134 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+    ),
+    135 => 
+    array (
+      0 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+    ),
+    136 => NULL,
   ),
   'C:\\xampp\\htdocs\\ts3min\\module\\Server\\Module.php' => 
   array (
@@ -6288,11 +6318,13 @@ $coverage->setData(array (
   array (
     57 => 
     array (
-      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetSnapshotId',
+      0 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetSnapshotId',
     ),
     58 => 
     array (
-      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetSnapshotId',
+      0 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetSnapshotId',
     ),
     59 => NULL,
     66 => 
@@ -6303,12 +6335,14 @@ $coverage->setData(array (
     75 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      2 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
     ),
     76 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      2 => 'ServerTests\\Entity\\SnapshotTest::testSetGetServer',
     ),
     77 => NULL,
     84 => 
@@ -6327,7 +6361,8 @@ $coverage->setData(array (
     95 => NULL,
     102 => 
     array (
-      0 => 'ServerTests\\Entity\\SnapshotTest::testSetGetVirtualServerID',
+      0 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetVirtualServerID',
     ),
     103 => NULL,
     111 => 
@@ -6347,12 +6382,14 @@ $coverage->setData(array (
     129 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetTimestamp',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      2 => 'ServerTests\\Entity\\SnapshotTest::testSetGetTimestamp',
     ),
     130 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
-      1 => 'ServerTests\\Entity\\SnapshotTest::testSetGetTimestamp',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
+      2 => 'ServerTests\\Entity\\SnapshotTest::testSetGetTimestamp',
     ),
     131 => NULL,
     138 => 
@@ -6363,14 +6400,17 @@ $coverage->setData(array (
     146 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
     ),
     147 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
     ),
     148 => 
     array (
       0 => 'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot',
+      1 => 'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId',
     ),
     149 => NULL,
   ),
@@ -6610,6 +6650,11 @@ $coverage->setTests(array (
     'status' => 0,
   ),
   'ServerTests\\Entity\\ServerTest::testSetGetAddSnapshot' => 
+  array (
+    'size' => 'small',
+    'status' => 0,
+  ),
+  'ServerTests\\Entity\\ServerTest::testgetSnapshotsByVirtualServerId' => 
   array (
     'size' => 'small',
     'status' => 0,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1453320013">
-  <project timestamp="1453320013">
+<coverage generated="1453322057">
+  <project timestamp="1453322057">
     <package name="Application">
       <file name="C:\xampp/htdocs/ts3min/module/Application/Module.php">
         <class name="Module" namespace="Application">
@@ -48,82 +48,88 @@
     <package name="Server\Entity">
       <file name="C:\xampp/htdocs/ts3min/module/Server/src/Server/Entity/Server.php">
         <class name="Server" namespace="Server\Entity">
-          <metrics methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="39" coveredelements="39"/>
+          <metrics methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="30" elements="45" coveredelements="45"/>
         </class>
-        <line num="47" type="method" name="__construct" crap="1" count="7"/>
-        <line num="48" type="stmt" count="7"/>
-        <line num="49" type="stmt" count="7"/>
-        <line num="50" type="stmt" count="7"/>
-        <line num="52" type="method" name="setServerID" crap="1" count="1"/>
-        <line num="53" type="stmt" count="1"/>
+        <line num="48" type="method" name="__construct" crap="1" count="8"/>
+        <line num="49" type="stmt" count="8"/>
+        <line num="50" type="stmt" count="8"/>
+        <line num="51" type="stmt" count="8"/>
+        <line num="53" type="method" name="setServerID" crap="1" count="1"/>
         <line num="54" type="stmt" count="1"/>
-        <line num="57" type="method" name="getServerID" crap="1" count="1"/>
-        <line num="58" type="stmt" count="1"/>
-        <line num="61" type="method" name="setServer" crap="1" count="1"/>
-        <line num="62" type="stmt" count="1"/>
+        <line num="55" type="stmt" count="1"/>
+        <line num="58" type="method" name="getServerID" crap="1" count="1"/>
+        <line num="59" type="stmt" count="1"/>
+        <line num="62" type="method" name="setServer" crap="1" count="1"/>
         <line num="63" type="stmt" count="1"/>
-        <line num="66" type="method" name="getServer" crap="1" count="1"/>
-        <line num="67" type="stmt" count="1"/>
-        <line num="70" type="method" name="setPort" crap="1" count="1"/>
-        <line num="71" type="stmt" count="1"/>
+        <line num="64" type="stmt" count="1"/>
+        <line num="67" type="method" name="getServer" crap="1" count="1"/>
+        <line num="68" type="stmt" count="1"/>
+        <line num="71" type="method" name="setPort" crap="1" count="1"/>
         <line num="72" type="stmt" count="1"/>
-        <line num="74" type="method" name="getPort" crap="1" count="1"/>
-        <line num="75" type="stmt" count="1"/>
-        <line num="78" type="method" name="setUsername" crap="1" count="1"/>
-        <line num="79" type="stmt" count="1"/>
+        <line num="73" type="stmt" count="1"/>
+        <line num="75" type="method" name="getPort" crap="1" count="1"/>
+        <line num="76" type="stmt" count="1"/>
+        <line num="79" type="method" name="setUsername" crap="1" count="1"/>
         <line num="80" type="stmt" count="1"/>
-        <line num="83" type="method" name="getUsername" crap="1" count="1"/>
-        <line num="84" type="stmt" count="1"/>
-        <line num="87" type="method" name="setPassword" crap="1" count="1"/>
-        <line num="88" type="stmt" count="1"/>
+        <line num="81" type="stmt" count="1"/>
+        <line num="84" type="method" name="getUsername" crap="1" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="86" type="stmt" count="1"/>
+        <line num="88" type="method" name="setPassword" crap="1" count="1"/>
         <line num="89" type="stmt" count="1"/>
-        <line num="91" type="method" name="getPassword" crap="1" count="1"/>
-        <line num="92" type="stmt" count="1"/>
-        <line num="100" type="method" name="setSnapshots" crap="1" count="7"/>
-        <line num="101" type="stmt" count="7"/>
-        <line num="102" type="stmt" count="7"/>
-        <line num="109" type="method" name="getSnapshots" crap="1" count="1"/>
-        <line num="110" type="stmt" count="1"/>
-        <line num="118" type="method" name="addSnapshot" crap="1" count="1"/>
-        <line num="119" type="stmt" count="1"/>
-        <line num="120" type="stmt" count="1"/>
-        <line num="121" type="stmt" count="1"/>
-        <line num="122" type="stmt" count="1"/>
-        <metrics loc="124" ncloc="86" classes="1" methods="14" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="39" coveredelements="39"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="92" type="method" name="getPassword" crap="1" count="1"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="101" type="method" name="setSnapshots" crap="1" count="8"/>
+        <line num="102" type="stmt" count="8"/>
+        <line num="103" type="stmt" count="8"/>
+        <line num="110" type="method" name="getSnapshots" crap="1" count="2"/>
+        <line num="111" type="stmt" count="2"/>
+        <line num="119" type="method" name="addSnapshot" crap="1" count="2"/>
+        <line num="120" type="stmt" count="2"/>
+        <line num="121" type="stmt" count="2"/>
+        <line num="122" type="stmt" count="2"/>
+        <line num="123" type="stmt" count="2"/>
+        <line num="131" type="method" name="getSnapshotsByVirtualServerId" crap="1" count="1"/>
+        <line num="132" type="stmt" count="1"/>
+        <line num="133" type="stmt" count="1"/>
+        <line num="134" type="stmt" count="1"/>
+        <line num="135" type="stmt" count="1"/>
+        <metrics loc="137" ncloc="94" classes="1" methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="30" elements="45" coveredelements="45"/>
       </file>
       <file name="C:\xampp/htdocs/ts3min/module/Server/src/Server/Entity/Snapshot.php">
         <class name="Snapshot" namespace="Server\Entity">
           <metrics methods="11" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="29" coveredelements="29"/>
         </class>
-        <line num="56" type="method" name="setSnapshotId" crap="1" count="1"/>
-        <line num="57" type="stmt" count="1"/>
-        <line num="58" type="stmt" count="1"/>
+        <line num="56" type="method" name="setSnapshotId" crap="1" count="2"/>
+        <line num="57" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="2"/>
         <line num="65" type="method" name="getSnapshotId" crap="1" count="1"/>
         <line num="66" type="stmt" count="1"/>
-        <line num="74" type="method" name="setServer" crap="1" count="2"/>
-        <line num="75" type="stmt" count="2"/>
-        <line num="76" type="stmt" count="2"/>
+        <line num="74" type="method" name="setServer" crap="1" count="3"/>
+        <line num="75" type="stmt" count="3"/>
+        <line num="76" type="stmt" count="3"/>
         <line num="83" type="method" name="getServer" crap="1" count="1"/>
         <line num="84" type="stmt" count="1"/>
         <line num="92" type="method" name="setVirtualServerID" crap="1" count="1"/>
         <line num="93" type="stmt" count="1"/>
         <line num="94" type="stmt" count="1"/>
-        <line num="101" type="method" name="getVirtualServerID" crap="1" count="1"/>
-        <line num="102" type="stmt" count="1"/>
+        <line num="101" type="method" name="getVirtualServerID" crap="1" count="2"/>
+        <line num="102" type="stmt" count="2"/>
         <line num="110" type="method" name="setConfig" crap="1" count="1"/>
         <line num="111" type="stmt" count="1"/>
         <line num="112" type="stmt" count="1"/>
         <line num="119" type="method" name="getConfig" crap="1" count="1"/>
         <line num="120" type="stmt" count="1"/>
-        <line num="128" type="method" name="setTimestamp" crap="1" count="2"/>
-        <line num="129" type="stmt" count="2"/>
-        <line num="130" type="stmt" count="2"/>
+        <line num="128" type="method" name="setTimestamp" crap="1" count="3"/>
+        <line num="129" type="stmt" count="3"/>
+        <line num="130" type="stmt" count="3"/>
         <line num="137" type="method" name="getTimestamp" crap="1" count="1"/>
         <line num="138" type="stmt" count="1"/>
-        <line num="145" type="method" name="setUpdated" crap="1" count="1"/>
-        <line num="146" type="stmt" count="1"/>
-        <line num="147" type="stmt" count="1"/>
-        <line num="148" type="stmt" count="1"/>
+        <line num="145" type="method" name="setUpdated" crap="1" count="2"/>
+        <line num="146" type="stmt" count="2"/>
+        <line num="147" type="stmt" count="2"/>
+        <line num="148" type="stmt" count="2"/>
         <metrics loc="150" ncloc="70" classes="1" methods="11" coveredmethods="11" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="29" coveredelements="29"/>
       </file>
     </package>
@@ -2255,6 +2261,6 @@
       <line num="64" type="stmt" count="4"/>
       <metrics loc="65" ncloc="22" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="6" elements="11" coveredelements="6"/>
     </file>
-    <metrics files="23" loc="4948" ncloc="3459" classes="14" methods="111" coveredmethods="49" conditionals="0" coveredconditionals="0" statements="2018" coveredstatements="129" elements="2129" coveredelements="178"/>
+    <metrics files="23" loc="4961" ncloc="3467" classes="14" methods="112" coveredmethods="50" conditionals="0" coveredconditionals="0" statements="2023" coveredstatements="134" elements="2135" coveredelements="184"/>
   </project>
 </coverage>

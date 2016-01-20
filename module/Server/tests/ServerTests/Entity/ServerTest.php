@@ -70,4 +70,18 @@ class ServerTest extends PHPUnit_Framework_TestCase{
         $gotSecondSnapshots = $this->oServer->getSnapshots();
         $this->assertEquals($gotSecondSnapshots, $gotSnapshots);
     }
+    
+    public function testgetSnapshotsByVirtualServerId(){
+        $id = 4711;
+        $snapshot = new Snapshot();
+        $snapshot->setSnapshotId($id);
+        $this->oServer->addSnapshot($snapshot);
+        $snapshot->setSnapshotId(42);
+        $this->oServer->addSnapshot(clone $snapshot);
+        $oGotSnapshots = $this->oServer->getSnapshotsByVirtualServerId($id);
+        
+        foreach($oGotSnapshots as $oSnapshot){
+            $this->assertEquals($oSnapshot->getSnapshotId(), $id);
+        }
+    }
 }
