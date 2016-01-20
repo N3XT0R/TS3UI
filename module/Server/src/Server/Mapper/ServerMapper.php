@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 5f2801bf7aaa610d43063059013e711bfb11aab6 $
  * $Date$
  */
 
@@ -22,7 +22,6 @@ use Zend\Crypt\Symmetric\Mcrypt;
 
 class ServerMapper implements ServerMapperInterface{
     
-    protected $oServerRepository;
     protected $oEntityManager;
     protected $aConfig;
     

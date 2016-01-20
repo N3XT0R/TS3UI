@@ -15,6 +15,7 @@ namespace Server\Service;
 use Zend\EventManager\EventManagerAwareTrait;
 use Zend\EventManager\EventManagerAwareInterface;
 use TeamSpeak3\Node\Server;
+use TeamSpeak3\TeamSpeak3;
 
 class SnapshotService  implements EventManagerAwareInterface{
     
@@ -76,6 +77,7 @@ class SnapshotService  implements EventManagerAwareInterface{
     }
     
     public function createServerSnapshot(Server $oServer){
-        
+        $sSnapshot = $oServer->snapshotCreate(TeamSpeak3::SNAPSHOT_BASE64);
+        return $sSnapshot;
     }
 }

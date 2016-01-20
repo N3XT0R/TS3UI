@@ -66,6 +66,7 @@ return array(
         'factories' => array(
             //Mapper
             'Server\Mapper\Server'                  => 'Server\Mapper\ServerMapperFactory',
+            'Server\Mapper\Snapshot'                => 'Server\Mapper\SnapshotMapperFactory',
             //Service
             'Server\Service\Server'                 => 'Server\Service\ServerServiceFactory',
             'Server\Service\VirtualServer'          => 'Server\Service\VirtualServerServiceFactory',

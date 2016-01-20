@@ -210,6 +210,8 @@ class VirtualServerController extends AbstractActionController{
     
     public function snapshotListAction(){
         
-        return new ViewModel([]);
+        return new ViewModel([
+            
+        ]);
     }
 }
