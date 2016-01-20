@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1453240087">
-  <project timestamp="1453240087">
+<coverage generated="1453320013">
+  <project timestamp="1453320013">
     <package name="Application">
       <file name="C:\xampp/htdocs/ts3min/module/Application/Module.php">
         <class name="Module" namespace="Application">

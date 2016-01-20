@@ -12,6 +12,7 @@
 namespace Server\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /** 
@@ -120,5 +121,17 @@ class Server implements ServerInterface{
         $snapshot->setUpdated();
         $this->getSnapshots()->add($snapshot);
         return $this;
+    }
+    
+    /**
+     * Get Snapshots for one VirtualServer by its Id
+     * @param integer $id VirtualServer ID
+     * @return Snapshot[]
+     */
+    public function getSnapshotsByVirtualServerId($id){
+        $criteria = Criteria::create();
+        $criteria->where(Criteria::expr()->eq("virtualServerID", $id));
+        $aSnapshots = $this->getSnapshots()->matching($criteria);
+        return $aSnapshots;
     }
 }

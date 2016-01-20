@@ -1,11 +1,26 @@
-<?php
-
-/*
- * TS3UI - Teamspeak 3 Webinterface
- * @author         N3X
- * @copyright      Copyright (c) 2015, Ilya Beliaev
- * @since          Version 1.0
- * 
- * $Id$
- * $Date$
- */
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="col-md-8"><?php echo $this->translate("SERVER_VIRTUAL_SNAPSHOT_TIMESTAMP");?></th>
+                <th class="col-md-4"><?php echo $this->translate("SERVER_ACTION");?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                if(count($aSnapshots) > 0){
+            ?>
+            <tr>
+                
+            </tr>
+            <?php
+                }else{
+            ?>
+            <tr>
+                <td colspan="12"><?php echo $this->translate("SERVER_NO_RECORD");?></td>
+            </tr>
+            <?php
+                }
+            ?>
+        </tbody>
+</div>

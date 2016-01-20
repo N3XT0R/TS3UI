@@ -209,9 +209,21 @@ class VirtualServerController extends AbstractActionController{
     }
     
     public function snapshotListAction(){
+        $serverID   = (int)$this->params()->fromRoute("id",0);
+        $virtualID  = (int)$this->params()->fromRoute("virtualId",0);
+        
+        $oServer = $this->getServerService()->getOneServerById($serverID);
+        
+        if(!$oServer){
+            $this->redirect()->toRoute("server");
+            return false;
+        }
+        
+        $aSnapshots = $oServer->getSnapshotsByVirtualServerId($virtualID);
+        
         
         return new ViewModel([
-            
+            'aSnapshots' => $aSnapshots,
         ]);
     }
 }

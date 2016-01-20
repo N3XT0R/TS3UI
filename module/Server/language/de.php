@@ -97,7 +97,11 @@ return [
     //Groups
     'SERVER_VIRTUAL_GROUP_NAME'             => 'Gruppe',
     'SERVER_VIRTUAL_GROUPS'                 => 'Benutzergruppen',
+    
+    //Snapshots
     'SERVER_VIRTUAL_SNAPSHOTS'              => 'Snapshots',
+    'SERVER_VIRTUAL_SNAPSHOT_TIMESTAMP'     => 'Zeitstempel',
+    
     
     //Exceptions
     'Operation timed out'                   => 'Der Server hat nicht in der vorgebenen Zeit geantwortet. Operation fehlgeschlagen.',
