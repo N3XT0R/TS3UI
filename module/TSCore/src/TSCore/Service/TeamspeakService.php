@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id$
+ * $Id: 7a60fd0fed1be54ee7bab3d27ac6e3f08a4a2640 $
  * $Date$
  */
 
@@ -92,5 +92,17 @@ class TeamspeakService implements EventManagerAwareInterface{
         $this->connect($id);
         $oTSHost = $this->getTeamspeakAdapter()->getTeamspeak();
         return $oTSHost;
+    }
+    
+    /**
+     * Create a new Virtual-Server on a dedicated Server
+     * @param array $data Configuration
+     * @return integer VirtualServer-ID
+     */
+    public function createVirtualServer(array $data){
+        $this->connect();
+        $oTS        = $this->getTeamspeakAdapter()->getTeamspeak();
+        $iVirtualID = $oTS->serverCreate($data);
+        return $iVirtualID;
     }
 }
