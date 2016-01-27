@@ -16,6 +16,8 @@ use Doctrine\ORM\EntityManager;
 use DoctrineModule\Stdlib\Hydrator\DoctrineObject as DoctrineHydrator;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator as DoctrineAdapter;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMInvalidArgumentException;
 use Server\Entity\Snapshot;
 
 class SnapshotMapper {
@@ -61,5 +63,21 @@ class SnapshotMapper {
         }
         
         return $oResult;
+    }
+    
+    /**
+     * Create a new Snapshot from a Virtual-Server
+     * @param array $data data
+     * @return Snapshot
+     */
+    public function create(array $data){
+        $oEM                = $this->getEntityManager();
+        $oHydrator          = new DoctrineHydrator($oEM);
+        $oSnapshot          = $oHydrator->hydrate($data, new Snapshot());
+        
+        $oEM->persist($oSnapshot);
+        $oEM->flush();
+        
+        return $oSnapshot;
     }
 }

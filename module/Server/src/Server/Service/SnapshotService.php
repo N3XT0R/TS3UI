@@ -17,7 +17,7 @@ use Zend\EventManager\EventManagerAwareInterface;
 use TeamSpeak3\Node\Server;
 use TeamSpeak3\TeamSpeak3;
 
-class SnapshotService  implements EventManagerAwareInterface{
+class SnapshotService implements EventManagerAwareInterface{
     
     use EventManagerAwareTrait;
     
