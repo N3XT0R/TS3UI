@@ -73,8 +73,12 @@ class SnapshotMapper {
     public function create(array $data){
         $oEM                = $this->getEntityManager();
         $oHydrator          = new DoctrineHydrator($oEM);
-        $oSnapshot          = $oHydrator->hydrate($data, new Snapshot());
+        $oSnapshot          = new Snapshot();
+        $oSnapshot->setUpdated();
         
+        
+        $oSnapshot          = $oHydrator->hydrate($data, $oSnapshot);
+         
         $oEM->persist($oSnapshot);
         $oEM->flush();
         
