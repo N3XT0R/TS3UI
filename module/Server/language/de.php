@@ -5,7 +5,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: d90df8e94697b543c2bf21481635c41f26b45a45 $
+ * $Id$
  * $Date$
  */
 
@@ -101,6 +101,7 @@ return [
     //Snapshots
     'SERVER_VIRTUAL_SNAPSHOTS'              => 'Snapshots',
     'SERVER_VIRTUAL_SNAPSHOT_TIMESTAMP'     => 'Zeitstempel',
+    'SERVER_VIRTUAL_SNAPSHOT_CREATE'        => 'Snapshot erstellen',
     
     
     //Exceptions

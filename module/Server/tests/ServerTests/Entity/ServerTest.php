@@ -6,7 +6,7 @@
  * @copyright      Copyright (c) 2015, Ilya Beliaev
  * @since          Version 1.0
  * 
- * $Id: 291670d4e6e889ca689d04251d3d680ca1680505 $
+ * $Id$
  * $Date$
  */
 
