@@ -17,13 +17,14 @@ use Zend\EventManager\EventManagerAwareInterface;
 use TeamSpeak3\Node\Server;
 use TeamSpeak3\TeamSpeak3;
 
-class SnapshotService  implements EventManagerAwareInterface{
+class SnapshotService implements EventManagerAwareInterface{
     
     use EventManagerAwareTrait;
     
     protected $aMessages = array();
     protected $oTeamspeakService;
     protected $oForms = array();
+    protected $oMapper;
     
     public function setTeamspeakService($oTeamspeakService){
         $this->oTeamspeakService = $oTeamspeakService;
@@ -36,6 +37,15 @@ class SnapshotService  implements EventManagerAwareInterface{
      */
     public function getTeamspeakService(){
         return $this->oTeamspeakService;
+    }
+    
+    public function getSnapshotMapper(){
+        return $this->oMapper;
+    }
+    
+    public function setSnapshotMapper($oSnapshotMapper){
+        $this->oMapper = $oSnapshotMapper;
+        return $this;
     }
     
     /**
@@ -77,7 +87,21 @@ class SnapshotService  implements EventManagerAwareInterface{
     }
     
     public function createServerSnapshot(Server $oServer){
-        $sSnapshot = $oServer->snapshotCreate(TeamSpeak3::SNAPSHOT_BASE64);
-        return $sSnapshot;
+        $oSnapshot          = null;
+        $sSnapshot          = $oServer->snapshotCreate(TeamSpeak3::SNAPSHOT_BASE64);
+        $oSnapshotMapper    =  $this->getSnapshotMapper();
+        $oHost              = $oServer->getParent();
+        
+        $aData = [
+            'server'                => $oHost,
+            'virtualServerID'       => $oServer->getId(),
+            'config'                => $sSnapshot,
+        ];
+        
+        try{
+           $oSnapshot = $oSnapshotMapper->create($aData);
+        } catch (\Exception $ex) {}
+        
+        return $oSnapshot;
     }
 }
