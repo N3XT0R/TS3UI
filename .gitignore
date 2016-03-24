@@ -11,3 +11,4 @@ vendor/bin
 data/session/*
 data/cache/*
 data/DoctrineORMModule/*
+/vendor/**/.git
