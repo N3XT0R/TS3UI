@@ -47,6 +47,9 @@ class Snapshot {
      * @ORM\Column(name="timestamp", type="datetime")
      */
     protected $timestamp;
+
+    /** @ORM\Column(type="string", nullable=true) */
+    protected $notice;
     
     /**
      * Set Snapshot Id
@@ -146,5 +149,14 @@ class Snapshot {
         $dateTime = new \DateTime("now");
         $this->setTimestamp($dateTime);
         return $this;
+    }
+
+    public function setNotice($notice){
+        $this->notice = $notice;
+        return $this;
+    }
+
+    public function getNotice(){
+        return $this->notice;
     }
 }
