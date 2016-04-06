@@ -60,8 +60,8 @@ class TeamspeakService implements EventManagerAwareInterface{
     }
     
     public function connect($server_id = null){
-        $oServer = $this->getServer();
-        $config = array(
+        $oServer    = $this->getServer();
+        $config     = array(
             "username"  => $oServer->getUsername(),
             "password"  => $oServer->getPassword(),
             "server"    => $oServer->getServer(),
@@ -104,5 +104,19 @@ class TeamspeakService implements EventManagerAwareInterface{
         $oTS        = $this->getTeamspeakAdapter()->getTeamspeak();
         $iVirtualID = $oTS->serverCreate($data);
         return $iVirtualID;
+    }
+    
+    /**
+     * 
+     * @return \TeamSpeak3\Adapter\ServerQuery
+     */
+    public function getDedicatedServer($iVirtualServer = null){
+        $this->connect($iVirtualServer);
+        $oTS        = $this->getTeamspeakAdapter()->getTeamspeak();
+        return $oTS;
+    }
+    
+    public function getCurrentLoggedInClient($iServer = null){
+        
     }
 }

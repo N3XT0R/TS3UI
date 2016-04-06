@@ -17,9 +17,11 @@ class VirtualServerControllerFactory implements FactoryInterface{
         $oSM                    = $serviceLocator->getServiceLocator();
         $oVirtualServerService  = $oSM->get("Server\Service\VirtualServer");
         $oServerService         = $oSM->get("Server\Service\Server");
+        $oSnapshotService       = $oSM->get("Server\Service\Snapshot");
         
         $oController = new VirtualServerController();
         $oController->setVirtualServerService($oVirtualServerService);
+        $oController->setSnapshotService($oSnapshotService);
         $oController->setServerService($oServerService);
         return $oController;
     }

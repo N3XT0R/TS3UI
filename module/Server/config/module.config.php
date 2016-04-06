@@ -70,6 +70,7 @@ return array(
             //Service
             'Server\Service\Server'                 => 'Server\Service\ServerServiceFactory',
             'Server\Service\VirtualServer'          => 'Server\Service\VirtualServerServiceFactory',
+            'Server\Service\Snapshot'               => 'Server\Service\SnapshotServiceFactory',
             //Form
             'Server\Form\ServerCreate'              => 'Server\Form\ServerCreateFormFactory',
             'Server\Form\VirtualServerEdit'         => 'Server\Form\VirtualServerEditFormFactory',

@@ -20,6 +20,7 @@ class VirtualServerController extends AbstractActionController{
     
     protected $oVirtualServerService;
     protected $oServerService;
+    protected $oSnapshotService;
     
     public function setVirtualServerService($oVirtualServerService){
         $this->oVirtualServerService = $oVirtualServerService;
@@ -32,6 +33,19 @@ class VirtualServerController extends AbstractActionController{
      */
     public function getVirtualServerService(){
         return $this->oVirtualServerService;
+    }
+    
+    public function setSnapshotService($oSnapshotService){
+        $this->oSnapshotService = $oSnapshotService;
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return \Server\Service\SnapshotService
+     */
+    public function getSnapshotService(){
+        return $this->oSnapshotService;
     }
     
     public function setServerService($oServerService){
@@ -219,11 +233,56 @@ class VirtualServerController extends AbstractActionController{
             return false;
         }
         
+        /* @var $oVirtualServer \TeamSpeak3\Node\Server */
+        $oVirtualServer = $this->getVirtualServerService()->getOneVirtualServerById(
+            $oServer, $virtualID
+        );
+        
+        
         $aSnapshots = $oServer->getSnapshotsByVirtualServerId($virtualID);
         
         
         return new ViewModel([
-            'aSnapshots' => $aSnapshots,
+            'aSnapshots'        => $aSnapshots,
+            'oServer'           => $oServer,
+            'oVirtualServer'    => $oVirtualServer,
+        ]);
+    }
+    
+    public function createSnapshotAction(){
+        $serverID   = (int)$this->params()->fromRoute("id",0);
+        $virtualID  = (int)$this->params()->fromRoute("virtualId",0);
+        
+        $oServer = $this->getServerService()->getOneServerById($serverID);
+       
+        if(!$oServer){
+            $this->redirect()->toRoute("server");
+            return false;
+        }
+        
+        
+        /* @var $oVirtualServer \TeamSpeak3\Node\Server */
+        $oVirtualServer = $this->getVirtualServerService()->getOneVirtualServerById(
+            $oServer, $virtualID
+        );
+        
+        
+        if(!$oVirtualServer){
+            $this->redirect()->toRoute("server/action", [
+                "action" => "edit", 
+                "id" => $serverID,
+            ]);
+            return false;
+        }
+        
+        $this->getSnapshotService()->createServerSnapshot($oServer, $oVirtualServer);
+        
+        die("test");
+        
+        $this->redirect()->toRoute("server/virtual/action", [
+            "action"        => "snapshotList",
+            'id'            => $oServer->getServerID(),
+            'virtualId'     => $oVirtualServer->getId(),
         ]);
     }
 }

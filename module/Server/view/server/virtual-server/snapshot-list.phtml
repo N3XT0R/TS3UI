@@ -29,13 +29,13 @@
     <div class="col-md-12">
         <div class="pull-right">
             <?php
-            /*
                 $sCreateUrl = $this->url("server/virtual/action", [
-                    
+                    "action"        => "createSnapshot",
+                    'id'            => $oServer->getServerID(),
+                    'virtualId'     => $oVirtualServer->getId(),    
                 ]);
-             */
             ?>
-            <a href="" class="btn btn-primary"><?php echo $this->translate("SERVER_VIRTUAL_SNAPSHOT_CREATE");?></a>
+            <a href="<?php echo $sCreateUrl; ?>" class="btn btn-primary"><?php echo $this->translate("SERVER_VIRTUAL_SNAPSHOT_CREATE");?></a>
         </div>
     </div>
 </div>
