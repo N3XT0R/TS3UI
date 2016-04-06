@@ -277,7 +277,6 @@ class VirtualServerController extends AbstractActionController{
         
         $this->getSnapshotService()->createServerSnapshot($oServer, $oVirtualServer);
         
-        die("test");
         
         $this->redirect()->toRoute("server/virtual/action", [
             "action"        => "snapshotList",

@@ -91,6 +91,7 @@ class SnapshotService implements EventManagerAwareInterface{
     /**
      * 
      * @param Server $oServer
+     * @param VirtualServer $oVirtualServer
      * @return type
      */
     public function createServerSnapshot(Server $oServer, VirtualServer $oVirtualServer){
@@ -99,28 +100,25 @@ class SnapshotService implements EventManagerAwareInterface{
         try{
             $sSnapshot          = $oVirtualServer->snapshotCreate(TeamSpeak3::SNAPSHOT_BASE64);
         } catch (Ts3Exception $ex) {
-            /* @var $oHost \TeamSpeak3\Node\Host */
-            $oHost              = $oVirtualServer->getParent();
-            var_dump($oVirtualServer);
-            die();
-            $oClient        = $oVirtualServer->clientGetByName($sUsername);
-            var_dump($oClient);
-            die();
+
         }
-        
-        $oSnapshotMapper    =  $this->getSnapshotMapper();
+
+        $oSnapshotMapper        =  $this->getSnapshotMapper();
+
+
         
         $aData = [
-            'server'                => $oServer,
-            'virtualServerID'       => $virtualID,
+            'serverID'                => $oServer->getServerID(),
+            'virtualServerID'       => $oVirtualServer->getId(),
             'config'                => $sSnapshot,
         ];
-        
-        var_dump($aData); die();
+
         
         try{
            $oSnapshot = $oSnapshotMapper->create($aData);
-        } catch (\Exception $ex) {}
+        } catch (\Exception $ex) {
+            $this->addMessage("error", "SERVER_VIRTUAL_SNAPSHOT_CREATE_FAILED");
+        }
         
         return $oSnapshot;
     }

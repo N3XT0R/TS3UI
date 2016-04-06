@@ -28,7 +28,7 @@ class Snapshot {
     protected $snapshotId;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Server", inversedBy="snapshots")
+     * @ORM\ManyToOne(targetEntity="Server")
      * @ORM\JoinColumn(name="serverID", referencedColumnName="serverID")
      */
     protected $server;
