@@ -20,6 +20,8 @@ return [
     'SERVER_EDIT_INFO'                      => 'In diesem Schritt können Sie Ihren bestehenden dedizierten Teamspeak-Server editieren.',
     'SERVER_CREATE_SUCCESS'                 => 'Der Server wurde erfolgreich angelegt.',
     'SERVER_CREATE_FAILED'                  => 'Beim Anlegen des Servers ist ein Fehler aufgetreten, bitte prüfen Sie Ihre Eingaben.',
+    'SERVER_SAVE_SUCCESS'                   => 'Ihre Servereinstellungen wurden erfolgreich gespeichert.',
+    'SERVER_SAVE_FAILED'                    => 'Ihre Servereinstellungen konnten aus unbekannten Gründen nicht gespeichert werden.',
     'SERVER_FORM_USERNAME'                  => 'ServerQuery-User',
     'SERVER_FORM_PASSWORD'                  => 'Passwort',
     'SERVER_FORM_HOSTNAME'                  => 'IP-Adresse/Hostname',

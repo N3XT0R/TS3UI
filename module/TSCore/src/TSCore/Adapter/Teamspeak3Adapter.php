@@ -31,7 +31,7 @@ class Teamspeak3Adapter implements Teamspeak3AdapterInterface{
         if(array_key_exists("server_id", $config)){
             $sURI .= "?server_id=".(int)$config["server_id"];
         }
-        
+
         $ts = TeamSpeak3::factory($sURI);
         $this->setTeamspeak($ts);
         return $this;

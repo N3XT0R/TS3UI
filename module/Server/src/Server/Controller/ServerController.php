@@ -31,7 +31,10 @@ class ServerController extends AbstractActionController{
         $this->oServerService = $oServerService;
         return $this;
     }
-    
+
+    /**
+     * @return ServerService
+     */
     public function getServerService(){
         return $this->oServerService;
     }
@@ -97,10 +100,21 @@ class ServerController extends AbstractActionController{
             return false;
         }
         
-        $oHydrator = new ClassMethods();
+        $oHydrator = new ClassMethods(false);
         $aData     = $oHydrator->extract($oServer);
         $oForm = $this->getServerService()->getForm("ServerEdit");
         $oForm->setData($aData);
+
+        $sUrl = $this->url()->fromRoute("server/action", ["action" => "edit", "id" => $serverID]);
+        $oPrg = $this->prg($sUrl, true);
+
+        if($oPrg instanceof Response){
+            return $oPrg;
+        }elseif($oPrg !== false){
+            $this->getServerService()->save($oPrg, $serverID);
+            $aMessages = $this->getServerService()->getMessages();
+            $this->MessagesToFlashMessenger()->add($aMessages);
+        }
         
         return new ViewModel([
             'oForm'     => $oForm,

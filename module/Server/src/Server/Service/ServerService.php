@@ -121,7 +121,26 @@ class ServerService implements EventManagerAwareInterface{
     }
 
     public function save(array $data, $id){
-        
+        $oForm  = $this->getForm("ServerEdit");
+        $oForm->setData($data);
+
+        if(!$oForm->isValid()){
+            return false;
+        }
+
+        $oMapper    = $this->getServerMapper();
+
+        $this->getEventManager()->trigger(__FUNCTION__.".pre", $this, compact("oForm", "oMapper"));
+        $aData      = $oForm->getData();
+
+        try{
+            $oServer    = $oMapper->update($aData, $id);
+            $this->addMessage("success", "SERVER_SAVE_SUCCESS");
+        } catch (\Exception $ex) {
+            $this->addMessage("error", "SERVER_SAVE_FAILED");
+        }
+
+        $this->getEventManager()->trigger(__FUNCTION__.".post", $this, compact("oMapper", "oServer"));
         
     }
     
@@ -181,6 +200,7 @@ class ServerService implements EventManagerAwareInterface{
     public function fetchVirtualServer($id){
         $aServerList = array();
         $oServer = $this->getOneServerById($id);
+
         if($oServer){
             $oService = $this->getTeamspeakService();
             $oService->setServer($oServer);
