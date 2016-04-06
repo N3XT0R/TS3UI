@@ -42,6 +42,7 @@ class Server implements ServerInterface{
     
     /**
      * @ORM\OneToMany(targetEntity="Snapshot", mappedBy="server")
+     * @ORM\JoinColumn(name="serverID", referencedColumnName="serverID")
      * )
      */
     protected $snapshots;
