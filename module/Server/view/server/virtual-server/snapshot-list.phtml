@@ -8,12 +8,18 @@
         </thead>
         <tbody>
             <?php
-                if(count($aSnapshots) > 0){
-            ?>
-            <tr>
-                
-            </tr>
-            <?php
+            /**
+             * @var $aSnapshots Doctrine\Common\Collections\ArrayCollection|\Server\Entity\Snapshot[]
+             */
+                if(count($aSnapshots->count()) > 0){
+                    foreach($aSnapshots as $oSnapshot) {
+                        ?>
+                        <tr>
+                            <td><?php echo $oSnapshot->getTimestamp()->format("d.m.Y H:i:s"); ?></td>
+                            <td></td>
+                        </tr>
+                        <?php
+                    }
                 }else{
             ?>
             <tr>

@@ -241,7 +241,6 @@ class VirtualServerController extends AbstractActionController{
         
         $aSnapshots = $oServer->getSnapshotsByVirtualServerId($virtualID);
         
-        
         return new ViewModel([
             'aSnapshots'        => $aSnapshots,
             'oServer'           => $oServer,
@@ -276,7 +275,9 @@ class VirtualServerController extends AbstractActionController{
         }
         
         $this->getSnapshotService()->createServerSnapshot($oServer, $oVirtualServer);
-        
+        $aMessages = $this->getSnapshotService()->getMessages();
+        $this->MessagesToFlashMessenger()->add($aMessages, 1);
+
         
         $this->redirect()->toRoute("server/virtual/action", [
             "action"        => "snapshotList",

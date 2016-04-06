@@ -108,7 +108,7 @@ class SnapshotService implements EventManagerAwareInterface{
 
         
         $aData = [
-            'serverID'                => $oServer->getServerID(),
+            'serverID'              => $oServer->getServerID(),
             'virtualServerID'       => $oVirtualServer->getId(),
             'config'                => $sSnapshot,
         ];
@@ -116,6 +116,7 @@ class SnapshotService implements EventManagerAwareInterface{
         
         try{
            $oSnapshot = $oSnapshotMapper->create($aData);
+            $this->addMessage("success", "SERVER_VIRTUAL_SNAPSHOT_CREATE_SUCCESS");
         } catch (\Exception $ex) {
             $this->addMessage("error", "SERVER_VIRTUAL_SNAPSHOT_CREATE_FAILED");
         }

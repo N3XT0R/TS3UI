@@ -104,6 +104,8 @@ return [
     'SERVER_VIRTUAL_SNAPSHOTS'              => 'Snapshots',
     'SERVER_VIRTUAL_SNAPSHOT_TIMESTAMP'     => 'Zeitstempel',
     'SERVER_VIRTUAL_SNAPSHOT_CREATE'        => 'Snapshot erstellen',
+    'SERVER_VIRTUAL_SNAPSHOT_CREATE_SUCCESS'        => 'Snapshot wurde erfolgreich erstellt.',
+    'SERVER_VIRTUAL_SNAPSHOT_CREATE_FAILED'         => 'Beim Erstellen des Snapshots ist ein kritischer Fehler aufgetreten.',
     
     
     //Exceptions
