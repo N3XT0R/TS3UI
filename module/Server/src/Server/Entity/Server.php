@@ -41,10 +41,7 @@ class Server implements ServerInterface{
     protected $password;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Snapshot")
-     * @ORM\JoinTable(name="Snapshot",
-     *      joinColumns={@ORM\JoinColumn(name="serverID", referencedColumnName="serverID")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="snapshotId;", referencedColumnName="snapshotId;", unique=true)}
+     * @ORM\OneToMany(targetEntity="Snapshot", mappedBy="server")
      * )
      */
     protected $snapshots;
