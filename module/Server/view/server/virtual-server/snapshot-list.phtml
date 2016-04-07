@@ -16,7 +16,23 @@
                         ?>
                         <tr>
                             <td><?php echo $oSnapshot->getTimestamp()->format("d.m.Y H:i:s"); ?></td>
-                            <td></td>
+                            <td>
+                                <?php
+                                    $sSnapshotShowUrl = $this->url("server/virtual/action/snapshot", [
+                                        "action"        => "snapshotList",
+                                        'id'            => $oServer->getServerID(),
+                                        'virtualId'     => $oVirtualServer->getId(),
+                                        'snapshotAction' => 'index',
+                                        'SnapshotId' => $oSnapshot->getSnapshotId(),
+                                    ]);
+
+                                ?>
+                                <a href="<?php echo $sSnapshotShowUrl; ?>" class="btn btn-xs btn-primary">
+                                    <?php
+                                    echo $this->translate("SERVER_VIRTUAL_SNAPSHOT_BTN_SHOW");
+                                    ?>
+                                </a>
+                            </td>
                         </tr>
                         <?php
                     }

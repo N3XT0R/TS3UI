@@ -48,6 +48,24 @@ return array(
                                         'action'        => '[a-zA-Z]+',
                                         'virtualId'     => '[0-9]+',
                                     ),
+
+                                ),
+                                'may_terminate' => true,
+                                'child_routes' => array(
+                                    'snapshot' => array(
+                                        'type'  => 'segment',
+                                        'options' => array(
+                                            'route' => '/[:snapshotAction][/:SnapshotId]',
+                                            'defaults' => array(
+                                                'controller' => 'Snapshot',
+                                                'action'     => 'index',
+                                            ),
+                                            'constraints' => array(
+                                                'snapshotAction' => '[a-zA-Z]+',
+                                                'SnapshotId'     => '[0-9]+',
+                                            ),
+                                        ),
+                                    ),
                                 ),
                             ),
                         ),
@@ -60,6 +78,7 @@ return array(
         'factories' => array(
             'Server'                => 'Server\Controller\ServerControllerFactory',
             'VirtualServer'         => 'Server\Controller\VirtualServerControllerFactory',
+            'Snapshot'              => 'Server\Controller\SnapshotControllerFactory',
         ),
     ),
     'service_manager' => array(
@@ -212,7 +231,7 @@ return array(
                 'allow' => array(
                     // allow guests and users (and admins, through inheritance)
                     // the "wear" privilege on the resource "pants",
-                    array(array('Administrator', 'User'), ['Server', 'VirtualServer']),                   
+                    array(array('Administrator', 'User'), ['Server', 'VirtualServer', 'Snapshot']),
                 ),
                 // Don't mix allow/deny rules if you are using role inheritance.
                 // There are some weird bugs.
@@ -235,6 +254,10 @@ return array(
                     'roles' => array('User', 'Administrator'),
                 ),
                 array(
+                    'route' => 'server/virtual/action/snapshot',
+                    'roles' => array('User', 'Administrator'),
+                ),
+                array(
                     'route' => 'Assetmanager-warmup',
                     'roles' => array('User', 'Administrator', 'Guest', null),
                 ),
@@ -246,6 +269,7 @@ return array(
             'BjyAuthorize\Provider\Resource\Config' => array(
                 'Server'            => array('index', 'create', 'virtualServerList'),
                 'VirtualServer'     => array('index'),
+                'Snapshot'          => array('index'),
             ),
         ),
     ),
