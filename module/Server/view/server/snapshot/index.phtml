@@ -1,9 +1,13 @@
 <?php
-$this->PageTitle("SERVER_VIRTUAL_SNAPSHOTS_DETAILS");
 /**
  * @var \Server\Entity\Snapshot $oSnapshot
  */
 $oSnapshot  = $this->oSnapshot;
+
+$this->PageTitle("SERVER_VIRTUAL_SNAPSHOTS_DETAILS");
+$this->PageTitle($oSnapshot->getServer()->getServer(), "append");
+$this->PageTitle("Snapshot #". $oSnapshot->getSnapshotId(), "append");
+
 
 ?>
 <div class="row">
