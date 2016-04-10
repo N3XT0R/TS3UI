@@ -79,6 +79,9 @@ class SnapshotController extends AbstractActionController
             return false;
         }
 
+        $this->getEventManager()->trigger(__FUNCTION__.".preShow", $this, compact("oSnapshot", "serverID", "id"));
+
+
         $oServer        = $oSnapshot->getServer();
         $iVirtualId     = $oSnapshot->getVirtualServerID();
 
@@ -109,6 +112,9 @@ class SnapshotController extends AbstractActionController
             $this->redirect()->toRoute("server");
             return false;
         }
+
+        $this->getEventManager()->trigger(__FUNCTION__.".preShow", $this, compact("oSnapshot", "serverID", "id"));
+
 
         $sConfig        = $oSnapshot->getConfig();
         $fileName       = $oSnapshot->getTimestamp()->format("Y-m-d-H-i-s").".ts3config";

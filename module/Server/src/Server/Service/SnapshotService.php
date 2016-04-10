@@ -119,14 +119,19 @@ class SnapshotService implements EventManagerAwareInterface{
             'config'                => $sSnapshot,
         ];
 
-        
+        $this->getEventManager()->trigger(__FUNCTION__.".preCreate", $this, compact("aData", "oSnapshotMapper", "sSnapshot"));
+
+
         try{
            $oSnapshot = $oSnapshotMapper->create($aData);
             $this->addMessage("success", "SERVER_VIRTUAL_SNAPSHOT_CREATE_SUCCESS");
         } catch (\Exception $ex) {
             $this->addMessage("error", "SERVER_VIRTUAL_SNAPSHOT_CREATE_FAILED");
         }
-        
+
+        $this->getEventManager()->trigger(__FUNCTION__.".postCreate", $this, compact("oSnapshot"));
+
+
         return $oSnapshot;
     }
 
@@ -140,5 +145,5 @@ class SnapshotService implements EventManagerAwareInterface{
         $oSnapshot          = $oSnapshotMapper->getOneById($id);
         return $oSnapshot;
     }
-    
+
 }
