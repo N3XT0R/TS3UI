@@ -5,7 +5,7 @@
 $oSnapshot  = $this->oSnapshot;
 
 $this->PageTitle("SERVER_VIRTUAL_SNAPSHOTS_DETAILS");
-$this->PageTitle($oSnapshot->getServer()->getServer(), "append");
+$this->PageTitle($oSnapshot->getServer()->getServer()."/".$oSnapshot->getVirtualServerID(), "append");
 $this->PageTitle("Snapshot #". $oSnapshot->getSnapshotId(), "append");
 
 
