@@ -54,14 +54,15 @@ return array(
                             'snapshot' => array(
                                 'type'  => 'segment',
                                 'options' => array(
-                                    'route' => '/snapshot/:SnapshotId[/:action]',
+                                    'route' => '/:virtualId/snapshot/:SnapshotId[/:action]',
                                     'defaults' => array(
                                         'controller' => 'Snapshot',
                                         'action'     => 'index',
                                     ),
                                     'constraints' => array(
-                                        'action'         => '[a-zA-Z]+',
-                                        'SnapshotId'     => '[0-9]+',
+                                        'virtualId'         => '[0-9]+',
+                                        'action'            => '[a-zA-Z]+',
+                                        'SnapshotId'        => '[0-9]+',
                                     ),
                                 ),
                             ),

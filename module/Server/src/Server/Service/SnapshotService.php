@@ -19,6 +19,7 @@ use Server\Entity\Server;
 use TeamSpeak3\Node\Server as VirtualServer;
 use TeamSpeak3\TeamSpeak3;
 use TeamSpeak3\Ts3Exception;
+use Server\Entity\Snapshot;
 
 class SnapshotService implements EventManagerAwareInterface{
     
@@ -130,7 +131,7 @@ class SnapshotService implements EventManagerAwareInterface{
 
     /**
      * @param $id
-     * @return null|Snapshot
+     * @return Snapshot|null
      */
     public function getServerSnapshotByID($id){
         $oSnapshot          = null;
