@@ -22,7 +22,10 @@ use Server\Entity\Server;
  * @author N3X-Home
  */
 class SnapshotTest extends PHPUnit_Framework_TestCase{
-    
+
+    /**
+     * @var Snapshot $oSnapshot
+     */
     private $oSnapshot;
     
     public function setUp() {
@@ -63,5 +66,12 @@ class SnapshotTest extends PHPUnit_Framework_TestCase{
         $this->oSnapshot->setServer($server);
         $gotServer = $this->oSnapshot->getServer();
         $this->assertEquals($gotServer, $server);
+    }
+
+    public function testSetGetNotice(){
+        $notice = "test notice";
+        $this->oSnapshot->setNotice($notice);
+        $gotNotice = $this->oSnapshot->getNotice();
+        $this->assertEquals($notice, $gotNotice);
     }
 }

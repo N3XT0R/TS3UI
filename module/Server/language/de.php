@@ -107,7 +107,9 @@ return [
     'SERVER_VIRTUAL_SNAPSHOT_CREATE_SUCCESS'        => 'Snapshot wurde erfolgreich erstellt.',
     'SERVER_VIRTUAL_SNAPSHOT_CREATE_FAILED'         => 'Beim Erstellen des Snapshots ist ein kritischer Fehler aufgetreten.',
     'SERVER_VIRTUAL_SNAPSHOT_BTN_SHOW'              => 'Anzeigen',
-    'SERVER_VIRTUAL_SNAPSHOTS_DETAILS'               => 'Details',
+    'SERVER_VIRTUAL_SNAPSHOTS_DETAILS'              => 'Details',
+    'SERVER_VIRTUAL_SNAPSHOT_BTN_DELETE'            => 'Löschen',
+    'SERVER_VIRTUAL_SNAPSHOTS_DELETE'               => 'Snapshot löschen',
     
     //Exceptions
     'Operation timed out'                   => 'Der Server hat nicht in der vorgebenen Zeit geantwortet. Operation fehlgeschlagen.',

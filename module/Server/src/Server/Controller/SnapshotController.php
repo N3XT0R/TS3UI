@@ -55,7 +55,12 @@ class SnapshotController extends AbstractActionController
     }
 
     public function indexAction() {
-        
+        return new ViewModel([
+
+        ]);
+    }
+
+    public function deleteAction(){
         return new ViewModel([
 
         ]);

@@ -50,26 +50,24 @@ return array(
                                     ),
 
                                 ),
-                                'may_terminate' => true,
-                                'child_routes' => array(
-                                    'snapshot' => array(
-                                        'type'  => 'segment',
-                                        'options' => array(
-                                            'route' => '/[:snapshotAction][/:SnapshotId]',
-                                            'defaults' => array(
-                                                'controller' => 'Snapshot',
-                                                'action'     => 'index',
-                                            ),
-                                            'constraints' => array(
-                                                'snapshotAction' => '[a-zA-Z]+',
-                                                'SnapshotId'     => '[0-9]+',
-                                            ),
-                                        ),
+                            ),
+                            'snapshot' => array(
+                                'type'  => 'segment',
+                                'options' => array(
+                                    'route' => '/snapshot/:SnapshotId[/:action]',
+                                    'defaults' => array(
+                                        'controller' => 'Snapshot',
+                                        'action'     => 'index',
+                                    ),
+                                    'constraints' => array(
+                                        'action'         => '[a-zA-Z]+',
+                                        'SnapshotId'     => '[0-9]+',
                                     ),
                                 ),
                             ),
                         ),
                     ),
+
                 ),
             ),
         ),
@@ -183,11 +181,22 @@ return array(
                                                         'id'                => 'SnapshotIndex',
                                                         'type'              => 'mvc',
                                                         'label'             => 'SERVER_VIRTUAL_SNAPSHOTS_DETAILS',
-                                                        'route'             => 'server/virtual/action/snapshot',
+                                                        'route'             => 'server/virtual/snapshot',
                                                         'controller'        => 'Snapshot',
                                                         'action'            => 'index',
                                                         'resource'          => 'Snapshot',
                                                         'privilege'         => 'index',
+                                                        'useRouteMatch'     => true,
+                                                    ],
+                                                    'SnapshotDelete' => [
+                                                        'id'                => 'SnapshotDelete',
+                                                        'type'              => 'mvc',
+                                                        'label'             => 'SERVER_VIRTUAL_SNAPSHOTS_DELETE',
+                                                        'route'             => 'server/virtual/snapshot',
+                                                        'controller'        => 'Snapshot',
+                                                        'action'            => 'delete',
+                                                        'resource'          => 'Snapshot',
+                                                        'privilege'         => 'delete',
                                                         'useRouteMatch'     => true,
                                                     ],
                                                 ],
@@ -267,7 +276,7 @@ return array(
                     'roles' => array('User', 'Administrator'),
                 ),
                 array(
-                    'route' => 'server/virtual/action/snapshot',
+                    'route' => 'server/virtual/snapshot',
                     'roles' => array('User', 'Administrator'),
                 ),
                 array(
@@ -282,7 +291,7 @@ return array(
             'BjyAuthorize\Provider\Resource\Config' => array(
                 'Server'            => array('index', 'create', 'virtualServerList'),
                 'VirtualServer'     => array('index'),
-                'Snapshot'          => array('index'),
+                'Snapshot'          => array('index', 'delete'),
             ),
         ),
     ),
