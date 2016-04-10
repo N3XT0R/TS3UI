@@ -67,9 +67,9 @@ class User implements UserInterface, ProviderInterface{
 
     /**
      * @var int
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
-    protected $isAPIUser;
+    protected $isAPIUser = 0;
     /**
      * Initialies the roles variable.
      */
