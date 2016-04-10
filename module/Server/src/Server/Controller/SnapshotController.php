@@ -17,6 +17,7 @@ class SnapshotController extends AbstractActionController
 
     private $oSnapshotService;
     private $oVirtualServerService;
+    private $oServerService;
 
     public function __construct(SnapshotService $oSnapshotService) {
         $this->setSnapshotService($oSnapshotService);
@@ -54,9 +55,28 @@ class SnapshotController extends AbstractActionController
         return $this;
     }
 
-    public function indexAction() {
-        return new ViewModel([
+    public function setServerService($oServerService){
+        $this->oServerService = $oServerService;
+        return $this;
+    }
+    /**
+     *
+     * @return \Server\Service\ServerService
+     */
+    public function getServerService(){
+        return $this->oServerService;
+    }
 
+    public function indexAction() {
+        $serverID       = (int)$this->params()->fromRoute("id",0);
+        $id             = (int)$this->params()->fromRoute("virtualId",0);
+        $snapShotID     = (int)$this->params()->fromRoute("SnapshotId",0);
+
+        $oSnapshot      = $this->getSnapshotService()->getServerSnapshotByID($snapShotID);
+
+
+        return new ViewModel([
+            "oSnapshot"     => $oSnapshot,
         ]);
     }
 

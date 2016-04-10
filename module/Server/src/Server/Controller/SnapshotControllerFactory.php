@@ -20,8 +20,11 @@ class SnapshotControllerFactory implements  FactoryInterface
     {
         $sm                     = $serviceLocator->getServicelocator();
         $oService               = $sm->get("Server\Service\Snapshot");#
-        $oVirtualService        = $sm->get("Server\Service\VirtualServer");#
+        $oVirtualService        = $sm->get("Server\Service\VirtualServer");
+        $oServerService         = $sm->get("Server\Service\Server");
         $oController    = new SnapshotController($oService);
+        $oController->setVirtualServerService($oVirtualService);
+        $oController->setServerService($oServerService);
         return $oController;
     }
 

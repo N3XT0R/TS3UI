@@ -12,6 +12,7 @@
 
 namespace Server\Service;
 
+use Server\Mapper\SnapshotMapper;
 use Zend\EventManager\EventManagerAwareTrait;
 use Zend\EventManager\EventManagerAwareInterface;
 use Server\Entity\Server;
@@ -40,12 +41,15 @@ class SnapshotService implements EventManagerAwareInterface{
     public function getTeamspeakService(){
         return $this->oTeamspeakService;
     }
-    
+
+    /**
+     * @return SnapshotMapper
+     */
     public function getSnapshotMapper(){
         return $this->oMapper;
     }
     
-    public function setSnapshotMapper($oSnapshotMapper){
+    public function setSnapshotMapper(SnapshotMapper $oSnapshotMapper){
         $this->oMapper = $oSnapshotMapper;
         return $this;
     }
@@ -121,6 +125,17 @@ class SnapshotService implements EventManagerAwareInterface{
             $this->addMessage("error", "SERVER_VIRTUAL_SNAPSHOT_CREATE_FAILED");
         }
         
+        return $oSnapshot;
+    }
+
+    /**
+     * @param $id
+     * @return null|Snapshot
+     */
+    public function getServerSnapshotByID($id){
+        $oSnapshot          = null;
+        $oSnapshotMapper    = $this->getSnapshotMapper();
+        $oSnapshot          = $oSnapshotMapper->getOneById($id);
         return $oSnapshot;
     }
 }

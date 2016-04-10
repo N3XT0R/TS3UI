@@ -1,1 +1,20 @@
-aaa
+<?php
+$this->PageTitle("SERVER_VIRTUAL_SNAPSHOTS_DETAILS");
+/**
+ * @var \Server\Entity\Snapshot $oSnapshot
+ */
+$oSnapshot  = $this->oSnapshot;
+
+?>
+<div class="row">
+    <div class="col-md-12">
+<textarea class="form-control" rows="15" disabled>
+<?php
+        $sEncConfig    = $oSnapshot->getConfig();
+        $sConfig       = base64_decode($sEncConfig);
+
+        echo str_replace(" ", "\n", $sConfig);
+?>
+</textarea>
+    </div>
+</div>
