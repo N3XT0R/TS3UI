@@ -32,10 +32,22 @@
                                         'SnapshotId'    => $oSnapshot->getSnapshotId(),
                                     ]);
 
+                                    $sSnapshotDownloadUrl = $this->url("server/virtual/snapshot", [
+                                        'id'            => $oServer->getServerID(),
+                                        'virtualId'     => $oVirtualServer->getId(),
+                                        'action'        => 'download',
+                                        'SnapshotId'    => $oSnapshot->getSnapshotId(),
+                                    ]);
+
                                 ?>
                                 <a href="<?php echo $sSnapshotShowUrl; ?>" class="btn btn-xs btn-primary">
                                     <?php
                                     echo $this->translate("SERVER_VIRTUAL_SNAPSHOT_BTN_SHOW");
+                                    ?>
+                                </a>
+                                <a href="<?php echo $sSnapshotDownloadUrl; ?>" class="btn btn-xs btn-primary">
+                                    <?php
+                                    echo $this->translate("SERVER_VIRTUAL_SNAPSHOT_BTN_DOWNLOAD");
                                     ?>
                                 </a>
                                 <a href="<?php echo $sSnapshotDeleteUrl; ?>" class="btn btn-xs btn-danger">
@@ -43,6 +55,7 @@
                                     echo $this->translate("SERVER_VIRTUAL_SNAPSHOT_BTN_DELETE");
                                     ?>
                                 </a>
+
                             </td>
                         </tr>
                         <?php

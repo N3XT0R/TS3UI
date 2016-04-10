@@ -20,6 +20,7 @@ use TeamSpeak3\Node\Server as VirtualServer;
 use TeamSpeak3\TeamSpeak3;
 use TeamSpeak3\Ts3Exception;
 use Server\Entity\Snapshot;
+use Zend\Filter\Compress;
 
 class SnapshotService implements EventManagerAwareInterface{
     
@@ -139,4 +140,5 @@ class SnapshotService implements EventManagerAwareInterface{
         $oSnapshot          = $oSnapshotMapper->getOneById($id);
         return $oSnapshot;
     }
+    
 }

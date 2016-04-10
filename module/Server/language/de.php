@@ -110,6 +110,7 @@ return [
     'SERVER_VIRTUAL_SNAPSHOTS_DETAILS'              => 'Details',
     'SERVER_VIRTUAL_SNAPSHOT_BTN_DELETE'            => 'Löschen',
     'SERVER_VIRTUAL_SNAPSHOTS_DELETE'               => 'Snapshot löschen',
+    'SERVER_VIRTUAL_SNAPSHOT_BTN_DOWNLOAD'          => 'Herunterladen',
     
     //Exceptions
     'Operation timed out'                   => 'Der Server hat nicht in der vorgebenen Zeit geantwortet. Operation fehlgeschlagen.',
