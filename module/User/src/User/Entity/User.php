@@ -64,6 +64,12 @@ class User implements UserInterface, ProviderInterface{
      * )
      */
     protected $roles;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer")
+     */
+    protected $isAPIUser;
     /**
      * Initialies the roles variable.
      */
@@ -134,10 +140,12 @@ class User implements UserInterface, ProviderInterface{
     {
         return $this->displayName;
     }
+
     /**
      * Set displayName.
      *
      * @param string $displayName
+     * @return void|UserInterface
      */
     public function setDisplayName($displayName)
     {
@@ -230,5 +238,14 @@ class User implements UserInterface, ProviderInterface{
         foreach ($roles as $role) {
             $this->roles->removeElement($role);
         }
+    }
+
+    public function setIsAPIUser($blIsAPIUser){
+        $this->isAPIUser = (bool)$blIsAPIUser;
+        return $this;
+    }
+
+    public function getISAPIUser(){
+        return $this->isAPIUser;
     }
 }
