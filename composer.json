@@ -9,7 +9,7 @@
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.5",
-        "zendframework/zendframework": "2.5.1",
+        "zendframework/zendframework": "2.5.*",
         "fkubis/teamspeak-php-framework": "dev-master",
         "phpunit/phpunit": "4.5.*",
         "satooshi/php-coveralls": "0.6.*",
