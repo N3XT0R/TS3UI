@@ -153,6 +153,12 @@ php ./public/index.php assetmanager warmup
 </VirtualHost>
 ```
 
+#### PHP.ini
+
+```
+E_ALL & ~ E_DEPRECATED & ~ E_USER_DEPRECATED & ~ E_STRICT
+```
+
 ## Login into Application
 
 Notice:
