@@ -154,9 +154,10 @@ php ./public/index.php assetmanager warmup
 ```
 
 #### PHP.ini
+Replace the error_reporting with following:
 
 ```
-E_ALL & ~ E_DEPRECATED & ~ E_USER_DEPRECATED & ~ E_STRICT
+error_reporting=E_ALL & ~ E_DEPRECATED & ~ E_USER_DEPRECATED & ~ E_STRICT
 ```
 
 ## Login into Application
