@@ -7,8 +7,7 @@ nbproject
 .project
 .settings
 composer.lock
-vendor/
+vendor/*
 data/session/*
 data/cache/*
 data/DoctrineORMModule/*
-/vendor/*
