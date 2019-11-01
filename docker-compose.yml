@@ -9,6 +9,9 @@ services:
     ports:
       - "3306:3306"
     environment:
+      - MYSQL_DATABASE=ts3ui
+      - MYSQL_USER=ts3ui
+      - MYSQL_PASSWORD=ts3ui
       - MYSQL_ROOT_PASSWORD=password
   ts3ui:
     depends_on:
