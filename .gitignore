@@ -11,3 +11,4 @@ vendor/*
 data/session/*
 data/cache/*
 data/DoctrineORMModule/*
+data/db/*
