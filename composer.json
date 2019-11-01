@@ -3,10 +3,9 @@
     "description": "TS3UI",
     "license": "BSD-3-Clause",
     "keywords": [
-        "framework",
-        "zf2"
+        "ts3ui"
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "http://blog.php-dev.info/",
     "require": {
         "php": ">=7.2",
         "zendframework/zendframework": "2.5.*",
